@@ -31,17 +31,17 @@ All submissions are subject to a review process at the discretion of the MAST te
 
 - Submitting organizations are responsible for **token costs** incurred during evaluation. Estimated token usage and evaluation parameters are provided for reference and may vary.
 
-- Organizations are limited to **one (1) set of submissions per week**.
-
 - All results will be **manually inspected and verified** by the MAST team prior to public indexing on the leaderboard.
 
 - The MAST team retains **final authority** over verification decisions.
 
-- All verified and non-disqualified results will be posted publicly to the leaderboard. Once submitted and evaluated, model scores are **final**, will be made public, and **cannot be revoked or withdrawn** at the request of the submitting organization.
+- All verified and non-disqualified results will be posted publicly to the leaderboard. Once submitted and evaluated, model scores are **final** and will remain publicly available.
 
 - To discourage overfitting and repeated probing of the benchmark, the total number of submission attempts will be displayed publicly alongside the score, as well as the date of submission.
 
 - The MAST team reserves the right to **disqualify any submission** made in bad faith or exhibiting suspicious activity, including but not limited to attempts at benchmark reconstruction, prompt leakage, coordinated probing, or violations of the Terms of Use.
+
+- Submission constitutes advance consent for evaluation on future MAST benchmarks and major benchmark revisions. Organizations may decline participation in a newly introduced benchmark; however, models that do not participate will be listed as partially indexed.
 
 ---
 
@@ -49,10 +49,10 @@ All submissions are subject to a review process at the discretion of the MAST te
 
 Participation in MAST is conditioned on agreement to responsible use of the benchmark. Submitting organizations agree **not** to attempt to reverse engineer, reconstruct, or infer the contents of the private test sets, nor to game or manipulate the evaluation process.
 
-Violations of this policy will result in **immediate disqualification** and **permanent removal** of the organization from all current and future MAST submissions, at the sole discretion of the MAST team. Additionally, we reserve the right to pursue legal action.
+Violations of this policy will result in **immediate disqualification** and **permanent removal** of the organization from all current and future MAST submissions. Additionally, we reserve the right to pursue legal action.
 
 All decisions regarding verification, scoring, disqualification, and leaderboard inclusion are **final and non-appealable**.
 
 ---
 
-_Last modified on December 23rd, 2025._
+_Last modified on January 1st, 2026._
