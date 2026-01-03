@@ -1,0 +1,16 @@
+{
+  "type": "object",
+  "properties": {
+    "Rating": {
+      "type": "integer",
+      "minimum": -2,
+      "maximum": 2,
+      "description": "Impact rating from -2 (strongly decreases) to +2 (strongly increases)"
+    },
+    "Rationale": {
+      "type": "string",
+      "description": "Brief clinical justification for the rating"
+    }
+  },
+  "required": ["Rating", "Rationale"]
+}
