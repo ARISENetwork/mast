@@ -28,16 +28,16 @@ def discover_benchmarks() -> List[str]:
 
 
 def discover_test_cases(benchmark_name: str) -> List[str]:
-    """Discover all test cases for a given benchmark."""
+    """Discover all test cases for a given benchmark (test_*.txt and example_*.txt)."""
     inputs_dir = Path(__file__).parent.parent / "benchmarks" / benchmark_name / "inputs"
     if not inputs_dir.exists():
         return []
 
-    test_cases = []
-    for item in inputs_dir.glob("test_*.txt"):
-        test_cases.append(item.stem)  # Remove .txt extension
-
-    return sorted(test_cases)
+    stems = set()
+    for pattern in ("test_*.txt", "example_*.txt"):
+        for item in inputs_dir.glob(pattern):
+            stems.add(item.stem)
+    return sorted(stems)
 
 
 def run_api_validator(benchmark_name: str, test_name: str) -> Tuple[bool, str]:
@@ -72,15 +72,18 @@ def run_api_validator(benchmark_name: str, test_name: str) -> Tuple[bool, str]:
 
 def validate_benchmark(benchmark_name: str) -> Dict[str, Any]:
     """Validate all test cases for a given benchmark via API."""
-    print(f"\n🔄 Testing {benchmark_name.upper()} benchmark...")
+    print(f"\nTesting {benchmark_name.upper()} benchmark...")
 
     test_cases = discover_test_cases(benchmark_name)
     if not test_cases:
-        print(f"⚠️  No test cases found for {benchmark_name}")
+        print(f" No test cases found for {benchmark_name}")
         return {
             "benchmark": benchmark_name,
             "status": "no_tests",
             "message": "No test cases found",
+            "total_tests": 0,
+            "passed": 0,
+            "failed": 0,
             "test_cases": []
         }
 
@@ -89,7 +92,7 @@ def validate_benchmark(benchmark_name: str) -> Dict[str, Any]:
     failed = 0
 
     for test_case in test_cases:
-        print(f"  📤 Testing {test_case}...")
+        print(f"  Testing {test_case}...")
         is_valid, message = run_api_validator(benchmark_name, test_case)
 
         results.append({
@@ -118,19 +121,19 @@ def validate_benchmark(benchmark_name: str) -> Dict[str, Any]:
 def print_benchmark_results(results: Dict[str, Any]):
     """Print results for a single benchmark."""
     print(f"\n{'='*60}")
-    print(f"📊 {results['benchmark'].upper()} RESULTS")
+    print(f"{results['benchmark'].upper()} RESULTS")
     print(f"{'='*60}")
     print(f"Status: {results['status'].upper()}")
-    print(f"Tests: {results['passed']}/{results['total_tests']} passed")
+    print(f"Tests: {results.get('passed', 0)}/{results.get('total_tests', 0)} passed")
 
-    if results['failed'] > 0:
-        print("\n❌ Failed tests:")
+    if results.get('failed', 0) > 0:
+        print("\nFailed tests:")
         for test_case in results['test_cases']:
             if not test_case['passed']:
-                print(f"  ✗ {test_case['test_case']}: {test_case['message']}")
+                print(f"  - {test_case['test_case']}: {test_case['message']}")
 
-    if results['failed'] == 0 and results['total_tests'] > 0:
-        print("\n✅ All API tests passed!")
+    if results.get('failed', 0) == 0 and results.get('total_tests', 0) > 0:
+        print("\nAll API tests passed!")
 
 
 def validate_config() -> bool:
@@ -140,7 +143,7 @@ def validate_config() -> bool:
         endpoint = config.get("endpoint")
 
         if not endpoint:
-            print("❌ No endpoint configured in config.json")
+            print("Error: No endpoint configured in config.json")
             return False
 
         # Check required fields
@@ -148,25 +151,25 @@ def validate_config() -> bool:
         missing_fields = [field for field in required_fields if field not in endpoint]
 
         if missing_fields:
-            print(f"❌ Missing required fields: {', '.join(missing_fields)}")
+            print(f"Error: Missing required fields: {', '.join(missing_fields)}")
             return False
 
         # Validate URL format
         url = endpoint["url"]
         if not url.startswith("http"):
-            print(f"❌ Invalid URL format: {url}")
+            print(f"Error: Invalid URL format: {url}")
             return False
 
         # Check timeout
         timeout = endpoint.get("timeout", 30)
         if timeout > 300:
-            print(f"⚠️  Timeout {timeout}s exceeds maximum 300s, capping at 300s")
+            print(f"Warning: Timeout {timeout}s exceeds maximum 300s, capping at 300s")
 
-        print("✅ Configuration validation passed")
+        print("Configuration validation passed")
         return True
 
     except Exception as e:
-        print(f"❌ Configuration error: {e}")
+        print(f"Error: Configuration error: {e}")
         return False
 
 
@@ -174,18 +177,18 @@ def show_config_info():
     """Show information about the configured endpoint."""
     config = load_config()
     endpoint = config.get("endpoint", {})
-    print(f"📍 Endpoint: {endpoint.get('url', 'unknown')}")
-    print(f"⏱️  Timeout: {endpoint.get('timeout', 30)}s\n")
+    print(f"Endpoint: {endpoint.get('url', 'unknown')}")
+    print(f"Timeout: {endpoint.get('timeout', 30)}s\n")
 
 
 def main():
     """Main API validation function."""
-    print("🚀 Starting API validation for all benchmarks...")
+    print("Starting API validation for all benchmarks...")
     print("This will make HTTPS requests to configured endpoints\n")
 
     # Validate configuration first
     if not validate_config():
-        print("\n❌ Configuration validation failed. Please check your config.json")
+        print("\nError: Configuration validation failed. Please check your config.json")
         sys.exit(1)
 
     # Show endpoint info
@@ -193,10 +196,10 @@ def main():
 
     benchmarks = discover_benchmarks()
     if not benchmarks:
-        print("❌ No benchmarks found!")
+        print("Error: No benchmarks found!")
         sys.exit(1)
 
-    print(f"🎯 Will test {len(benchmarks)} benchmark(s): {', '.join(benchmarks)}\n")
+    print(f"Will test {len(benchmarks)} benchmark(s): {', '.join(benchmarks)}\n")
 
     all_results = []
     total_passed = 0
@@ -205,13 +208,13 @@ def main():
     for benchmark in benchmarks:
         results = validate_benchmark(benchmark)
         all_results.append(results)
-        total_passed += results['passed']
-        total_failed += results['failed']
+        total_passed += results.get('passed', 0)
+        total_failed += results.get('failed', 0)
         print_benchmark_results(results)
 
     # Summary
     print(f"\n{'='*80}")
-    print("📈 FINAL SUMMARY")
+    print("FINAL SUMMARY")
     print(f"{'='*80}")
     print(f"Total benchmarks tested: {len(benchmarks)}")
     print(f"Total API calls made: {total_passed + total_failed}")
@@ -219,13 +222,13 @@ def main():
     print(f"Failed responses: {total_failed}")
 
     if total_failed == 0:
-        print("\n🎉 All API tests passed! Responses saved to results/ directory.")
-        print("📁 Check results/noharm/ for detailed API responses and validation results.")
+        print("\nAll API tests passed! Responses saved to results/ directory.")
+        print("Check results/noharm/ for detailed API responses and validation results.")
         sys.exit(0)
     else:
-        print(f"\n❌ {total_failed} API test(s) failed!")
-        print("📁 Check results/ directory for detailed error information.")
-        print("🔍 Look for _response.json files (raw API responses) and _validation.json files (error details).")
+        print(f"\n{total_failed} API test(s) failed!")
+        print("Check results/ directory for detailed error information.")
+        print("Look for _response.json files (raw API responses) and _validation.json files (error details).")
         sys.exit(1)
 
 
