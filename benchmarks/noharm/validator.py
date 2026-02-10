@@ -38,7 +38,7 @@ def load_input_file(input_path: Path) -> str:
         return f.read().strip()
 
 
-def make_api_request(url: str, token: str, payload: str, timeout: int) -> Dict[str, Any]:
+def make_api_request(url: str, token: str, payload: str, timeout: int, verify_ssl: bool = True) -> Dict[str, Any]:
     """
     Make HTTPS POST request to submitter's API.
 
@@ -47,6 +47,7 @@ def make_api_request(url: str, token: str, payload: str, timeout: int) -> Dict[s
         token: Bearer token for authentication
         payload: Request payload (prompt + input)
         timeout: Request timeout in seconds
+        verify_ssl: Whether to verify SSL certificates (default: True)
 
     Returns:
         Dict containing response details
@@ -62,7 +63,8 @@ def make_api_request(url: str, token: str, payload: str, timeout: int) -> Dict[s
             url,
             data=payload,
             headers=headers,
-            timeout=timeout
+            timeout=timeout,
+            verify=verify_ssl
         )
         response_time = time.time() - start_time
 
@@ -166,6 +168,7 @@ def test_api_endpoint(test_case: str) -> Tuple[bool, str]:
         url = endpoint_config["url"]
         token = endpoint_config["token"]
         timeout = min(endpoint_config.get("timeout", 30), 300)  # Cap at 300 seconds
+        verify_ssl = endpoint_config.get("verify_ssl", True)  # Default to True for security
 
         # Load prompt and input
         prompt = load_prompt()
@@ -180,7 +183,7 @@ def test_api_endpoint(test_case: str) -> Tuple[bool, str]:
         payload = prompt + "\n" + input_text
 
         # Make API request
-        response_data = make_api_request(url, token, payload, timeout)
+        response_data = make_api_request(url, token, payload, timeout, verify_ssl)
         response_data["url"] = url  # Add URL for saving
 
         # Save raw response
