@@ -8,7 +8,7 @@ that matches the MAST benchmark requirements. Supports CUDA, Metal (MPS), and CP
 Usage:
     python scripts/local_model_server.py
 
-Then configure scripts/config.json to point to http://localhost:8080
+Then configure scripts/config.json to point to http://localhost:8893/mastv1
 """
 
 import os
@@ -22,8 +22,8 @@ from transformers import AutoProcessor, AutoModelForImageTextToText
 import uvicorn
 
 # Configuration
-MODEL_ID = "google/medgemma-27b-it"
-PORT = int(os.getenv("PORT", "8080"))
+MODEL_ID = "/shared/models/medgemma-27b-it"
+PORT = int(os.getenv("PORT", "8893"))
 HOST = os.getenv("HOST", "0.0.0.0")
 BEARER_TOKEN = os.getenv("BEARER_TOKEN", "test_token")
 MAX_NEW_TOKENS = int(os.getenv("MAX_NEW_TOKENS", "4096"))  # Increased for longer rationales
@@ -84,20 +84,20 @@ def load_model():
             print("Loading model to CPU first, then moving to MPS...")
             model = AutoModelForImageTextToText.from_pretrained(
                 MODEL_ID,
-                torch_dtype=dtype,
+                dtype=dtype,
                 device_map=None,  # Don't use auto device_map with MPS
             )
             model = model.to(device_to_use)
         elif device_to_use == "cuda":
             model = AutoModelForImageTextToText.from_pretrained(
                 MODEL_ID,
-                torch_dtype=dtype,
+                dtype=dtype,
                 device_map="auto",
             )
         else:
             model = AutoModelForImageTextToText.from_pretrained(
                 MODEL_ID,
-                torch_dtype=dtype,
+                dtype=dtype,
                 device_map=None,
             )
             model = model.to(device_to_use)
@@ -115,7 +115,7 @@ def load_model():
             try:
                 model = AutoModelForImageTextToText.from_pretrained(
                     MODEL_ID,
-                    torch_dtype=torch.float32,
+                    dtype=torch.float32,
                     device_map=None,
                 )
                 model = model.to("mps")
@@ -312,13 +312,9 @@ async def health_check():
     }
 
 
-@app.post("/", response_class=JSONResponse)
-async def generate(
-    request: Request,
-    authorization: Optional[str] = Header(None)
-):
+async def handle_request(request: Request, authorization: Optional[str] = Header(None)):
     """
-    Main endpoint for MAST benchmark.
+    Shared request handler for MAST benchmark endpoints.
     
     Accepts:
         - POST request with plain text body (Content-Type: text/plain)
@@ -366,6 +362,24 @@ async def generate(
     return JSONResponse(content=result["response"])
 
 
+@app.post("/", response_class=JSONResponse)
+async def generate_root(
+    request: Request,
+    authorization: Optional[str] = Header(None)
+):
+    """Root endpoint for MAST benchmark."""
+    return await handle_request(request, authorization)
+
+
+@app.post("/mastv1", response_class=JSONResponse)
+async def generate_mastv1(
+    request: Request,
+    authorization: Optional[str] = Header(None)
+):
+    """MAST v1 endpoint for benchmark."""
+    return await handle_request(request, authorization)
+
+
 if __name__ == "__main__":
     print(f"Starting MedGemma API server on {HOST}:{PORT}")
     print(f"Model: {MODEL_ID}")
@@ -377,7 +391,7 @@ if __name__ == "__main__":
             print("MPS not available, will use CPU")
     print(f"Bearer token: {BEARER_TOKEN[:10]}..." if len(BEARER_TOKEN) > 10 else f"Bearer token: {BEARER_TOKEN}")
     print(f"\nTo test, configure scripts/config.json with:")
-    print(f'  "url": "http://localhost:{PORT}"')
+    print(f'  "url": "http://localhost:{PORT}/mastv1"')
     print(f'  "token": "{BEARER_TOKEN}"')
     print("\nPress Ctrl+C to stop the server\n")
     
