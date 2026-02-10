@@ -178,7 +178,11 @@ def show_config_info():
     config = load_config()
     endpoint = config.get("endpoint", {})
     print(f"Endpoint: {endpoint.get('url', 'unknown')}")
-    print(f"Timeout: {endpoint.get('timeout', 30)}s\n")
+    print(f"Timeout: {endpoint.get('timeout', 30)}s")
+    verify_ssl = endpoint.get('verify_ssl', True)
+    if not verify_ssl:
+        print("⚠️  SSL certificate verification is DISABLED")
+    print()
 
 
 def main():
