@@ -26,6 +26,20 @@ def load_config() -> Dict[str, Any]:
         sys.exit(1)
 
 
+def extract_openai_content(response_body: Any) -> str | None:
+    """Extract content from an OpenAI-compatible response.
+
+    Returns the text content if the response matches the OpenAI chat
+    completions format (choices[0].message.content), otherwise None.
+    """
+    try:
+        if isinstance(response_body, dict) and "choices" in response_body:
+            return response_body["choices"][0]["message"]["content"]
+    except (KeyError, IndexError, TypeError):
+        pass
+    return None
+
+
 def validate_schema(response_body: Any, schema: Dict[str, Any]) -> Tuple[bool, str]:
     """Validate response body against a JSON schema."""
     try:

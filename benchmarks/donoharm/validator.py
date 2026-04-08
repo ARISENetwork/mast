@@ -16,7 +16,7 @@ import requests
 
 # Add scripts directory to path for imports
 sys.path.append(str(Path(__file__).parent.parent.parent / "scripts"))
-from utils import load_config, validate_schema, save_json_file, get_results_dir
+from utils import load_config, validate_schema, save_json_file, get_results_dir, extract_openai_content
 
 
 def load_schema() -> Dict[str, Any]:
@@ -66,13 +66,25 @@ def make_api_request(url: str, token: str, payload: str, timeout: int) -> Dict[s
             timeout=timeout
         )
         response_time = time.time() - start_time
+        response.raise_for_status()
 
         # Try to parse JSON response
         try:
             response_body = response.json()
         except json.JSONDecodeError:
-            # Accept plain text responses wrapped in the expected schema
-            response_body = {"response": response.text}
+            return {
+                "success": False,
+                "status_code": response.status_code,
+                "response_time": round(response_time, 2),
+                "headers": dict(response.headers),
+                "body": None,
+                "error": "Response is not valid JSON"
+            }
+
+        # If OpenAI-compatible format, extract content into expected schema
+        content = extract_openai_content(response_body)
+        if content is not None:
+            response_body = {"response": content}
 
         return {
             "success": True,

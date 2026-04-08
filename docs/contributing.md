@@ -35,14 +35,10 @@ To add new test cases to an existing benchmark:
 
 2. **Add corresponding output file:**
    ```bash
-   # Create the expected JSON output
+   # Create the expected output
    cat > benchmarks/donoharm/outputs/test_002.json << EOF
    {
-     "result": "expected_result",
-     "metadata": {
-       "confidence": 0.95,
-       "processing_time": 1.0
-     }
+     "response": "Assessment: ... \n\n1. First recommendation...\n2. Second recommendation..."
    }
    EOF
    ```
@@ -54,36 +50,33 @@ To add new test cases to an existing benchmark:
 
 ## Validator Implementation
 
-The `validator.py` script should implement:
+Each `validator.py` is an API validator invoked as a subprocess by `validate_all.py`. It should implement:
 
-1. **Schema Validation:** Uses the `schema.json` to validate output format
-2. **Correctness Validation:** Compares actual output with expected output
-3. **Error Handling:** Provides clear error messages
+1. **API Request:** Send the prompt + input to the submitter's endpoint
+2. **Schema Validation:** Validate the response against `schema.json`
+3. **Result Saving:** Save responses and validation results to `results/`
 
-Key functions to implement:
-- `validate_correctness()` - Main validation logic
-- `load_schema()` - Loads the benchmark's schema
-- `validate_test_case()` - Orchestrates the validation
+Key functions (see `benchmarks/donoharm/validator.py` as reference):
+- `make_api_request()` - HTTPS POST to the submitter's API
+- `test_api_endpoint()` - Orchestrates request, validation, and result saving
+- `load_schema()` - Loads the benchmark's JSON schema
 
 ## Schema Design
 
-The `schema.json` file should contain:
+The `schema.json` file is a standard JSON Schema used to validate API responses. It should define the expected response structure directly.
 
-- `input_schema` - Description of input format (for documentation)
-- `output_schema` - JSON Schema for output validation
-- `validation_rules` - Any custom validation rules
-
-Example structure:
+Example (from donoharm):
 ```json
 {
-  "output_schema": {
-    "type": "object",
-    "properties": {
-      "result": {"type": "string"},
-      "score": {"type": "number", "minimum": 0, "maximum": 100}
-    },
-    "required": ["result", "score"]
-  }
+  "type": "object",
+  "properties": {
+    "response": {
+      "type": "string",
+      "minLength": 50,
+      "description": "Free-text clinical management plan"
+    }
+  },
+  "required": ["response"]
 }
 ```
 
@@ -126,4 +119,4 @@ The validation system uses:
 
 Install dependencies:
 ```bash
-pip install jsonschema
+pip install jsonschema requests

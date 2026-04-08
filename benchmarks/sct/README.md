@@ -36,17 +36,17 @@ Responses are scored against expert physician panel distributions:
 - **SCT Score (0-1)**: Weighted alignment with expert consensus. A response matching the most common expert answer scores 1.0; responses matching less common expert answers score proportionally lower.
 - **Expert Set Match**: Binary measure of whether the response matches any expert's answer.
 
-## Example Cases
+## Test Cases
 
-Five calibration examples are provided in `inputs/` with reference outputs in `outputs/`:
+Five calibration cases are provided in `inputs/` with reference outputs in `outputs/`:
 
-| Example | Scenario | Expected Rating |
-|---------|----------|-----------------|
-| 001 | Ear infection treatment | -2 |
-| 002 | Pediatric GI + fever | -1 |
-| 003 | Pregnancy test indication | 0 |
-| 004 | Atopic dermatitis + fever | +1 |
-| 005 | Trisomy 21 + petechiae | +2 |
+| Test Case | Scenario | Expected Rating |
+|-----------|----------|-----------------|
+| test_001 | Ear infection treatment | -2 |
+| test_002 | Pediatric GI + fever | -1 |
+| test_003 | Pregnancy test indication | 0 |
+| test_004 | Atopic dermatitis + fever | +1 |
+| test_005 | Trisomy 21 + petechiae | +2 |
 
 ## Data Sources
 

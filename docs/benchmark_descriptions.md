@@ -20,6 +20,7 @@ See the live [leaderboard](https://bench.arise-ai.org/) for current rankings.
 - **Schema:** Defined in `benchmarks/donoharm/schema.json`
 - **Required fields:** `response` (string, minimum 50 characters)
 - **Content:** Free-text clinical management plan including assessment and numbered recommendations
+- **Also accepted:** OpenAI-compatible chat completions format (content is extracted automatically)
 
 ### Test Cases
 Currently includes:
@@ -35,6 +36,10 @@ Models are scored by multiple LLM judges against physician-authored rubrics. Key
 - Input files: `test_001.txt`, `test_002.txt`, etc.
 - Output files: `test_001.txt`, `test_002.txt`, etc.
 - Sequential numbering maintains input-output correspondence
+
+## SCT (Script Concordance Test) Benchmark
+
+*Coming soon.* See `benchmarks/sct/README.md` for preliminary details.
 
 ## Adding New Benchmarks
 When adding new benchmarks:

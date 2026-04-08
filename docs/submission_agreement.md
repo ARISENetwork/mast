@@ -7,7 +7,7 @@
 
 1. Review this document in its entirety.
 2. If you are submitting a custom model, please review all instructions on this GitHub repository to validate your API endpoint.
-3. Fill out the [Registration Form](https://forms.gle/6KC3oPhG6mFGjCVc9) and agree to the terms of use.
+3. Fill out the [Registration Form](https://forms.gle/4exSPLbsmWjNmMRQ7) and agree to the terms of use.
 4. We will review and verify your submission.
 5. If verified, your model will be evaluated on the private test set for each benchmark.
 6. Results will be reviewed by the MAST team for approval.
@@ -37,6 +37,8 @@ All submissions are subject to a review process at the discretion of the MAST te
 
 - All verified and non-disqualified results will be posted publicly to the leaderboard. Once submitted and evaluated, model scores are **final** and will remain publicly available.
 
+- The MAST team reserves the right to **publish, analyze, and report** submitted results — including model names, scores, and aggregate statistics — in academic papers, preprints, presentations, and other research communications, without additional consent from submitting organizations.
+
 - To discourage overfitting and repeated probing of the benchmark, the total number of submission attempts will be displayed publicly alongside the score, as well as the date of submission.
 
 - The MAST team reserves the right to **disqualify any submission** made in bad faith or exhibiting suspicious activity, including but not limited to attempts at benchmark reconstruction, prompt leakage, coordinated probing, or violations of the Terms of Use.
@@ -55,4 +57,4 @@ All decisions regarding verification, scoring, disqualification, and leaderboard
 
 ---
 
-_Last modified on January 1st, 2026._
+_Last modified on April 7th, 2026._
