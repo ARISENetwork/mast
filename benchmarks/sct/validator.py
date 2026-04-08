@@ -15,7 +15,7 @@ import requests
 
 # Add scripts directory to path for imports
 sys.path.append(str(Path(__file__).parent.parent.parent / "scripts"))
-from utils import load_config, validate_schema, save_json_file, get_results_dir
+from utils import load_config, validate_schema, save_json_file, get_results_dir, extract_openai_content
 
 
 def load_schema() -> Dict[str, Any]:
@@ -65,12 +65,35 @@ def make_api_request(url: str, token: str, payload: str, timeout: int) -> Dict[s
             timeout=timeout
         )
         response_time = time.time() - start_time
+        response.raise_for_status()
 
         # Try to parse JSON response
         try:
             response_body = response.json()
         except json.JSONDecodeError:
-            response_body = {"error": "Invalid JSON response", "raw_response": response.text}
+            return {
+                "success": False,
+                "status_code": response.status_code,
+                "response_time": round(response_time, 2),
+                "headers": dict(response.headers),
+                "body": None,
+                "error": "Response is not valid JSON"
+            }
+
+        # If OpenAI-compatible format, extract and parse content
+        content = extract_openai_content(response_body)
+        if content is not None:
+            try:
+                response_body = json.loads(content)
+            except json.JSONDecodeError:
+                return {
+                    "success": False,
+                    "status_code": response.status_code,
+                    "response_time": round(response_time, 2),
+                    "headers": dict(response.headers),
+                    "body": {"raw_content": content},
+                    "error": "OpenAI response content is not valid JSON"
+                }
 
         return {
             "success": True,
@@ -176,7 +199,7 @@ def test_api_endpoint(test_case: str) -> Tuple[bool, str]:
     Test a single API endpoint for the given test case.
 
     Args:
-        test_case: Name of the test case (e.g., "example_001")
+        test_case: Name of the test case (e.g., "test_001")
 
     Returns:
         Tuple of (passed, message)
@@ -281,7 +304,7 @@ def main():
     """Main validation function."""
     if len(sys.argv) != 2:
         print("Usage: python validator.py <test_name>")
-        print("Example: python validator.py example_001")
+        print("Example: python validator.py test_001")
         sys.exit(1)
 
     test_name = sys.argv[1]

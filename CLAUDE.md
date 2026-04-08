@@ -12,13 +12,13 @@ The system sends HTTPS POST requests with clinical prompts to submitter APIs, va
 
 ```bash
 # Install dependencies
-uv sync
+pip install jsonschema requests
 
 # Run all benchmark validations against configured API
-uv run python scripts/validate_all.py
+python scripts/validate_all.py
 
 # Run a single test case for a specific benchmark
-uv run python benchmarks/donoharm/validator.py test_001
+python benchmarks/donoharm/validator.py test_001
 
 # Setup: copy config template and edit with your API details
 cp scripts/config.example.json scripts/config.json
@@ -52,6 +52,8 @@ scripts/validate_all.py  (discovers benchmarks, runs each via subprocess)
 ## Adding a New Benchmark
 
 Copy `benchmarks/template/`, implement `validator.py` following `benchmarks/donoharm/validator.py` as reference. Test cases use `test_NNN` naming. The benchmark is auto-discovered by `validate_all.py`.
+
+**OpenAI-compatible endpoints:** Validators accept both the native schema (`{"response": "..."}` for donoharm, `{"Rating": N, "Rationale": "..."}` for SCT) and OpenAI chat completions format (`choices[0].message.content`). Extraction logic lives in `scripts/utils.py:extract_openai_content()`.
 
 ## Key Constraints
 

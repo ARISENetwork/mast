@@ -20,21 +20,19 @@ This repository provides instructions and test files to validate your custom mod
 ```
 mast/
 ├── benchmarks/
-│   └── donoharm/              # Do No Harm benchmark
-│       ├── prompt.md           # System prompt sent with each case
-│       ├── schema.json         # Response validation schema
-│       ├── validator.py        # API testing logic
-│       ├── inputs/             # Test input files (.txt)
-│       │   └── test_001.txt
-│       └── outputs/            # Reference responses
-│           └── test_001.txt
-├── results/                    # API response storage
-│   └── donoharm/               # Per-benchmark results
-│       ├── test_001_response.json    # Raw API responses
-│       └── test_001_validation.json  # Validation results
+│   ├── donoharm/               # Do No Harm benchmark
+│   │   ├── prompt.md           # System prompt sent with each case
+│   │   ├── schema.json         # Response validation schema
+│   │   ├── validator.py        # API testing logic
+│   │   ├── inputs/             # Test input files (.txt)
+│   │   └── outputs/            # Reference responses
+│   ├── sct/                    # Script Concordance Test benchmark
+│   └── template/               # Template for new benchmarks
+├── results/                    # API response storage (per-benchmark)
 ├── scripts/
 │   ├── validate_all.py         # Master API tester
-│   ├── config.json             # API endpoint configurations
+│   ├── utils.py                # Shared utilities
+│   ├── config.json             # API endpoint config (gitignored)
 │   └── config.example.json     # Template for submitters
 ├── docs/
 │   ├── contributing.md         # Contribution guidelines
@@ -49,7 +47,7 @@ mast/
 
 1. **Clone the repository:**
 ```bash
-git clone https://github.com/HealthRex/mast.git
+git clone https://github.com/ARISENetwork/mast.git
 cd mast
 ```
 
@@ -91,6 +89,8 @@ APIs must return a JSON object containing a free-text clinical management plan:
 
 The `response` field must contain at least 50 characters of clinical text. There is no required structure within the text itself — the model should write a management plan as described in the prompt. See `benchmarks/donoharm/outputs/test_001.txt` for an example of a valid response.
 
+**OpenAI-compatible endpoints** are also accepted. If your API returns the standard OpenAI chat completions format (`choices[0].message.content`), the validator will automatically extract the content. This includes endpoints served via OpenRouter or any OpenAI-compatible provider.
+
 ## Benchmarks
 
 ### First Do NOHARM Benchmark
@@ -101,6 +101,10 @@ The `response` field must contain at least 50 characters of clinical text. There
 - **Output**: Free-text management plan (assessment + recommendations)
 - **Scoring**: Evaluated by multiple LLM judges against specialist-authored rubrics
 - **Validation**: Format compliance (schema validation only)
+
+### SCT (Script Concordance Test) Benchmark
+
+*Coming soon.* See `benchmarks/sct/README.md` for preliminary details.
 
 ## Validation Results
 
@@ -121,24 +125,18 @@ pip install jsonschema requests
 - **Concurrent requests**: Must support 5-10 simultaneous connections
 - **Authentication**: Bearer token authentication required
 - **Response time**: Under 300 seconds per request
-- **Response format**: Valid JSON with a `response` field containing the management plan
+- **Response format**: Valid JSON — either `{"response": "..."}` or OpenAI-compatible chat completions format
 
 ### Resource Requirements
 
 #### Estimated Token Usage
-- Input tokens: ~500,000
-- Output tokens: ~400,000-2,500,000 (varies with reasoning depth)
+- Input tokens: ~1,500,000
+- Output tokens: ~3,000,000-18,000,000 (varies with reasoning depth)
 
 #### Estimated Costs
-Approximate inference costs of widely-used models for a full benchmark run:
-- DeepSeek V3: ~$0.20
-- Gemini Flash: ~$0.20
-- GPT-4o: ~$5
-- Claude Sonnet: ~$8
-- GPT-5: ~$18
-- Gemini Pro: ~$22
+Approximate inference costs for large frontier-scale models: **$125-$400** for a full benchmark run (but can be higher depending on reasoning effort).
 
-*Costs are approximate and depend on your provider's current pricing. Reasoning models (e.g., o4-mini, DeepSeek R1, Gemini Pro) produce more output tokens due to chain-of-thought, increasing costs.*
+*Costs are approximate and depend on your provider's current pricing. The benchmark is run at multiple response lengths for sensitivity analysis. Reasoning models produce significantly more output tokens due to chain-of-thought, increasing costs substantially.*
 
 ## File Formats
 
@@ -148,6 +146,6 @@ Approximate inference costs of widely-used models for a full benchmark run:
 - One case per file
 
 ### Response Schema
-- JSON object with a `response` string field
-- Must conform to `benchmarks/donoharm/schema.json`
+- JSON object with a `response` string field, or OpenAI-compatible chat completions format
+- Must conform to `benchmarks/donoharm/schema.json` (after extraction)
 - Minimum 50 characters in the response field

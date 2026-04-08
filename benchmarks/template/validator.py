@@ -1,26 +1,39 @@
 #!/usr/bin/env python3
 """
-Template validator for benchmark.
+Template API validator for new benchmarks.
 
-This validator reads input text files and validates corresponding JSON output files
-against the schema defined in schema.json and checks for correctness.
+Copy this directory and modify for your benchmark. See
+benchmarks/donoharm/validator.py for a complete example.
 """
 
 import json
 import sys
+import time
 from pathlib import Path
-from typing import Dict, Any, Tuple, List
+from typing import Dict, Any, Tuple
+
+import requests
 
 # Add scripts directory to path for imports
 sys.path.append(str(Path(__file__).parent.parent.parent / "scripts"))
-from utils import validate_schema
+from utils import load_config, validate_schema, save_json_file, get_results_dir, extract_openai_content
+
+# TODO: Change this to your benchmark name
+BENCHMARK_NAME = "template"
 
 
 def load_schema() -> Dict[str, Any]:
-    """Load the JSON schema for this benchmark."""
+    """Load JSON schema for response validation."""
     schema_path = Path(__file__).parent / "schema.json"
     with open(schema_path, 'r') as f:
         return json.load(f)
+
+
+def load_prompt() -> str:
+    """Load the prompt template."""
+    prompt_path = Path(__file__).parent / "prompt.md"
+    with open(prompt_path, 'r', encoding='utf-8') as f:
+        return f.read().strip()
 
 
 def load_input_file(input_path: Path) -> str:
@@ -29,68 +42,191 @@ def load_input_file(input_path: Path) -> str:
         return f.read().strip()
 
 
-def load_output_file(output_path: Path) -> List[Dict[str, Any]]:
-    """Load output JSON file."""
-    with open(output_path, 'r', encoding='utf-8') as f:
-        return json.load(f)
+def make_api_request(url: str, token: str, payload: str, timeout: int) -> Dict[str, Any]:
+    """Make HTTPS POST request to submitter's API."""
+    headers = {
+        'Authorization': f'Bearer {token}',
+        'Content-Type': 'text/plain'
+    }
 
-
-
-
-def validate_test_case(test_name: str) -> Tuple[bool, str]:
-    """
-    Validate a single test case.
-
-    Args:
-        test_name: Name of the test case (e.g., "test_001")
-
-    Returns:
-        Tuple of (is_valid, message)
-    """
+    start_time = time.time()
     try:
-        # Load schema
-        schema = load_schema()
+        response = requests.post(
+            url,
+            data=payload,
+            headers=headers,
+            timeout=timeout
+        )
+        response_time = time.time() - start_time
+        response.raise_for_status()
 
-        # File paths
-        input_path = Path(__file__).parent / "inputs" / f"{test_name}.txt"
-        output_path = Path(__file__).parent / "outputs" / f"{test_name}.json"
+        try:
+            response_body = response.json()
+        except json.JSONDecodeError:
+            return {
+                "success": False,
+                "status_code": response.status_code,
+                "response_time": round(response_time, 2),
+                "headers": dict(response.headers),
+                "body": None,
+                "error": "Response is not valid JSON"
+            }
 
-        # Check if files exist
+        # If OpenAI-compatible format, extract content into expected schema
+        content = extract_openai_content(response_body)
+        if content is not None:
+            response_body = {"response": content}
+
+        return {
+            "success": True,
+            "status_code": response.status_code,
+            "response_time": round(response_time, 2),
+            "headers": dict(response.headers),
+            "body": response_body,
+            "error": None
+        }
+
+    except requests.exceptions.Timeout:
+        response_time = time.time() - start_time
+        return {
+            "success": False,
+            "status_code": None,
+            "response_time": round(response_time, 2),
+            "headers": {},
+            "body": None,
+            "error": f"Request timed out after {timeout} seconds"
+        }
+
+    except requests.exceptions.RequestException as e:
+        response_time = time.time() - start_time
+        return {
+            "success": False,
+            "status_code": None,
+            "response_time": round(response_time, 2),
+            "headers": {},
+            "body": None,
+            "error": str(e)
+        }
+
+
+def save_response(test_case: str, response_data: Dict[str, Any], payload: str):
+    """Save API response to results directory."""
+    results_dir = get_results_dir(BENCHMARK_NAME)
+    response_file = results_dir / f"{test_case}_response.json"
+
+    full_response = {
+        "test_case": test_case,
+        "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+        "request": {
+            "url": response_data.get("url", "unknown"),
+            "payload": payload
+        },
+        "response": {
+            "success": response_data["success"],
+            "status_code": response_data["status_code"],
+            "response_time": response_data["response_time"],
+            "headers": dict(response_data["headers"]),
+            "body": response_data["body"],
+            "error": response_data["error"]
+        }
+    }
+
+    save_json_file(full_response, response_file)
+
+
+def save_validation_result(test_case: str, validation_data: Dict[str, Any]):
+    """Save validation results to results directory."""
+    results_dir = get_results_dir(BENCHMARK_NAME)
+    validation_file = results_dir / f"{test_case}_validation.json"
+
+    save_json_file(validation_data, validation_file)
+
+
+def test_api_endpoint(test_case: str) -> Tuple[bool, str]:
+    """Test a single API endpoint for the given test case."""
+    try:
+        config = load_config()
+        if "endpoint" not in config:
+            return False, "No endpoint configured in config.json"
+
+        endpoint_config = config["endpoint"]
+        url = endpoint_config["url"]
+        token = endpoint_config["token"]
+        timeout = min(endpoint_config.get("timeout", 30), 300)
+
+        prompt = load_prompt()
+        input_path = Path(__file__).parent / "inputs" / f"{test_case}.txt"
+
         if not input_path.exists():
             return False, f"Input file not found: {input_path}"
-        if not output_path.exists():
-            return False, f"Output file not found: {output_path}"
 
-        # Load files
         input_text = load_input_file(input_path)
-        output_data = load_output_file(output_path)
+        payload = prompt + "\n" + input_text
 
-        # Validate schema only (template - correctness validation to be implemented)
-        is_schema_valid, schema_message = validate_schema(output_data, schema)
-        if not is_schema_valid:
-            return False, schema_message
+        response_data = make_api_request(url, token, payload, timeout)
+        response_data["url"] = url
 
-        return True, "Test case passed (schema validation only)"
+        save_response(test_case, response_data, payload)
+
+        if not response_data["success"]:
+            validation_result = {
+                "test_case": test_case,
+                "passed": False,
+                "schema_valid": False,
+                "response_time": response_data["response_time"],
+                "errors": [response_data["error"]],
+                "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+            }
+            save_validation_result(test_case, validation_result)
+            return False, f"API request failed: {response_data['error']}"
+
+        schema = load_schema()
+        schema_valid, schema_message = validate_schema(response_data["body"], schema)
+
+        # TODO: Add benchmark-specific validation here
+
+        validation_result = {
+            "test_case": test_case,
+            "passed": schema_valid,
+            "schema_valid": schema_valid,
+            "response_time": response_data["response_time"],
+            "errors": [] if schema_valid else [schema_message],
+            "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+        }
+
+        save_validation_result(test_case, validation_result)
+
+        if schema_valid:
+            return True, f"PASS {test_case}: API responded correctly in {response_data['response_time']}s"
+        else:
+            return False, f"FAIL {test_case}: {schema_message}"
 
     except Exception as e:
-        return False, f"Validation error: {str(e)}"
+        error_msg = f"Validation error: {str(e)}"
+        validation_result = {
+            "test_case": test_case,
+            "passed": False,
+            "schema_valid": False,
+            "response_time": None,
+            "errors": [error_msg],
+            "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+        }
+        save_validation_result(test_case, validation_result)
+        return False, error_msg
 
 
 def main():
     """Main validation function."""
     if len(sys.argv) != 2:
         print("Usage: python validator.py <test_name>")
+        print("Example: python validator.py test_001")
         sys.exit(1)
-    
+
     test_name = sys.argv[1]
-    is_valid, message = validate_test_case(test_name)
-    
-    if is_valid:
-        print(f"✓ {test_name}: {message}")
-        sys.exit(0)
-    else:
-        print(f"✗ {test_name}: {message}")
-        sys.exit(1)
+    passed, message = test_api_endpoint(test_name)
+
+    print(message)
+    sys.exit(0 if passed else 1)
 
 
 if __name__ == "__main__":

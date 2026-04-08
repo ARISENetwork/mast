@@ -10,6 +10,8 @@ import sys
 from pathlib import Path
 from typing import Dict, List, Tuple, Any
 import subprocess
+
+sys.path.append(str(Path(__file__).parent))
 from utils import load_config
 
 
