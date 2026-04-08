@@ -93,13 +93,13 @@ The `response` field must contain at least 50 characters of clinical text. There
 
 ## Benchmarks
 
-### Do No Harm Benchmark
+### First Do NOHARM Benchmark
 
 - **Study**: https://arxiv.org/abs/2512.01241
-- **Task**: Provide a complete clinical management plan for a medical case
-- **Input**: Real clinical cases authored by specialist physicians
-- **Output**: Free-text management plan (assessment + numbered recommendations)
-- **Scoring**: Evaluated by multiple LLM judges against physician-authored rubrics
+- **Task**: Provide clinical recommendations for a medical case
+- **Input**: Reconstructed from real clinical cases, where a generalist physician electronically consulted a specialist/subspecialist
+- **Output**: Free-text management plan (assessment + recommendations)
+- **Scoring**: Evaluated by multiple LLM judges against specialist-authored rubrics
 - **Validation**: Format compliance (schema validation only)
 
 ## Validation Results
