@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-MAST (Medical AI Superintelligence Test) is a medical AI benchmarking system. Submitters provide an API endpoint that gets tested against standardized medical scenarios. Results appear on the leaderboard at bench.arise-ai.org.
+MAST (Medical AI Superintelligence Test) is a medical AI benchmarking system. Submitters provide an API endpoint that gets tested against standardized medical scenarios. Results appear on the leaderboard at benchmarks.arise-ai.org.
 
 The system sends HTTPS POST requests with clinical prompts to submitter APIs, validates JSON responses against schemas, and saves results for audit.
 

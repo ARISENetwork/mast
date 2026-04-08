@@ -3,7 +3,7 @@
 
 MAST (Medical AI Superintelligence Test) is a suite of clinically realistic benchmarks to evaluate real-world medical capabilities of artificial intelligence models. The system provides a leaderboard where AI models submit API endpoints that are automatically tested against standardized medical scenarios. 
 
-The live leaderboard is available at [bench.arise-ai.org](https://bench.arise-ai.org).
+The live leaderboard is available at [benchmarks.arise-ai.org](https://benchmarks.arise-ai.org).
 
 This repository provides instructions and test files to validate your custom model API endpoint. After passing validation, view the [Submission Agreement](docs/submission_agreement.md) and submit the [Registration Form](https://forms.gle/4exSPLbsmWjNmMRQ7) for review by the MAST team. The API and token are used only for benchmark execution and are not stored after evaluation.
 
