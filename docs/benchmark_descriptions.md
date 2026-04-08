@@ -8,7 +8,7 @@ This document provides detailed descriptions of all benchmarks in the MAST leade
 Do No Harm is a physician-validated medical benchmark to evaluate the safety and completeness of AI-generated clinical management plans. Models are presented with real clinical cases and asked to provide free-text management plans, which are then scored by multiple LLM judges against physician-authored rubrics. The benchmark covers cases across multiple medical specialties with perturbations testing robustness to variations in patient demographics, lab values, and clinical context. This project is led and supported by the ARISE AI Research Network, based at Stanford and Harvard.
 
 Read our [study](https://arxiv.org/abs/2512.01241) for more details.
-See the live [leaderboard](https://bench.arise-ai.org/) for current rankings.
+See the live [leaderboard](https://benchmarks.arise-ai.org/) for current rankings.
 
 ### Input Format
 - **File type:** Plain text (.txt)

@@ -21,7 +21,32 @@ All submissions are subject to a review process at the discretion of the MAST te
 
 ---
 
-## Section 3. Submission Requirements
+## Section 3. Eligibility
+
+### Availability
+
+Models must be publicly accessible through at least one of the following:
+
+- A commercial product with a public-facing website available to end users or clinicians
+- A public API or inference platform (e.g., OpenRouter, cloud provider marketplace)
+
+### Notability
+
+To maintain leaderboard quality and prevent flooding, submitted models must satisfy **at least two** of the following notability criteria, adapted from [Wikipedia's general notability guideline](https://en.wikipedia.org/wiki/Wikipedia:Notability):
+
+1. **Independent coverage** — the model or its parent organization has received coverage in independent reliable sources (e.g., news outlets, peer-reviewed journals, industry publications)
+2. **Platform listing** — the model is listed on a major model hub or inference platform (e.g., HuggingFace, OpenRouter, AWS Bedrock, Google Vertex, Azure AI)
+3. **Technical documentation** — a published paper, preprint, or technical report describing the model's architecture or training
+4. **Commercial availability** — the model is part of a commercially available product with a public-facing website
+5. **Institutional affiliation** — the model is developed by a recognized company, research lab, or academic institution
+
+The MAST team retains final discretion over notability determinations. Submissions that do not clearly meet these criteria may be declined without further review.
+
+### Distinctiveness
+
+Submissions must represent **substantively distinct models**. Trivial variations — such as different system prompts, thin wrappers, or minor configuration changes applied to a model already on the leaderboard — will not be accepted as separate entries.
+
+## Section 4. Submission Requirements
 
 - Models not publicly available via common inference aggregators (e.g., OpenRouter) must provide a **stable custom API endpoint** for MAST evaluation. Submitting organizations are responsible for ensuring endpoint availability, correctness, and compliance with the expected input/output schema throughout the evaluation period.
 
@@ -47,7 +72,7 @@ All submissions are subject to a review process at the discretion of the MAST te
 
 ---
 
-## Terms of Use
+## Section 5. Terms of Use
 
 Participation in MAST is conditioned on agreement to responsible use of the benchmark. Submitting organizations agree **not** to attempt to reverse engineer, reconstruct, or infer the contents of the private test sets, nor to game or manipulate the evaluation process.
 
@@ -57,4 +82,4 @@ All decisions regarding verification, scoring, disqualification, and leaderboard
 
 ---
 
-_Last modified on April 7th, 2026._
+_Last modified on April 8th, 2026._
