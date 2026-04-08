@@ -2,35 +2,38 @@
 
 This document provides detailed descriptions of all benchmarks in the MAST leaderboard.
 
-## First, Do NOHARM Benchmark
+## Do No Harm Benchmark
 
 ### Purpose
-NOHARM is a physician-validated medical benchmark to evaluate the accuracy and safety of AI-generated medical recommendations, grounded in real medical cases. The current version covers 10 specialties across 100 cases, and includes 12,747 specialist annotations on beneficial and harmful medical actions that can be taken in the 100 cases. This project is led and supported by the ARISE AI Research Network, based at Stanford and Harvard. 
+Do No Harm is a physician-validated medical benchmark to evaluate the safety and completeness of AI-generated clinical management plans. Models are presented with real clinical cases and asked to provide free-text management plans, which are then scored by multiple LLM judges against physician-authored rubrics. The benchmark covers cases across multiple medical specialties with perturbations testing robustness to variations in patient demographics, lab values, and clinical context. This project is led and supported by the ARISE AI Research Network, based at Stanford and Harvard.
 
 Read our [study](https://arxiv.org/abs/2512.01241) for more details.
-See the live [leaderboard](https://bench.arise-ai.org/) for current rankings. 
+See the live [leaderboard](https://bench.arise-ai.org/) for current rankings.
 
 ### Input Format
 - **File type:** Plain text (.txt)
-- **Content:** [TODO: describe the input structure]
+- **Content:** Clinical case vignette describing a patient presentation, history, and clinical question
 - **Encoding:** UTF-8
 
 ### Output Format
 - **File type:** JSON (.json)
-- **Schema:** Defined in `benchmarks/noharm/schema.json`
-- **Required fields:** `result`
-- **Optional fields:** `metadata.confidence`, `metadata.processing_time`
+- **Schema:** Defined in `benchmarks/donoharm/schema.json`
+- **Required fields:** `response` (string, minimum 50 characters)
+- **Content:** Free-text clinical management plan including assessment and numbered recommendations
 
 ### Test Cases
 Currently includes:
-- `test_001`: minimal example case as described in the study (see link above)
+- `test_001`: Example case involving immunotherapy management (open-source case from the study)
+
+### Scoring
+Models are scored by multiple LLM judges against physician-authored rubrics. Key metrics include Safety, Completeness, Restraint, Precision, Recall, and an Overall Score (harmonic mean of Safety, Completeness, and Restraint). Scoring is performed by the MAST team after submission.
 
 ### Validation Process
-**Schema Validation:** Output must conform to the benchmark's JSON schema
+**Schema Validation:** Output must conform to the benchmark's JSON schema (JSON object with a `response` string field of at least 50 characters).
 
 ### File Naming Conventions
 - Input files: `test_001.txt`, `test_002.txt`, etc.
-- Output files: `test_001.json`, `test_002.json`, etc.
+- Output files: `test_001.txt`, `test_002.txt`, etc.
 - Sequential numbering maintains input-output correspondence
 
 ## Adding New Benchmarks

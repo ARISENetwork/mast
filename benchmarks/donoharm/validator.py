@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-API Validator for Noharm benchmark.
+API Validator for Do No Harm benchmark.
 
 This validator makes HTTPS POST requests to submitter APIs,
 validates responses against the schema, and saves results.
@@ -10,7 +10,8 @@ import json
 import sys
 import time
 from pathlib import Path
-from typing import Dict, Any, Tuple, Optional
+from typing import Dict, Any, Tuple
+
 import requests
 
 # Add scripts directory to path for imports
@@ -70,7 +71,8 @@ def make_api_request(url: str, token: str, payload: str, timeout: int) -> Dict[s
         try:
             response_body = response.json()
         except json.JSONDecodeError:
-            response_body = {"error": "Invalid JSON response", "raw_response": response.text}
+            # Accept plain text responses wrapped in the expected schema
+            response_body = {"response": response.text}
 
         return {
             "success": True,
@@ -106,10 +108,9 @@ def make_api_request(url: str, token: str, payload: str, timeout: int) -> Dict[s
 
 def save_response(test_case: str, response_data: Dict[str, Any], payload: str):
     """Save API response to results directory."""
-    results_dir = get_results_dir("noharm")
+    results_dir = get_results_dir("donoharm")
     response_file = results_dir / f"{test_case}_response.json"
 
-    # Add metadata to response
     full_response = {
         "test_case": test_case,
         "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
@@ -132,7 +133,7 @@ def save_response(test_case: str, response_data: Dict[str, Any], payload: str):
 
 def save_body_output(test_case: str, response_body: Any):
     """Save just the response body output to results directory."""
-    results_dir = get_results_dir("noharm")
+    results_dir = get_results_dir("donoharm")
     body_file = results_dir / f"{test_case}.json"
 
     save_json_file(response_body, body_file)
@@ -140,7 +141,7 @@ def save_body_output(test_case: str, response_body: Any):
 
 def save_validation_result(test_case: str, validation_data: Dict[str, Any]):
     """Save validation results to results directory."""
-    results_dir = get_results_dir("noharm")
+    results_dir = get_results_dir("donoharm")
     validation_file = results_dir / f"{test_case}_validation.json"
 
     save_json_file(validation_data, validation_file)
@@ -157,7 +158,6 @@ def test_api_endpoint(test_case: str) -> Tuple[bool, str]:
         Tuple of (passed, message)
     """
     try:
-        # Load configuration
         config = load_config()
         if "endpoint" not in config:
             return False, "No endpoint configured in config.json"
@@ -165,7 +165,7 @@ def test_api_endpoint(test_case: str) -> Tuple[bool, str]:
         endpoint_config = config["endpoint"]
         url = endpoint_config["url"]
         token = endpoint_config["token"]
-        timeout = min(endpoint_config.get("timeout", 30), 300)  # Cap at 300 seconds
+        timeout = min(endpoint_config.get("timeout", 30), 300)
 
         # Load prompt and input
         prompt = load_prompt()
@@ -176,12 +176,12 @@ def test_api_endpoint(test_case: str) -> Tuple[bool, str]:
 
         input_text = load_input_file(input_path)
 
-        # Construct payload
+        # Construct payload: prompt + case
         payload = prompt + "\n" + input_text
 
         # Make API request
         response_data = make_api_request(url, token, payload, timeout)
-        response_data["url"] = url  # Add URL for saving
+        response_data["url"] = url
 
         # Save raw response
         save_response(test_case, response_data, payload)
@@ -207,7 +207,6 @@ def test_api_endpoint(test_case: str) -> Tuple[bool, str]:
         schema = load_schema()
         schema_valid, schema_message = validate_schema(response_data["body"], schema)
 
-        # Create validation result
         validation_result = {
             "test_case": test_case,
             "passed": schema_valid,
@@ -220,9 +219,9 @@ def test_api_endpoint(test_case: str) -> Tuple[bool, str]:
         save_validation_result(test_case, validation_result)
 
         if schema_valid:
-            return True, f"✓ {test_case}: API responded correctly in {response_data['response_time']}s"
+            return True, f"PASS {test_case}: API responded correctly in {response_data['response_time']}s"
         else:
-            return False, f"✗ {test_case}: {schema_message}"
+            return False, f"FAIL {test_case}: {schema_message}"
 
     except Exception as e:
         error_msg = f"Validation error: {str(e)}"

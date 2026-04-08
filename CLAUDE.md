@@ -18,7 +18,7 @@ uv sync
 uv run python scripts/validate_all.py
 
 # Run a single test case for a specific benchmark
-uv run python benchmarks/noharm/validator.py test_001
+uv run python benchmarks/donoharm/validator.py test_001
 
 # Setup: copy config template and edit with your API details
 cp scripts/config.example.json scripts/config.json
@@ -43,19 +43,19 @@ scripts/validate_all.py  (discovers benchmarks, runs each via subprocess)
 - `schema.json` - JSON Schema for response validation
 - `validator.py` - makes the API call, validates, saves results
 - `inputs/test_*.txt` - test case inputs
-- `outputs/test_*.json` - reference answers
+- `outputs/test_*.txt` - reference answers
 
-**Cross-module imports:** Benchmark validators import from `scripts/utils.py` via `sys.path.append` (see `benchmarks/noharm/validator.py:17`).
+**Cross-module imports:** Benchmark validators import from `scripts/utils.py` via `sys.path.append` (see `benchmarks/donoharm/validator.py:17`).
 
 **Config:** `scripts/config.json` (gitignored) holds the API endpoint URL, bearer token, and timeout. Max timeout is 300s.
 
 ## Adding a New Benchmark
 
-Copy `benchmarks/template/`, implement `validator.py` following `benchmarks/noharm/validator.py` as reference. Test cases use `test_NNN` naming. The benchmark is auto-discovered by `validate_all.py`.
+Copy `benchmarks/template/`, implement `validator.py` following `benchmarks/donoharm/validator.py` as reference. Test cases use `test_NNN` naming. The benchmark is auto-discovered by `validate_all.py`.
 
 ## Key Constraints
 
 - API payload format: `prompt.md + "\n" + test_input.txt` sent as `Content-Type: text/plain`
-- Responses must be JSON arrays validated against the benchmark's `schema.json`
+- Responses must be valid JSON validated against the benchmark's `schema.json`
 - `config.json` contains secrets (bearer token) and must never be committed
 - Results are saved to `results/` for auditability (also gitignored)

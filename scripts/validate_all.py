@@ -220,7 +220,7 @@ def main():
 
     if total_failed == 0:
         print("\n🎉 All API tests passed! Responses saved to results/ directory.")
-        print("📁 Check results/noharm/ for detailed API responses and validation results.")
+        print("📁 Check results/ for detailed API responses and validation results.")
         sys.exit(0)
     else:
         print(f"\n❌ {total_failed} API test(s) failed!")

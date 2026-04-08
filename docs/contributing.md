@@ -29,14 +29,14 @@ To add new test cases to an existing benchmark:
 
 1. **Add input file:**
    ```bash
-   # For benchmark 'noharm'
-   echo "Your test input here" > benchmarks/noharm/inputs/test_002.txt
+   # For benchmark 'donoharm'
+   echo "Your test input here" > benchmarks/donoharm/inputs/test_002.txt
    ```
 
 2. **Add corresponding output file:**
    ```bash
    # Create the expected JSON output
-   cat > benchmarks/noharm/outputs/test_002.json << EOF
+   cat > benchmarks/donoharm/outputs/test_002.json << EOF
    {
      "result": "expected_result",
      "metadata": {
@@ -90,7 +90,7 @@ Example structure:
 ## Running Tests
 
 - **Validate all benchmarks:** `python scripts/validate_all.py`
-- **Validate specific benchmark:** `python benchmarks/noharm/validator.py test_001`
+- **Validate specific benchmark:** `python benchmarks/donoharm/validator.py test_001`
 - **Validate specific test case:** `python scripts/validate_all.py` (finds and runs all)
 
 ## Best Practices
