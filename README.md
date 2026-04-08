@@ -20,25 +20,25 @@ This repository provides instructions and test files to validate your custom mod
 ```
 mast/
 ├── benchmarks/
-│   ├── noharm/                # NOHARM benchmark
-│   │   ├── prompt.md          # Base prompt for API requests
-│   │   ├── schema.json        # Response validation schema
-│   │   ├── validator.py       # API testing logic
-│   │   ├── inputs/            # Test input files (.txt)
-│   │   │   └── test_001.txt
-│   │   └── outputs/           # Reference answers (kept)
-│   │       └── test_001.json
-│   └── template/              # Template for new benchmarks
-├── results/                   # API response storage
-│   └── noharm/                # Per-benchmark results
+│   └── donoharm/              # Do No Harm benchmark
+│       ├── prompt.md           # System prompt sent with each case
+│       ├── schema.json         # Response validation schema
+│       ├── validator.py        # API testing logic
+│       ├── inputs/             # Test input files (.txt)
+│       │   └── test_001.txt
+│       └── outputs/            # Reference responses
+│           └── test_001.txt
+├── results/                    # API response storage
+│   └── donoharm/               # Per-benchmark results
 │       ├── test_001_response.json    # Raw API responses
 │       └── test_001_validation.json  # Validation results
 ├── scripts/
-│   ├── validate_all.py        # Master API tester
-│   ├── config.json            # API endpoint configurations
-│   └── config.example.json    # Template for submitters
+│   ├── validate_all.py         # Master API tester
+│   ├── config.json             # API endpoint configurations
+│   └── config.example.json     # Template for submitters
 ├── docs/
-│   ├── contributing.md        # Contribution guidelines
+│   ├── contributing.md         # Contribution guidelines
+│   ├── submission_agreement.md # Terms for submitters
 │   └── benchmark_descriptions.md  # Detailed benchmark info
 └── README.md
 ```
@@ -53,7 +53,7 @@ git clone https://github.com/HealthRex/mast.git
 cd mast
 ```
 
-2. **Set up your API endpoint** provide a hosted endpoint for accessing and benchmarking your model.
+2. **Set up your API endpoint** — provide a hosted endpoint for accessing and benchmarking your model.
 
 3. **Configure your endpoint** by copying and editing the config:
 ```bash
@@ -77,32 +77,29 @@ Each benchmark makes HTTPS POST requests with:
 - **Body**: `prompt.md + "\n" + test_input.txt`
 - **Timeout**: Up to 300 seconds
 
+The body contains the full system prompt followed by the clinical case. See `benchmarks/donoharm/prompt.md` for the exact prompt and `benchmarks/donoharm/inputs/test_001.txt` for an example case.
+
 ## Response Format
 
-APIs must return JSON arrays in this format:
+APIs must return a JSON object containing a free-text clinical management plan:
+
 ```json
-[
-  {
-    "Option": 1,
-    "GradeAI": "Appropriate",
-    "Rationale": "Clinical justification..."
-  },
-  {
-    "Option": 2,
-    "GradeAI": "Inappropriate",
-    "Rationale": "Clinical justification..."
-  }
-]
+{
+  "response": "Assessment: Grade 3 infusion reaction to nivolumab...\n\n1. Refer to Allergy/Immunology for urgent evaluation...\n2. Hold next nivolumab dose until allergy clearance...\n3. ..."
+}
 ```
+
+The `response` field must contain at least 50 characters of clinical text. There is no required structure within the text itself — the model should write a management plan as described in the prompt. See `benchmarks/donoharm/outputs/test_001.txt` for an example of a valid response.
 
 ## Benchmarks
 
-### First Do NOHARM Benchmark
+### Do No Harm Benchmark
 
 - **Study**: https://arxiv.org/abs/2512.01241
-- **Task**: Provide complete and appropriate medical recommendations for a medical case
-- **Input**: Real medical case questions posed by generalist physicians
-- **Output**: Appropriateness ratings for numerous plausible options
+- **Task**: Provide a complete clinical management plan for a medical case
+- **Input**: Real clinical cases authored by specialist physicians
+- **Output**: Free-text management plan (assessment + numbered recommendations)
+- **Scoring**: Evaluated by multiple LLM judges against physician-authored rubrics
 - **Validation**: Format compliance (schema validation only)
 
 ## Validation Results
@@ -124,34 +121,33 @@ pip install jsonschema requests
 - **Concurrent requests**: Must support 5-10 simultaneous connections
 - **Authentication**: Bearer token authentication required
 - **Response time**: Under 300 seconds per request
-- **Response format**: Valid JSON array output
+- **Response format**: Valid JSON with a `response` field containing the management plan
 
 ### Resource Requirements
 
 #### Estimated Token Usage
-- Input tokens: ~6 million
-- Output tokens: ~15-25 million (varies with reasoning depth)
+- Input tokens: ~500,000
+- Output tokens: ~400,000-2,500,000 (varies with reasoning depth)
 
 #### Estimated Costs
-Approximate costs of widely-used models for a full benchmark run
-- DeepSeek R1: ~$150
-- OpenAI GPT-5: ~$250
-- Claude Sonnet 4.5: ~$400
-- Gemini 3 Pro: ~$500
+Approximate inference costs of widely-used models for a full benchmark run:
+- DeepSeek V3: ~$0.20
+- Gemini Flash: ~$0.20
+- GPT-4o: ~$5
+- Claude Sonnet: ~$8
+- GPT-5: ~$18
+- Gemini Pro: ~$22
 
-*Costs are approximate and depend on your provider's current pricing.*
+*Costs are approximate and depend on your provider's current pricing. Reasoning models (e.g., o4-mini, DeepSeek R1, Gemini Pro) produce more output tokens due to chain-of-thought, increasing costs.*
 
 ## File Formats
 
 ### Input Files (.txt)
 - Plain text clinical cases
 - UTF-8 encoding
-- Benchmark-specific structure
+- One case per file
 
-### Output Files (.json)
-- JSON arrays of option evaluations
-- Must conform to benchmark schema
-
-### Schema Files (.json)
-- JSON schemas for response validation
-- Defines required structure and types
+### Response Schema
+- JSON object with a `response` string field
+- Must conform to `benchmarks/donoharm/schema.json`
+- Minimum 50 characters in the response field

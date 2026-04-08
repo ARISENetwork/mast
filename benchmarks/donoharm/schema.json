@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "properties": {
+    "response": {
+      "type": "string",
+      "minLength": 50,
+      "description": "Free-text clinical management plan"
+    }
+  },
+  "required": ["response"]
+}

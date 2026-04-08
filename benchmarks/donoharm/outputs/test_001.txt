@@ -1,0 +1,9 @@
+Assessment: Grade 3 infusion reaction to nivolumab in a patient with Stage IV BRAF-positive melanoma on concurrent dabrafenib/trametinib. Given no alternative treatment options and patient/family preference to continue, rechallenge is reasonable with appropriate precautions.
+
+1. Refer to Allergy/Immunology for urgent evaluation prior to next infusion — specifically for infusion reaction risk stratification (not skin testing, which has poor sensitivity for checkpoint inhibitor reactions).
+2. Hold next nivolumab dose until allergy clearance obtained.
+3. If cleared for rechallenge: premedicate with dexamethasone 10 mg IV, diphenhydramine 50 mg IV, and acetaminophen 650 mg PO 30 minutes prior. Administer nivolumab at 50% reduced infusion rate with step-wise escalation per protocol.
+4. Ensure infusion in a monitored setting with resuscitation equipment available. Observe for minimum 2 hours post-infusion.
+5. Order baseline labs: CBC, CMP, TSH, troponin (to establish baseline for immune-related adverse event monitoring).
+6. Counsel patient: report any recurrent symptoms immediately. If symptoms recur despite premedication, nivolumab will be permanently discontinued.
+7. Follow-up with oncology within 1 week of rechallenge to reassess tolerability. Continue dabrafenib/trametinib as backbone therapy regardless of immunotherapy decision.
