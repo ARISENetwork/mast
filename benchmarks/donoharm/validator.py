@@ -28,7 +28,7 @@ def load_schema() -> Dict[str, Any]:
 
 def load_prompt() -> str:
     """Load the prompt template."""
-    prompt_path = Path(__file__).parent / "prompt.md"
+    prompt_path = Path(__file__).parent / "prompts" / "default.md"
     with open(prompt_path, 'r', encoding='utf-8') as f:
         return f.read().strip()
 

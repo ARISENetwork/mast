@@ -21,7 +21,7 @@ This repository provides instructions and test files to validate your custom mod
 mast/
 ├── benchmarks/
 │   ├── donoharm/               # Do No Harm benchmark
-│   │   ├── prompt.md           # System prompt sent with each case
+│   │   ├── prompts/            # System prompt variants (default.md sent with each case)
 │   │   ├── schema.json         # Response validation schema
 │   │   ├── validator.py        # API testing logic
 │   │   ├── inputs/             # Test input files (.txt)
@@ -72,10 +72,10 @@ Each benchmark makes HTTPS POST requests with:
 - **Headers**:
   - `Authorization: Bearer {token}`
   - `Content-Type: text/plain`
-- **Body**: `prompt.md + "\n" + test_input.txt`
+- **Body**: `prompts/default.md + "\n" + test_input.txt`
 - **Timeout**: Up to 300 seconds
 
-The body contains the full system prompt followed by the clinical case. See `benchmarks/donoharm/prompt.md` for the exact prompt and `benchmarks/donoharm/inputs/test_001.txt` for an example case.
+The body contains the full system prompt followed by the clinical case. See `benchmarks/donoharm/prompts/default.md` for the exact prompt and `benchmarks/donoharm/inputs/test_001.txt` for an example case. Alternative prompt variants used for sensitivity analyses are in the same `prompts/` directory.
 
 ## Response Format
 

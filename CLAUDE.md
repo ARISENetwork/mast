@@ -39,7 +39,7 @@ scripts/validate_all.py  (discovers benchmarks, runs each via subprocess)
 `validate_all.py` discovers benchmarks by scanning `benchmarks/` for directories containing `validator.py` (excluding `template/`). Each validator is invoked as a subprocess with `sys.executable`.
 
 **Benchmark structure** (each benchmark follows this convention):
-- `prompt.md` - task description concatenated with input as the API payload
+- `prompt.md` - task description concatenated with input as the API payload (donoharm uses `prompts/default.md` instead, with sibling variants for sensitivity analyses)
 - `schema.json` - JSON Schema for response validation
 - `validator.py` - makes the API call, validates, saves results
 - `inputs/test_*.txt` - test case inputs
