@@ -1,0 +1,102 @@
+{
+  "open_medical": {
+    "name": "Open Medical SCT",
+    "source": "University of Florida",
+    "profession": "Physician",
+    "specialty": "General Medical",
+    "n_questions": 72,
+    "human_baselines": {},
+    "model_baselines": {
+      "gpt-4o": {
+        "score": 0.648914,
+        "sem": 0.042159
+      },
+      "claude-3.5-sonnet": {
+        "score": 0.641561,
+        "sem": 0.04342
+      },
+      "deepseek-r1": {
+        "score": 0.680528,
+        "sem": 0.040333
+      },
+      "gemini-1.5-pro": {
+        "score": 0.625795,
+        "sem": 0.042643
+      },
+      "gemini-2.5-pro": {
+        "score": 0.666658,
+        "sem": 0.041269
+      },
+      "llama-3.3-70b": {
+        "score": 0.613208,
+        "sem": 0.045389
+      },
+      "mistral-small": {
+        "score": 0.578012,
+        "sem": 0.042307
+      },
+      "o1-preview": {
+        "score": 0.692474,
+        "sem": 0.039273
+      },
+      "o3": {
+        "score": 0.737092,
+        "sem": 0.038437
+      },
+      "o4-mini": {
+        "score": 0.697251,
+        "sem": 0.037766
+      }
+    }
+  },
+  "adelaide": {
+    "name": "Adelaide SCT",
+    "source": "University of Adelaide",
+    "profession": "Physician",
+    "specialty": "Medicine, Surgery, Psychiatry, Pediatrics, OB-Gyn",
+    "n_questions": 102,
+    "human_baselines": {},
+    "model_baselines": {
+      "gpt-4o": {
+        "score": 0.695588,
+        "sem": 0.031858
+      },
+      "claude-3.5-sonnet": {
+        "score": 0.686275,
+        "sem": 0.031961
+      },
+      "deepseek-r1": {
+        "score": 0.706618,
+        "sem": 0.035252
+      },
+      "gemini-1.5-pro": {
+        "score": 0.639706,
+        "sem": 0.037314
+      },
+      "gemini-2.5-pro": {
+        "score": 0.717157,
+        "sem": 0.034476
+      },
+      "llama-3.3-70b": {
+        "score": 0.63848,
+        "sem": 0.035667
+      },
+      "mistral-small": {
+        "score": 0.632353,
+        "sem": 0.036814
+      },
+      "o1-preview": {
+        "score": 0.71348,
+        "sem": 0.033519
+      },
+      "o3": {
+        "score": 0.780392,
+        "sem": 0.029043
+      },
+      "o4-mini": {
+        "score": 0.730392,
+        "sem": 0.032798
+      }
+    }
+  }
+}

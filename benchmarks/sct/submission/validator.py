@@ -14,7 +14,8 @@ from typing import Dict, Any, Tuple
 import requests
 
 # Add scripts directory to path for imports
-sys.path.append(str(Path(__file__).parent.parent.parent / "scripts"))
+# validator.py lives in benchmarks/<name>/submission/, so walk up 4 levels to repo root
+sys.path.append(str(Path(__file__).parent.parent.parent.parent / "scripts"))
 from utils import load_config, validate_schema, save_json_file, get_results_dir, extract_openai_content
 
 

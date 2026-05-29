@@ -1,0 +1,11 @@
+benchmark:
+  name: "sct"
+  subset: "all"        # the bundle only contains the open subset (Open Medical + Adelaide)
+  limit: null
+  trials: 1
+  temperature: 0.0
+  max_tokens: 4096
+sct:
+  few_shot: false
+  reason: false
+  test_mode: false
