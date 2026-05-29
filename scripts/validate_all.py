@@ -15,6 +15,15 @@ sys.path.append(str(Path(__file__).parent))
 from utils import load_config
 
 
+def _harness_dir(benchmark_dir: Path):
+    """Locate the dir holding validator.py for a benchmark: the submission/
+    subdir (run-it-yourself-first layout) or the benchmark root (legacy layout)."""
+    for candidate in (benchmark_dir / "submission", benchmark_dir):
+        if (candidate / "validator.py").exists():
+            return candidate
+    return None
+
+
 def discover_benchmarks() -> List[str]:
     """Discover all benchmark directories."""
     benchmarks_dir = Path(__file__).parent.parent / "benchmarks"
@@ -23,7 +32,7 @@ def discover_benchmarks() -> List[str]:
 
     benchmarks = []
     for item in benchmarks_dir.iterdir():
-        if item.is_dir() and (item / "validator.py").exists() and item.name != "template":
+        if item.is_dir() and item.name != "template" and _harness_dir(item) is not None:
             benchmarks.append(item.name)
 
     return sorted(benchmarks)
@@ -31,7 +40,10 @@ def discover_benchmarks() -> List[str]:
 
 def discover_test_cases(benchmark_name: str) -> List[str]:
     """Discover all test cases for a given benchmark."""
-    inputs_dir = Path(__file__).parent.parent / "benchmarks" / benchmark_name / "inputs"
+    harness = _harness_dir(Path(__file__).parent.parent / "benchmarks" / benchmark_name)
+    if harness is None:
+        return []
+    inputs_dir = harness / "inputs"
     if not inputs_dir.exists():
         return []
 
@@ -45,7 +57,10 @@ def discover_test_cases(benchmark_name: str) -> List[str]:
 def run_api_validator(benchmark_name: str, test_name: str) -> Tuple[bool, str]:
     """Run the API validator for a specific benchmark and test case."""
     try:
-        validator_path = Path(__file__).parent.parent / "benchmarks" / benchmark_name / "validator.py"
+        harness = _harness_dir(Path(__file__).parent.parent / "benchmarks" / benchmark_name)
+        if harness is None:
+            return False, f"No validator found for benchmark: {benchmark_name}"
+        validator_path = harness / "validator.py"
 
         # Run the validator as a subprocess
         result = subprocess.run(

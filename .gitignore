@@ -141,6 +141,8 @@ Thumbs.db
 *.csv
 *.jsonl
 *.parquet
+# ...but ship the bundled open datasets for the run-it-yourself eval kits
+!benchmarks/*/dataset/*.jsonl
 
 # Benchmark results (if generated)
 temp/

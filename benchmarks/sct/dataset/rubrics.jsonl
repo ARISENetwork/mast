@@ -1,0 +1,174 @@
+{"id": "1", "expert_distribution": [0.0, 0.4, 0.8, 1.0, 0.2], "source": "Adelaide SCT"}
+{"id": "2", "expert_distribution": [0.0, 0.0, 0.8, 0.6, 1.0], "source": "Adelaide SCT"}
+{"id": "3", "expert_distribution": [0.0, 1.0, 0.2, 0.0, 0.0], "source": "Adelaide SCT"}
+{"id": "4", "expert_distribution": [0.0, 0.1, 1.0, 0.0, 0.0], "source": "Adelaide SCT"}
+{"id": "5", "expert_distribution": [0.0, 0.0, 0.0, 1.0, 0.2], "source": "Adelaide SCT"}
+{"id": "6", "expert_distribution": [1.0, 0.0, 0.0, 0.0, 0.0], "source": "Adelaide SCT"}
+{"id": "7", "expert_distribution": [0.0, 0.0, 0.0, 0.3, 1.0], "source": "Adelaide SCT"}
+{"id": "8", "expert_distribution": [0.0, 0.0, 0.2, 1.0, 0.8], "source": "Adelaide SCT"}
+{"id": "9", "expert_distribution": [1.0, 0.3, 0.0, 0.0, 0.0], "source": "Adelaide SCT"}
+{"id": "10", "expert_distribution": [0.0, 0.0, 0.0, 1.0, 1.0], "source": "Adelaide SCT"}
+{"id": "11", "expert_distribution": [0.0, 0.0, 0.4, 0.3, 1.0], "source": "Adelaide SCT"}
+{"id": "12", "expert_distribution": [0.0, 0.0, 0.1, 1.0, 0.2], "source": "Adelaide SCT"}
+{"id": "13", "expert_distribution": [0.0, 0.0, 0.4, 0.8, 1.0], "source": "Adelaide SCT"}
+{"id": "14", "expert_distribution": [0.0, 0.7, 1.0, 0.0, 0.0], "source": "Adelaide SCT"}
+{"id": "15", "expert_distribution": [0.0, 0.7, 1.0, 0.0, 0.0], "source": "Adelaide SCT"}
+{"id": "16", "expert_distribution": [0.0, 0.0, 0.0, 0.7, 1.0], "source": "Adelaide SCT"}
+{"id": "17", "expert_distribution": [0.0, 0.0, 0.0, 0.5, 1.0], "source": "Adelaide SCT"}
+{"id": "18", "expert_distribution": [0.0, 0.0, 0.2, 1.0, 0.8], "source": "Adelaide SCT"}
+{"id": "19", "expert_distribution": [1.0, 0.3, 0.0, 0.0, 0.0], "source": "Adelaide SCT"}
+{"id": "20", "expert_distribution": [1.0, 0.1, 0.0, 0.0, 0.0], "source": "Adelaide SCT"}
+{"id": "21", "expert_distribution": [0.0, 0.0, 0.2, 1.0, 0.8], "source": "Adelaide SCT"}
+{"id": "22", "expert_distribution": [1.0, 0.7, 0.0, 0.0, 0.0], "source": "Adelaide SCT"}
+{"id": "23", "expert_distribution": [0.0, 0.0, 0.6, 1.0, 0.8], "source": "Adelaide SCT"}
+{"id": "24", "expert_distribution": [1.0, 0.3, 0.4, 0.0, 0.0], "source": "Adelaide SCT"}
+{"id": "25", "expert_distribution": [0.0, 0.0, 0.0, 1.0, 0.7], "source": "Adelaide SCT"}
+{"id": "26", "expert_distribution": [0.4, 1.0, 0.1, 0.0, 0.0], "source": "Adelaide SCT"}
+{"id": "27", "expert_distribution": [1.0, 0.7, 0.0, 0.0, 0.0], "source": "Adelaide SCT"}
+{"id": "28", "expert_distribution": [0.8, 1.0, 0.0, 0.6, 0.0], "source": "Adelaide SCT"}
+{"id": "29", "expert_distribution": [0.0, 0.0, 1.0, 0.7, 0.0], "source": "Adelaide SCT"}
+{"id": "30", "expert_distribution": [0.3, 0.1, 1.0, 0.3, 0.0], "source": "Adelaide SCT"}
+{"id": "31", "expert_distribution": [0.7, 1.0, 0.0, 0.0, 0.0], "source": "Adelaide SCT"}
+{"id": "32", "expert_distribution": [0.0, 0.0, 0.0, 0.5, 1.0], "source": "Adelaide SCT"}
+{"id": "33", "expert_distribution": [1.0, 0.7, 0.0, 0.0, 0.0], "source": "Adelaide SCT"}
+{"id": "34", "expert_distribution": [1.0, 1.0, 0.3, 0.7, 1.0], "source": "Adelaide SCT"}
+{"id": "35", "expert_distribution": [0.0, 0.0, 1.0, 0.2, 0.0], "source": "Adelaide SCT"}
+{"id": "36", "expert_distribution": [1.0, 0.7, 0.0, 0.0, 0.0], "source": "Adelaide SCT"}
+{"id": "37", "expert_distribution": [0.0, 0.0, 0.0, 1.0, 0.2], "source": "Adelaide SCT"}
+{"id": "38", "expert_distribution": [0.0, 0.0, 0.0, 0.1, 1.0], "source": "Adelaide SCT"}
+{"id": "39", "expert_distribution": [0.0, 0.0, 0.5, 1.0, 0.0], "source": "Adelaide SCT"}
+{"id": "40", "expert_distribution": [0.0, 0.2, 1.0, 0.8, 0.4], "source": "Adelaide SCT"}
+{"id": "41", "expert_distribution": [1.0, 0.7, 0.0, 0.0, 0.0], "source": "Adelaide SCT"}
+{"id": "42", "expert_distribution": [0.0, 0.0, 0.0, 0.4, 1.0], "source": "Adelaide SCT"}
+{"id": "43", "expert_distribution": [0.0, 0.0, 0.5, 1.0, 0.2], "source": "Adelaide SCT"}
+{"id": "44", "expert_distribution": [0.3, 1.0, 0.3, 0.0, 0.0], "source": "Adelaide SCT"}
+{"id": "45", "expert_distribution": [0.0, 0.0, 0.0, 0.4, 1.0], "source": "Adelaide SCT"}
+{"id": "46", "expert_distribution": [0.0, 0.0, 0.0, 0.7, 1.0], "source": "Adelaide SCT"}
+{"id": "47", "expert_distribution": [1.0, 0.0, 0.0, 0.0, 0.0], "source": "Adelaide SCT"}
+{"id": "48", "expert_distribution": [0.0, 0.0, 0.0, 1.0, 0.7], "source": "Adelaide SCT"}
+{"id": "49", "expert_distribution": [1.0, 0.3, 0.0, 0.0, 0.0], "source": "Adelaide SCT"}
+{"id": "50", "expert_distribution": [0.0, 0.0, 0.0, 0.3, 1.0], "source": "Adelaide SCT"}
+{"id": "51", "expert_distribution": [0.0, 0.0, 0.0, 0.4, 1.0], "source": "Adelaide SCT"}
+{"id": "52", "expert_distribution": [1.0, 0.3, 0.0, 0.0, 0.0], "source": "Adelaide SCT"}
+{"id": "53", "expert_distribution": [0.0, 1.0, 0.1, 0.0, 0.0], "source": "Adelaide SCT"}
+{"id": "54", "expert_distribution": [1.0, 0.8, 0.0, 0.5, 0.3], "source": "Adelaide SCT"}
+{"id": "55", "expert_distribution": [1.0, 0.1, 0.0, 0.0, 0.0], "source": "Adelaide SCT"}
+{"id": "56", "expert_distribution": [0.0, 0.0, 0.0, 0.0, 1.0], "source": "Adelaide SCT"}
+{"id": "57", "expert_distribution": [1.0, 0.0, 0.0, 0.0, 0.0], "source": "Adelaide SCT"}
+{"id": "58", "expert_distribution": [1.0, 0.1, 0.0, 0.0, 0.0], "source": "Adelaide SCT"}
+{"id": "59", "expert_distribution": [0.3, 0.7, 0.7, 1.0, 0.7], "source": "Adelaide SCT"}
+{"id": "60", "expert_distribution": [1.0, 1.0, 0.5, 0.0, 0.0], "source": "Adelaide SCT"}
+{"id": "61", "expert_distribution": [1.0, 0.7, 0.0, 0.0, 0.0], "source": "Adelaide SCT"}
+{"id": "62", "expert_distribution": [0.0, 0.0, 0.0, 0.3, 1.0], "source": "Adelaide SCT"}
+{"id": "63", "expert_distribution": [0.3, 0.1, 1.0, 0.0, 0.0], "source": "Adelaide SCT"}
+{"id": "64", "expert_distribution": [1.0, 0.0, 0.0, 0.0, 0.0], "source": "Adelaide SCT"}
+{"id": "65", "expert_distribution": [0.0, 0.0, 0.0, 1.0, 0.4], "source": "Adelaide SCT"}
+{"id": "66", "expert_distribution": [0.0, 0.0, 0.2, 1.0, 0.5], "source": "Adelaide SCT"}
+{"id": "67", "expert_distribution": [1.0, 0.0, 0.0, 0.0, 0.0], "source": "Adelaide SCT"}
+{"id": "68", "expert_distribution": [0.0, 0.0, 0.0, 0.7, 1.0], "source": "Adelaide SCT"}
+{"id": "69", "expert_distribution": [1.0, 1.0, 0.0, 0.0, 0.0], "source": "Adelaide SCT"}
+{"id": "70", "expert_distribution": [0.0, 0.0, 0.0, 1.0, 0.0], "source": "Adelaide SCT"}
+{"id": "71", "expert_distribution": [0.0, 0.0, 1.0, 0.0, 0.0], "source": "Adelaide SCT"}
+{"id": "72", "expert_distribution": [0.0, 0.0, 0.5, 1.0, 0.2], "source": "Adelaide SCT"}
+{"id": "73", "expert_distribution": [0.0, 0.4, 1.0, 0.0, 0.0], "source": "Adelaide SCT"}
+{"id": "74", "expert_distribution": [0.0, 0.0, 0.0, 0.7, 1.0], "source": "Adelaide SCT"}
+{"id": "75", "expert_distribution": [0.0, 0.0, 0.2, 0.8, 1.0], "source": "Adelaide SCT"}
+{"id": "76", "expert_distribution": [0.1, 1.0, 0.3, 0.0, 0.0], "source": "Adelaide SCT"}
+{"id": "77", "expert_distribution": [0.3, 1.0, 0.0, 0.0, 0.0], "source": "Adelaide SCT"}
+{"id": "78", "expert_distribution": [1.0, 1.0, 0.5, 0.0, 0.0], "source": "Adelaide SCT"}
+{"id": "79", "expert_distribution": [0.0, 0.0, 0.0, 0.3, 1.0], "source": "Adelaide SCT"}
+{"id": "80", "expert_distribution": [0.3, 0.3, 0.8, 1.0, 0.3], "source": "Adelaide SCT"}
+{"id": "81", "expert_distribution": [0.4, 0.4, 0.0, 1.0, 0.2], "source": "Adelaide SCT"}
+{"id": "82", "expert_distribution": [1.0, 0.1, 0.0, 0.0, 0.0], "source": "Adelaide SCT"}
+{"id": "83", "expert_distribution": [0.0, 0.0, 0.0, 1.0, 0.1], "source": "Adelaide SCT"}
+{"id": "84", "expert_distribution": [0.0, 0.0, 1.0, 0.4, 0.0], "source": "Adelaide SCT"}
+{"id": "85", "expert_distribution": [0.2, 0.2, 0.0, 1.0, 0.6], "source": "Adelaide SCT"}
+{"id": "86", "expert_distribution": [1.0, 0.3, 0.0, 0.0, 0.0], "source": "Adelaide SCT"}
+{"id": "87", "expert_distribution": [0.0, 0.5, 1.0, 0.8, 0.3], "source": "Adelaide SCT"}
+{"id": "88", "expert_distribution": [0.3, 1.0, 0.1, 0.0, 0.0], "source": "Adelaide SCT"}
+{"id": "89", "expert_distribution": [1.0, 0.7, 0.0, 0.0, 0.0], "source": "Adelaide SCT"}
+{"id": "90", "expert_distribution": [0.4, 1.0, 0.0, 0.0, 0.0], "source": "Adelaide SCT"}
+{"id": "91", "expert_distribution": [0.0, 0.0, 0.0, 0.3, 1.0], "source": "Adelaide SCT"}
+{"id": "92", "expert_distribution": [0.0, 0.7, 1.0, 0.0, 0.0], "source": "Adelaide SCT"}
+{"id": "93", "expert_distribution": [1.0, 0.4, 0.0, 0.0, 0.0], "source": "Adelaide SCT"}
+{"id": "94", "expert_distribution": [0.0, 0.1, 0.1, 0.1, 1.0], "source": "Adelaide SCT"}
+{"id": "95", "expert_distribution": [1.0, 0.3, 0.0, 0.0, 0.0], "source": "Adelaide SCT"}
+{"id": "96", "expert_distribution": [0.0, 0.0, 0.1, 1.0, 0.3], "source": "Adelaide SCT"}
+{"id": "97", "expert_distribution": [0.0, 0.0, 0.4, 1.0, 0.0], "source": "Adelaide SCT"}
+{"id": "98", "expert_distribution": [0.0, 0.0, 0.0, 1.0, 1.0], "source": "Adelaide SCT"}
+{"id": "99", "expert_distribution": [0.3, 1.0, 0.0, 0.2, 0.2], "source": "Adelaide SCT"}
+{"id": "100", "expert_distribution": [0.0, 0.0, 0.0, 0.0, 1.0], "source": "Adelaide SCT"}
+{"id": "101", "expert_distribution": [0.0, 0.0, 0.0, 0.0, 1.0], "source": "Adelaide SCT"}
+{"id": "102", "expert_distribution": [0.0, 0.0, 0.4, 1.0, 0.6], "source": "Adelaide SCT"}
+{"id": "287", "expert_distribution": [0.0, 0.0, 0.0, 4.0, 7.0], "source": "Open Medical SCT"}
+{"id": "288", "expert_distribution": [0.0, 0.0, 0.0, 3.0, 8.0], "source": "Open Medical SCT"}
+{"id": "289", "expert_distribution": [6.0, 4.0, 0.0, 1.0, 0.0], "source": "Open Medical SCT"}
+{"id": "290", "expert_distribution": [0.0, 0.0, 0.0, 4.0, 7.0], "source": "Open Medical SCT"}
+{"id": "291", "expert_distribution": [0.0, 0.0, 2.0, 6.0, 3.0], "source": "Open Medical SCT"}
+{"id": "292", "expert_distribution": [0.0, 3.0, 7.0, 1.0, 0.0], "source": "Open Medical SCT"}
+{"id": "293", "expert_distribution": [0.0, 0.0, 0.0, 4.0, 7.0], "source": "Open Medical SCT"}
+{"id": "294", "expert_distribution": [7.0, 3.0, 1.0, 0.0, 0.0], "source": "Open Medical SCT"}
+{"id": "295", "expert_distribution": [0.0, 0.0, 0.0, 0.0, 11.0], "source": "Open Medical SCT"}
+{"id": "296", "expert_distribution": [0.0, 0.0, 0.0, 6.0, 5.0], "source": "Open Medical SCT"}
+{"id": "297", "expert_distribution": [0.0, 0.0, 0.0, 5.0, 6.0], "source": "Open Medical SCT"}
+{"id": "298", "expert_distribution": [1.0, 4.0, 2.0, 4.0, 0.0], "source": "Open Medical SCT"}
+{"id": "299", "expert_distribution": [0.0, 0.0, 0.0, 3.0, 8.0], "source": "Open Medical SCT"}
+{"id": "300", "expert_distribution": [1.0, 0.0, 0.0, 9.0, 1.0], "source": "Open Medical SCT"}
+{"id": "301", "expert_distribution": [0.0, 1.0, 1.0, 6.0, 3.0], "source": "Open Medical SCT"}
+{"id": "302", "expert_distribution": [1.0, 2.0, 1.0, 5.0, 2.0], "source": "Open Medical SCT"}
+{"id": "303", "expert_distribution": [0.0, 1.0, 1.0, 2.0, 7.0], "source": "Open Medical SCT"}
+{"id": "304", "expert_distribution": [0.0, 1.0, 3.0, 3.0, 4.0], "source": "Open Medical SCT"}
+{"id": "305", "expert_distribution": [0.0, 1.0, 0.0, 8.0, 1.0], "source": "Open Medical SCT"}
+{"id": "306", "expert_distribution": [0.0, 0.0, 0.0, 7.0, 3.0], "source": "Open Medical SCT"}
+{"id": "307", "expert_distribution": [0.0, 0.0, 0.0, 7.0, 3.0], "source": "Open Medical SCT"}
+{"id": "308", "expert_distribution": [0.0, 0.0, 2.0, 5.0, 3.0], "source": "Open Medical SCT"}
+{"id": "309", "expert_distribution": [0.0, 0.0, 0.0, 2.0, 8.0], "source": "Open Medical SCT"}
+{"id": "310", "expert_distribution": [0.0, 5.0, 5.0, 0.0, 0.0], "source": "Open Medical SCT"}
+{"id": "311", "expert_distribution": [0.0, 0.0, 0.0, 1.0, 9.0], "source": "Open Medical SCT"}
+{"id": "312", "expert_distribution": [0.0, 7.0, 1.0, 1.0, 1.0], "source": "Open Medical SCT"}
+{"id": "313", "expert_distribution": [0.0, 0.0, 0.0, 2.0, 8.0], "source": "Open Medical SCT"}
+{"id": "314", "expert_distribution": [0.0, 0.0, 1.0, 4.0, 5.0], "source": "Open Medical SCT"}
+{"id": "315", "expert_distribution": [0.0, 0.0, 1.0, 7.0, 2.0], "source": "Open Medical SCT"}
+{"id": "316", "expert_distribution": [3.0, 7.0, 0.0, 0.0, 0.0], "source": "Open Medical SCT"}
+{"id": "317", "expert_distribution": [0.0, 0.0, 1.0, 4.0, 5.0], "source": "Open Medical SCT"}
+{"id": "318", "expert_distribution": [0.0, 0.0, 1.0, 7.0, 2.0], "source": "Open Medical SCT"}
+{"id": "319", "expert_distribution": [3.0, 7.0, 0.0, 0.0, 0.0], "source": "Open Medical SCT"}
+{"id": "320", "expert_distribution": [0.0, 0.0, 1.0, 4.0, 5.0], "source": "Open Medical SCT"}
+{"id": "321", "expert_distribution": [0.0, 0.0, 1.0, 7.0, 2.0], "source": "Open Medical SCT"}
+{"id": "322", "expert_distribution": [3.0, 7.0, 0.0, 0.0, 0.0], "source": "Open Medical SCT"}
+{"id": "323", "expert_distribution": [0.0, 0.0, 0.0, 5.0, 5.0], "source": "Open Medical SCT"}
+{"id": "324", "expert_distribution": [4.0, 4.0, 0.0, 2.0, 0.0], "source": "Open Medical SCT"}
+{"id": "325", "expert_distribution": [0.0, 0.0, 0.0, 7.0, 3.0], "source": "Open Medical SCT"}
+{"id": "326", "expert_distribution": [0.0, 0.0, 1.0, 5.0, 4.0], "source": "Open Medical SCT"}
+{"id": "327", "expert_distribution": [0.0, 1.0, 6.0, 3.0, 0.0], "source": "Open Medical SCT"}
+{"id": "328", "expert_distribution": [3.0, 6.0, 0.0, 1.0, 0.0], "source": "Open Medical SCT"}
+{"id": "329", "expert_distribution": [0.0, 0.0, 1.0, 2.0, 7.0], "source": "Open Medical SCT"}
+{"id": "330", "expert_distribution": [2.0, 4.0, 0.0, 0.0, 4.0], "source": "Open Medical SCT"}
+{"id": "331", "expert_distribution": [0.0, 1.0, 0.0, 1.0, 8.0], "source": "Open Medical SCT"}
+{"id": "332", "expert_distribution": [0.0, 0.0, 1.0, 8.0, 1.0], "source": "Open Medical SCT"}
+{"id": "333", "expert_distribution": [3.0, 6.0, 1.0, 0.0, 0.0], "source": "Open Medical SCT"}
+{"id": "334", "expert_distribution": [1.0, 9.0, 0.0, 0.0, 0.0], "source": "Open Medical SCT"}
+{"id": "335", "expert_distribution": [9.0, 1.0, 0.0, 0.0, 0.0], "source": "Open Medical SCT"}
+{"id": "336", "expert_distribution": [7.0, 2.0, 0.0, 0.0, 1.0], "source": "Open Medical SCT"}
+{"id": "337", "expert_distribution": [0.0, 0.0, 0.0, 3.0, 7.0], "source": "Open Medical SCT"}
+{"id": "338", "expert_distribution": [8.0, 2.0, 0.0, 0.0, 0.0], "source": "Open Medical SCT"}
+{"id": "339", "expert_distribution": [0.0, 0.0, 0.0, 3.0, 7.0], "source": "Open Medical SCT"}
+{"id": "340", "expert_distribution": [3.0, 4.0, 1.0, 2.0, 0.0], "source": "Open Medical SCT"}
+{"id": "341", "expert_distribution": [5.0, 6.0, 0.0, 0.0, 0.0], "source": "Open Medical SCT"}
+{"id": "342", "expert_distribution": [0.0, 0.0, 1.0, 8.0, 2.0], "source": "Open Medical SCT"}
+{"id": "343", "expert_distribution": [0.0, 6.0, 4.0, 1.0, 0.0], "source": "Open Medical SCT"}
+{"id": "344", "expert_distribution": [0.0, 1.0, 10.0, 0.0, 0.0], "source": "Open Medical SCT"}
+{"id": "345", "expert_distribution": [0.0, 1.0, 2.0, 5.0, 3.0], "source": "Open Medical SCT"}
+{"id": "346", "expert_distribution": [0.0, 0.0, 0.0, 6.0, 5.0], "source": "Open Medical SCT"}
+{"id": "347", "expert_distribution": [3.0, 1.0, 6.0, 0.0, 1.0], "source": "Open Medical SCT"}
+{"id": "348", "expert_distribution": [0.0, 1.0, 3.0, 1.0, 6.0], "source": "Open Medical SCT"}
+{"id": "349", "expert_distribution": [0.0, 0.0, 8.0, 1.0, 2.0], "source": "Open Medical SCT"}
+{"id": "350", "expert_distribution": [2.0, 5.0, 2.0, 1.0, 0.0], "source": "Open Medical SCT"}
+{"id": "351", "expert_distribution": [2.0, 5.0, 2.0, 1.0, 0.0], "source": "Open Medical SCT"}
+{"id": "352", "expert_distribution": [2.0, 5.0, 2.0, 1.0, 0.0], "source": "Open Medical SCT"}
+{"id": "353", "expert_distribution": [0.0, 2.0, 8.0, 0.0, 0.0], "source": "Open Medical SCT"}
+{"id": "354", "expert_distribution": [0.0, 0.0, 3.0, 4.0, 3.0], "source": "Open Medical SCT"}
+{"id": "355", "expert_distribution": [0.0, 5.0, 5.0, 0.0, 0.0], "source": "Open Medical SCT"}
+{"id": "356", "expert_distribution": [9.0, 1.0, 0.0, 0.0, 0.0], "source": "Open Medical SCT"}
+{"id": "357", "expert_distribution": [0.0, 0.0, 0.0, 2.0, 8.0], "source": "Open Medical SCT"}
+{"id": "358", "expert_distribution": [0.0, 5.0, 4.0, 1.0, 0.0], "source": "Open Medical SCT"}

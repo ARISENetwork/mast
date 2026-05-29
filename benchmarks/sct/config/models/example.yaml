@@ -1,0 +1,6 @@
+model:
+  name: gpt-5-mini            # result filename: results/scores/sct/gpt-5-mini.csv
+  platform: openrouter        # openrouter | openai | anthropic | gemini | local
+  model_id: openai/gpt-5-mini # provider model id (litellm routes by platform)
+  # completion_kwargs:        # optional, forwarded to litellm.completion
+  #   reasoning_effort: minimal
