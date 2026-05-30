@@ -20,7 +20,7 @@ This repository provides instructions and test files to validate your custom mod
 ```
 mast/
 ├── benchmarks/
-│   ├── donoharm/               # Do No Harm benchmark
+│   ├── donoharm/               # First Do NOHARM benchmark
 │   │   ├── prompts/            # System prompt variants (default.md sent with each case)
 │   │   ├── schema.json         # Response validation schema
 │   │   ├── validator.py        # API testing logic
