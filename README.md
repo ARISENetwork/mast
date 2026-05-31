@@ -93,9 +93,9 @@ The `response` field must contain at least 50 characters of clinical text. There
 
 ## Benchmarks
 
-The MAST suite spans the clinical capabilities measured on the public [leaderboard](https://arise-ai.org/mast/technical). Each benchmark links to code, data, or a site so you can run it yourself (the First Do NOHARM kit is coming shortly). Full descriptions and demos: [arise-ai.org/mast/benchmarks](https://arise-ai.org/mast/benchmarks).
+The MAST suite spans the clinical capabilities measured on the public [leaderboard](https://arise-ai.org/mast/technical). Each benchmark links to its code, data, or site (the First Do NOHARM kit is coming shortly). Full descriptions and demos: [arise-ai.org/mast/benchmarks](https://arise-ai.org/mast/benchmarks).
 
-| Benchmark | Clinical capability | Run it yourself | Paper |
+| Benchmark | Clinical capability | Code / data | Paper |
 | --- | --- | --- | --- |
 | First Do NOHARM v2 | Safety, management reasoning | Coming soon | [arXiv](https://arxiv.org/abs/2512.01241) |
 | Script Concordance Test (SCT) | Reasoning under uncertainty | [`benchmarks/sct/`](benchmarks/sct/) | [NEJM AI](https://ai.nejm.org/doi/full/10.1056/AIdbp2500120) |
@@ -104,6 +104,8 @@ The MAST suite spans the clinical capabilities measured on the public [leaderboa
 | PhysicianBench | Agentic EHR tasks | [GitHub](https://github.com/HealthRex/PhysicianBench) | - |
 | ReXrank Mini | Multimodal radiology | [GitHub](https://github.com/rajpurkarlab/ReXrank) | [arXiv](https://arxiv.org/abs/2411.15122) |
 | Multimodal Images | Multimodal dermatology | [DDI](https://ddi-dataset.github.io/) · [MIDAS](https://stanfordaimi.azurewebsites.net/datasets/f4c2020f-801a-42dd-a477-a1a8357ef2a5) | [DDI](https://www.science.org/doi/10.1126/sciadv.abq6147) · [MIDAS](https://ai.nejm.org/doi/full/10.1056/AIdbp2400732) |
+
+ReXrank Mini is MAST's curated subset of the full [ReXrank](https://github.com/rajpurkarlab/ReXrank) benchmark, run with that harness.
 
 - **First Do NOHARM v2**: free-text management plans reconstructed from real generalist-to-specialist consults, scored by multiple LLM judges against specialist-authored rubrics. The `benchmarks/donoharm/` validator checks your endpoint's response format (see [API Request Format](#api-request-format) above); a full run-it-yourself kit is coming shortly.
 - **Script Concordance Test (SCT)**: probabilistic clinical reasoning under uncertainty. Run it yourself on the 174-item open subset with deterministic scoring (no LLM judge); see `benchmarks/sct/README.md` for setup, the `sct_score` metric, and reference scores.
@@ -131,20 +133,20 @@ pip install jsonschema requests
 
 ### Resource Requirements
 
-Estimated tokens and inference cost per benchmark for a full run, measured from a GPT-5.5 evaluation. Output tokens include reasoning tokens; both output volume and cost scale with reasoning effort and your provider's pricing.
+Token and inference-cost estimates per benchmark, from a single GPT-5.5 reference run. Treat these as a rough guide only: your model's token counts and cost will differ, often substantially. Output tokens include reasoning tokens; both scale with reasoning effort and your provider's pricing.
 
-| Benchmark | Tasks | Input tokens | Output tokens | Est. cost (GPT-5.5) |
-| --- | --- | --- | --- | --- |
-| First Do NOHARM v2 | 1,100 | 0.7M | 0.9M | $31 |
-| Script Concordance Test (SCT) | 750 | 0.2M | 0.2M | $6 |
-| CPC-Bench | 2,539 | 5.6M | 2.2M | $87 |
-| MedAgentBench v2 | 300 | 12.5M | 0.4M | $74 |
-| PhysicianBench | 100 | 36.6M | 0.7M | $205 |
-| ReXrank Mini | 3,112 | 32.9M | 2.0M | $221 |
-| Multimodal Images | 3,508 | 32.0M | 1.0M | $191 |
-| **Full suite** | **11,409** | **~121M** | **~7.4M** | **~$815** |
+| Benchmark | Input tokens | Output tokens | Est. cost (GPT-5.5) |
+| --- | --- | --- | --- |
+| First Do NOHARM v2 | 0.7M | 0.9M | $31 |
+| Script Concordance Test (SCT) | 0.2M | 0.2M | $6 |
+| CPC-Bench | 5.6M | 2.2M | $87 |
+| MedAgentBench v2 | 12.5M | 0.4M | $74 |
+| PhysicianBench | 36.6M | 0.7M | $205 |
+| ReXrank Mini | 32.9M | 2.0M | $221 |
+| Multimodal Images | 32.0M | 1.0M | $191 |
+| **Full suite** | **~121M** | **~7.4M** | **~$815** |
 
-Agentic benchmarks (MedAgentBench, PhysicianBench) consume far more input tokens because each task spans many tool-use turns. Costs cover model inference only; LLM-judge scoring is run by the MAST team. PhysicianBench reflects the GPT-5.5 high-effort run (the complete 100-task run available).
+Agentic benchmarks (MedAgentBench, PhysicianBench) consume far more input tokens because each task spans many tool-use turns. Costs cover model inference only; LLM-judge scoring is run by the MAST team. PhysicianBench reflects the GPT-5.5 high-effort run.
 
 ## File Formats
 
