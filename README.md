@@ -3,7 +3,7 @@
 
 MAST (Medical AI Superintelligence Test) is a suite of clinically realistic benchmarks to evaluate real-world medical capabilities of artificial intelligence models. The system provides a leaderboard where AI models submit API endpoints that are automatically tested against standardized medical scenarios. 
 
-The live leaderboard is available at [benchmarks.arise-ai.org](https://benchmarks.arise-ai.org).
+The live leaderboard is available at [arise-ai.org/mast/technical](https://arise-ai.org/mast/technical).
 
 This repository provides instructions and test files to validate your custom model API endpoint. After passing validation, view the [Submission Agreement](docs/submission_agreement.md) and submit the [Registration Form](https://forms.gle/4exSPLbsmWjNmMRQ7) for review by the MAST team. The API and token are used only for benchmark execution and are not stored after evaluation.
 
@@ -51,7 +51,7 @@ git clone https://github.com/ARISENetwork/mast.git
 cd mast
 ```
 
-2. **Set up your API endpoint** — provide a hosted endpoint for accessing and benchmarking your model.
+2. **Set up your API endpoint**: provide a hosted endpoint for accessing and benchmarking your model.
 
 3. **Configure your endpoint** by copying and editing the config:
 ```bash
@@ -87,24 +87,28 @@ APIs must return a JSON object containing a free-text clinical management plan:
 }
 ```
 
-The `response` field must contain at least 50 characters of clinical text. There is no required structure within the text itself — the model should write a management plan as described in the prompt. See `benchmarks/donoharm/outputs/test_001.txt` for an example of a valid response.
+The `response` field must contain at least 50 characters of clinical text. There is no required structure within the text itself; the model should write a management plan as described in the prompt. See `benchmarks/donoharm/outputs/test_001.txt` for an example of a valid response.
 
 **OpenAI-compatible endpoints** are also accepted. If your API returns the standard OpenAI chat completions format (`choices[0].message.content`), the validator will automatically extract the content. This includes endpoints served via OpenRouter or any OpenAI-compatible provider.
 
 ## Benchmarks
 
-### First Do NOHARM Benchmark
+The MAST suite spans the clinical capabilities measured on the public [leaderboard](https://arise-ai.org/mast/technical). Each benchmark links to its code, data, or site (the First Do NOHARM kit is coming shortly). Full descriptions and demos: [arise-ai.org/mast/benchmarks](https://arise-ai.org/mast/benchmarks).
 
-- **Study**: https://arxiv.org/abs/2512.01241
-- **Task**: Provide clinical recommendations for a medical case
-- **Input**: Reconstructed from real clinical cases, where a generalist physician electronically consulted a specialist/subspecialist
-- **Output**: Free-text management plan (assessment + recommendations)
-- **Scoring**: Evaluated by multiple LLM judges against specialist-authored rubrics
-- **Validation**: Format compliance (schema validation only)
+| Benchmark | Clinical capability | Code / data | Paper |
+| --- | --- | --- | --- |
+| First Do NOHARM v2 | Safety, management reasoning | Coming soon | [arXiv](https://arxiv.org/abs/2512.01241) |
+| Script Concordance Test (SCT) | Reasoning under uncertainty | [`benchmarks/sct/`](benchmarks/sct/) | [NEJM AI](https://ai.nejm.org/doi/full/10.1056/AIdbp2500120) |
+| CPC-Bench | Diagnostic reasoning | [cpcbench.com](https://cpcbench.com) | [arXiv](https://arxiv.org/abs/2509.12194) |
+| MedAgentBench v2 | Agentic EHR tasks | [GitHub](https://github.com/ARISENetwork/medagentbenchv2) | [Paper](https://psb.stanford.edu/psb-online/proceedings/psb26/chen_eric.pdf) |
+| PhysicianBench | Agentic EHR tasks | [GitHub](https://github.com/HealthRex/PhysicianBench) | - |
+| ReXrank Mini | Multimodal radiology | [GitHub](https://github.com/rajpurkarlab/ReXrank) | [arXiv](https://arxiv.org/abs/2411.15122) |
+| Multimodal Images | Multimodal dermatology | [DDI](https://ddi-dataset.github.io/) · [MIDAS](https://stanfordaimi.azurewebsites.net/datasets/f4c2020f-801a-42dd-a477-a1a8357ef2a5) | [DDI](https://www.science.org/doi/10.1126/sciadv.abq6147) · [MIDAS](https://ai.nejm.org/doi/full/10.1056/AIdbp2400732) |
 
-### SCT (Script Concordance Test) Benchmark
+ReXrank Mini is MAST's curated subset of the full [ReXrank](https://github.com/rajpurkarlab/ReXrank) benchmark, run with that harness.
 
-*Coming soon.* See `benchmarks/sct/README.md` for preliminary details.
+- **First Do NOHARM v2**: free-text management plans reconstructed from real generalist-to-specialist consults, scored by multiple LLM judges against specialist-authored rubrics. The `benchmarks/donoharm/` validator checks your endpoint's response format (see [API Request Format](#api-request-format) above); a full run-it-yourself kit is coming shortly.
+- **Script Concordance Test (SCT)**: probabilistic clinical reasoning under uncertainty. Run it yourself on the 174-item open subset with deterministic scoring (no LLM judge); see `benchmarks/sct/README.md` for setup, the `sct_score` metric, and reference scores.
 
 ## Validation Results
 
@@ -125,18 +129,24 @@ pip install jsonschema requests
 - **Concurrent requests**: Must support 5-10 simultaneous connections
 - **Authentication**: Bearer token authentication required
 - **Response time**: Under 300 seconds per request
-- **Response format**: Valid JSON — either `{"response": "..."}` or OpenAI-compatible chat completions format
+- **Response format**: Valid JSON: either `{"response": "..."}` or OpenAI-compatible chat completions format
 
 ### Resource Requirements
 
-#### Estimated Token Usage
-- Input tokens: ~1,500,000
-- Output tokens: ~3,000,000-18,000,000 (varies with reasoning depth)
+Token and inference-cost estimates per benchmark, from a single GPT-5.5 reference run. Treat these as a rough guide only: your model's token counts and cost will differ, often substantially. Output tokens include reasoning tokens; both scale with reasoning effort and your provider's pricing.
 
-#### Estimated Costs
-Approximate inference costs for large frontier-scale models: **$125-$400** for a full benchmark run (but can be higher depending on reasoning effort).
+| Benchmark | Input tokens | Output tokens | Est. cost (GPT-5.5) |
+| --- | --- | --- | --- |
+| First Do NOHARM v2 | 0.7M | 0.9M | $31 |
+| Script Concordance Test (SCT) | 0.2M | 0.2M | $6 |
+| CPC-Bench | 5.6M | 2.2M | $87 |
+| MedAgentBench v2 | 12.5M | 0.4M | $74 |
+| PhysicianBench | 36.6M | 0.7M | $205 |
+| ReXrank Mini | 32.9M | 2.0M | $221 |
+| Multimodal Images | 32.0M | 1.0M | $191 |
+| **Full suite** | **~121M** | **~7.4M** | **~$815** |
 
-*Costs are approximate and depend on your provider's current pricing. The benchmark is run at multiple response lengths for sensitivity analysis. Reasoning models produce significantly more output tokens due to chain-of-thought, increasing costs substantially.*
+Agentic benchmarks (MedAgentBench, PhysicianBench) consume far more input tokens because each task spans many tool-use turns. Costs cover model inference only; LLM-judge scoring is run by the MAST team. PhysicianBench reflects the GPT-5.5 high-effort run.
 
 ## File Formats
 

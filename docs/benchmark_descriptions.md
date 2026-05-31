@@ -1,6 +1,6 @@
 # Benchmark Descriptions
 
-This document provides detailed descriptions of all benchmarks in the MAST leaderboard.
+This document provides detailed descriptions of the benchmarks with runnable kits in this repository. The full MAST suite on the public leaderboard also includes CPC-Bench (diagnostic reasoning), MedAgentBench v2 and PhysicianBench (agentic EHR tasks), ReXrank Mini (radiology), and Multimodal Images (dermatology); see [arise-ai.org/mast/benchmarks](https://arise-ai.org/mast/benchmarks) for the complete set.
 
 ## First Do NOHARM Benchmark
 
@@ -8,7 +8,7 @@ This document provides detailed descriptions of all benchmarks in the MAST leade
 First Do NOHARM is a physician-validated medical benchmark to evaluate the safety and completeness of AI-generated clinical management plans. Models are presented with real clinical cases and asked to provide free-text management plans, which are then scored by multiple LLM judges against physician-authored rubrics. The benchmark covers cases across multiple medical specialties with perturbations testing robustness to variations in patient demographics, lab values, and clinical context. This project is led and supported by the ARISE AI Research Network, based at Stanford and Harvard.
 
 Read our [study](https://arxiv.org/abs/2512.01241) for more details.
-See the live [leaderboard](https://benchmarks.arise-ai.org/) for current rankings.
+See the live [leaderboard](https://arise-ai.org/mast/technical) for current rankings.
 
 ### Input Format
 - **File type:** Plain text (.txt)
@@ -39,7 +39,19 @@ Models are scored by multiple LLM judges against physician-authored rubrics. Key
 
 ## SCT (Script Concordance Test) Benchmark
 
-*Coming soon.* See `benchmarks/sct/README.md` for preliminary details.
+### Purpose
+The Script Concordance Test measures probabilistic clinical reasoning under uncertainty. Given a clinical scenario, a hypothesis (diagnosis or treatment), and a new piece of information, the model rates how that information shifts the likelihood of the hypothesis on a 5-point scale (-2 to +2). Responses are scored against expert physician panel distributions.
+
+### Run it yourself
+SCT ships as a run-it-yourself kit over a 174-item open subset (Adelaide SCT + Open Medical SCT) with deterministic scoring (no LLM judge). The headline metric is `sct_score`: alignment with the expert consensus distribution, scaled 0 to 1, with an item-level bootstrap confidence interval. See `benchmarks/sct/README.md` for setup, reference scores, and data provenance.
+
+### Output Format
+- **File type:** JSON (.json)
+- **Required fields:** `Rating` (integer, -2 to +2) and `Rationale` (string)
+- **Also accepted:** OpenAI-compatible chat completions format (content is extracted automatically)
+
+### Submission
+Submitting to the public leaderboard is optional and separate from running the benchmark locally. See `benchmarks/sct/submission/` for the endpoint validator and calibration cases.
 
 ## Adding New Benchmarks
 When adding new benchmarks:
