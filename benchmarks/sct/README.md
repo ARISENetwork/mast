@@ -78,7 +78,7 @@ The full benchmark includes 750 questions from 10 medical institutions; this bun
 
 ## Submitting to the leaderboard (optional)
 
-If you want your model on the public [leaderboard](https://benchmarks.arise-ai.org), your hosted API endpoint must first pass a format check, then you register it. See [`submission/`](submission/) for the endpoint validator and the 5 calibration cases, and `docs/submission_agreement.md` (repo root) for the Registration Form and terms. This step is only for leaderboard submission; it is not needed to run the benchmark yourself.
+If you want your model on the public [leaderboard](https://arise-ai.org/mast/technical), your hosted API endpoint must first pass a format check, then you register it. See [`submission/`](submission/) for the endpoint validator and the 5 calibration cases, and `docs/submission_agreement.md` (repo root) for the Registration Form and terms. This step is only for leaderboard submission; it is not needed to run the benchmark yourself.
 
 ## License
 
