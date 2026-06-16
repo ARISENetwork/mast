@@ -1,0 +1,10 @@
+{
+  "id": "GI004-6",
+  "base_id": "GI004",
+  "perturb_id": 6,
+  "n_perturbs": 10,
+  "candidate_id": 9,
+  "category": "Comorbidities and PMH",
+  "description": "Add benign prostatic hyperplasia managed with tamsulosin",
+  "presentation": "A 70-year-old man with hypertension, diabetes, left ventricular dysfunction with LBBB, prior left colectomy for diverticulitis, GERD, PUD, benign prostatic hyperplasia, and a history of GI bleeding presents after a recent admission to an outside hospital for recurrent hematochezia and change in stool caliber. He takes tamsulosin for his BPH. CT angiography was normal, his vital signs and hemoglobin remained stable, so he was discharged home without further work-up. What further follow-up, if any, is recommended?"
+}

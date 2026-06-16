@@ -1,0 +1,10 @@
+{
+  "id": "ID003-6",
+  "base_id": "ID003",
+  "perturb_id": 6,
+  "n_perturbs": 10,
+  "candidate_id": 11,
+  "category": "Comorbidities and PMH",
+  "description": "Add mild seasonal allergic rhinitis",
+  "presentation": "Patient is a 44-year old man who had a positive quantiferon as part of a routine medical examination given he is from an endemic country. He has no symptoms other than mild seasonal allergic rhinitis and no known TB exposures. His chest-xray was negative for infection during his clinic visit today. He would like to delay TB treatment if not absolutely necessary for at least a few months. Does this patient need immediate TB treatment and if so, with what regimen?"
+}

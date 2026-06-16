@@ -1,0 +1,10 @@
+{
+  "id": "Neuro004-2",
+  "base_id": "Neuro004",
+  "perturb_id": 2,
+  "n_perturbs": 10,
+  "candidate_id": 3,
+  "category": "Sex",
+  "description": "Change patient sex from male to female",
+  "presentation": "Patient is a 77-year-old woman with hypertension, hyperlipidemia, and type 2 diabetes. One week ago, she awoke with sudden right-sided arm and leg weakness lasting about 30 minutes without facial droop or speech changes. She presented to a local ED the next day. CT head and MRI brain were unrevealing. Her basic labs were unremarkable. Today, her ABCD2 score is 5, so I initiated dual antiplatelet therapy (aspirin 81 mg indefinitely + clopidogrel 75 mg for 21 days) and ordered a 7-day Zio patch. Does the patient need further evaluation or medication adjustments?"
+}

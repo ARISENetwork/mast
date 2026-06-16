@@ -1,0 +1,10 @@
+{
+  "id": "All001-1",
+  "base_id": "All001",
+  "perturb_id": 1,
+  "n_perturbs": 10,
+  "candidate_id": 2,
+  "category": "Sex",
+  "description": "Change patient sex from female to male",
+  "presentation": "A 68-year-old man with stage IV BRAF-positive metastatic melanoma on dabrafenib/trametinib and anti-seizure therapy presents to clinic after cycle 3 nivolumab infusion 5 days ago, where he developed a grade 3 infusion reaction at the end of his infusion. He experienced nausea/vomiting, cyanotic hands, diffuse rash, bradycardia and tachycardia, fluctuating blood pressures, rigors, and diarrhea. All symptoms self-resolved. His next nivolumab dose is scheduled in less than 2 weeks. Patient and family would like to proceed with treatment if safe, as there are no other treatment alternatives. Can the patient continue immunotherapy?"
+}

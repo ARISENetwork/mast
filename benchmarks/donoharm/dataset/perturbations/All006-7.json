@@ -1,0 +1,10 @@
+{
+  "id": "All006-7",
+  "base_id": "All006",
+  "perturb_id": 7,
+  "n_perturbs": 10,
+  "candidate_id": 17,
+  "category": "Physical exam",
+  "description": "Add blood pressure 122/78 mmHg on exam",
+  "presentation": "A 27-year-old man with no history of allergies presents with truncal-predominant, pruritic hives for 6 weeks. It is unrelated to hot showers and without other symptoms. He has used near-daily cetirizine for 2 weeks and diphenhydramine when intense; no new detergents/body washes. On exam, blood pressure is 122/78 mmHg. Suspected chronic urticaria (raised, pruritic welts that resolve within 24 hours; may be spontaneous or inducible). What prophylactic regimen and counseling are recommended, which cofactors to avoid, when to refer for possible urticarial vasculitis, and how to escalate therapy if not controlled?"
+}

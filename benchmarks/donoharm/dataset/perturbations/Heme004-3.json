@@ -1,0 +1,10 @@
+{
+  "id": "Heme004-3",
+  "base_id": "Heme004",
+  "perturb_id": 3,
+  "n_perturbs": 10,
+  "candidate_id": 8,
+  "category": "Medication",
+  "description": "Add loratadine 10 mg daily for seasonal allergies",
+  "presentation": "52-year-old woman who just established care endorses persistent fatigue over the past few months. She was previously found to be iron deficient but has not responded to intermittent oral iron supplementation. Most recent labs show anemia (Hgb 7.3 g/dL, MCV 67 fL), low ferritin (<5 ng/mL), and low iron saturation. Peripheral smear shows hypochromia and microcytosis. Only medications are oral iron, intermittent pyridium for recurrent urinary symptoms, and loratadine 10 mg daily for seasonal allergies. Otherwise healthy without notable family history. Does this patient need work-up for an underlying hemoglobinopathy?"
+}

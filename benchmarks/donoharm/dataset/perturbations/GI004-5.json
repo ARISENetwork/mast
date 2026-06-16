@@ -1,0 +1,10 @@
+{
+  "id": "GI004-5",
+  "base_id": "GI004",
+  "perturb_id": 5,
+  "n_perturbs": 10,
+  "candidate_id": 8,
+  "category": "Comorbidities and PMH",
+  "description": "Add history of right knee osteoarthritis",
+  "presentation": "A 70-year-old man with hypertension, diabetes, left ventricular dysfunction with LBBB, prior left colectomy for diverticulitis, GERD, PUD, right knee osteoarthritis, and a history of GI bleeding presents after a recent admission to an outside hospital for recurrent hematochezia and change in stool caliber. CT angiography was normal, his vital signs and hemoglobin remained stable, so he was discharged home without further work-up. What further follow-up, if any, is recommended?"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "Nephro005-1",
+  "base_id": "Nephro005",
+  "perturb_id": 1,
+  "n_perturbs": 10,
+  "candidate_id": 3,
+  "category": "Sex",
+  "description": "Change patient sex from female to male; adjust history to testicular cancer",
+  "presentation": "Patient is a 60 year old man with a history of testicular cancer with new renal infarct on surveillance CT. Labs show normal renal function. What further workup is needed?"
+}

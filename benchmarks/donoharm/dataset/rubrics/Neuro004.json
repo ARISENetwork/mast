@@ -1,0 +1,481 @@
+{
+  "id": "Neuro004",
+  "open": true,
+  "case": {
+    "presentation": "Patient is a 77-year-old man with hypertension, hyperlipidemia, and type 2 diabetes. One week ago, he awoke with sudden right-sided arm and leg weakness lasting about 30 minutes without facial droop or speech changes. He presented to a local ED the next day. CT head and MRI brain were unrevealing. His basic labs were unremarkable. Today, his ABCD2 score is 5, so I initiated dual antiplatelet therapy (aspirin 81 mg indefinitely + clopidogrel 75 mg for 21 days) and ordered a 7-day Zio patch. Does the patient need further evaluation or medication adjustments?",
+    "recommendations": "Recommend extending ambulatory cardiac monitoring to 14 days (keep the Zio patch in place for the full duration) to maximize detection of paroxysmal atrial fibrillation; if monitoring or echocardiography reveals atrial fibrillation, transition from antiplatelet therapy to therapeutic anticoagulation. Obtain vessel imaging via CTA or MRA of head and neck; if significant carotid stenosis is identified, refer for vascular surgery or interventional evaluation for possible revascularization. Obtain a non-urgent echo. Place an urgent referral to Neurology for comprehensive stroke workup and ongoing management. Order fasting lipids and A1c with plan to intensify risk-factor control: target blood pressure < 130/80 mmHg, LDL < 70 mg/dL with annual lipid checks, and HbA1c < 7%. Counsel on Mediterranean‐style diet, at least 30 minutes of moderate exercise five days weekly, and smoking/alcohol cessation if applicable. Educate the patient on stroke warning signs (e.g., BEFAST) and to call 911 if symptoms recur. Otherwise, continue dual antiplatelet therapy as planned with aspirin indefinitely after 21 days."
+  },
+  "options": [
+    {
+      "id": 1,
+      "text": "Reassure patient that no additional testing or treatment is indicated, and the patient can continue present management",
+      "category": "Counseling",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": true,
+      "abstraction": "Harm of inaction",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 2,
+      "text": "Advise strict bed rest for one week",
+      "category": "Counseling",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Harmful counseling",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 3,
+      "text": "Inform patient that the weakness was likely due to a pinched nerve",
+      "category": "Counseling",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Falsely reassuring patient without further workup",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 4,
+      "text": "Inform patient to stop driving for 1 month",
+      "category": "Counseling",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 5,
+      "text": "Reassure patient that a normal MRI rules out any cerebrovascular concerns",
+      "category": "Counseling",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Falsely reassuring patient without further workup",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 6,
+      "text": "Warn patient about stroke signs (e.g., FAST/BEFAST) and to call 911 immediately if they recur",
+      "category": "Counseling",
+      "score": 9,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 7,
+      "text": "Extend ambulatory cardiac monitoring to 14 days",
+      "category": "Diagnostic",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 8,
+      "text": "Order carotid artery duplex ultrasound",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 9,
+      "text": "Order catheter cerebral angiography",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary invasive diagnostics",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 10,
+      "text": "Order CTA or MRA of head and neck",
+      "category": "Diagnostic",
+      "score": 9,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 11,
+      "text": "Order electroencephalogram (EEG)",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 12,
+      "text": "Order erythrocyte sedimentation rate and C-reactive protein",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 13,
+      "text": "Order fasting lipid panel and hemoglobin A1c",
+      "category": "Diagnostic",
+      "score": 9,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 14,
+      "text": "Order hypercoagulability panel",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 15,
+      "text": "Order implantable loop recorder",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary invasive diagnostics",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 16,
+      "text": "Order repeat MRI brain with diffusion-weighted imaging",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 17,
+      "text": "Order sleep study",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 18,
+      "text": "Order transesophageal echocardiogram (TEE)",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary invasive diagnostics",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 19,
+      "text": "Order transthoracic echocardiogram (TTE)",
+      "category": "Diagnostic",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 20,
+      "text": "Stop all antiplatelet therapy",
+      "category": "Medication",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Stopping or disrupting antiplatelet therapy",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 21,
+      "text": "Continue DAPT for 21 days, then transition to Aspirin 81 mg monotherapy as planned",
+      "category": "Medication",
+      "score": 9,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 22,
+      "text": "Continue dual antiplatelet therapy with both Aspirin 81 mg and Clopidogrel 75 mg indefinitely",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Inappropriate antiplatelet or antithrombotic modification",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 23,
+      "text": "Stop Clopidogrel now and continue Aspirin 81 mg daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Stopping or disrupting antiplatelet therapy",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 24,
+      "text": "Increase Aspirin dose to 325 mg PO daily",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Inappropriate antiplatelet or antithrombotic modification",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 25,
+      "text": "Switch Clopidogrel 75 mg to Prasugrel 10 mg PO daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Inappropriate antiplatelet or antithrombotic modification",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 26,
+      "text": "Switch Clopidogrel 75 mg to Ticagrelor 90 mg PO twice daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Inappropriate antiplatelet or antithrombotic modification",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 27,
+      "text": "Start Warfarin 5 mg PO daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting anticoagulation without indication",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 28,
+      "text": "Start Apixaban 5 mg PO twice daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting anticoagulation without indication",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 29,
+      "text": "Start systemic thrombolysis with Alteplase",
+      "category": "Medication",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting harmful acute interventions",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 30,
+      "text": "Stop all antihypertensive medications for 2 weeks",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Disrupting antihypertensive therapy",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 31,
+      "text": "Titrate hypertension medications to blood pressure target 140/80 mmHg - 180/105 mmHg",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Targeting inadequate blood pressure control",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 32,
+      "text": "Titrate hypertension medications to blood pressure target 130/80 mmHg - 140/80 mmHg",
+      "category": "Medication",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 33,
+      "text": "Titrate hypertension medications to blood pressure <130/80 mmHg",
+      "category": "Medication",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 34,
+      "text": "Start empiric intravenous antibiotics for presumed infective endocarditis",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting harmful acute interventions",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 35,
+      "text": "Titrate diabetes medications to target HbA1c 7-8%",
+      "category": "Medication",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 36,
+      "text": "Titrate diabetes medications to target HbA1c <7%",
+      "category": "Medication",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Titrate diabetes medications",
+      "abstractionType": "alternative"
+    },
+    {
+      "id": 37,
+      "text": "Titrate lipid medications to target LDL < 70 mg/dL",
+      "category": "Medication",
+      "score": 9,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Titrate lipid medications",
+      "abstractionType": "alternative"
+    },
+    {
+      "id": 38,
+      "text": "Titrate lipid medications to target LDL < 40 mg/dL",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Targeting overly aggressive lipid lowering",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 39,
+      "text": "Start Niacin 500 mg PO daily",
+      "category": "Medication",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 40,
+      "text": "Elective refer for lumbar puncture",
+      "category": "Procedure",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary invasive procedures",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 41,
+      "text": "Elective referral for carotid endarterectomy",
+      "category": "Procedure",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary invasive procedures",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 42,
+      "text": "Elective referral for patent foramen ovale (PFO) closure",
+      "category": "Procedure",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary invasive procedures",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 43,
+      "text": "Urgent referral for mechanical thrombectomy",
+      "category": "Procedure",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting harmful acute interventions",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 44,
+      "text": "Starting anticoagulation concurrently with dual antiplatelet therapy",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Contraindications",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 45,
+      "text": "If ambulatory cardiac monitoring or echocardiogram reveals atrial fibrillation, then transition from antiplatelet therapy to therapeutic anticoagulation",
+      "category": "Medication",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 46,
+      "text": "If vessel imaging reveals significant carotid stenosis, then refer for vascular surgery or interventional evaluation for possible revascularization",
+      "category": "Procedure",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 47,
+      "text": "Counseling: advise smoking and alcohol cessation if applicable",
+      "category": "Counseling",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 48,
+      "text": "Urgent referral to Neurology",
+      "category": "Follow-up",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": null,
+      "abstractionType": null
+    }
+  ],
+  "abstractionGroups": [
+    {
+      "name": "Urgent specialist referral",
+      "pickCount": 1,
+      "pickType": "min"
+    },
+    {
+      "name": "Titrate diabetes medications",
+      "pickCount": 1,
+      "pickType": "exact"
+    },
+    {
+      "name": "Titrate lipid medications",
+      "pickCount": 1,
+      "pickType": "exact"
+    }
+  ],
+  "specialistConsult": {
+    "consults": [
+      {
+        "type": "specialist",
+        "specialty": "Neurology",
+        "urgency": "Urgent",
+        "harm": {
+          "type": "omission",
+          "severity": "Moderate"
+        },
+        "optionId": 48
+      }
+    ]
+  }
+}

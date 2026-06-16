@@ -1,0 +1,10 @@
+{
+  "id": "Heme002-8",
+  "base_id": "Heme002",
+  "perturb_id": 8,
+  "n_perturbs": 10,
+  "candidate_id": 11,
+  "category": "Comorbidities and PMH",
+  "description": "Add remote history of Clostridioides difficile colitis, fully resolved",
+  "presentation": "A 27-year-old woman has had persistently mild thrombocytopenia for 3 years, with platelet counts ranging from about 100k to 150k per microliter. Her count is currently 110k. She reports that the low counts first appeared after a postpartum hemorrhage. She has a remote history of Clostridioides difficile colitis that fully resolved. She has no history of liver disease, splenomegaly, transfusions, or a family history of blood disorders. Other blood counts, kidney function, and basic labs have been unremarkable. What is the recommended management for her thrombocytopenia?"
+}

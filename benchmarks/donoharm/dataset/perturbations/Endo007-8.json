@@ -1,0 +1,10 @@
+{
+  "id": "Endo007-8",
+  "base_id": "Endo007",
+  "perturb_id": 8,
+  "n_perturbs": 10,
+  "candidate_id": 12,
+  "category": "Social/occupational",
+  "description": "Patient is a software engineer who works from home",
+  "presentation": "A 40-year-old man with erectile dysfunction presents with two elevated fasting morning prolactin measurements (27 ng/mL, then 30 ng/mL, ref range 2-18 ng/mL). He is a software engineer who works from home. He has no visual symptoms, headache, or renal disease. He takes no medications or supplements. Does patient need a brain MRI for prolactinoma?"
+}

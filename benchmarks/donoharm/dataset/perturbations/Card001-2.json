@@ -1,0 +1,10 @@
+{
+  "id": "Card001-2",
+  "base_id": "Card001",
+  "perturb_id": 2,
+  "n_perturbs": 10,
+  "candidate_id": 3,
+  "category": "Sex",
+  "description": "Change patient sex from male to female",
+  "presentation": "A 50-year-old woman with a history of prediabetes and hyperlipidemia presents with exertional chest pain in the upper left chest and dyspnea associated with exercise. Her ASCVD risk score is 1.2% and her EKG shows 1st degree AV block. She had a negative stress test. Her family history is notable for early-onset CAD, as her father had an MI at age 55. What would be the next step in evaluating for cardiac causes for this patient's chest pain?"
+}

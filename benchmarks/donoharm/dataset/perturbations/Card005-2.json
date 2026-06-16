@@ -1,0 +1,10 @@
+{
+  "id": "Card005-2",
+  "base_id": "Card005",
+  "perturb_id": 2,
+  "n_perturbs": 10,
+  "candidate_id": 6,
+  "category": "Medication",
+  "description": "Add daily multivitamin as home medication",
+  "presentation": "A 34-year-old man presents for follow-up after an emergency department visit for palpitations, tachycardia, arm numbness, and a sensation of tightness in the neck, thought to be due to stress/anxiety as he has been getting poor sleep due to international travel and jet lag. He takes a daily multivitamin at home. He had a negative troponin, normal TSH, and normal A1c, but his LDL was 200. What interventions should be done for this patient?"
+}

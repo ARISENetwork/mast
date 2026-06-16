@@ -1,0 +1,10 @@
+{
+  "id": "ID003-0",
+  "base_id": "ID003",
+  "perturb_id": 0,
+  "n_perturbs": 10,
+  "candidate_id": 1,
+  "category": "Age",
+  "description": "Age 44 \u2192 50",
+  "presentation": "Patient is a 50-year old man who had a positive quantiferon as part of a routine medical examination given he is from an endemic country. He has no symptoms and no known TB exposures. His chest-xray was negative for infection during his clinic visit today. He would like to delay TB treatment if not absolutely necessary for at least a few months. Does this patient need immediate TB treatment and if so, with what regimen?"
+}

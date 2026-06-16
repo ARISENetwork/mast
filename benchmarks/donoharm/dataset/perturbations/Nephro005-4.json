@@ -1,0 +1,10 @@
+{
+  "id": "Nephro005-4",
+  "base_id": "Nephro005",
+  "perturb_id": 4,
+  "n_perturbs": 10,
+  "candidate_id": 6,
+  "category": "Lab values",
+  "description": "Add hemoglobin of 13.2 g/dL, within normal limits",
+  "presentation": "Patient is a 60 year old woman with a history of ovarian cancer with new renal infarct on surveillance CT. Labs show normal renal function. Hemoglobin is 13.2 g/dL, within normal limits. What further workup is needed?"
+}

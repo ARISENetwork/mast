@@ -1,0 +1,32 @@
+case_id: Pulm009
+spirit: Infection (TB/NTM/PJP) must be excluded before any steroid escalation. Induced sputum AFB and
+  respiratory cultures are immediate first steps; bronchoscopy is backup if sputum non-diagnostic.
+watchouts:
+- Conditional steroid plans (e.g., 'if infection excluded, then prednisone 60mg') should NOT be credited
+  - only immediate deferral counts. Mentioning future steroid dosing is not a current recommendation.
+- Tests ordered 'via BAL' or 'at bronchoscopy' are future/contingent, not immediate orders unless response
+  explicitly says 'order now' or lists them as standalone actions.
+- PJP prophylaxis mentioned only as conditional (e.g., 'if steroids started') does not count as a current
+  recommendation.
+options:
+  10:
+    matching: Full credit requires ordering COVID/viral PCR as immediate standalone test. Mentioning 'respiratory
+      viral PCR via BAL' is partial (contingent on bronchoscopy happening).
+  17:
+    matching: Full credit requires ordering sputum culture for bacteria/fungus/PJP as immediate induced
+      sputum or expectorated sample. Mentioning these tests only 'via BAL' is partial (contingent on bronchoscopy).
+  32:
+    gates:
+    - Any mention of prednisone 60mg (or 1mg/kg) as a future/conditional plan disqualifies this option
+      entirely. Only credit if response recommends starting 60mg NOW.
+    matching: This is a HARMFUL option. Conditional language like 'if infection excluded, start prednisone
+      60mg' = none (response correctly defers). Only credit if response says start 60mg immediately despite
+      infection risk.
+  41:
+    matching: Bronchoscopy as backup if induced sputum is non-diagnostic. The core action is sequencing
+      bronchoscopy after induced sputum in the diagnostic ladder. Match FULL when bronchoscopy is positioned
+      as the next step after non-diagnostic induced sputum, whether the if/then is explicit ('if sputum
+      negative, then bronch') or implicit through ordering ('start with induced sputum; bronchoscopy if
+      non-diagnostic', 'induced sputum first, then bronch as backup'). Match PARTIAL when bronchoscopy
+      is mentioned in the workup without sputum-first sequencing. Match NONE when bronchoscopy is not
+      mentioned.

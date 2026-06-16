@@ -1,0 +1,10 @@
+{
+  "id": "Neuro007-2",
+  "base_id": "Neuro007",
+  "perturb_id": 2,
+  "n_perturbs": 10,
+  "candidate_id": 5,
+  "category": "Lab values",
+  "description": "Add hemoglobin 13.2 g/dL and hematocrit 39%",
+  "presentation": "A 63-year-old man with hypertension and CAD underwent CABG two months ago and developed postoperative delirium. Today, despite orientation to person, place, and time and a normal neurologic exam in clinic, he continues to endorse intermittent confusion, delusions, and paranoid thinking. A noncontrast head CT on last month showed no acute infarct. Laboratory studies show a hemoglobin of 13.2 g/dL and hematocrit of 39%. The patient has no prior history of dementia or psychiatric illness. What is the next best step to evaluate this persistent cognitive deficit?"
+}

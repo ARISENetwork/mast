@@ -1,0 +1,10 @@
+{
+  "id": "Neuro007-1",
+  "base_id": "Neuro007",
+  "perturb_id": 1,
+  "n_perturbs": 10,
+  "candidate_id": 3,
+  "category": "Sex",
+  "description": "Change patient sex from male to female",
+  "presentation": "A 63-year-old woman with hypertension and CAD underwent CABG two months ago and developed postoperative delirium. Today, despite orientation to person, place, and time and a normal neurologic exam in clinic, she continues to endorse intermittent confusion, delusions, and paranoid thinking. A noncontrast head CT on last month showed no acute infarct. The patient has no prior history of dementia or psychiatric illness. What is the next best step to evaluate this persistent cognitive deficit?"
+}

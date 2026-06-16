@@ -1,0 +1,10 @@
+{
+  "id": "Derm006-4",
+  "base_id": "Derm006",
+  "perturb_id": 4,
+  "n_perturbs": 10,
+  "candidate_id": 8,
+  "category": "Comorbidities and PMH",
+  "description": "Add well-controlled hypertension on lisinopril",
+  "presentation": "A 57-year-old female with COPD (due to 10-pack year history of smoking) and well-controlled hypertension on lisinopril presents with many seborrheic keratoses that multiplied on her back over the last few months. Is this normal?"
+}

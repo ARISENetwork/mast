@@ -1,0 +1,10 @@
+{
+  "id": "Endo007-5",
+  "base_id": "Endo007",
+  "perturb_id": 5,
+  "n_perturbs": 10,
+  "candidate_id": 9,
+  "category": "Comorbidities and PMH",
+  "description": "Add remote history of inguinal hernia repair 8 years ago",
+  "presentation": "A 40-year-old man with erectile dysfunction presents with two elevated fasting morning prolactin measurements (27 ng/mL, then 30 ng/mL, ref range 2-18 ng/mL). He has no visual symptoms, headache, or renal disease. He has a history of inguinal hernia repair 8 years ago. He takes no medications or supplements. Does patient need a brain MRI for prolactinoma?"
+}

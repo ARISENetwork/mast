@@ -1,0 +1,10 @@
+{
+  "id": "Nephro003-3",
+  "base_id": "Nephro003",
+  "perturb_id": 3,
+  "n_perturbs": 10,
+  "candidate_id": 8,
+  "category": "Medication",
+  "description": "Patient takes loratadine 10 mg as needed for seasonal allergies",
+  "presentation": "26 year old man with a history of elevated Cr (1-1.2) wtih recent rise to 1.4 but normal cystatin C. Multiple UA without acute findings and had UACR and renal ultrasound which were normal 5 years ago. Takes loratadine 10 mg as needed for seasonal allergies. No other offending medications has a normal BP. What further workup is needed?"
+}

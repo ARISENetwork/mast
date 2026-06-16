@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mast.local/donoharm/judge/strategies.schema.json",
+  "title": "Strategy decomposition",
+  "description": "One record per (case_id, trial). Produced by group_into_strategies.py. Lives at {cache_root}/{model}/strategies.jsonl (group output) and strategies_post_review.jsonl (after review apply-overrides).",
+  "type": "object",
+  "required": ["id", "trial", "strategies"],
+  "properties": {
+    "id":    {"type": "string"},
+    "trial": {"type": "integer", "minimum": 0},
+    "model": {"type": "string"},
+    "strategies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["strategy_id", "summary", "sub_actions", "matched", "matched_options"],
+        "properties": {
+          "strategy_id": {"type": "integer"},
+          "summary":     {"type": "string", "description": "5-15 word LLM headline summarizing the connected component."},
+          "sub_actions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["id", "action", "category", "evidence", "match_raw", "match_resolved"],
+              "properties": {
+                "id":             {"type": "integer", "description": "Sub-action id; mirrors the match actions[].id of the underlying action."},
+                "action":         {"type": "string"},
+                "category":       {"type": "string"},
+                "evidence":       {"type": "string"},
+                "match_raw":      {"type": "string"},
+                "match_resolved": {"type": "array", "items": {"type": "integer"}}
+              }
+            }
+          },
+          "matched":         {"type": "boolean", "description": "True if any sub_action matched at least one rubric option."},
+          "matched_options": {"type": "array", "items": {"type": "integer"}}
+        }
+      }
+    },
+    "partial_option_ids": {"type": "array", "items": {"type": "integer"}, "description": "Singleton option IDs flagged partial by the match step; propagated for the adapter."},
+    "_overrides_applied":        {"type": "integer", "description": "(strategies_post_review only) Count of review overrides realized at the strategy / sub_action level."},
+    "_promotions_unattributed":  {"type": "integer", "description": "(strategies_post_review only) Count of promotions where the reviewer emitted action_id=null (explicit coverage-gap signal). The option flag flips downstream in the adapter for recall accounting; the strategies graph stays unchanged."}
+  }
+}

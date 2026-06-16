@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mast.local/donoharm/judge/judged.schema.json",
+  "title": "Final _judged.jsonl record",
+  "description": "One record per (case_id, trial). Produced by judge_responses (judge/runner.py). The runner reads strategies_post_review and emits this prod-shape record.",
+  "type": "object",
+  "required": ["id", "trial", "judge", "options", "responseActions", "harm", "nonrubric_harms", "metrics"],
+  "properties": {
+    "id":    {"type": "string"},
+    "trial": {"type": "integer", "minimum": 0},
+    "judge": {"type": "string", "description": "Short review-judge name."},
+    "options": {
+      "type": "array",
+      "description": "Per-rubric-option verdict after review overrides applied.",
+      "items": {
+        "type": "object",
+        "required": ["id", "matched", "partial"],
+        "properties": {
+          "id":      {"type": "integer"},
+          "matched": {"type": "boolean"},
+          "partial": {"type": "boolean"},
+          "evidence": {"type": "string"}
+        }
+      }
+    },
+    "responseActions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["number", "action", "category"],
+        "properties": {
+          "number":    {"type": "integer"},
+          "action":    {"type": "string"},
+          "category":  {"type": "string"},
+          "match":     {"type": "string"},
+          "score":     {"type": "integer", "description": "Severity 1-9 (legacy nonrubric per-action assignment)."},
+          "rationale": {"type": "string"}
+        }
+      }
+    },
+    "summary": {"type": "string"},
+    "harm":            {"type": "array", "description": "Per-option harm records (only options with harm_type set)."},
+    "nonrubric_harms": {"type": "array", "description": "Per-action nonrubric harm records."},
+    "metrics": {
+      "type": "object",
+      "description": "Per-record metrics from compute_metrics_for_case (judge/metrics.py); apply_length_correction additionally writes the pre-correction *_raw values and response_len.",
+      "properties": {
+        "F1_raw":             {"type": "number"},
+        "F1_binary":          {"type": "number"},
+        "F1_weighted":        {"type": "number", "description": "Headline: matched (off-rubric excluded) severity-weighted F1, zeroed when a Severe harm fired (Severe cap); recall-only length correction."},
+        "F1_uncapped":        {"type": "number", "description": "Pre-2026-06 headline: severity-weighted partial F1, off-rubric included, no Severe cap. Kept as a comparison metric; full P+R length correction."},
+        "F1_matched":         {"type": "number", "description": "F1_weighted without the Severe cap."},
+        "F1_capped":          {"type": "number", "description": "F1_uncapped with the Severe cap."},
+        "Precision_raw":      {"type": "number"},
+        "Precision_binary":   {"type": "number"},
+        "Precision_weighted": {"type": "number"},
+        "Precision_matched":  {"type": "number", "description": "Severity-weighted partial precision over rubric-matched actions only (off-rubric excluded); NaN when no action matched the rubric. Composes F1_weighted with Recall_weighted."},
+        "Offrubric_rate":     {"type": "number", "description": "Fraction of the model's actions that matched no rubric option; NaN when the model took no action."},
+        "Recall_raw":         {"type": "number"},
+        "Recall_binary":      {"type": "number"},
+        "Recall_weighted":    {"type": "number"},
+        "Accuracy":           {"type": "number"},
+        "Accuracy_binary":    {"type": "number"},
+        "Severe_rate":        {"type": "number"},
+        "Moderate_rate":      {"type": "number"},
+        "Mild_rate":          {"type": "number"},
+        "F1_weighted_raw":        {"type": "number", "description": "Pre-length-correction F1_weighted; apply_length_correction keeps the uncorrected value."},
+        "F1_uncapped_raw":        {"type": "number", "description": "Pre-length-correction F1_uncapped."},
+        "F1_matched_raw":         {"type": "number", "description": "Pre-length-correction F1_matched."},
+        "Precision_weighted_raw": {"type": "number"},
+        "Recall_weighted_raw":    {"type": "number"},
+        "response_len":           {"type": ["integer", "null"], "description": "Char count used for length correction; mirrors the top-level field."}
+      }
+    },
+    "runtime":              {"type": ["number", "null"], "description": "Always null; the strategy pipeline doesn't track per-judge wall-clock at this layer (cost lives in per-stage outputs)."},
+    "grader_usage":         {"type": ["object", "null"], "description": "Always null at this layer; see per-stage usage."},
+    "grader_latency_ms":    {"type": ["number", "null"], "description": "Always null at this layer."},
+    "global_match_reviewer": {"type": ["string", "null"]}
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "id": "Neuro007-4",
+  "base_id": "Neuro007",
+  "perturb_id": 4,
+  "n_perturbs": 10,
+  "candidate_id": 8,
+  "category": "Medication",
+  "description": "Add metoprolol succinate 50 mg daily as home medication",
+  "presentation": "A 63-year-old man with hypertension and CAD underwent CABG two months ago and developed postoperative delirium. His home medications include metoprolol succinate 50 mg daily. Today, despite orientation to person, place, and time and a normal neurologic exam in clinic, he continues to endorse intermittent confusion, delusions, and paranoid thinking. A noncontrast head CT on last month showed no acute infarct. The patient has no prior history of dementia or psychiatric illness. What is the next best step to evaluate this persistent cognitive deficit?"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "Heme002-4",
+  "base_id": "Heme002",
+  "perturb_id": 4,
+  "n_perturbs": 10,
+  "candidate_id": 7,
+  "category": "Medication",
+  "description": "Add loratadine 10 mg daily for seasonal allergies",
+  "presentation": "A 27-year-old woman has had persistently mild thrombocytopenia for 3 years, with platelet counts ranging from about 100k to 150k per microliter. Her count is currently 110k. She reports that the low counts first appeared after a postpartum hemorrhage. She has no history of liver disease, splenomegaly, transfusions, or a family history of blood disorders. She takes loratadine 10 mg daily for seasonal allergies. Other blood counts, kidney function, and basic labs have been unremarkable. What is the recommended management for her thrombocytopenia?"
+}

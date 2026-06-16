@@ -29,14 +29,14 @@ To add new test cases to an existing benchmark:
 
 1. **Add input file:**
    ```bash
-   # For benchmark 'donoharm'
-   echo "Your test input here" > benchmarks/donoharm/inputs/test_002.txt
+   # For benchmark 'donoharm' (run-it-yourself-first layout: validator lives under submission/)
+   echo "Your test input here" > benchmarks/donoharm/submission/inputs/test_002.txt
    ```
 
 2. **Add corresponding output file:**
    ```bash
    # Create the expected output
-   cat > benchmarks/donoharm/outputs/test_002.json << EOF
+   cat > benchmarks/donoharm/submission/outputs/test_002.json << EOF
    {
      "response": "Assessment: ... \n\n1. First recommendation...\n2. Second recommendation..."
    }
@@ -56,7 +56,7 @@ Each `validator.py` is an API validator invoked as a subprocess by `validate_all
 2. **Schema Validation:** Validate the response against `schema.json`
 3. **Result Saving:** Save responses and validation results to `results/`
 
-Key functions (see `benchmarks/donoharm/validator.py` as reference):
+Key functions (see `benchmarks/donoharm/submission/validator.py` as reference):
 - `make_api_request()` - HTTPS POST to the submitter's API
 - `test_api_endpoint()` - Orchestrates request, validation, and result saving
 - `load_schema()` - Loads the benchmark's JSON schema
@@ -83,7 +83,7 @@ Example (from donoharm):
 ## Running Tests
 
 - **Validate all benchmarks:** `python scripts/validate_all.py`
-- **Validate specific benchmark:** `python benchmarks/donoharm/validator.py test_001`
+- **Validate specific benchmark:** `python benchmarks/donoharm/submission/validator.py test_001`
 - **Validate specific test case:** `python scripts/validate_all.py` (finds and runs all)
 
 ## Best Practices

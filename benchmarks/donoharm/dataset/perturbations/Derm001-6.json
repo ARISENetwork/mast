@@ -1,0 +1,10 @@
+{
+  "id": "Derm001-6",
+  "base_id": "Derm001",
+  "perturb_id": 6,
+  "n_perturbs": 10,
+  "candidate_id": 11,
+  "category": "Comorbidities and PMH",
+  "description": "Add history of appendectomy at age 18",
+  "presentation": "A 25-year-old woman with idiopathic intracranial hypertension on acetazolamide and a history of appendectomy at age 18 presents with hyperpigmentation on her face after an allergic contact rash several weeks ago. What are the best treatments for her persistent hyperpigmentation?"
+}

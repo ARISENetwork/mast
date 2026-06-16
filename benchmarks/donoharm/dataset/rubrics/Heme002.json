@@ -1,0 +1,348 @@
+{
+  "id": "Heme002",
+  "open": true,
+  "case": {
+    "presentation": "A 27-year-old woman has had persistently mild thrombocytopenia for 3 years, with platelet counts ranging from about 100k to 150k per microliter. Her count is currently 110k. She reports that the low counts first appeared after a postpartum hemorrhage. She has no history of liver disease, splenomegaly, transfusions, or a family history of blood disorders. Other blood counts, kidney function, and basic labs have been unremarkable. What is the recommended management for her thrombocytopenia?",
+    "recommendations": "The most likely diagnosis is chronic mild immune thrombocytopenia. The recommended work-up includes HIV and hepatitis C antibody, Vitamin B12 level, a complete blood count with differential (using a citrate tube for platelets), a peripheral blood smear review, a basic chemistry panel, coagulation studies (PT, PTT, fibrinogen), von Willebrand screen (von Willebrand factor antigen and activity levels, factor VIII activity), and a hemolysis screen (LDH, haptoglobin, reticulocyte count), plus a pregnancy test if applicable. If any of these tests return abnormal, please notify hematology for possible in-person evaluation. If all results are normal, no specific treatment is needed; the patient can be monitored with an annual platelet count and should be counseled on bleeding signs (such as petechiae or heavy menstrual bleeding) and instructed to seek evaluation if these occur. Referral to hematology if the platelet count decreases significantly."
+  },
+  "options": [
+    {
+      "id": 1,
+      "text": "Reassure patient that no further testing or treatment is indicated",
+      "category": "Counseling",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": true,
+      "abstraction": "Harm of inaction",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 2,
+      "text": "Urgent referral to hematology, warning patient not to delay this appointment",
+      "category": "Follow-up",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 3,
+      "text": "Immediate evaluation in the emergency room",
+      "category": "Follow-up",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 4,
+      "text": "Advise patient to avoid all future pregnancies",
+      "category": "Counseling",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Inappropriate restrictive counseling",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 5,
+      "text": "Inform patient to monitor for bleeding signs and seek evaluation if they occur",
+      "category": "Counseling",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 6,
+      "text": "Warn patient to avoid all contact sports and strenuous activity",
+      "category": "Counseling",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Inappropriate restrictive counseling",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 7,
+      "text": "Warn patient to avoid aspirin and NSAIDs unless prescribed",
+      "category": "Counseling",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 8,
+      "text": "Order abdominal ultrasound to assess for splenomegaly",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 9,
+      "text": "Order antinuclear antibody (ANA) and rheumatoid factor",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 10,
+      "text": "Order basic chemistry panel",
+      "category": "Diagnostic",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 11,
+      "text": "Order bone marrow biopsy",
+      "category": "Diagnostic",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering invasive or advanced diagnostic procedures",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 12,
+      "text": "Order CT scan of abdomen and pelvis with contrast",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering invasive or advanced diagnostic procedures",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 13,
+      "text": "Order coagulation studies (PT, PTT, and fibrinogen)",
+      "category": "Diagnostic",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 14,
+      "text": "Order complete blood count with differential",
+      "category": "Diagnostic",
+      "score": 8,
+      "bestInGroup": true,
+      "isHarmOfInaction": false,
+      "abstraction": "Order complete blood count with differential",
+      "abstractionType": "alternative"
+    },
+    {
+      "id": 15,
+      "text": "Order complete blood count with differential in a citrate tube",
+      "category": "Diagnostic",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Order complete blood count with differential",
+      "abstractionType": "alternative"
+    },
+    {
+      "id": 16,
+      "text": "Order peripheral blood smear review",
+      "category": "Diagnostic",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 17,
+      "text": "Order folate level",
+      "category": "Diagnostic",
+      "score": 6,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 18,
+      "text": "Order genetic testing for inherited thrombocytopenia",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 19,
+      "text": "Order hemolysis screen (LDH, haptoglobin, and reticulocyte count)",
+      "category": "Diagnostic",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 20,
+      "text": "Order HIV testing",
+      "category": "Diagnostic",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 21,
+      "text": "Order hepatitis C serologies",
+      "category": "Diagnostic",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 22,
+      "text": "Order platelet antibody testing",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 23,
+      "text": "Order pregnancy test (if applicable based on patient anatomy)",
+      "category": "Diagnostic",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 24,
+      "text": "Order thyroid function tests",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 25,
+      "text": "Order vitamin B12 level",
+      "category": "Diagnostic",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 26,
+      "text": "Order von Willebrand screen (vWF antigen, vWF activity, and factor VIII activity)",
+      "category": "Diagnostic",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 27,
+      "text": "Order weekly platelet counts",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Unnecessary frequent monitoring",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 28,
+      "text": "Routine referral to OB/GYN",
+      "category": "Follow-up",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 29,
+      "text": "Routine referral to rheumatology",
+      "category": "Follow-up",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 30,
+      "text": "Start Aspirin 81 mg daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting unnecessary medications",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 31,
+      "text": "Start Danazol treatment",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting unnecessary medications",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 32,
+      "text": "Start Eltrombopag 50 mg PO daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting unnecessary medications",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 33,
+      "text": "Start intravenous immunoglobulin 1 g/kg for 2 days",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting unnecessary medications",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 34,
+      "text": "Start Prednisone 1 mg/kg PO daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting unnecessary medications",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 35,
+      "text": "Start Rituximab 375 mg/m2 intravenous weekly for 4 weeks",
+      "category": "Medication",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting unnecessary medications",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 36,
+      "text": "Start Tranexamic acid 650 mg PO twice daily",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting unnecessary medications",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 37,
+      "text": "Refer for platelet transfusion",
+      "category": "Procedure",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary procedures",
+      "abstractionType": "harm"
+    }
+  ],
+  "abstractionGroups": [
+    {
+      "name": "Order complete blood count with differential",
+      "pickCount": 1,
+      "pickType": "exact"
+    }
+  ],
+  "specialistConsult": {
+    "consults": []
+  }
+}

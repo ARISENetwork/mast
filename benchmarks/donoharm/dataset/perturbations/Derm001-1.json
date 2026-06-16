@@ -1,0 +1,10 @@
+{
+  "id": "Derm001-1",
+  "base_id": "Derm001",
+  "perturb_id": 1,
+  "n_perturbs": 10,
+  "candidate_id": 3,
+  "category": "Sex",
+  "description": "Change patient sex from female to male",
+  "presentation": "A 25-year-old man with idiopathic intracranial hypertension on acetazolamide presents with hyperpigmentation on his face after an allergic contact rash several weeks ago. What are the best treatments for his persistent hyperpigmentation?"
+}

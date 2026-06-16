@@ -1,0 +1,10 @@
+{
+  "id": "Derm001-2",
+  "base_id": "Derm001",
+  "perturb_id": 2,
+  "n_perturbs": 10,
+  "candidate_id": 4,
+  "category": "Lab values",
+  "description": "Add hemoglobin 13.2 g/dL (within normal range)",
+  "presentation": "A 25-year-old woman with idiopathic intracranial hypertension on acetazolamide presents with hyperpigmentation on her face after an allergic contact rash several weeks ago. Laboratory studies show a hemoglobin of 13.2 g/dL. What are the best treatments for her persistent hyperpigmentation?"
+}

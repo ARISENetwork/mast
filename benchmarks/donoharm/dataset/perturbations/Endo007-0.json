@@ -1,0 +1,10 @@
+{
+  "id": "Endo007-0",
+  "base_id": "Endo007",
+  "perturb_id": 0,
+  "n_perturbs": 10,
+  "candidate_id": 1,
+  "category": "Age",
+  "description": "Age 40 \u2192 45",
+  "presentation": "A 45-year-old man with erectile dysfunction presents with two elevated fasting morning prolactin measurements (27 ng/mL, then 30 ng/mL, ref range 2-18 ng/mL). He has no visual symptoms, headache, or renal disease. He takes no medications or supplements. Does patient need a brain MRI for prolactinoma?"
+}

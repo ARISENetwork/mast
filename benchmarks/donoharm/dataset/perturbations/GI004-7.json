@@ -1,0 +1,10 @@
+{
+  "id": "GI004-7",
+  "base_id": "GI004",
+  "perturb_id": 7,
+  "n_perturbs": 10,
+  "candidate_id": 10,
+  "category": "Comorbidities and PMH",
+  "description": "Add history of bilateral cataract surgery 5 years ago",
+  "presentation": "A 70-year-old man with hypertension, diabetes, left ventricular dysfunction with LBBB, prior left colectomy for diverticulitis, GERD, PUD, a history of GI bleeding, and bilateral cataract surgery 5 years ago presents after a recent admission to an outside hospital for recurrent hematochezia and change in stool caliber. CT angiography was normal, his vital signs and hemoglobin remained stable, so he was discharged home without further work-up. What further follow-up, if any, is recommended?"
+}

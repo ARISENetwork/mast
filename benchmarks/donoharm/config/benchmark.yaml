@@ -1,0 +1,6 @@
+benchmark:
+  name: "donoharm"
+  trials: 1
+  max_tokens: 8192
+donoharm:
+  prompt: default

@@ -1,0 +1,10 @@
+{
+  "id": "Endo009-4",
+  "base_id": "Endo009",
+  "perturb_id": 4,
+  "n_perturbs": 10,
+  "candidate_id": 10,
+  "category": "Comorbidities and PMH",
+  "description": "Add past medical history of carpal tunnel release surgery 8 years ago",
+  "presentation": "A 66-year-old woman with type 2 diabetes on metformin 1000 mg BID and oral semaglutide (Rybelsus 3 mg) presents with persistent hyperglycemia and unintended weight loss. She has a past medical history of carpal tunnel release surgery 8 years ago. She discontinued pioglitazone and sitagliptin due to osteoporosis. Despite no GI side effects on Rybelsus, she has lost 5 lbs (now 104 lbs) since starting it one month ago. She reports fasting and post-prandial glucose readings as follows:\n\nFasting glucose >200 mg/dL\nPost-prandial glucose 150\u2013200 mg/dL\n\nHer A1c and weight over the past year:\n\n12 months ago: A1c 7.4%, 109 lbs\n6 months ago: A1c 7.5%, 108 lbs\n1 month ago: A1c 8.1%, 109 lbs\nToday: 104 lbs\n\nBMI is 19.7 today Patient is willing to switch to an injectable GLP-1 receptor agonist to improve blood sugar control while minimizing further weight loss. Would dulaglutide would be appropriate?"
+}

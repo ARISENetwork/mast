@@ -1,0 +1,10 @@
+{
+  "id": "Nephro005-2",
+  "base_id": "Nephro005",
+  "perturb_id": 2,
+  "n_perturbs": 10,
+  "candidate_id": 4,
+  "category": "Lab values",
+  "description": "Creatinine specified as 0.9 mg/dL instead of just \"normal renal function\"",
+  "presentation": "Patient is a 60 year old woman with a history of ovarian cancer with new renal infarct on surveillance CT. Labs show a creatinine of 0.9 mg/dL. What further workup is needed?"
+}

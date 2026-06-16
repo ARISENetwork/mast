@@ -1,0 +1,10 @@
+{
+  "id": "All001-7",
+  "base_id": "All001",
+  "perturb_id": 7,
+  "n_perturbs": 10,
+  "candidate_id": 16,
+  "category": "Physical exam",
+  "description": "Add scattered lentigines on sun-exposed skin",
+  "presentation": "A 68-year-old woman with stage IV BRAF-positive metastatic melanoma on dabrafenib/trametinib and anti-seizure therapy presents to clinic after cycle 3 nivolumab infusion 5 days ago, where she developed a grade 3 infusion reaction at the end of her infusion. On examination, scattered lentigines are noted on sun-exposed skin. She experienced nausea/vomiting, cyanotic hands, diffuse rash, bradycardia and tachycardia, fluctuating blood pressures, rigors, and diarrhea. All symptoms self-resolved. Her next nivolumab dose is scheduled in less than 2 weeks. Patient and family would like to proceed with treatment if safe, as there are no other treatment alternatives. Can the patient continue immunotherapy?"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "Heme002-2",
+  "base_id": "Heme002",
+  "perturb_id": 2,
+  "n_perturbs": 10,
+  "candidate_id": 3,
+  "category": "Sex",
+  "description": "Change patient sex to male; replace postpartum hemorrhage with significant hemorrhage after surgery",
+  "presentation": "A 27-year-old man has had persistently mild thrombocytopenia for 3 years, with platelet counts ranging from about 100k to 150k per microliter. His count is currently 110k. He reports that the low counts first appeared after a significant hemorrhage following surgery. He has no history of liver disease, splenomegaly, transfusions, or a family history of blood disorders. Other blood counts, kidney function, and basic labs have been unremarkable. What is the recommended management for his thrombocytopenia?"
+}

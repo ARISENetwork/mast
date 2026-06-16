@@ -1,0 +1,10 @@
+{
+  "id": "ID008-4",
+  "base_id": "ID008",
+  "perturb_id": 4,
+  "n_perturbs": 10,
+  "candidate_id": 7,
+  "category": "Medication",
+  "description": "Add nightly melatonin 3 mg for sleep maintenance",
+  "presentation": "Patient is a 55 year old woman with a history of fecal transplant for Clostridium difficile infection. The patient developed an atypical pneumonia with diarrhea and was started on azithromycin after which she had loose and bloody stools. The bloody stools have resolved but she has persistent loose stool. She has no watery stool, abdominal pain, fevers, chills, or other GI symptoms. She also takes nightly melatonin 3 mg for sleep maintenance. Do we need to order C. Diff testing for this patient?"
+}

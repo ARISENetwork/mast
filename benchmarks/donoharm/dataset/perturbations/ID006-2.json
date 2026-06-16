@@ -1,0 +1,10 @@
+{
+  "id": "ID006-2",
+  "base_id": "ID006",
+  "perturb_id": 2,
+  "n_perturbs": 10,
+  "candidate_id": 4,
+  "category": "Comorbidities and PMH",
+  "description": "Add well-controlled hypothyroidism on levothyroxine",
+  "presentation": "Patient is a 35-year old woman with well-controlled hypothyroidism on levothyroxine who had unprotected vaginal intercourse with a male partner who has recently been diagnosed with HIV. The patient is requesting PEP despite being outside of the 72-hour window. What testing should be ordered for this patient and is PEP indicated?"
+}

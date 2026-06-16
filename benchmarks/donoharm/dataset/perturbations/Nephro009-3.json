@@ -1,0 +1,10 @@
+{
+  "id": "Nephro009-3",
+  "base_id": "Nephro009",
+  "perturb_id": 3,
+  "n_perturbs": 10,
+  "candidate_id": 5,
+  "category": "Lab values",
+  "description": "Serum sodium 140 mEq/L \u2192 138 mEq/L, still normal",
+  "presentation": "Patient is a 28 year old man who has urinary frequency despite treatment for a presumed UTI. Patient has nocturia and workup for polyuria was done. CMP and A1c were normal, with serum sodium of 138 mEq/L, but urine sodium and urine osm were both low. What further workup should be done to work up diabetes insipidus or other etiologies?"
+}

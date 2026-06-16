@@ -1,0 +1,10 @@
+{
+  "id": "Pulm001-9",
+  "base_id": "Pulm001",
+  "perturb_id": 9,
+  "n_perturbs": 10,
+  "candidate_id": 20,
+  "category": "Family history",
+  "description": "Add mother with age-related macular degeneration diagnosed at 75",
+  "presentation": "A 71-year-old man who is a former smoker with type 2 diabetes and chronic eosinophilia underwent a noncontrast CT chest for lung cancer screening. His mother was diagnosed with age-related macular degeneration at age 75. The CT revealed new tree-in-bud micronodularity in the right lower lobe, along with bronchial wall thickening and mucus plugging, not present on imaging from 5 years prior. He remembers a self-limited cough several weeks ago, has no current respiratory symptoms, and has no other systemic complaints or history of reflux. Is additional follow-up needed?"
+}

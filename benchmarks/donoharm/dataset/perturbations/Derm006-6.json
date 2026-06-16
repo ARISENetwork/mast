@@ -1,0 +1,10 @@
+{
+  "id": "Derm006-6",
+  "base_id": "Derm006",
+  "perturb_id": 6,
+  "n_perturbs": 10,
+  "candidate_id": 10,
+  "category": "Comorbidities and PMH",
+  "description": "Add mild osteoarthritis of bilateral knees",
+  "presentation": "A 57-year-old female with COPD (due to 10-pack year history of smoking) presents with many seborrheic keratoses that multiplied on her back over the last few months. She also has mild osteoarthritis of bilateral knees. Is this normal?"
+}

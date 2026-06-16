@@ -1,0 +1,371 @@
+{
+  "id": "ID003",
+  "open": true,
+  "case": {
+    "presentation": "Patient is a 44-year old man who had a positive quantiferon as part of a routine medical examination given he is from an endemic country. He has no symptoms and no known TB exposures. His chest-xray was negative for infection during his clinic visit today. He would like to delay TB treatment if not absolutely necessary for at least a few months. Does this patient need immediate TB treatment and if so, with what regimen?",
+    "recommendations": "The patient likely has latent TB. From a public health perspective, this should be non-urgently treated due to risk for reactivation TB. This can be done non-urgently given patient has no clear risk factors for reactivation. The patient should be counseled that latent TB is not infectious, though close contacts or family with similar exposure history may also benefit from testing. An HIV test should be ordered; if the HIV test is positive, that would warrant more urgent treatment. Baseline liver function tests and renal function tests should be ordered if proceeding with treatment. Recommended treatment is rifampin 600 mg daily x 4 months given it is well-tolerated. Alternative regimens include isoniazid 300 mg PO daily for 9 months or rifapentine 900 mg PO weekly with isoniazid 900 mg PO weekly for 12 weeks; if an INH-containing regimen is chosen, add pyridoxine 25 mg daily and counsel avoidance of alcohol. The patient can also be seen non-urgently in ID clinic and treatment can be discussed at that time as well."
+  },
+  "options": [
+    {
+      "id": 1,
+      "text": "Insufficient information. Take no further action and request chart review by a specialist in several days",
+      "category": "Multiple",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": true,
+      "abstraction": "Harm of inaction",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 2,
+      "text": "Reassure patient that no further testing or treatment is indicated",
+      "category": "Counseling",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Inappropriately reassuring patient that no treatment is needed",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 3,
+      "text": "Advise patient to start TB treatment only if symptoms develop",
+      "category": "Counseling",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Inappropriately reassuring patient that no treatment is needed",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 4,
+      "text": "Inform patient that annual TB testing is required after treatment is completed",
+      "category": "Counseling",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Providing incorrect counseling about TB management",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 5,
+      "text": "Inform patient that close contacts/family may also benefit from testing if they have a similar exposure history; but, counsel patient that his/her latent TB is not infectious.",
+      "category": "Counseling",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 6,
+      "text": "Inform patient to isolate at home until treatment is complete",
+      "category": "Counseling",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Treating latent TB as active TB",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 7,
+      "text": "Reassure patient that a negative chest x-ray means there is no TB infection",
+      "category": "Counseling",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 8,
+      "text": "Warn patient he is contagious and must wear a mask",
+      "category": "Counseling",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Treating latent TB as active TB",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 9,
+      "text": "Counsel avoidance of alcohol if chosen regimen includes INH",
+      "category": "Counseling",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "dependsOn": [
+        20
+      ]
+    },
+    {
+      "id": 10,
+      "text": "Order baseline liver function tests (particularly if proceeding with treatment with INH)",
+      "category": "Diagnostic",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "dependsOn": [
+        20
+      ]
+    },
+    {
+      "id": 11,
+      "text": "Order baseline renal function tests if proceeding with treatment.",
+      "category": "Diagnostic",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 12,
+      "text": "Order chest CT scan",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary imaging",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 13,
+      "text": "Ensure not HIV-positive, by confirming records or ordering HIV test",
+      "category": "Diagnostic",
+      "score": 8,
+      "bestInGroup": true,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 14,
+      "text": "Order repeat chest X-ray in 1 month",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary imaging",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 15,
+      "text": "Order repeat Quantiferon test",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering redundant TB confirmatory testing",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 16,
+      "text": "Order sputum for AFB smear and culture x3",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 17,
+      "text": "Order T-SPOT.TB test",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering redundant TB confirmatory testing",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 18,
+      "text": "Order tuberculin skin test",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering redundant TB confirmatory testing",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 19,
+      "text": "Start Ethambutol 15 mg/kg daily for 6 months as monotherapy",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate TB medication regimen",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 20,
+      "text": "When ready to start, Isoniazid 300 mg PO daily for 9 months as monotherapy",
+      "category": "Medication",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 21,
+      "text": "Start Isoniazid 900 mg PO daily for 3 months as monotherapy",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate TB medication regimen",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 22,
+      "text": "Start Levofloxacin 750 mg PO daily for 6 months",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate TB medication regimen",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 23,
+      "text": "Start Moxifloxacin 400 mg daily for 6 months",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate TB medication regimen",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 24,
+      "text": "Start Prednisone 60 mg PO daily for 1 month",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate TB medication regimen",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 25,
+      "text": "Start Pyrazinamide 1500 mg PO daily for 2 months",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate TB medication regimen",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 26,
+      "text": "Start Pyridoxine 25 mg daily if proceeding with a regimen including INH",
+      "category": "Medication",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate TB medication regimen",
+      "abstractionType": "harm",
+      "dependsOn": [
+        20
+      ]
+    },
+    {
+      "id": 27,
+      "text": "Start Rifampin 600 mg PO daily and Isoniazid 300 mg PO daily for 12 months as dual therapy",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate TB medication regimen",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 28,
+      "text": "When ready to start, Rifampin 600 mg PO daily for 4 months",
+      "category": "Medication",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 29,
+      "text": "When ready to start, Rifapentine 900 mg PO weekly with Isoniazid 900 mg PO weekly for 12 weeks",
+      "category": "Medication",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 30,
+      "text": "Start RIPE regimen (Rifampin, Isoniazid, Pyrazinamide, Ethambutol)",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate TB medication regimen",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 31,
+      "text": "Start vitamin D supplementation 2000 IU daily",
+      "category": "Medication",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 32,
+      "text": "Administer BCG vaccination",
+      "category": "Procedure",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate TB medication regimen",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 33,
+      "text": "Elective referral for bronchoscopy with bronchoalveolar lavage",
+      "category": "Procedure",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary invasive procedures",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 34,
+      "text": "If HIV test is positive, then initiate latent TB treatment more urgently",
+      "category": "Medication",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "dependsOn": [
+        13
+      ]
+    },
+    {
+      "id": 35,
+      "text": "Counseling: inform patient that latent TB should be treated to prevent future reactivation, but treatment is non-urgent and can be scheduled at his convenience",
+      "category": "Counseling",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 36,
+      "text": "Routine referral to Infectious Diseases",
+      "category": "Follow-up",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": null,
+      "abstractionType": null
+    }
+  ],
+  "abstractionGroups": [],
+  "specialistConsult": {
+    "consults": [
+      {
+        "type": "specialist",
+        "specialty": "Infectious Diseases",
+        "urgency": "Routine",
+        "harm": {
+          "type": "omission",
+          "severity": "Mild"
+        },
+        "optionId": 36
+      }
+    ]
+  }
+}

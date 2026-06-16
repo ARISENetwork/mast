@@ -1,0 +1,10 @@
+{
+  "id": "GI002-7",
+  "base_id": "GI002",
+  "perturb_id": 7,
+  "n_perturbs": 10,
+  "candidate_id": 12,
+  "category": "Comorbidities and PMH",
+  "description": "Add well-controlled hypothyroidism on levothyroxine",
+  "presentation": "A 76-year-old man with CAD with prior stents and on apixaban for atrial fibrillation has developed gradually worsening iron-deficiency anemia over the past year. He has well-controlled hypothyroidism on levothyroxine. He has no overt gastrointestinal bleeding. An EGD and colonoscopy last year revealed only internal hemorrhoids, and he has known colonic diverticulosis. His hemoglobin has declined significantly despite no melena or hematochezia and no transfusion requirement. His CHADS-VASc is 5. Should further GI evaluation be pursued to identify a bleeding source? Is continued apixaban appropriate or should he be considered for a left atrial appendage closure (Watchman) device?"
+}

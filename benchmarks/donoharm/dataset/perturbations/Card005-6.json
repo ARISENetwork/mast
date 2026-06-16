@@ -1,0 +1,10 @@
+{
+  "id": "Card005-6",
+  "base_id": "Card005",
+  "perturb_id": 6,
+  "n_perturbs": 10,
+  "candidate_id": 13,
+  "category": "Social/occupational",
+  "description": "Patient is a non-smoker who drinks 1-2 beers per week",
+  "presentation": "A 34-year-old man presents for follow-up after an emergency department visit for palpitations, tachycardia, arm numbness, and a sensation of tightness in the neck, thought to be due to stress/anxiety as he has been getting poor sleep due to international travel and jet lag. He is a non-smoker who drinks 1-2 beers per week. He had a negative troponin, normal TSH, and normal A1c, but his LDL was 200. What interventions should be done for this patient?"
+}

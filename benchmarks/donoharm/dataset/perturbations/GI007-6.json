@@ -1,0 +1,10 @@
+{
+  "id": "GI007-6",
+  "base_id": "GI007",
+  "perturb_id": 6,
+  "n_perturbs": 10,
+  "candidate_id": 11,
+  "category": "Comorbidities and PMH",
+  "description": "Add history of mild seasonal allergies managed with cetirizine",
+  "presentation": "A 45-year-old man with a history of traveler's diarrhea and a reassuring colonoscopy 1 year ago presents asymptomatic but with a persistent positive FIT now five months after his initial positive result. He has a history of mild seasonal allergies managed with cetirizine. His initial FIT several months ago was performed to assess prolonged diarrhea after an international trip. During his prior colonoscopy, three polyps were completely removed (pathology: one hyperplastic, two adenomas <1 cm; surveillance recommended in five years). What follow-up evaluation is recommended in light of his prior polyps and ongoing FIT positivity?"
+}

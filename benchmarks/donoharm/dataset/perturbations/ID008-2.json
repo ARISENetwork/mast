@@ -1,0 +1,10 @@
+{
+  "id": "ID008-2",
+  "base_id": "ID008",
+  "perturb_id": 2,
+  "n_perturbs": 10,
+  "candidate_id": 3,
+  "category": "Sex",
+  "description": "Change patient sex from female to male",
+  "presentation": "Patient is a 55 year old man with a history of fecal transplant for Clostridium difficile infection. The patient developed an atypical pneumonia with diarrhea and was started on azithromycin after which he had loose and bloody stools. The bloody stools have resolved but he has persistent loose stool. He has no watery stool, abdominal pain, fevers, chills, or other GI symptoms. Do we need to order C. Diff testing for this patient?"
+}

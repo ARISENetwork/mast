@@ -1,0 +1,10 @@
+{
+  "id": "Endo002-6",
+  "base_id": "Endo002",
+  "perturb_id": 6,
+  "n_perturbs": 10,
+  "candidate_id": 10,
+  "category": "Comorbidities and PMH",
+  "description": "Add well-controlled hypothyroidism on levothyroxine",
+  "presentation": "A 78-year-old woman with history of hyperlipidemia, androgenetic alopecia, TIA, osteopenia (on alendronate for the past year), and well-controlled hypothyroidism presents because her dentist plans a tooth extraction with bone graft and implant. She is at high fracture risk due to her advanced age and weight, but no other FRAX risk factors. She is concerned about medication-related osteonecrosis of the jaw (MRONJ). Her only other medications are aspirin, atorvastatin, and levothyroxine. When should alendronate be held and resumed with respect to the procedure?"
+}

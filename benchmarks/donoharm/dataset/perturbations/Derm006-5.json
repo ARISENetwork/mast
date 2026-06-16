@@ -1,0 +1,10 @@
+{
+  "id": "Derm006-5",
+  "base_id": "Derm006",
+  "perturb_id": 5,
+  "n_perturbs": 10,
+  "candidate_id": 9,
+  "category": "Comorbidities and PMH",
+  "description": "Add history of cholecystectomy 8 years ago",
+  "presentation": "A 57-year-old female with COPD (due to 10-pack year history of smoking) presents with many seborrheic keratoses that multiplied on her back over the last few months. She had a cholecystectomy 8 years ago. Is this normal?"
+}

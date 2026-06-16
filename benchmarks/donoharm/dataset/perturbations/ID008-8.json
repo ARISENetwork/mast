@@ -1,0 +1,10 @@
+{
+  "id": "ID008-8",
+  "base_id": "ID008",
+  "perturb_id": 8,
+  "n_perturbs": 10,
+  "candidate_id": 13,
+  "category": "Social/occupational",
+  "description": "Patient lives with her spouse and 2 adult children",
+  "presentation": "Patient is a 55 year old woman who lives with her spouse and 2 adult children, with a history of fecal transplant for Clostridium difficile infection. The patient developed an atypical pneumonia with diarrhea and was started on azithromycin after which she had loose and bloody stools. The bloody stools have resolved but she has persistent loose stool. She has no watery stool, abdominal pain, fevers, chills, or other GI symptoms. Do we need to order C. Diff testing for this patient?"
+}

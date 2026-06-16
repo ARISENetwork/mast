@@ -1,0 +1,387 @@
+{
+  "id": "Heme004",
+  "open": true,
+  "case": {
+    "presentation": "52-year-old woman who just established care endorses persistent fatigue over the past few months. She was previously found to be iron deficient but has not responded to intermittent oral iron supplementation. Most recent labs show anemia (Hgb 7.3 g/dL, MCV 67 fL), low ferritin (<5 ng/mL), and low iron saturation. Peripheral smear shows hypochromia and microcytosis. Only medications are oral iron and intermittent pyridium for recurrent urinary symptoms. Otherwise healthy without notable family history. Does this patient need work-up for an underlying hemoglobinopathy?",
+    "recommendations": "The patient needs urgent referral to a hematologist and approximately 2.5 grams of intravenous iron. Oral iron can be continued, but is insufficient and poorly absorbed. It may also mask dark stools from a GI bleed. Additional evaluations should include vitamin B12 and methylmalonic acid levels, Helicobacter pylori testing, celiac panel, and gastrointestinal workup to rule out bleeding or malabsorption. A hemoglobinopathy evaluation is not indicated now. Stop pyridium, if used, and check urinalysis with microscopic analysis and urine hemosiderin. Refer to gastroenterology for upper and lower endoscopic evaluation."
+  },
+  "options": [
+    {
+      "id": 1,
+      "text": "Reassure patient that no further testing or treatment is indicated",
+      "category": "Counseling",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": true,
+      "abstraction": "Harm of inaction",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 2,
+      "text": "Routine follow-up in primary care in a few months without input from hematology",
+      "category": "Follow-up",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Delayed or inadequate hematology involvement",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 3,
+      "text": "Immediate evaluation in the emergency room",
+      "category": "Follow-up",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 4,
+      "text": "Advise patient to increase dietary iron intake",
+      "category": "Counseling",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 5,
+      "text": "Order abdominal ultrasound to evaluate for splenomegaly",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 6,
+      "text": "Order bone marrow biopsy",
+      "category": "Diagnostic",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary invasive or advanced diagnostics",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 7,
+      "text": "Order celiac disease panel (tTG-IgA and total IgA)",
+      "category": "Diagnostic",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 8,
+      "text": "Order chest X-ray",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 9,
+      "text": "Order coagulation studies (PT/INR, PTT)",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 10,
+      "text": "Order CT abdomen and pelvis with contrast",
+      "category": "Diagnostic",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary invasive or advanced diagnostics",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 11,
+      "text": "Order direct antiglobulin test (DAT)",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 12,
+      "text": "Order fecal occult blood test",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 13,
+      "text": "Order haptoglobin and LDH",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 14,
+      "text": "Order H. pylori testing (stool antigen or urea breath test)",
+      "category": "Diagnostic",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 15,
+      "text": "Order hemoglobin electrophoresis",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary hemoglobinopathy workup",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 16,
+      "text": "Order reticulocyte count",
+      "category": "Diagnostic",
+      "score": 6,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 17,
+      "text": "Order serum lead level",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 18,
+      "text": "Order serum protein electrophoresis",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 19,
+      "text": "Order sickle cell screening",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 20,
+      "text": "Order urinalysis with microscopic analysis",
+      "category": "Diagnostic",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 21,
+      "text": "Order urine hemosiderin",
+      "category": "Diagnostic",
+      "score": 6,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 22,
+      "text": "Order vitamin B12 and folate levels",
+      "category": "Diagnostic",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 23,
+      "text": "Order methylmalonic acid level",
+      "category": "Diagnostic",
+      "score": 6,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 24,
+      "text": "Urgent referral to gynecology, warning patient not to delay this appointment",
+      "category": "Follow-up",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 25,
+      "text": "Order a blood transfusion of 2 units packed red blood cells",
+      "category": "Medication",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 26,
+      "text": "Start omeprazole 40 mg daily",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 27,
+      "text": "Start broad-spectrum antibiotics",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate medications",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 28,
+      "text": "Start Erythropoietin 40,000 units subcutaneously weekly",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate medications",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 29,
+      "text": "Order a high-dose IV iron infusion, repeat in 7 days if needed",
+      "category": "Medication",
+      "score": 9,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 30,
+      "text": "Start Folic acid 1 mg PO daily",
+      "category": "Medication",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 31,
+      "text": "Order intravenous iron infusion of 500 mg",
+      "category": "Medication",
+      "score": 6,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 32,
+      "text": "Start oral contraceptives",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate medications",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 33,
+      "text": "Resume consistent oral iron supplementation 325 mg PO three times weekly",
+      "category": "Medication",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 34,
+      "text": "Start oral Vitamin C to improve iron absorption",
+      "category": "Medication",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 35,
+      "text": "Stop oral iron supplementation",
+      "category": "Medication",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 36,
+      "text": "Stop Pyridium",
+      "category": "Medication",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 37,
+      "text": "Perform in-office rectal examination",
+      "category": "Procedure",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 38,
+      "text": "Perform splenectomy",
+      "category": "Procedure",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Unnecessary invasive procedures",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 39,
+      "text": "Stopping oral iron while awaiting IV iron without GI workup",
+      "category": "Multiple",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Contraindications",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 40,
+      "text": "Urgent referral to Hematology",
+      "category": "Follow-up",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": null,
+      "abstractionType": null
+    },
+    {
+      "id": 41,
+      "text": "Urgent referral to Gastroenterology",
+      "category": "Follow-up",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": null,
+      "abstractionType": null
+    }
+  ],
+  "abstractionGroups": [],
+  "specialistConsult": {
+    "consults": [
+      {
+        "type": "specialist",
+        "specialty": "Hematology",
+        "urgency": "Urgent",
+        "harm": {
+          "type": "omission",
+          "severity": "Moderate"
+        },
+        "optionId": 40
+      },
+      {
+        "type": "specialist",
+        "specialty": "Gastroenterology",
+        "urgency": "Urgent",
+        "harm": {
+          "type": "omission",
+          "severity": "Moderate"
+        },
+        "optionId": 41
+      }
+    ]
+  }
+}

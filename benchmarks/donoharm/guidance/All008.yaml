@@ -1,0 +1,17 @@
+case_id: All008
+spirit: Patient with sulfa antibiotic-associated rash and AKI. Focus is on appropriate allergy counseling,
+  distinguishing true allergy from other reactions, and managing acute kidney injury.
+watchouts:
+- Conditional or 'if needed' nephrology referral does NOT count as routine referral (opt#26). Routine
+  means scheduled regardless of trajectory.
+- 'Opt 26 PARTIAL credit applies when the response mentions nephrology involvement in a non-routine framing:
+  ongoing nephrology follow-up for IgA nephropathy being informed of the event, ''coordinate with nephrology
+  on antibiotic choice'', or delegated decision-making to the existing nephrology team. These acknowledge
+  nephrology involvement without committing to a routine re-referral - PARTIAL, not none, not full.'
+options:
+  26:
+    matching: Only credit FULL if nephrology referral is routine/automatic for this episode. PARTIAL when
+      the response invokes existing nephrology follow-up for coordination (antibiotic choice, AKI trajectory,
+      shared decision) without a firm routine-referral commitment. NONE when nephrology is merely named
+      as the existing specialist without any current involvement. Conditional referrals ('if Cr doesn't
+      improve', 'if proteinuria worsens') do NOT count as full matches - treat as partial at most.

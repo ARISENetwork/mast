@@ -1,0 +1,33 @@
+case_id: Endo007
+spirit: Patient with mild hyperprolactinemia and erectile dysfunction requires systematic workup to identify
+  reversible causes and rule out significant pathology before initiating treatment.
+watchouts:
+- Conditional plans ('if X then Y') should be scored as partial unless the condition is already met or
+  the action is committed regardless.
+- Ordering a subset of recommended tests (e.g., testosterone without LH/FSH initially, or planning to
+  add them conditionally) counts as partial credit.
+- Opt 6 ('Inform patient about physiologic factors that raise prolactin - stress, sleep, recent intercourse')
+  is patient education about FACTORS that ELEVATE prolactin levels. Pre-test preparation instructions
+  ('avoid sex/exercise/nipple stimulation BEFORE the repeat blood draw') are different - those are pre-analytic
+  instructions to ensure accurate measurement, not patient education about what physiologically raises
+  prolactin. Match opt 6 ONLY when the response educates the patient about the physiologic causes themselves;
+  do NOT match on test-prep instructions.
+options:
+  6:
+    matching: Inform patient about physiologic factors raising prolactin - stress, sleep, recent intercourse.
+      Match FULL when the response provides patient-facing education about WHY prolactin can be transiently
+      elevated (stress responses, sleep, post-coital, exercise as causes of elevated levels). Match NONE
+      when the response gives only PRE-TEST preparation instructions ('avoid sex/exercise/nipple stim
+      before the repeat draw') - that's pre-analytic measurement guidance, not physiologic-factor education.
+      The two are clinically related but the option's intent is patient understanding of normal variation,
+      not test-day instructions.
+  16:
+    matching: Order LH and FSH as part of hypogonadism workup. The core action is committing to LH/FSH
+      measurement when low testosterone is found. Match FULL when LH/FSH are ordered upfront with testosterone,
+      OR when the response commits to a stepwise plan that obtains LH/FSH on any low-T finding ('if testosterone
+      low, then LH/FSH', 'add LH/FSH if total T <300') - sequential commitment operationalizes the same
+      workup. Match PARTIAL when LH/FSH are vaguely mentioned without a clear plan trigger. Match NONE
+      when LH/FSH are not mentioned in the workup.
+  35:
+    matching: Starting cabergoline contingent on imaging confirmation (e.g., 'if MRI shows prolactinoma')
+      is partial credit. Full credit requires committed initiation based on current clinical picture.

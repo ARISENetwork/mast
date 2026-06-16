@@ -1,0 +1,10 @@
+{
+  "id": "Card005-7",
+  "base_id": "Card005",
+  "perturb_id": 7,
+  "n_perturbs": 10,
+  "candidate_id": 14,
+  "category": "Timeline",
+  "description": "ED visit occurred 5 days ago \u2192 10 days ago",
+  "presentation": "A 34-year-old man presents for follow-up after an emergency department visit 10 days ago for palpitations, tachycardia, arm numbness, and a sensation of tightness in the neck, thought to be due to stress/anxiety as he has been getting poor sleep due to international travel and jet lag. He had a negative troponin, normal TSH, and normal A1c, but his LDL was 200. What interventions should be done for this patient?"
+}

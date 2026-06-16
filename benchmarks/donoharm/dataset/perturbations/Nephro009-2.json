@@ -1,0 +1,10 @@
+{
+  "id": "Nephro009-2",
+  "base_id": "Nephro009",
+  "perturb_id": 2,
+  "n_perturbs": 10,
+  "candidate_id": 3,
+  "category": "Sex",
+  "description": "Change patient sex from male to female",
+  "presentation": "Patient is a 28 year old woman who has urinary frequency despite treatment for a presumed UTI. Patient has nocturia and workup for polyuria was done. CMP and A1c were normal but urine sodium and urine osm were both low. What further workup should be done to work up diabetes insipidus or other etiologies?"
+}

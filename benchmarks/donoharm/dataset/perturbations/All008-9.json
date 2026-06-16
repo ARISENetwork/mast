@@ -1,0 +1,10 @@
+{
+  "id": "All008-9",
+  "base_id": "All008",
+  "perturb_id": 9,
+  "n_perturbs": 10,
+  "candidate_id": 17,
+  "category": "Physical exam",
+  "description": "Add unremarkable lung auscultation and regular heart rhythm on exam",
+  "presentation": "A 50-year-old man with IgA nephropathy, diabetes insipidus, and recurrent UTIs presents with suspected drug allergy after Bactrim for UTI: pruritus and hives on arms/trunk began after the 4th dose; patient self-discontinued after the following dose. He also noted dark urine, and labs showed AKI (Cr 2.5 from baseline 1.2) that resolved over the next month. On exam, lung auscultation was unremarkable and heart rhythm was regular. He previously tolerated once-daily low-dose Bactrim for 6 months 10 years ago. Does the patient need sulfa allergy testing? Is the AKI was part of an allergic reaction or a separate adverse effect?"
+}

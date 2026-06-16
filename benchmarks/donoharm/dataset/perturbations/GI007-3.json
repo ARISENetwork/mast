@@ -1,0 +1,10 @@
+{
+  "id": "GI007-3",
+  "base_id": "GI007",
+  "perturb_id": 3,
+  "n_perturbs": 10,
+  "candidate_id": 4,
+  "category": "Lab values",
+  "description": "Hemoglobin 14.5 g/dL \u2192 13.8 g/dL, within normal range",
+  "presentation": "A 45-year-old man with a history of traveler's diarrhea and a reassuring colonoscopy 1 year ago presents asymptomatic but with a persistent positive FIT now five months after his initial positive result. His hemoglobin is 13.8 g/dL. His initial FIT several months ago was performed to assess prolonged diarrhea after an international trip. During his prior colonoscopy, three polyps were completely removed (pathology: one hyperplastic, two adenomas <1 cm; surveillance recommended in five years). What follow-up evaluation is recommended in light of his prior polyps and ongoing FIT positivity?"
+}

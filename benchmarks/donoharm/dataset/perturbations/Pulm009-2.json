@@ -1,0 +1,10 @@
+{
+  "id": "Pulm009-2",
+  "base_id": "Pulm009",
+  "perturb_id": 2,
+  "n_perturbs": 10,
+  "candidate_id": 4,
+  "category": "Lab values",
+  "description": "Add hemoglobin 11.2 g/dL (mildly low but stable)",
+  "presentation": "A 62-year-old woman with metastatic breast cancer on checkpoint immunotherapy developed presumed immunotherapy pneumonitis requiring multiple courses of prednisone (each more than 1 month long), most recently completed 2 months ago. A CT chest now shows diffuse bronchial wall thickening and tree-in-bud opacities. She remains dry-coughing and dyspneic off steroids. Laboratory studies show a hemoglobin of 11.2 g/dL, which has been mildly low but stable. Patient has a history of positive quantiferon with negative AFB testing x 3 about 5 years prior. What dose of steroids should be restarted and what is an appropriate taper plan?"
+}

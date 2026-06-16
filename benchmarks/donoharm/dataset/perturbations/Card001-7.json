@@ -1,0 +1,10 @@
+{
+  "id": "Card001-7",
+  "base_id": "Card001",
+  "perturb_id": 7,
+  "n_perturbs": 10,
+  "candidate_id": 18,
+  "category": "Physical exam",
+  "description": "Add blood pressure 128/82 mmHg and heart rate 72 bpm",
+  "presentation": "A 50-year-old man with a history of prediabetes and hyperlipidemia presents with exertional chest pain in the upper left chest and dyspnea associated with exercise. His blood pressure is 128/82 mmHg and heart rate is 72 bpm. His ASCVD risk score is 1.2% and his EKG shows 1st degree AV block. He had a negative stress test. His family history is notable for early-onset CAD, as his father had an MI at age 55. What would be the next step in evaluating for cardiac causes for this patient's chest pain?"
+}

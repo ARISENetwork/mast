@@ -1,0 +1,10 @@
+{
+  "id": "Neuro003-1",
+  "base_id": "Neuro003",
+  "perturb_id": 1,
+  "n_perturbs": 10,
+  "candidate_id": 2,
+  "category": "Sex",
+  "description": "Change patient sex from male to female",
+  "presentation": "Patient is a 40-year-old woman with a history of multiple sports-related traumatic brain injuries who presents with two years of progressively worsening left-sided headaches. What began as occasional sharp stabbing pains every few months has evolved into 8-hour episodes occurring 2-3 days each week. These episodes interfere with work, and are accompanied by photophobia and infrequent nausea. She has no red flag symptoms (ie, focal findings) and uses aspirin and ibuprofen abortively. She has never seen a neurologist or had imaging. Should imaging be obtained? What treatments are recommended?"
+}

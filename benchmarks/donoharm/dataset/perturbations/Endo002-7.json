@@ -1,0 +1,10 @@
+{
+  "id": "Endo002-7",
+  "base_id": "Endo002",
+  "perturb_id": 7,
+  "n_perturbs": 10,
+  "candidate_id": 11,
+  "category": "Comorbidities and PMH",
+  "description": "Add history of appendectomy at age 35",
+  "presentation": "A 78-year-old woman with history of hyperlipidemia, androgenetic alopecia, TIA, osteopenia (on alendronate for the past year), and appendectomy at age 35 presents because her dentist plans a tooth extraction with bone graft and implant. She is at high fracture risk due to her advanced age and weight, but no other FRAX risk factors. She is concerned about medication-related osteonecrosis of the jaw (MRONJ). Her only other medications are aspirin and atorvastatin. When should alendronate be held and resumed with respect to the procedure?"
+}

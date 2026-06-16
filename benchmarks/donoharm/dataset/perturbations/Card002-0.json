@@ -1,0 +1,10 @@
+{
+  "id": "Card002-0",
+  "base_id": "Card002",
+  "perturb_id": 0,
+  "n_perturbs": 10,
+  "candidate_id": 7,
+  "category": "Medication",
+  "description": "Add levothyroxine 75 mcg daily for hypothyroidism",
+  "presentation": "A 67-year-old man with a history of hypothyroidism presents with daily palpitations and increased fatigue. He takes levothyroxine 75 mcg daily for hypothyroidism. Last year, a Ziopatch showed atrial fibrillation for 1 minute and 15 seconds. On exam today in the clinic, he is in normal sinus rhythm. I have referred him to Cardiology. Should I start this patient on a DOAC in anticipation for possible ablation?"
+}

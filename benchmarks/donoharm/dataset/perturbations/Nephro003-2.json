@@ -1,0 +1,10 @@
+{
+  "id": "Nephro003-2",
+  "base_id": "Nephro003",
+  "perturb_id": 2,
+  "n_perturbs": 10,
+  "candidate_id": 7,
+  "category": "Medication",
+  "description": "Patient takes daily melatonin 3 mg for sleep",
+  "presentation": "26 year old man with a history of elevated Cr (1-1.2) wtih recent rise to 1.4 but normal cystatin C. Multiple UA without acute findings and had UACR and renal ultrasound which were normal 5 years ago. Takes daily melatonin 3 mg for sleep. Has a normal BP. What further workup is needed?"
+}

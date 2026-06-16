@@ -1,0 +1,10 @@
+{
+  "id": "Nephro005-3",
+  "base_id": "Nephro005",
+  "perturb_id": 3,
+  "n_perturbs": 10,
+  "candidate_id": 5,
+  "category": "Lab values",
+  "description": "Add BUN of 14 mg/dL within normal range",
+  "presentation": "Patient is a 60 year old woman with a history of ovarian cancer with new renal infarct on surveillance CT. Labs show normal renal function with a BUN of 14 mg/dL. What further workup is needed?"
+}

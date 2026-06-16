@@ -1,0 +1,10 @@
+{
+  "id": "GI004-4",
+  "base_id": "GI004",
+  "perturb_id": 4,
+  "n_perturbs": 10,
+  "candidate_id": 7,
+  "category": "Comorbidities and PMH",
+  "description": "Add well-controlled hypothyroidism on levothyroxine",
+  "presentation": "A 70-year-old man with hypertension, diabetes, left ventricular dysfunction with LBBB, prior left colectomy for diverticulitis, GERD, PUD, hypothyroidism well controlled on levothyroxine, and a history of GI bleeding presents after a recent admission to an outside hospital for recurrent hematochezia and change in stool caliber. CT angiography was normal, his vital signs and hemoglobin remained stable, so he was discharged home without further work-up. What further follow-up, if any, is recommended?"
+}

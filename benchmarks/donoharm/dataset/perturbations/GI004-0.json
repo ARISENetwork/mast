@@ -1,0 +1,10 @@
+{
+  "id": "GI004-0",
+  "base_id": "GI004",
+  "perturb_id": 0,
+  "n_perturbs": 10,
+  "candidate_id": 1,
+  "category": "Age",
+  "description": "Age 70 \u2192 76",
+  "presentation": "A 76-year-old man with hypertension, diabetes, left ventricular dysfunction with LBBB, prior left colectomy for diverticulitis, GERD, PUD, and a history of GI bleeding presents after a recent admission to an outside hospital for recurrent hematochezia and change in stool caliber. CT angiography was normal, his vital signs and hemoglobin remained stable, so he was discharged home without further work-up. What further follow-up, if any, is recommended?"
+}

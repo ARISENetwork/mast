@@ -1,0 +1,10 @@
+{
+  "id": "ID003-2",
+  "base_id": "ID003",
+  "perturb_id": 2,
+  "n_perturbs": 10,
+  "candidate_id": 3,
+  "category": "Sex",
+  "description": "Change patient sex from male to female",
+  "presentation": "Patient is a 44-year old woman who had a positive quantiferon as part of a routine medical examination given she is from an endemic country. She has no symptoms and no known TB exposures. Her chest-xray was negative for infection during her clinic visit today. She would like to delay TB treatment if not absolutely necessary for at least a few months. Does this patient need immediate TB treatment and if so, with what regimen?"
+}

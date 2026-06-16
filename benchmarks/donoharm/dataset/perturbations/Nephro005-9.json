@@ -1,0 +1,10 @@
+{
+  "id": "Nephro005-9",
+  "base_id": "Nephro005",
+  "perturb_id": 9,
+  "n_perturbs": 10,
+  "candidate_id": 19,
+  "category": "Family history",
+  "description": "Add mother with rheumatoid arthritis diagnosed at age 55",
+  "presentation": "Patient is a 60 year old woman with a history of ovarian cancer with new renal infarct on surveillance CT. Her mother was diagnosed with rheumatoid arthritis at age 55. Labs show normal renal function. What further workup is needed?"
+}

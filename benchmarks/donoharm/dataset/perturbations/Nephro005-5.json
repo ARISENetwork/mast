@@ -1,0 +1,10 @@
+{
+  "id": "Nephro005-5",
+  "base_id": "Nephro005",
+  "perturb_id": 5,
+  "n_perturbs": 10,
+  "candidate_id": 9,
+  "category": "Comorbidities and PMH",
+  "description": "Add well-controlled GERD managed with famotidine",
+  "presentation": "Patient is a 60 year old woman with a history of ovarian cancer and well-controlled GERD managed with famotidine with new renal infarct on surveillance CT. Labs show normal renal function. What further workup is needed?"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "Nephro005-0",
+  "base_id": "Nephro005",
+  "perturb_id": 0,
+  "n_perturbs": 10,
+  "candidate_id": 2,
+  "category": "Age",
+  "description": "Age 60 \u2192 67",
+  "presentation": "Patient is a 67 year old woman with a history of ovarian cancer with new renal infarct on surveillance CT. Labs show normal renal function. What further workup is needed?"
+}

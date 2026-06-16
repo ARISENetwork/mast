@@ -18,7 +18,7 @@ pip install jsonschema requests
 python scripts/validate_all.py
 
 # Run a single test case for a specific benchmark
-python benchmarks/donoharm/validator.py test_001
+python benchmarks/donoharm/submission/validator.py test_001
 
 # Setup: copy config template and edit with your API details
 cp scripts/config.example.json scripts/config.json
@@ -45,13 +45,13 @@ scripts/validate_all.py  (discovers benchmarks, runs each via subprocess)
 - `inputs/test_*.txt` - test case inputs
 - `outputs/test_*.txt` - reference answers
 
-**Cross-module imports:** Benchmark validators import from `scripts/utils.py` via `sys.path.append` (see `benchmarks/donoharm/validator.py:17`).
+**Cross-module imports:** Benchmark validators import from `scripts/utils.py` via `sys.path.append` (see `benchmarks/donoharm/submission/validator.py:18`).
 
 **Config:** `scripts/config.json` (gitignored) holds the API endpoint URL, bearer token, and timeout. Max timeout is 300s.
 
 ## Adding a New Benchmark
 
-Copy `benchmarks/template/`, implement `validator.py` following `benchmarks/donoharm/validator.py` as reference. Test cases use `test_NNN` naming. The benchmark is auto-discovered by `validate_all.py`.
+Copy `benchmarks/template/`, implement `validator.py` following `benchmarks/donoharm/submission/validator.py` as reference (run-it-yourself-first benchmarks put their validator under `submission/`; `validate_all.py` discovers either location). Test cases use `test_NNN` naming. The benchmark is auto-discovered by `validate_all.py`.
 
 **OpenAI-compatible endpoints:** Validators accept both the native schema (`{"response": "..."}` for donoharm, `{"Rating": N, "Rationale": "..."}` for SCT) and OpenAI chat completions format (`choices[0].message.content`). Extraction logic lives in `scripts/utils.py:extract_openai_content()`.
 

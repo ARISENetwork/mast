@@ -1,0 +1,10 @@
+{
+  "id": "Card002-5",
+  "base_id": "Card002",
+  "perturb_id": 5,
+  "n_perturbs": 10,
+  "candidate_id": 12,
+  "category": "Comorbidities and PMH",
+  "description": "Add mild osteoarthritis of both knees",
+  "presentation": "A 67-year-old man with a history of hypothyroidism presents with daily palpitations and increased fatigue. He also has mild osteoarthritis of both knees. Last year, a Ziopatch showed atrial fibrillation for 1 minute and 15 seconds. On exam today in the clinic, he is in normal sinus rhythm. I have referred him to Cardiology. Should I start this patient on a DOAC in anticipation for possible ablation?"
+}

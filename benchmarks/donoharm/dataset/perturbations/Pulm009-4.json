@@ -1,0 +1,10 @@
+{
+  "id": "Pulm009-4",
+  "base_id": "Pulm009",
+  "perturb_id": 4,
+  "n_perturbs": 10,
+  "candidate_id": 6,
+  "category": "Medication",
+  "description": "Add daily calcium carbonate 600 mg and vitamin D 1000 IU",
+  "presentation": "A 62-year-old woman with metastatic breast cancer on checkpoint immunotherapy developed presumed immunotherapy pneumonitis requiring multiple courses of prednisone (each more than 1 month long), most recently completed 2 months ago. A CT chest now shows diffuse bronchial wall thickening and tree-in-bud opacities. She remains dry-coughing and dyspneic off steroids. She takes daily calcium carbonate 600 mg and vitamin D 1000 IU. Patient has a history of positive quantiferon with negative AFB testing x 3 about 5 years prior. What dose of steroids should be restarted and what is an appropriate taper plan?"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "Card005-1",
+  "base_id": "Card005",
+  "perturb_id": 1,
+  "n_perturbs": 10,
+  "candidate_id": 2,
+  "category": "Sex",
+  "description": "Change patient sex from male to female",
+  "presentation": "A 34-year-old woman presents for follow-up after an emergency department visit for palpitations, tachycardia, arm numbness, and a sensation of tightness in the neck, thought to be due to stress/anxiety as she has been getting poor sleep due to international travel and jet lag. She had a negative troponin, normal TSH, and normal A1c, but her LDL was 200. What interventions should be done for this patient?"
+}

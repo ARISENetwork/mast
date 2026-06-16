@@ -1,0 +1,10 @@
+{
+  "id": "Endo007-1",
+  "base_id": "Endo007",
+  "perturb_id": 1,
+  "n_perturbs": 10,
+  "candidate_id": 3,
+  "category": "Sex",
+  "description": "Change patient sex to female with sexual dysfunction instead of erectile dysfunction",
+  "presentation": "A 40-year-old woman with sexual dysfunction presents with two elevated fasting morning prolactin measurements (27 ng/mL, then 30 ng/mL, ref range 2-18 ng/mL). She has no visual symptoms, headache, or renal disease. She takes no medications or supplements. Does patient need a brain MRI for prolactinoma?"
+}

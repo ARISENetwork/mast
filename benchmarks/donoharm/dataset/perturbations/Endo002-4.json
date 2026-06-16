@@ -1,0 +1,10 @@
+{
+  "id": "Endo002-4",
+  "base_id": "Endo002",
+  "perturb_id": 4,
+  "n_perturbs": 10,
+  "candidate_id": 8,
+  "category": "Medication",
+  "description": "Add daily omeprazole 20 mg for occasional heartburn",
+  "presentation": "A 78-year-old woman with history of hyperlipidemia, androgenetic alopecia, TIA, and osteopenia (on alendronate for the past year) presents because her dentist plans a tooth extraction with bone graft and implant. She is at high fracture risk due to her advanced age and weight, but no other FRAX risk factors. She is concerned about medication-related osteonecrosis of the jaw (MRONJ). Her only other medications are aspirin, atorvastatin, and omeprazole 20 mg daily for occasional heartburn. When should alendronate be held and resumed with respect to the procedure?"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "Card005-5",
+  "base_id": "Card005",
+  "perturb_id": 5,
+  "n_perturbs": 10,
+  "candidate_id": 12,
+  "category": "Social/occupational",
+  "description": "Change occupation from unspecified to software engineer",
+  "presentation": "A 34-year-old man who works as a software engineer presents for follow-up after an emergency department visit for palpitations, tachycardia, arm numbness, and a sensation of tightness in the neck, thought to be due to stress/anxiety as he has been getting poor sleep due to international travel and jet lag. He had a negative troponin, normal TSH, and normal A1c, but his LDL was 200. What interventions should be done for this patient?"
+}

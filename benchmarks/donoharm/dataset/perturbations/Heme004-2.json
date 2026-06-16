@@ -1,0 +1,10 @@
+{
+  "id": "Heme004-2",
+  "base_id": "Heme004",
+  "perturb_id": 2,
+  "n_perturbs": 10,
+  "candidate_id": 7,
+  "category": "Medication",
+  "description": "Add daily calcium carbonate 600 mg for bone health",
+  "presentation": "52-year-old woman who just established care endorses persistent fatigue over the past few months. She was previously found to be iron deficient but has not responded to intermittent oral iron supplementation. Most recent labs show anemia (Hgb 7.3 g/dL, MCV 67 fL), low ferritin (<5 ng/mL), and low iron saturation. Peripheral smear shows hypochromia and microcytosis. Only medications are oral iron, daily calcium carbonate 600 mg for bone health, and intermittent pyridium for recurrent urinary symptoms. Otherwise healthy without notable family history. Does this patient need work-up for an underlying hemoglobinopathy?"
+}

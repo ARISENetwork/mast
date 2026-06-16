@@ -1,0 +1,10 @@
+{
+  "id": "Pulm005-2",
+  "base_id": "Pulm005",
+  "perturb_id": 2,
+  "n_perturbs": 10,
+  "candidate_id": 3,
+  "category": "Sex",
+  "description": "Change patient sex from male to female",
+  "presentation": "A 71-year-old woman with no prior lung disease develops productive cough episodes lasting more than four weeks almost every year, usually after a presumed viral illness. She denies wheezing; her chest X-ray is normal, PFTs are pending, and she has a history of GERD managed with famotidine (PPIs were tried without relief). In the past, a short course of azithromycin temporarily relieved the cough, but it always recurs. Should I continue empirically prescribing azithromycin each time she coughs given the prior improvement?"
+}

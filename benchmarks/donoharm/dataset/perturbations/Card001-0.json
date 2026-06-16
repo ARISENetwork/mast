@@ -1,0 +1,10 @@
+{
+  "id": "Card001-0",
+  "base_id": "Card001",
+  "perturb_id": 0,
+  "n_perturbs": 10,
+  "candidate_id": 1,
+  "category": "Age",
+  "description": "Age 50 \u2192 55",
+  "presentation": "A 55-year-old man with a history of prediabetes and hyperlipidemia presents with exertional chest pain in the upper left chest and dyspnea associated with exercise. His ASCVD risk score is 1.2% and his EKG shows 1st degree AV block. He had a negative stress test. His family history is notable for early-onset CAD, as his father had an MI at age 55. What would be the next step in evaluating for cardiac causes for this patient's chest pain?"
+}

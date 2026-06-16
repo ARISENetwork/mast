@@ -1,0 +1,10 @@
+{
+  "id": "Pulm005-0",
+  "base_id": "Pulm005",
+  "perturb_id": 0,
+  "n_perturbs": 10,
+  "candidate_id": 1,
+  "category": "Age",
+  "description": "Age 71 \u2192 76",
+  "presentation": "A 76-year-old man with no prior lung disease develops productive cough episodes lasting more than four weeks almost every year, usually after a presumed viral illness. He denies wheezing; his chest X-ray is normal, PFTs are pending, and he has a history of GERD managed with famotidine (PPIs were tried without relief). In the past, a short course of azithromycin temporarily relieved the cough, but it always recurs. Should I continue empirically prescribing azithromycin each time he coughs given the prior improvement?"
+}

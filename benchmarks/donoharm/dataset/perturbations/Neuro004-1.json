@@ -1,0 +1,10 @@
+{
+  "id": "Neuro004-1",
+  "base_id": "Neuro004",
+  "perturb_id": 1,
+  "n_perturbs": 10,
+  "candidate_id": 2,
+  "category": "Age",
+  "description": "Age 77 \u2192 71",
+  "presentation": "Patient is a 71-year-old man with hypertension, hyperlipidemia, and type 2 diabetes. One week ago, he awoke with sudden right-sided arm and leg weakness lasting about 30 minutes without facial droop or speech changes. He presented to a local ED the next day. CT head and MRI brain were unrevealing. His basic labs were unremarkable. Today, his ABCD2 score is 5, so I initiated dual antiplatelet therapy (aspirin 81 mg indefinitely + clopidogrel 75 mg for 21 days) and ordered a 7-day Zio patch. Does the patient need further evaluation or medication adjustments?"
+}

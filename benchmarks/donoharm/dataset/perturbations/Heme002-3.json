@@ -1,0 +1,10 @@
+{
+  "id": "Heme002-3",
+  "base_id": "Heme002",
+  "perturb_id": 3,
+  "n_perturbs": 10,
+  "candidate_id": 4,
+  "category": "Lab values",
+  "description": "Platelet count currently 110k \u2192 120k",
+  "presentation": "A 27-year-old woman has had persistently mild thrombocytopenia for 3 years, with platelet counts ranging from about 100k to 150k per microliter. Her count is currently 120k. She reports that the low counts first appeared after a postpartum hemorrhage. She has no history of liver disease, splenomegaly, transfusions, or a family history of blood disorders. Other blood counts, kidney function, and basic labs have been unremarkable. What is the recommended management for her thrombocytopenia?"
+}

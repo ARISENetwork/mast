@@ -1,0 +1,10 @@
+{
+  "id": "Derm006-2",
+  "base_id": "Derm006",
+  "perturb_id": 2,
+  "n_perturbs": 10,
+  "candidate_id": 5,
+  "category": "Lab values",
+  "description": "Add fasting glucose of 95 mg/dL",
+  "presentation": "A 57-year-old female with COPD (due to 10-pack year history of smoking) presents with many seborrheic keratoses that multiplied on her back over the last few months. Her fasting glucose is 95 mg/dL. Is this normal?"
+}

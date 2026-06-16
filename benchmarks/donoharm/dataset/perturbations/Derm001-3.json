@@ -1,0 +1,10 @@
+{
+  "id": "Derm001-3",
+  "base_id": "Derm001",
+  "perturb_id": 3,
+  "n_perturbs": 10,
+  "candidate_id": 5,
+  "category": "Lab values",
+  "description": "Add serum potassium 3.8 mEq/L (normal range)",
+  "presentation": "A 25-year-old woman with idiopathic intracranial hypertension on acetazolamide presents with hyperpigmentation on her face after an allergic contact rash several weeks ago. Her serum potassium is 3.8 mEq/L (normal range). What are the best treatments for her persistent hyperpigmentation?"
+}

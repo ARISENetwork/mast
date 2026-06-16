@@ -1,0 +1,10 @@
+{
+  "id": "Nephro005-6",
+  "base_id": "Nephro005",
+  "perturb_id": 6,
+  "n_perturbs": 10,
+  "candidate_id": 16,
+  "category": "Timeline",
+  "description": "Renal infarct discovered on CT obtained 2 weeks ago",
+  "presentation": "Patient is a 60 year old woman with a history of ovarian cancer with new renal infarct discovered on surveillance CT obtained 2 weeks ago. Labs show normal renal function. What further workup is needed?"
+}
