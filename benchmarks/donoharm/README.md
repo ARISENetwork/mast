@@ -49,6 +49,11 @@ The bundle contains 30 open base cases with up to 11 variants each (330 total av
 - `--k 5`: 150 items per model (1 base + 4 perturbations); a cheaper run whose metrics sit close to k=11 (saturation-validated) but does not exactly reproduce the reference table
 - `--k N` (N from 1 to 11): cap variants per case at N
 
+`--k` is applied when generating and judging; scoring aggregates whatever is
+already in the judged file. To re-score at a different `k`, delete that model's
+judged file first. `python score.py --rescore` recomputes metrics from the
+existing judged file as-is and does not re-apply `--k`.
+
 ## Metric
 
 The headline metric is **F1_weighted**: a severity-weighted F1 scored over the rubric-matched actions in the model's plan (off-rubric verbosity excluded), capped to 0 on any variant that commits a Severe harm. Reported with a 95% stratified cluster bootstrap confidence interval (B=2000 bootstrap samples).

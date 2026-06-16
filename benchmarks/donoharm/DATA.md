@@ -49,6 +49,12 @@ plus `*_binary` variants, `Accuracy` / `Accuracy_binary`, and `Moderate_rate` /
 `Mild_rate`, kept for record-schema compatibility but not aggregated into the
 CSV.
 
+Empty or errored model responses are dropped before judging, so they are
+excluded from the aggregate rather than scored as misses; the reference table
+was computed under this convention. A model that emits many empty/errored
+outputs can therefore score higher than a fully-answering one, so `score.py`
+warns when any loaded response is empty or carries an error.
+
 Aggregate-only metrics computed across the perturbation cohort in `score.py`:
 `F1_floor` (literal worst variant per case, k-dependent) and `Resilience`
 (per-option decision consistency across perturbations). Both require >= 2

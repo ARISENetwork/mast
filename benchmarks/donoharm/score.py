@@ -658,7 +658,10 @@ def score_one(args):
     if n_bad:
         log.warning(
             "%d of %d loaded responses are empty or carry an error field; "
-            "their scores will be degenerate and drag the aggregate down.",
+            "the judge drops these, so they are EXCLUDED from scoring rather "
+            "than penalized -- a model that returns empty/errored outputs can "
+            "therefore score higher than it should. Retry or fill them in for "
+            "a comparable score.",
             n_bad, len(responses),
         )
 
