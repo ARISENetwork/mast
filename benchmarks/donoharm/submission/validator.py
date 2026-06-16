@@ -28,8 +28,13 @@ def load_schema() -> Dict[str, Any]:
 
 
 def load_prompt() -> str:
-    """Load the prompt template."""
-    prompt_path = Path(__file__).parent / "prompts" / "default.md"
+    """Load the prompt template.
+
+    Shares the single canonical prompt with the run-it-yourself kit
+    (benchmarks/<name>/prompts/), one level up, so the endpoint submission
+    and the local run send an identical system prompt.
+    """
+    prompt_path = Path(__file__).parent.parent / "prompts" / "default.md"
     with open(prompt_path, 'r', encoding='utf-8') as f:
         return f.read().strip()
 

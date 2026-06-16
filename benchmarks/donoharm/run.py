@@ -161,7 +161,9 @@ def main():
     parser.add_argument("--benchmark-config", required=True, help="Path to benchmark config YAML")
     parser.add_argument("--limit", type=int, default=None, help="Limit number of items")
     parser.add_argument("--threads", type=int, default=20, help="Number of parallel threads")
-    parser.add_argument("--prompt", type=str, default=None, help="Prompt variant name (from prompts/)")
+    parser.add_argument("--prompt", type=str, default=None,
+                        help="Prompt variant matching prompts/<name>.md "
+                             "(default, limit500, limitnone, zero). Default: default.")
     parser.add_argument("--k", type=int, default=11, choices=range(1, 12),
                         help="Variants per case (1-11). 1=base only, "
                              "5=base + 4 perturbations, 11=all (default).")
