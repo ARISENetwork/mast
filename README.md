@@ -100,7 +100,7 @@ The MAST suite spans the clinical capabilities measured on the public [leaderboa
 | Script Concordance Test (SCT) | Reasoning under uncertainty | [`benchmarks/sct/`](benchmarks/sct/) | [NEJM AI](https://ai.nejm.org/doi/full/10.1056/AIdbp2500120) |
 | CPC-Bench | Diagnostic reasoning | [cpcbench.com](https://cpcbench.com) | [arXiv](https://arxiv.org/abs/2509.12194) |
 | MedAgentBench v2 | Agentic EHR tasks | [GitHub](https://github.com/ARISENetwork/medagentbenchv2) | [Paper](https://psb.stanford.edu/psb-online/proceedings/psb26/chen_eric.pdf) |
-| PhysicianBench | Agentic EHR tasks | [GitHub](https://github.com/HealthRex/PhysicianBench) | - |
+| PhysicianBench | Agentic EHR tasks | [GitHub](https://github.com/HealthRex/PhysicianBench) | [arXiv](https://arxiv.org/abs/2605.02240) |
 | ReXrank Mini | Multimodal radiology | [GitHub](https://github.com/rajpurkarlab/ReXrank) | [arXiv](https://arxiv.org/abs/2411.15122) |
 | Multimodal Images | Multimodal dermatology | [DDI](https://ddi-dataset.github.io/) · [MIDAS](https://stanfordaimi.azurewebsites.net/datasets/f4c2020f-801a-42dd-a477-a1a8357ef2a5) | [DDI](https://www.science.org/doi/10.1126/sciadv.abq6147) · [MIDAS](https://ai.nejm.org/doi/full/10.1056/AIdbp2400732) |
 
