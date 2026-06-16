@@ -1,0 +1,17 @@
+model:
+  # `name` is the output/cache namespace, NOT the routed model: it names the
+  # result files (results/.../<name>.jsonl and <name>.csv) and the judge cache
+  # (_strategy/<name>/). Changing `model_id` while keeping the same `name`
+  # reuses the previous model's cached responses and judgments, so rename `name`
+  # (or clear the cache) whenever you switch models.
+  name: gpt-5-mini
+  platform: openrouter
+  # `model_id` is the model litellm actually calls. This example uses a cheap
+  # model for a first run; it is NOT one of the reference-table rows
+  # (GPT-5.5 / Opus 4.7 / Gemini 3.1 Pro), so its scores are not comparable to
+  # that table. Point `model_id` at a reference model to reproduce a row.
+  model_id: openai/gpt-5-mini
+  # The reference table was produced with reasoning_effort: minimal. Uncomment
+  # to match it on a reasoning model; omit for models that reject the parameter.
+  # completion_kwargs:
+  #   reasoning_effort: minimal

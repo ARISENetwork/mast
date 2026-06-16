@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mast.local/donoharm/judge/match.schema.json",
+  "title": "Match output",
+  "description": "One record per (case_id, trial). Produced by match_stage.py. Cache location: {cache_root}/{model}/match/<extractor>.jsonl. Schema source: match_stage.schema().",
+  "type": "object",
+  "required": ["id", "trial", "model", "judge", "actions", "options"],
+  "properties": {
+    "id":     {"type": "string", "description": "Case ID (e.g. Card001 or Card001-3 for a perturbation variant)."},
+    "trial":  {"type": "integer", "minimum": 0},
+    "model":  {"type": "string", "description": "Canonical model name that produced the responses (e.g. claude-sonnet-4-6)."},
+    "judge":  {"type": "string", "description": "Short judge name (e.g. gemini-3-flash). Stripped of vendor prefixes and -preview."},
+    "actions": {
+      "type": "array",
+      "description": "Extracted response actions with rubric-option matches.",
+      "items": {
+        "type": "object",
+        "required": ["id", "action", "category", "evidence", "dependsOn", "match"],
+        "properties": {
+          "id":        {"type": "integer", "description": "Per-record action identifier; 1-indexed, monotonic within the record."},
+          "action":    {"type": "string"},
+          "category":  {"type": "string", "enum": ["Diagnostic", "Medication", "Procedure", "Counseling", "Follow-up"]},
+          "evidence":  {"type": "string"},
+          "dependsOn": {"type": "array", "items": {"type": "integer"}},
+          "match":     {"type": "string", "description": "Comma-separated rubric option IDs (or \"harm:...\" for nonrubric harms). Empty string for unmatched."}
+        }
+      }
+    },
+    "options": {
+      "type": "array",
+      "description": "Per-rubric-option verdict.",
+      "items": {
+        "type": "object",
+        "required": ["id", "matched", "partial", "matched_action_ids", "evidence"],
+        "properties": {
+          "id":      {"type": "integer"},
+          "matched": {"type": "boolean"},
+          "partial": {"type": "boolean", "description": "Partial-credit flag from the matcher; the review step may also shift it."},
+          "matched_action_ids": {"type": "array", "items": {"type": "integer"}, "description": "Which actions[].id values matched this option (used by the group step)."},
+          "evidence": {"type": "string"}
+        }
+      }
+    },
+    "runtime":    {"type": "number", "description": "Per-call wall time in seconds."},
+    "usage":      {"type": "object", "description": "Provider usage block (prompt_tokens/completion_tokens, cost, etc.)."},
+    "prompt_hash": {"type": "string", "description": "sha256 of the rendered prompt template; used for cache staleness checks."}
+  }
+}

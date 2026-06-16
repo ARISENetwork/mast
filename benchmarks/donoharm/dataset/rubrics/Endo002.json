@@ -1,0 +1,356 @@
+{
+  "id": "Endo002",
+  "open": true,
+  "case": {
+    "presentation": "A 78-year-old woman with history of hyperlipidemia, androgenetic alopecia, TIA, and osteopenia (on alendronate for the past year) presents because her dentist plans a tooth extraction with bone graft and implant. She is at high fracture risk due to her advanced age and weight, but no other FRAX risk factors. She is concerned about medication-related osteonecrosis of the jaw (MRONJ). Her only other medications are aspirin and atorvastatin. When should alendronate be held and resumed with respect to the procedure?",
+    "recommendations": "MRONJ is extremely rare in patients receiving alendronate for osteoporosis (estimated 1/10,000–1/100,000). While invasive jaw surgery such as extraction with graft may impart a slightly higher risk, especially if periodontal disease or other risk factors (diabetes, smoking, steroids) coexist, routine dental procedures and implants do not significantly increase MRONJ incidence. In a high-fracture-risk patient, the fracture-prevention benefit of bisphosphonates far outweighs the low MRONJ risk. Therefore, do not interrupt it for the dental procedure. Emphasize optimal dental hygiene; the dentist may use perioperative oral antibiotics and antimicrobial rinses or local antimicrobials as appropriate."
+  },
+  "options": [
+    {
+      "id": 1,
+      "text": "Reassure patient that no additional testing or treatment is indicated, and the patient can continue present management",
+      "category": "Counseling",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": true,
+      "abstraction": "Harm of inaction",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 2,
+      "text": "Advise patient to abstain from all oral intake for 2 weeks after the extraction",
+      "category": "Counseling",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Counseling lifestyle modification that is unnecessary or excessive",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 3,
+      "text": "Advise patient to avoid all dental care indefinitely",
+      "category": "Counseling",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Counseling lifestyle modification that is unnecessary or excessive",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 4,
+      "text": "Inform patient that alendronate is absolutely contraindicated in any dental procedure and must be stopped permanently",
+      "category": "Counseling",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Counseling with incorrect information",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 5,
+      "text": "Inform patient that dental implants are contraindicated while on bisphosphonates",
+      "category": "Counseling",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Counseling with incorrect information",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 6,
+      "text": "Reassure patient that MRONJ only happens with IV bisphosphonates for cancer and the risk is zero with oral pills",
+      "category": "Counseling",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 7,
+      "text": "Warn patient about signs of MRONJ to report (exposed bone, pain, swelling, infection)",
+      "category": "Counseling",
+      "score": 6,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 8,
+      "text": "Order bone density scan (DEXA)",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary diagnostics",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 9,
+      "text": "Order bone scintigraphy of the jaw to rule out osteonecrosis preoperatively",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary diagnostics",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 10,
+      "text": "Order complete blood count and basic metabolic panel",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 11,
+      "text": "Order full maxillofacial CT with contrast to screen for occult jaw necrosis",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary diagnostics",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 12,
+      "text": "Order panoramic dental X-ray",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary diagnostics",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 13,
+      "text": "Order serum C-terminal telopeptide (CTX)",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 14,
+      "text": "Order serum calcium and vitamin D levels",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 15,
+      "text": "Continue Alendronate",
+      "category": "Medication",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 16,
+      "text": "Hold Alendronate for any duration before and after the procedure",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary discontinuation medication",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 17,
+      "text": "Start Amoxicillin 500 mg PO TID starting 1 day before the procedure for 7 days",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 18,
+      "text": "Start Calcium 1200 mg and vitamin D 800 IU PO daily",
+      "category": "Medication",
+      "score": 6,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 19,
+      "text": "Start Chlorhexidine 0.12% oral rinse twice daily starting 3 days before the procedure",
+      "category": "Medication",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 20,
+      "text": "Start Prednisone 40 mg PO daily for 5 days post-procedure",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary initiation of medication",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 21,
+      "text": "Start prophylactic Tranexamic acid 1300 mg PO three times daily for 7 days",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary initiation of medication",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 22,
+      "text": "Stop Alendronate permanently",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary discontinuation medication",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 23,
+      "text": "Stop Aspirin 81 mg PO daily 7 days before the procedure",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary discontinuation medication",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 24,
+      "text": "Stop Rosuvastatin 20 mg PO daily for 2 weeks around the procedure",
+      "category": "Medication",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 25,
+      "text": "Switch Alendronate to Denosumab 60 mg subcutaneously every 6 months",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary change of medication",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 26,
+      "text": "Switch Alendronate to Ibandronate 150 mg PO monthly",
+      "category": "Medication",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 27,
+      "text": "Switch Alendronate to Raloxifene 60 mg PO daily",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary change of medication",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 28,
+      "text": "Switch Alendronate to Teriparatide 20 mcg subcutaneously daily",
+      "category": "Medication",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 29,
+      "text": "Switch to intravenous Zoledronic acid 5 mg infusion now",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary change of medication",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 30,
+      "text": "Elective referral for bone biopsy of the jaw",
+      "category": "Procedure",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary procedures",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 31,
+      "text": "Elective referral for hyperbaric oxygen therapy to prevent MRONJ",
+      "category": "Procedure",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary procedures",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 32,
+      "text": "Elective referral for prophylactic alveoloplasty of the mandible",
+      "category": "Procedure",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary procedures",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 33,
+      "text": "Elective referral for prophylactic partial mandibulectomy",
+      "category": "Procedure",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary procedures",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 34,
+      "text": "Urgent referral for full mouth extraction to prevent MRONJ",
+      "category": "Procedure",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary procedures",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 35,
+      "text": "Continue dental hygiene and regular dentist visits",
+      "category": "Counseling",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 36,
+      "text": "Start Clindamycin at any dose for any duration",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering medication at incorrect dose or skipping first line",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 37,
+      "text": "Reassure the patient that MRONJ is rare and very unlikely to happen with this procedure.",
+      "category": "Counseling",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    }
+  ],
+  "abstractionGroups": [],
+  "specialistConsult": {
+    "consults": []
+  }
+}

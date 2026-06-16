@@ -1,0 +1,57 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "donoharm-judge"
+version = "0.1.0"
+description = "LLM judge pipeline for clinical-harm scoring against a per-case rubric."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [
+    { name = "David Wu" },
+]
+keywords = ["llm", "medical", "evaluation", "judge", "rubric", "harm"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "google-genai>=2,<3",
+    "jsonschema>=4.0,<5",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/ARISENetwork/mast"
+Source = "https://github.com/ARISENetwork/mast"
+
+[tool.setuptools]
+# The directory containing this file IS the package; the mapping below exposes
+# it as the importable package `donoharm_judge`. (Inside the MAST bundle the
+# same code is imported directly as `judge`, its directory is on sys.path, so
+# pip-installing here is optional.)
+include-package-data = true
+packages = ["donoharm_judge", "donoharm_judge.stages", "donoharm_judge.schemas"]
+
+[tool.setuptools.package-dir]
+"donoharm_judge" = "."
+
+[tool.setuptools.package-data]
+# Production prompts only; retired variants are not shipped.
+"donoharm_judge" = [
+    "prompts/extract_match.md",
+    "prompts/global_match_review.md",
+]
+"donoharm_judge.schemas" = ["*.schema.json"]

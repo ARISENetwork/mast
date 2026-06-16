@@ -1,0 +1,10 @@
+# Requires Python >= 3.10
+litellm>=1.83.0,<1.84
+google-genai>=2,<3
+jsonschema>=4.0,<5
+numpy>=2.0,<3
+pandas>=2.2,<3
+pyyaml>=6.0.3,<7
+python-dotenv>=1.0,<2
+tqdm>=4.67.1,<5
+requests>=2.31,<3  # submission/validator.py (API-endpoint submission flow)

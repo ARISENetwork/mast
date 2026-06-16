@@ -1,0 +1,23 @@
+case_id: Neuro003
+spirit: Progressive unilateral headache with TBI history requires urgent imaging to exclude structural
+  lesion; judge must distinguish firm recommendations from conditional fallbacks and recognize that 'if
+  contraindicated' alternatives are not primary treatment plans.
+watchouts:
+- Conditional imaging (e.g., 'if MRI unavailable, get CT') counts as partial match for the fallback modality,
+  not full
+- Medications offered only as alternatives ('if X contraindicated, use Y') should not be credited as full
+  matches-they are backup options, not primary recommendations
+- Conditional or fallback recommendations (e.g., 'if propranolol contraindicated, use topiramate') should
+  receive NO credit for the fallback option-they are not active recommendations
+options:
+  7:
+    matching: CT head mentioned only as fallback if MRI unavailable/contraindicated → partial match, not
+      full
+  27:
+    matching: Topiramate recommended only as alternative if propranolol contraindicated → none (not partial).
+      Conditional/fallback recommendations do not count.
+  29:
+    matching: Requires explicit instruction to STOP or DISCONTINUE the OTC analgesics themselves (aspirin/ibuprofen/NSAIDs).
+      Frequency reduction ('limit to <10 days/month'), usage guidelines, or stopping the 'cycling pattern'
+      are NOT stopping the medications → none. Partial credit only if response says to stop/discontinue
+      OTC analgesics but allows exceptions or tapering.

@@ -1,0 +1,361 @@
+{
+  "id": "GI007",
+  "open": true,
+  "case": {
+    "presentation": "A 45-year-old man with a history of traveler’s diarrhea and a reassuring colonoscopy 1 year ago presents asymptomatic but with a persistent positive FIT now five months after his initial positive result. His initial FIT several months ago was performed to assess prolonged diarrhea after an international trip. During his prior colonoscopy, three polyps were completely removed (pathology: one hyperplastic, two adenomas <1 cm; surveillance recommended in five years). What follow-up evaluation is recommended in light of his prior polyps and ongoing FIT positivity?",
+    "recommendations": "Given the history of adenomatous polyps and a persistently positive FIT, current guidelines support proceeding with a repeat colonoscopy now rather than longer surveillance or serial FIT screening. Arrange referral for colonoscopic evaluation to be completed within the next few weeks to rule out any new or missed lesions."
+  },
+  "options": [
+    {
+      "id": 1,
+      "text": "Reassure patient that no additional testing or treatment is indicated, and the patient can continue present management",
+      "category": "Counseling",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": true,
+      "abstraction": "Harm of inaction",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 2,
+      "text": "Inform patient that positive FIT after colonoscopy is common and not concerning",
+      "category": "Counseling",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Falsely reassuring patient without workup",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 3,
+      "text": "Inform patient that the positive FIT is likely from hemorrhoids",
+      "category": "Counseling",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Falsely reassuring patient without workup",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 4,
+      "text": "Inform patient to avoid NSAIDs and aspirin",
+      "category": "Counseling",
+      "score": 6,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 5,
+      "text": "Inform patient to increase fiber intake",
+      "category": "Counseling",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 6,
+      "text": "Warn patient to stop all anticoagulant and antiplatelet medications until bleeding stops",
+      "category": "Counseling",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 7,
+      "text": "Order colonoscopy, to be completed within the next few weeks",
+      "category": "Procedure",
+      "score": 9,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Refer to gastroenterology for colonoscopy",
+      "abstractionType": "alternative"
+    },
+    {
+      "id": 8,
+      "text": "Order colonoscopy in 1 year instead of now",
+      "category": "Procedure",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Delaying colonoscopy beyond appropriate timeframe",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 9,
+      "text": "Delaying colonoscopy beyond 1 year",
+      "category": "Procedure",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Delaying colonoscopy beyond appropriate timeframe",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 10,
+      "text": "Order esophagogastroduodenoscopy (EGD), to be completed within the next few weeks",
+      "category": "Procedure",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 11,
+      "text": "Elective referral for hemorrhoidectomy or hemorrhoid banding",
+      "category": "Procedure",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Performing unnecessary procedures",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 12,
+      "text": "Urgent referral for CT-guided colon mass biopsy",
+      "category": "Procedure",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Performing unnecessary procedures",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 13,
+      "text": "Urgent referral for exploratory laparotomy",
+      "category": "Procedure",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Performing unnecessary procedures",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 14,
+      "text": "Order abdominal and pelvic CT scan with contrast",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 15,
+      "text": "Order abdominal ultrasound",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 16,
+      "text": "Order abdominal X-ray",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 17,
+      "text": "Order barium enema",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 18,
+      "text": "Order capsule endoscopy",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 19,
+      "text": "Order Carcinoembryonic Antigen (CEA) test",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 20,
+      "text": "Order complete blood count and iron studies",
+      "category": "Diagnostic",
+      "score": 6,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 21,
+      "text": "Order flexible sigmoidoscopy",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 22,
+      "text": "Order CT colonography",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 23,
+      "text": "Order fecal calprotectin",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 24,
+      "text": "Order genetic testing for Lynch syndrome",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 25,
+      "text": "Order repeat FIT test",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 26,
+      "text": "Order stool culture and ova/parasite examination",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 27,
+      "text": "Order stool DNA test (Cologuard)",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 28,
+      "text": "Start Loperamide 2-4 tablets PO PRN daily",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting unnecessary medications",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 29,
+      "text": "Start Aspirin 81 mg PO daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting unnecessary medications",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 30,
+      "text": "Start Ciprofloxacin 500 mg PO twice daily for 7 days",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting unnecessary medications",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 31,
+      "text": "Start Empagliflozin 10 mg PO daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting unnecessary medications",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 32,
+      "text": "Start empiric iron supplementation",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting unnecessary medications",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 33,
+      "text": "Start Mesalamine",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting unnecessary medications",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 34,
+      "text": "Start Prednisone 20 mg PO daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting unnecessary medications",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 35,
+      "text": "Start probiotics daily",
+      "category": "Medication",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 36,
+      "text": "Start Omeprazole 20 mg PO daily",
+      "category": "Medication",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 37,
+      "text": "Urgent referral to Gastroenterology",
+      "category": "Follow-up",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": null,
+      "abstractionType": null
+    }
+  ],
+  "abstractionGroups": [
+    {
+      "name": "Refer to gastroenterology for colonoscopy",
+      "pickCount": 1,
+      "pickType": "exact"
+    }
+  ],
+  "specialistConsult": {
+    "consults": [
+      {
+        "type": "specialist",
+        "specialty": "Gastroenterology",
+        "urgency": "Urgent",
+        "harm": {
+          "type": "omission",
+          "severity": "Moderate"
+        },
+        "optionId": 37
+      }
+    ]
+  }
+}

@@ -1,0 +1,371 @@
+{
+  "id": "Nephro005",
+  "open": true,
+  "case": {
+    "presentation": "Patient is a 60 year old woman with a history of ovarian cancer with new renal infarct on surveillance CT. Labs show normal renal function. What further workup is needed?",
+    "recommendations": "Obtain CTA to evaluate vasculature and vascular surgery consult to see if intervention (revascularization) is needed. Patient should also be evaluated for atrial fibrillation (e.g., ECG, 14-day ambulatory cardiac monitor, and transthoracic echocardiogram) or hypercoagulability. Refer to renal clinic if any worsening of renal function."
+  },
+  "options": [
+    {
+      "id": 1,
+      "text": "Reassure patient that no further testing or treatment is indicated",
+      "category": "Counseling",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": true,
+      "abstraction": "Harm of inaction",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 2,
+      "text": "Inform patient her ovarian cancer has likely returned and this is a metastasis",
+      "category": "Counseling",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Providing misleading clinical information",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 3,
+      "text": "Inform patient that this is a benign finding related to prior cancer treatment",
+      "category": "Counseling",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Providing misleading clinical information",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 4,
+      "text": "Inform patient to increase fluid intake to 3 liters daily",
+      "category": "Counseling",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Providing misleading clinical information",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 5,
+      "text": "Order 14-day ambulatory cardiac monitor",
+      "category": "Diagnostic",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 6,
+      "text": "Order bilateral lower extremity venous doppler ultrasound",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 7,
+      "text": "Order CT angiography of the abdomen and pelvis",
+      "category": "Diagnostic",
+      "score": 8,
+      "bestInGroup": true,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 8,
+      "text": "Order D-dimer test",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 9,
+      "text": "Order electrocardiogram (ECG)",
+      "category": "Diagnostic",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 10,
+      "text": "Order hypercoagulability panel",
+      "category": "Diagnostic",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 11,
+      "text": "Order MRA of the abdomen and pelvis",
+      "category": "Diagnostic",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 12,
+      "text": "Order PET scan",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary imaging",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 13,
+      "text": "Order renin and aldosterone levels",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 14,
+      "text": "Order renal ultrasound with Doppler",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 15,
+      "text": "Order repeat non-contrast CT abdomen/pelvis in 1 month",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary imaging",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 16,
+      "text": "Order serum CA-125 level",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 17,
+      "text": "Order transesophageal echocardiogram",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Performing unnecessary invasive procedures",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 18,
+      "text": "Order transthoracic echocardiogram",
+      "category": "Diagnostic",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 19,
+      "text": "Order urinalysis and urine culture",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 20,
+      "text": "Order urine cytology",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 21,
+      "text": "Order urine protein electrophoresis",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 22,
+      "text": "Start Apixaban 5 mg PO twice daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting anticoagulation without indication",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 23,
+      "text": "Start Aspirin 81 mg PO daily",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting empiric antithrombotic therapy",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 24,
+      "text": "Start Atorvastatin 80 mg PO daily",
+      "category": "Medication",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 25,
+      "text": "Start Clopidogrel 75 mg PO daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting anticoagulation without indication",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 26,
+      "text": "Start empiric Ciprofloxacin 500 mg PO twice daily for 7 days",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting empiric unnecessary medication",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 27,
+      "text": "Start Lisinopril 10 mg PO daily for renal protection",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting empiric unnecessary medication",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 28,
+      "text": "Start systemic thrombolysis with Alteplase 100 mg IV over 2 hours",
+      "category": "Medication",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting dangerous thrombolytic or anticoagulant therapy",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 29,
+      "text": "Start Warfarin 5 mg PO daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting anticoagulation without indication",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 30,
+      "text": "Stop all anticoagulant or antiplatelet medications",
+      "category": "Medication",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Stopping indicated medications",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 31,
+      "text": "Elective referral for nephrectomy",
+      "category": "Procedure",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Performing unnecessary invasive procedures",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 32,
+      "text": "Elective referral for renal mass biopsy",
+      "category": "Procedure",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Performing unnecessary invasive procedures",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 33,
+      "text": "Elective referral for renal artery stenting",
+      "category": "Procedure",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Performing unnecessary invasive procedures",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 34,
+      "text": "Perform in-office blood pressure monitoring in all four extremities",
+      "category": "Procedure",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 35,
+      "text": "Urgent surgical exploration of kidney",
+      "category": "Procedure",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Performing unnecessary invasive procedures",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 36,
+      "text": "Prescribing multiple antithrombotic agents simultaneously",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Contraindications",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 37,
+      "text": "Refer to nephrology clinic if any worsening renal function.",
+      "category": "Contingency",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 38,
+      "text": "Urgent referral to Vascular Surgery",
+      "category": "Follow-up",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": null,
+      "abstractionType": null
+    }
+  ],
+  "abstractionGroups": [],
+  "specialistConsult": {
+    "consults": [
+      {
+        "type": "specialist",
+        "specialty": "Vascular Surgery",
+        "urgency": "Urgent",
+        "harm": {
+          "type": "omission",
+          "severity": "Moderate"
+        },
+        "optionId": 38
+      }
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+case_id: Card002
+spirit: Patient with paroxysmal AF on Ziopatch; judge must recognize that "14-30 day event monitor" encompasses
+  the 30-day ambulatory cardiac monitor option, and distinguish ablation-consultation referrals from generic
+  EP-evaluation referrals.
+watchouts:
+- Event monitors and ambulatory cardiac monitors are synonymous in this context.
+- Duration ranges that include the target duration (e.g., '14-30 day') count as full matches.
+- Opt 6 PARTIAL when the response commits to ambulatory monitoring at a duration SHORTER than 30 days
+  (14-day monitor only, 48-hour Holter). FULL requires a duration that includes or exceeds 30 days.
+- 'Opt 13 (repeat Ziopatch monitoring, score=4 HARM) fires when the response orders a repeat ambulatory
+  cardiac monitor of the SAME type already done (Ziopatch redux) without changing duration or modality.
+  Distinct: a longer ambulatory monitor (30-day event monitor when prior was 14-day Ziopatch) is opt 6,
+  not opt 13. Match opt 13 only when the response duplicates short-term patch monitoring without escalating
+  duration or capability.'
+- Opt 30 (catheter ablation consultation referral) requires referral phrased specifically AROUND ablation
+  - 'EP for ablation candidacy', 'EP to discuss ablation', 'consultation for ablation evaluation'. Generic
+  EP referral for 'AF management' or 'rhythm-control evaluation' is too broad and does NOT match opt 30
+  - that's a generic cardiology referral. The matcher should resist interpreting any EP referral as ablation-specific.
+options:
+  6:
+    aliases:
+    - event monitor
+    - ambulatory monitor
+    - cardiac event monitor
+    matching: Durations specified as ranges (e.g., '14-30 day') that include 30 days count as FULL. Shorter
+      durations (14-day alone, 48-hour Holter) are PARTIAL - concept fires but duration is narrower than
+      target. Longer durations (implantable loop recorder) match a different harm cluster.
+  13:
+    matching: Order repeat Ziopatch monitoring is HARM (score=4) - duplicating short-term patch monitoring
+      after the first Ziopatch already showed paroxysmal AF episodes. Match FULL when the response commits
+      to repeating the SAME type of monitoring (Ziopatch redux, repeat 14-day patch). Match NONE when
+      the response escalates to a longer/different modality (30-day event monitor, implantable loop recorder,
+      Holter for different question) - that's a meaningful escalation, not a redundant repeat.
+  30:
+    matching: Elective referral for catheter ablation consultation. Match FULL when the response refers
+      to EP/cardiology specifically for ablation discussion or candidacy evaluation. Match NONE when the
+      EP referral is framed generically ('refer to EP for AF management', 'EP for rhythm-control evaluation',
+      'cardiology for AF') - those are broader-scope referrals that don't commit to ablation as the question.
+      The referral target must be ablation, not generic AF management.

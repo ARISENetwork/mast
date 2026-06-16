@@ -1,0 +1,292 @@
+{
+  "id": "All006",
+  "open": true,
+  "case": {
+    "presentation": "A 27-year-old man with no history of allergies presents with truncal-predominant, pruritic hives for 6 weeks. It is unrelated to hot showers and without other symptoms. He has used near-daily cetirizine for 2 weeks and diphenhydramine when intense; no new detergents/body washes. Suspected chronic urticaria (raised, pruritic welts that resolve within 24 hours; may be spontaneous or inducible). What prophylactic regimen and counseling are recommended, which cofactors to avoid, when to refer for possible urticarial vasculitis, and how to escalate therapy if not controlled?",
+    "recommendations": "Increase cetirizine 10 mg to BID for prophylaxis, counseling on risks including sedation and/or dry mouth. Continue antihistamine prophylaxis until complete control, then attempt to wean. Advise against first-generation antihistamines (e.g., diphenhydramine) due to sedation and other side effects. Advise patient to maintain a symptom diary noting any new medications or exposures. Avoid cofactors that exacerbate urticaria: hot showers, tight clothing, NSAIDs/ASA, opiates, stress, alcohol. This is not angioedema, so ACE-I do not need to be avoided. Take additional history to identify any exacerbating factors such as new medications. Would also consider screening labs for chronic urticaria assessment (CBC with differential, ESR, CRP) if appropriate. Refer to Allergy if red flags for urticarial vasculitis: hives persisting >24 hours, residual bruising/scarring, or painful lesions; patient should seek evaluation promptly if they occur. If uncontrolled, increase up to cetirizine 20 mg BID and refer to Allergy for potential escalation (e.g., omalizumab)."
+  },
+  "options": [
+    {
+      "id": 1,
+      "text": "Reassure patient that no additional testing or treatment is indicated, and the patient can continue present management",
+      "category": "Counseling",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": true,
+      "abstraction": "Harm of inaction",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 2,
+      "text": "Advise against the use of first-generation antihistamines such as Diphenhydramine due to side effect profile",
+      "category": "Counseling",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 3,
+      "text": "Advise patient to avoid common triggers such as NSAIDs, alcohol, stress, and tight clothing",
+      "category": "Counseling",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 4,
+      "text": "Advise patient to maintain a symptom diary and note any new medications or exposures",
+      "category": "Counseling",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 5,
+      "text": "Advise patient to start a strict food elimination diet",
+      "category": "Counseling",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Inappropriate dietary or allergy interventions",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 6,
+      "text": "Advise patient to avoid ACE inhibitors",
+      "category": "Counseling",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 7,
+      "text": "Inform patient about side effects of increased antihistamine use, such as potential sedation",
+      "category": "Counseling",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 8,
+      "text": "Inform patient that chronic hives are often a sign of underlying cancer",
+      "category": "Counseling",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Providing harmful misinformation",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 9,
+      "text": "Reassure patient that daily Diphenhydramine use is safe for long-term control",
+      "category": "Counseling",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Providing harmful misinformation",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 10,
+      "text": "Warn patient about red flags (lesions lasting >24 hours, painful, or leaving bruises) and instruct to seek evaluation if they occur",
+      "category": "Counseling",
+      "score": 9,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 11,
+      "text": "Order ANA and anti-dsDNA testing",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 12,
+      "text": "Order a comprehensive IgE food allergy panel",
+      "category": "Diagnostic",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Inappropriate dietary or allergy interventions",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 13,
+      "text": "Order complete blood count (CBC) with differential",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 14,
+      "text": "Order C-reactive protein (CRP) and erythrocyte sedimentation rate (ESR)",
+      "category": "Diagnostic",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 15,
+      "text": "Order testing for Helicobacter pylori",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 16,
+      "text": "Order thyroid stimulating hormone (TSH) and anti-thyroid peroxidase (TPO) antibodies",
+      "category": "Diagnostic",
+      "score": 6,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 17,
+      "text": "Continue Cetirizine 10 mg PO daily and add Famotidine 20 mg PO twice daily",
+      "category": "Medication",
+      "score": 6,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 18,
+      "text": "Continue Diphenhydramine 25 mg PO TID PRN for breakthrough hives",
+      "category": "Medication",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 19,
+      "text": "Increase Cetirizine to 10 mg PO twice daily",
+      "category": "Medication",
+      "score": 8,
+      "bestInGroup": true,
+      "isHarmOfInaction": false,
+      "abstraction": "Increase cetirizine dosing",
+      "abstractionType": "alternative"
+    },
+    {
+      "id": 20,
+      "text": "Increase Cetirizine to 20 mg PO twice daily",
+      "category": "Medication",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Increase cetirizine dosing",
+      "abstractionType": "alternative"
+    },
+    {
+      "id": 21,
+      "text": "Prescribe an epinephrine auto-injector",
+      "category": "Medication",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 22,
+      "text": "Start Amoxicillin 500 mg PO TID for 7 days",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate medications",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 23,
+      "text": "Start Doxepin 10 mg PO nightly",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting first-generation or sedating antihistamines",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 24,
+      "text": "Start Hydroxyzine 10 mg PO three times daily",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting first-generation or sedating antihistamines",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 25,
+      "text": "Start Montelukast 10 mg PO daily",
+      "category": "Medication",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 26,
+      "text": "Start Omalizumab 300 mg SC every 4 weeks",
+      "category": "Medication",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 27,
+      "text": "Start Prednisone 40 mg PO daily for 5 days",
+      "category": "Medication",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 28,
+      "text": "Start topical Triamcinolone 0.1% cream to apply to hives twice daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate medications",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 29,
+      "text": "Stop Cetirizine",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Stopping or switching cetirizine inappropriately",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 30,
+      "text": "Switch Cetirizine to Loratadine 10 mg daily",
+      "category": "Medication",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 31,
+      "text": "Elective referral for allergy skin prick testing to environmental and food allergens",
+      "category": "Procedure",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    }
+  ],
+  "abstractionGroups": [
+    {
+      "name": "Increase cetirizine dosing",
+      "pickCount": 1,
+      "pickType": "exact"
+    }
+  ],
+  "specialistConsult": {
+    "consults": []
+  }
+}

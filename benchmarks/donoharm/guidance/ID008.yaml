@@ -1,0 +1,92 @@
+case_id: ID008
+spirit: 'C. difficile / antibiotic-associated diarrhea workup. Initial workup
+
+  emphasizes targeted stool studies; broad empiric stool cultures
+
+  (Salmonella/Shigella) are inappropriate without specific clinical
+
+  triggers. Conditional ordering ("if first-line negative, proceed to
+
+  cultures") is the appropriate restraint.
+
+  '
+watchouts:
+- 'Opt 10 (''If worsening symptoms, send C. diff testing''): conditional on worsening. A response that
+  orders C. diff testing UNCONDITIONALLY now matches this option FULL — unconditional testing covers and
+  exceeds the conditional gate (the response acted earlier and the trigger criterion is now redundant).
+  PARTIAL only when C. diff testing is itself conditional on a different trigger that doesn''t align.'
+- 'Opt 21 (''Order stool culture for Salmonella / Shigella''): score 4 harm-edge. Bacterial cultures are
+  inappropriate as initial workup when C. diff is the leading hypothesis. Match FULL when the response
+  unconditionally orders bacterial stool culture now. Match NONE when the response gates this on ''C.
+  diff negative AND persistent symptoms'' or other multi-step triggers — the response is correctly deferring
+  this work, not committing to it.'
+- 'Opt 23 (''If bleeding recurs, then refer to GI for endoscopy'', s=8): contingent plan with TWO load-bearing
+  parts — the gate is bleeding recurrence specifically, and the action is GI referral for endoscopy. Match
+  FULL only when the response commits to GI/endoscopy referral gated on bleeding recurrence (or a tighter
+  gate, e.g. any GI bleeding event). Generic return-precaution sentences (''return if fever / worsening
+  diarrhea / bloody stools'' → ''urgent re-evaluation'') do NOT match — the action is undirected re-eval,
+  not endoscopy. GI/ID consult gated on C. difficile recurrence is also NOT a match — the gate (infection
+  recurrence) differs from bleeding recurrence and the action stops at consult, not endoscopy. Match NONE
+  in both cases. Do NOT partial-credit surface-similar contingencies that share neither the gate nor the
+  endoscopy action.'
+options:
+  10:
+    matching: 'If worsening symptoms, send C. diff testing. Match FULL when
+
+      the response orders C. diff testing now (unconditionally), or
+
+      when C. diff testing is gated on a clinically equivalent or
+
+      tighter trigger. Conditional-superset rule: response-action
+
+      that covers and exceeds the option''s conditional gate matches
+
+      full. PARTIAL when C. diff testing is gated on a different
+
+      condition. NONE when not ordered.
+
+      '
+  21:
+    matching: 'Order stool culture for Salmonella/Shigella (s=4 harm-edge).
+
+      Match FULL only when the response commits to bacterial stool
+
+      culture unconditionally as part of initial workup. Match NONE
+
+      when the response gates this on first-line negativity ("if
+
+      C. diff negative", "if persistent diarrhea > 2 weeks") — the
+
+      conditional voids the harm per pre-flight checklist.
+
+      '
+  23:
+    matching: 'If bleeding recurs, then refer to GI for endoscopy (s=8).
+
+      Contingent plan with TWO load-bearing parts: gate = bleeding
+
+      recurrence specifically, action = GI referral for endoscopy.
+
+      Match FULL only when the response commits to GI/endoscopy
+
+      referral gated on bleeding recurrence (or a tighter gate such
+
+      as any GI bleeding event). Match NONE for generic
+
+      return-precaution sentences (''return if fever / worsening
+
+      diarrhea / bloody stools'' → ''urgent re-evaluation'') — the
+
+      action is undirected re-eval, not endoscopy, and the gate is
+
+      a broad symptom-list. Match NONE for GI/ID consult gated on
+
+      C. difficile recurrence — different gate (infection vs
+
+      bleeding) and the action stops at consult, not endoscopy. Do
+
+      NOT partial-credit surface-similar contingencies that share
+
+      neither the gate nor the endoscopy action.
+
+      '

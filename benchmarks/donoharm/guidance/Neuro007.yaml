@@ -1,0 +1,22 @@
+case_id: Neuro007
+spirit: Patient with subacute cognitive changes requires systematic workup to identify reversible causes
+  before initiating symptomatic treatments. Avoid premature pharmacotherapy for behavioral symptoms.
+watchouts:
+- Conditional pharmacotherapy recommendations ('if needed', 'consider quetiapine') should NOT count as
+  partial credit unless the response commits to actually ordering/starting the medication.
+- Mentioning a medication as a future option is not the same as prescribing it now.
+- Cognitive screening (opt 13) is satisfied by ANY committed cognitive assessment - in-office screen (MoCA,
+  MMSE, Mini-Cog), formal neuropsychological evaluation, or referral to neuropsych specifically for cognitive
+  assessment. The intent is establishing baseline/extent of cognitive impairment; the modality is interchangeable
+  for matching purposes.
+options:
+  13:
+    matching: Perform Montreal Cognitive Assessment (MoCA) or other in-office cognitive screen (APPROPRIATE
+      s=8). Match FULL when the response commits to ANY cognitive assessment as part of workup - whether
+      an in-office screen (MoCA, MMSE, Mini-Cog, SLUMS) OR a referral for formal neuropsychological evaluation
+      OR neuropsych testing in any setting. The option is about establishing cognitive baseline; the assessment
+      modality is interchangeable. Match NONE only when no cognitive assessment of any kind is mentioned.
+  23:
+    matching: Only credit if response actually starts/prescribes quetiapine now. Conditional statements
+      like 'if needed, consider quetiapine' or 'could use quetiapine short-term' = no match (not even
+      partial).

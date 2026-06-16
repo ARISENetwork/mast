@@ -1,0 +1,51 @@
+case_id: GI002
+spirit: Progressive iron-deficiency anemia on anticoagulation requires systematic GI evaluation (repeat
+  endoscopy -> capsule if negative) while balancing stroke risk from high CHADS-VASc against bleeding
+  risk.
+watchouts:
+- Conditional or contingent recommendations (e.g., 'if X fails, then do Y') do not count as ordering/performing
+  Y.
+- Patient counseling about anticoagulation risks/benefits (opt 2) requires the response to explicitly
+  counsel or inform the PATIENT - clinical justification embedded in the assessment ('CHA2DS2-VASc=5 supports
+  continuing apixaban', 'continuing AC given high stroke risk') is reasoning for the clinician, not patient
+  counseling, and does NOT match opt 2.
+- Watchman / left-atrial-appendage closure (opt 27) requires actual commitment to or referral for the
+  procedure itself. Referral 'for evaluation', 'for candidacy assessment', 'to discuss Watchman' is a
+  referral for evaluation, NOT a commitment to the procedure - match NONE. Only firm referral for the
+  closure procedure itself matches.
+- Routine cardiology referral (opt 31) requires a general cardiology / atrial-fibrillation management
+  referral that is NOT specifically scoped to Watchman or LAA closure evaluation. EP referral specifically
+  scoped to 'Watchman evaluation' or 'LAA closure candidacy' is a procedure-specific referral and falls
+  under opt 27 considerations - it does NOT count as the broad opt 31 cardiology referral. A generic cardiology
+  / AF-management referral matches opt 31.
+options:
+  2:
+    matching: Inform patient about risks and benefits of continuing anticoagulation - match FULL when
+      the response includes explicit patient-directed counseling about AC risks vs benefits (shared decision-making
+      language, 'discuss with patient', 'explain to the patient', 'inform her of the bleeding/stroke trade-off').
+      Match NONE when the response only provides clinical reasoning ('CHA2DS2-VASc=5, continue apixaban')
+      without patient-facing communication framing - that's clinician justification, not patient counseling.
+  10:
+    matching: Conditional/contingent balloon enteroscopy (e.g., 'if capsule positive') = none. Must be
+      ordered as definite next step.
+  20:
+    matching: Start ferrous sulfate 325 mg PO daily. Match FULL when oral ferrous sulfate (or ferrous
+      gluconate / ferrous fumarate at equivalent elemental iron) is named with any standard dosing interval
+      (daily, every other day, BID); IV iron mentioned as a fallback if oral intolerant or severe does
+      not downgrade. Match PARTIAL only when IV iron is the primary recommendation with no oral ferrous
+      sulfate. Match NONE when no iron is recommended.
+  27:
+    matching: Watchman / LAA closure referral - match FULL only when the response firmly refers FOR the
+      closure procedure itself. Referral 'for evaluation of Watchman candidacy', 'to EP to discuss LAA
+      closure', 'for consideration of Watchman' counts as a referral for evaluation, NOT a commitment
+      to the procedure - match NONE. Conditional referrals ('if bleeding refractory') also = none.
+  30:
+    matching: Capsule endoscopy as next step after at least one repeat scope = full match. Full match
+      requires ordering at least one repeat upper-or-lower endoscopy then capsule, OR explicit if-then
+      framing. Partial when capsule is named with no prior-scope sequencing.
+  31:
+    matching: Routine cardiology referral - match FULL on a generic cardiology, AF-management, or stroke-risk-management
+      referral. Match NONE when the cardiology referral is procedure-scoped to Watchman / LAA closure
+      evaluation specifically (that falls under opt 27 procedure-referral handling, not the broad cardiology
+      follow-up of opt 31). EP referral counts only when it is broadly framed for AF/stroke management,
+      not Watchman-specific.

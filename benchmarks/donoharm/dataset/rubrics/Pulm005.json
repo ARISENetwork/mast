@@ -1,0 +1,412 @@
+{
+  "id": "Pulm005",
+  "open": true,
+  "case": {
+    "presentation": "A 71-year-old man with no prior lung disease develops productive cough episodes lasting more than four weeks almost every year, usually after a presumed viral illness. He denies wheezing; his chest X-ray is normal, PFTs are pending, and he has a history of GERD managed with famotidine (PPIs were tried without relief). In the past, a short course of azithromycin temporarily relieved the cough, but it always recurs. Should I continue empirically prescribing azithromycin each time he coughs given the prior improvement?",
+    "recommendations": "Routine empiric antibiotics without culture data are not recommended. Instead, obtain sputum samples for bacterial, mycobacterial, and fungal studies whenever she can expectorate. Begin a trial of low-dose inhaled corticosteroid/long-acting β2-agonist therapy (for example, budesonide/formoterol 80/4.5 mcg, two puffs twice daily). If the chronic cough and sputum production persist despite these measures, proceed with a noncontrast chest CT and refer to pulmonology for further evaluation. Antibiotic therapy should be reserved for instances when culture results identify a treatable pathogen"
+  },
+  "options": [
+    {
+      "id": 1,
+      "text": "Reassure patient that no additional testing or treatment is indicated, and the patient can continue present management",
+      "category": "Counseling",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": true,
+      "abstraction": "Harm of inaction",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 2,
+      "text": "Urgent referral to Pulmonology, warning patient not to delay this appointment",
+      "category": "Follow-up",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 3,
+      "text": "Immediate evaluation in the emergency room",
+      "category": "Follow-up",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Inappropriate urgency of evaluation",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 4,
+      "text": "Inform patient about the risk of long-term antibiotic use and antibiotic resistance",
+      "category": "Counseling",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 5,
+      "text": "Inform patient this is likely an unavoidable consequence of aging",
+      "category": "Counseling",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Inappropriate dismissive counseling",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 6,
+      "text": "Inform patient to continue to take azithromycin each time symptoms recur because it previously helped",
+      "category": "Counseling",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Encouraging continued empiric antibiotics",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 7,
+      "text": "Inform patient to elevate head of bed for GERD management",
+      "category": "Counseling",
+      "score": 6,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 8,
+      "text": "Inform patient to increase fluid intake to thin secretions",
+      "category": "Counseling",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 9,
+      "text": "Inform patient about smoking cessation",
+      "category": "Counseling",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 10,
+      "text": "Reassure patient that productive coughs following illness are self-limiting",
+      "category": "Counseling",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 11,
+      "text": "Order 24-hour esophageal pH monitoring",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 12,
+      "text": "Order alpha-1 antitrypsin level",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 13,
+      "text": "Order CBC with differential",
+      "category": "Diagnostic",
+      "score": 6,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 14,
+      "text": "Order echocardiogram",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 15,
+      "text": "Order HIV antigen/antibody test",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 16,
+      "text": "Order methacholine challenge test",
+      "category": "Diagnostic",
+      "score": 6,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 17,
+      "text": "Order nasopharyngeal Bordetella pertussis PCR",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 18,
+      "text": "Order non-contrast high-resolution chest CT (HRCT) of the chest",
+      "category": "Diagnostic",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 19,
+      "text": "Order repeat chest X-ray",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 20,
+      "text": "Order serum immunoglobulin levels (IgG, IgA, IgM)",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 21,
+      "text": "Order sinus CT",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 22,
+      "text": "Order spirometry with bronchodilator response",
+      "category": "Diagnostic",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 23,
+      "text": "Order sputum cytology to evaluate for malignancy",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 24,
+      "text": "Order sputum for bacterial culture and sensitivities",
+      "category": "Diagnostic",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 25,
+      "text": "Order sputum for fungal culture and sensitivities",
+      "category": "Diagnostic",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 26,
+      "text": "Order sputum for acid-fast bacilli (AFB) culture and sensitivities",
+      "category": "Diagnostic",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 27,
+      "text": "Order sweat chloride test",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 28,
+      "text": "Routine referral to Gastroenterology in a few months",
+      "category": "Follow-up",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 29,
+      "text": "Increase Famotidine to 40 mg PO twice daily",
+      "category": "Medication",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 30,
+      "text": "Start Amoxicillin/Clavulanate 875 mg/125 mg PO twice daily for 7 days",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting empiric antibiotics",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 31,
+      "text": "Start Azithromycin 250 mg PO three times weekly for 3 months",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting empiric antibiotics",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 32,
+      "text": "Start Azithromycin 500 mg PO daily for 5 days for current symptoms",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting empiric antibiotics",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 33,
+      "text": "Start Benzonatate 100 mg PO three times daily as needed for cough",
+      "category": "Medication",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 34,
+      "text": "Start Budesonide/Formoterol 80/4.5 mcg 2 puffs inhaled twice daily",
+      "category": "Medication",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 35,
+      "text": "Start a codeine-based cough suppressant",
+      "category": "Medication",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 36,
+      "text": "Start Doxycycline 100 mg PO twice daily for 7 days",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting empiric antibiotics",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 37,
+      "text": "Start Fluticasone nasal spray 50 mcg 2 sprays in each nostril daily",
+      "category": "Medication",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 38,
+      "text": "Start Guaifenesin 600 mg PO twice daily",
+      "category": "Medication",
+      "score": 6,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 39,
+      "text": "Start Ipratropium inhaler 2 puffs four times daily",
+      "category": "Medication",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 40,
+      "text": "Start Levofloxacin 750 mg PO daily for 5 days",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting empiric antibiotics",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 41,
+      "text": "Start Montelukast 10 mg PO daily",
+      "category": "Medication",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 42,
+      "text": "Start Omeprazole 40 mg PO daily",
+      "category": "Medication",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 43,
+      "text": "Start Oseltamivir 75 mg PO twice daily for 5 days",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting empiric antivirals",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 44,
+      "text": "Start Prednisone 40 mg PO daily for 5 days",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting systemic corticosteroids without indication",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 45,
+      "text": "Start Tiotropium 18 mcg inhaled daily",
+      "category": "Medication",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 46,
+      "text": "Elective referral for bronchoscopy",
+      "category": "Procedure",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 47,
+      "text": "Elective referral for chest physiotherapy and airway clearance training",
+      "category": "Procedure",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    }
+  ],
+  "abstractionGroups": [],
+  "specialistConsult": {
+    "consults": []
+  }
+}

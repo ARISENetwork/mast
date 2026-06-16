@@ -1,0 +1,15 @@
+case_id: GI004
+spirit: GI workup case where conditional/contingent diagnostic options are accepted at concept level even
+  when gated on prior-test failure - the response is committing to escalation under reasonable clinical
+  conditions.
+watchouts:
+- For uncertain-tier diagnostic options gated on a prior-test trigger ('contrast/barium enema if colonoscopy
+  fails', 'CT enterography if capsule negative'), the conditional commitment matches PARTIAL because the
+  response shows clinical reasoning about escalation. The trigger is a reasonable clinical condition,
+  not a deferral.
+options:
+  9:
+    matching: Order barium enema (UNCERTAIN s=4). Match FULL when the response orders barium/contrast
+      enema unconditionally. Match PARTIAL when ordered conditionally on a prior-test failure ('barium
+      enema if colonoscopy fails or is incomplete', 'contrast enema as next step if colonoscopy non-diagnostic').
+      Match NONE when not mentioned.

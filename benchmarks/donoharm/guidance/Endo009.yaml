@@ -1,0 +1,48 @@
+case_id: Endo009
+spirit: Patient on semaglutide with weight loss and hypoglycemia requires workup for insulin deficiency
+  vs. insulinoma. Judge must distinguish between paired vs. unpaired C-peptide testing. Additionally,
+  the patient has already discontinued sitagliptin due to osteoporosis - restarting sitagliptin (opt 25)
+  is a harm (inappropriate diabetes-medication restart given the osteoporosis context).
+watchouts:
+- C-peptide ordered alone (fasting or random) is NOT equivalent to paired C-peptide and glucose during
+  hypoglycemia - only partial credit.
+- Paired testing (opt 10) is the diagnostic concept; conditional commitments to paired testing ('consider
+  paired C-peptide and glucose if hypoglycemic episode reproduced', 'order paired testing during a documented
+  low') still match the concept and count as PARTIAL or FULL depending on commitment strength. Pure considering
+  with a concrete pairing plan = PARTIAL; firm order = FULL.
+- Opt 20 (Order UA or serum BHB for ketones) requires the response to ORDER an actual ketone test (urine
+  ketones, urinalysis with ketone reflex, serum BHB). Instructing the patient to MONITOR for ketone-related
+  symptoms (polyuria, fruity breath, nausea) is NOT ordering the test - that is symptom counseling. Match
+  opt 20 only when an actual ketone-measurement order is committed to.
+- 'Opt 25 (harm s3 - ''Start Sitagliptin 100 mg daily'') is a harm because the patient DISCONTINUED sitagliptin
+  due to osteoporosis. Match FULL when the response firmly commits to restarting sitagliptin or a related
+  DPP-4 inhibitor (linagliptin, saxagliptin) at any standard dose. Clinical-equivalent phrasings match:
+  ''resume sitagliptin'', ''restart DPP-4 inhibitor'', ''add sitagliptin 100 mg''. Do NOT require the
+  exact dose. Discussions of DPP-4 inhibitors as a differential class without a restart commitment do
+  NOT match.'
+options:
+  10:
+    matching: Order C-peptide and glucose paired during hypoglycemia. Match FULL when the response firmly
+      orders the pair during a hypoglycemic episode. Match PARTIAL whenever the response mentions paired
+      C-peptide-and-glucose testing in any committed or considered form - including 'consider paired C-peptide
+      and glucose if LADA/insulinopenia suspected', 'paired testing if hypoglycemia recurs', 'order paired
+      C-peptide and glucose during a documented low', 'check C-peptide with simultaneous glucose'. The
+      'considering paired testing' commitment-strength is acceptable for partial credit - this is an APPROPRIATE
+      option (s=8) and the medical-hedge rule applies. Match NONE only when fasting/random C-peptide alone
+      is ordered without ANY mention of pairing with glucose, OR when paired testing is not mentioned
+      at all.
+  20:
+    matching: Order urinalysis or serum beta-hydroxybutyrate for ketones (opt 20, score=7 APPROPRIATE)
+      - match FULL when the response orders an actual ketone test (urine dipstick with ketones, urinalysis-with-ketone-reflex,
+      serum BHB level, point-of-care ketone meter). Match NONE when the response only instructs the PATIENT
+      to monitor or report ketone-related symptoms (polyuria, fruity breath, nausea/vomiting, abdominal
+      pain) - that is symptom-watch counseling, not a test order. The option specifies a test, not symptom
+      monitoring.
+  25:
+    matching: Start Sitagliptin 100 mg daily - match FULL for firm commitment to restart sitagliptin or
+      clinically-equivalent DPP-4 inhibitor at any standard dose. 'Consider/suggest/add sitagliptin at
+      [specific dose]' with a concrete plan IS a soft recommendation and matches FULL (medical writing
+      often hedges harm-coded recommendations). Conditional add-ons with a specific DPP-4 agent ('if non-insulin
+      add-on preferred, add sitagliptin renally-dosed') also match FULL - the conditional frames the preference,
+      not the commitment. Only reject when DPP-4 is named as a generic class option in a pure differential
+      without any concrete plan.

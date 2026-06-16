@@ -3,7 +3,7 @@
 Template API validator for new benchmarks.
 
 Copy this directory and modify for your benchmark. See
-benchmarks/donoharm/validator.py for a complete example.
+benchmarks/donoharm/submission/validator.py for a complete example.
 """
 
 import json

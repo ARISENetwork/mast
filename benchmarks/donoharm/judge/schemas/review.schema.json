@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mast.local/donoharm/judge/review.schema.json",
+  "title": "Review output",
+  "description": "One record per (case_id, trial). Produced by review_stage.py. Cache location: {cache_root}/{model}/review_<judge>/<judge>.jsonl. Schema source: review_stage.review_schema().",
+  "type": "object",
+  "required": ["id", "trial", "model", "judge", "overrides"],
+  "properties": {
+    "id":    {"type": "string"},
+    "trial": {"type": "integer", "minimum": 0},
+    "model": {"type": "string"},
+    "judge": {"type": "string"},
+    "overrides": {
+      "type": "array",
+      "description": "Absent-means-confirmed list of per-option verdict overrides. Each promotion override cites the extracted action_id that supports it, or null when the response did the action but match didn't extract a matching action (explicit coverage-gap signal).",
+      "items": {
+        "type": "object",
+        "required": ["option_id", "new_verdict", "rationale", "evidence", "action_id"],
+        "properties": {
+          "option_id":   {"type": "integer"},
+          "new_verdict": {"type": "string", "enum": ["yes", "partial", "no"]},
+          "rationale":   {"type": "string"},
+          "evidence":    {"type": ["string", "null"], "description": "Demotion overrides typically pass null."},
+          "action_id":   {"type": ["integer", "null"], "description": "Cites the extracted action (match actions[].id) that supports the override. Null when the response did the action but match didn't extract it, or when the override is a demotion."}
+        }
+      }
+    },
+    "runtime":     {"type": ["number", "null"], "description": "Per-call wall time in seconds. May be null for re-emitted records."},
+    "usage":       {"type": "object"},
+    "prompt_hash": {"type": "string"}
+  }
+}

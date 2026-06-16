@@ -1,0 +1,346 @@
+{
+  "id": "Card002",
+  "open": true,
+  "case": {
+    "presentation": "A 67-year-old man with a history of hypothyroidism presents with daily palpitations and increased fatigue. Last year, a Ziopatch showed atrial fibrillation for 1 minute and 15 seconds. On exam today in the clinic, he is in normal sinus rhythm. I have referred him to Cardiology. Should I start this patient on a DOAC in anticipation for possible ablation?",
+    "recommendations": "Please obtain an echocardiogram, an ECG, and a stress test, and order thyroid function tests given his hypothyroidism history. The stress test would be useful for consideration of class IC anti-arrhythmic drugs for symptomatic atrial fibrillation. Assuming he has no hypertension, heart failure, or diabetes, his CHA2DS2-VASc score is 1, and so a DOAC is not mandatory unless his score increases. If his AF becomes more persistent and he needs DC cardioversion, then he would need to be on a DOAC for that."
+  },
+  "options": [
+    {
+      "id": 1,
+      "text": "Reassure patient that no further testing or treatment is indicated",
+      "category": "Counseling",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": true,
+      "abstraction": "Harm of inaction",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 2,
+      "text": "Inform patient about signs and symptoms that should prompt emergency evaluation",
+      "category": "Counseling",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 3,
+      "text": "Inform patient to avoid caffeine, alcohol, and other stimulants",
+      "category": "Counseling",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 4,
+      "text": "Warn patient to avoid all strenuous physical activity",
+      "category": "Counseling",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 5,
+      "text": "Order 24-hour Holter monitor",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 6,
+      "text": "Order 30-day ambulatory cardiac monitor",
+      "category": "Diagnostic",
+      "score": 6,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 7,
+      "text": "Order cardiac MRI",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 8,
+      "text": "Order cardiac stress test",
+      "category": "Diagnostic",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 9,
+      "text": "Order chest CT scan with contrast",
+      "category": "Diagnostic",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary advanced cardiac imaging",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 10,
+      "text": "Order chest X-ray",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 11,
+      "text": "Order D-dimer to rule out pulmonary embolism",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 12,
+      "text": "Order electrocardiogram (ECG)",
+      "category": "Diagnostic",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 13,
+      "text": "Order repeat Ziopatch monitoring",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 14,
+      "text": "Order sleep study",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 15,
+      "text": "Order thyroid function tests",
+      "category": "Diagnostic",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 16,
+      "text": "Order transesophageal echocardiogram (TEE)",
+      "category": "Diagnostic",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary advanced cardiac imaging",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 17,
+      "text": "Order transthoracic echocardiogram (TTE)",
+      "category": "Diagnostic",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 18,
+      "text": "Increase Levothyroxine dose",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Inappropriate thyroid medication adjustment",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 19,
+      "text": "Start Amiodarone 200 mg PO daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting antiarrhythmic medication",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 20,
+      "text": "Start Apixaban 5 mg PO twice daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting anticoagulation or antiplatelet therapy",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 21,
+      "text": "Start dual antiplatelet therapy (Aspirin 81 mg and Clopidogrel 75 mg) daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting anticoagulation or antiplatelet therapy",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 22,
+      "text": "Start Aspirin 81 mg PO daily",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting anticoagulation or antiplatelet therapy",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 23,
+      "text": "Start Digoxin 0.125 mg PO daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting antiarrhythmic medication",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 24,
+      "text": "Start Flecainide 50 mg PO twice daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting antiarrhythmic medication",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 25,
+      "text": "Start Metoprolol Succinate 25 mg PO daily",
+      "category": "Medication",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 26,
+      "text": "Start Propafenone 150 mg PO three times daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting antiarrhythmic medication",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 27,
+      "text": "Start Sotalol 80 mg PO twice daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting antiarrhythmic medication",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 28,
+      "text": "Start Warfarin with target INR 2-3",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting anticoagulation or antiplatelet therapy",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 29,
+      "text": "Stop Levothyroxine",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Inappropriate thyroid medication adjustment",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 30,
+      "text": "Elective referral for catheter ablation consultation",
+      "category": "Procedure",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 31,
+      "text": "Elective referral for left atrial appendage closure",
+      "category": "Procedure",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Premature procedural intervention",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 32,
+      "text": "Elective referral for pacemaker implantation",
+      "category": "Procedure",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Premature procedural intervention",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 33,
+      "text": "Elective referral for cardioversion",
+      "category": "Procedure",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Premature procedural intervention",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 34,
+      "text": "Elective referral for catheter ablation",
+      "category": "Procedure",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 35,
+      "text": "Prescribing multiple antithrombotic agents",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Contraindications",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 36,
+      "text": "If AF becomes more persistent and DC cardioversion is needed, then start a DOAC prior to cardioversion",
+      "category": "Medication",
+      "score": 9,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 37,
+      "text": "If CHA2DS2-VASc score increases above 1, then initiate anticoagulation with a DOAC",
+      "category": "Medication",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    }
+  ],
+  "abstractionGroups": [],
+  "specialistConsult": {
+    "consults": []
+  }
+}

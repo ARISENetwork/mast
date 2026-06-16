@@ -1,0 +1,350 @@
+{
+  "id": "Pulm001",
+  "open": true,
+  "case": {
+    "presentation": "A 71-year-old man who is a former smoker with type 2 diabetes and chronic eosinophilia underwent a noncontrast CT chest for lung cancer screening. The CT revealed new tree-in-bud micronodularity in the right lower lobe, along with bronchial wall thickening and mucus plugging, not present on imaging from 5 years prior. He remembers a self-limited cough several weeks ago, has no current respiratory symptoms, and has no other systemic complaints or history of reflux. Is additional follow-up needed?",
+    "recommendations": "Leading considerations are atypical infection (eg, Mycobacterium avium complex), allergic bronchopulmonary aspergillosis, aspiration, desquamative interstitial pneumonia, or other bronchiolar processes. We recommend obtaining induced sputum on three consecutive mornings for AFB smear and culture plus fungal and bacterial cultures, and ordering Aspergillus serologies (total IgE, Aspergillus-specific IgE and IgG). Evaluate for aspiration risk (eg, swallow study or review of reflux history). Repeat CT chest in 3 months rather than waiting one year to confirm stability or resolution; if nodularity persists or worsens, or if cough recurs, refer to pulmonology for further assessment (including consideration of bronchoscopy)."
+  },
+  "options": [
+    {
+      "id": 1,
+      "text": "Reassure patient that no additional testing or treatment is indicated, and the patient can continue present management",
+      "category": "Counseling",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": true,
+      "abstraction": "Harm of inaction",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 2,
+      "text": "Routine referral to Pulmonology in a few months",
+      "category": "Follow-up",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 3,
+      "text": "Urgent referral to Pulmonology, warning patient not to delay this appointment",
+      "category": "Follow-up",
+      "score": 6,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 4,
+      "text": "Immediate evaluation in the emergency room",
+      "category": "Follow-up",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 5,
+      "text": "Inform patient he has asthma due to his eosinophilia",
+      "category": "Counseling",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Providing inaccurate diagnosis",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 6,
+      "text": "Inform patient to report any new or worsening symptoms, such as cough, fever, or weight loss",
+      "category": "Counseling",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 7,
+      "text": "Reassure patient that these findings are common in former smokers and of no concern",
+      "category": "Counseling",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Reassuring without further workup",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 8,
+      "text": "Order alpha-1 antitrypsin level",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 9,
+      "text": "Order ANCA and ANA testing",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 10,
+      "text": "Order bronchoscopy with bronchoalveolar lavage",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 11,
+      "text": "Order complete blood count with differential",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 12,
+      "text": "Order CT-guided lung biopsy",
+      "category": "Diagnostic",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering invasive procedures prematurely",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 13,
+      "text": "Order HIV test",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 14,
+      "text": "Order induced sputum on three consecutive mornings for AFB, fungal, and bacterial cultures",
+      "category": "Diagnostic",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 15,
+      "text": "Order PET-CT scan",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering irrelevant diagnostic tests",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 16,
+      "text": "Order pulmonary function tests",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 17,
+      "text": "Order QuantiFERON-TB Gold test",
+      "category": "Diagnostic",
+      "score": 6,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 18,
+      "text": "Order repeat non-contrast CT chest in 1 year",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Inappropriately delayed follow-up imaging",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 19,
+      "text": "Order repeat non-contrast CT chest in 3 months",
+      "category": "Diagnostic",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 20,
+      "text": "Order serum ACE level",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 21,
+      "text": "Order serum galactomannan",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 22,
+      "text": "Order serum total IgE",
+      "category": "Diagnostic",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 23,
+      "text": "Order serum Aspergillus-specific IgE and IgG",
+      "category": "Diagnostic",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 24,
+      "text": "Order swallow study",
+      "category": "Diagnostic",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 25,
+      "text": "Order tuberculin skin test (PPD)",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 26,
+      "text": "Routine referral to Gastroenterology for GERD evaluation",
+      "category": "Follow-up",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 27,
+      "text": "Routine referral to Infectious Disease in a few months",
+      "category": "Follow-up",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 28,
+      "text": "Start Azithromycin 500 mg PO three times weekly for presumed NTM",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting empiric antimicrobial therapy",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 29,
+      "text": "Start empiric multi-drug therapy for tuberculosis (RIPE)",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting empiric antimicrobial therapy",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 30,
+      "text": "Start Fluticasone/Salmeterol inhaler twice daily",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting empiric inhalational therapy",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 31,
+      "text": "Start Itraconazole 200 mg PO twice daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting empiric antimicrobial therapy",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 32,
+      "text": "Start Levofloxacin 750 mg PO daily for 14 days",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting empiric antimicrobial therapy",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 33,
+      "text": "Start Omeprazole 40 mg PO daily",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting empiric medication without indication",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 34,
+      "text": "Start Prednisone 40 mg PO daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting immunosuppression prematurely",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 35,
+      "text": "Stop Metformin due to possible contrast use in future imaging",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Unnecessary medication changes",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 36,
+      "text": "Elective referral for surgical lung biopsy (VATS)",
+      "category": "Procedure",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering invasive procedures prematurely",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 37,
+      "text": "Starting empiric antimicrobials while awaiting sputum cultures",
+      "category": "Multiple",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Contraindications",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 38,
+      "text": "If sputum cultures and serologies are non-diagnostic and CT findings persist or worsen at 3 months, then refer to Pulmonology for bronchoscopy with bronchoalveolar lavage",
+      "category": "Procedure",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    }
+  ],
+  "abstractionGroups": [],
+  "specialistConsult": {
+    "consults": []
+  }
+}

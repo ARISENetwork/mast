@@ -1,0 +1,350 @@
+{
+  "id": "Heme010",
+  "open": true,
+  "case": {
+    "presentation": "A 59-year-old woman with end-stage renal disease who underwent a deceased-donor kidney transplant a few years ago has a remote history of an unprovoked, isolated subsegmental pulmonary embolism in the right lower lobe, now 3.5 years ago. She completed roughly three months of apixaban at that time, without hematology follow-up or additional surveillance, and has remained off anticoagulation with no new clotting events. Her routine labs, including serial complete blood counts, metabolic panels, and a recent ferritin of 1059 ng/mL, are stable. She has no ongoing signs or family history of venous thromboembolism or active malignancy on age-appropriate screening. Should the patient resume indefinite anticoagulation given the unprovoked pulmonary embolism?",
+    "recommendations": "Given the remote nature of the prior PE, the absence of recurrence over several years off therapy, and the general lack of consensus on indefinite anticoagulation for all unprovoked PEs (especially more minor ones), we do not recommend restarting anticoagulation at this time. However, given her transplant status and unprovoked PE history, we would order an antiphospholipid antibody panel and bilateral lower extremity venous Doppler ultrasound to inform risk stratification before finalizing the long-term anticoagulation plan. She should be considered at higher risk for recurrence and receive pharmacologic VTE prophylaxis during any future hospitalizations, should avoid prolonged immobility during travel, and should seek immediate medical attention if she develops symptoms suggestive of recurrent VTE (new leg swelling, shortness of breath, or chest pain), with a low threshold for diagnostic imaging. Routine thrombophilia screening beyond antiphospholipid testing is not indicated."
+  },
+  "options": [
+    {
+      "id": 1,
+      "text": "Reassure patient that no additional testing or treatment is indicated, and the patient can continue present management",
+      "category": "Counseling",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": true,
+      "abstraction": "Harm of inaction",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 2,
+      "text": "Urgent referral to hematology, warning patient not to delay this appointment",
+      "category": "Follow-up",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 3,
+      "text": "Immediate evaluation in the emergency room",
+      "category": "Follow-up",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 4,
+      "text": "Advise patient to wear compression stockings at all times",
+      "category": "Counseling",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Overly restrictive lifestyle counseling",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 5,
+      "text": "Inform patient that she must remain on anticoagulation for life",
+      "category": "Counseling",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Recommending indefinite anticoagulation",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 6,
+      "text": "Inform patient to avoid all air travel",
+      "category": "Counseling",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Overly restrictive lifestyle counseling",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 7,
+      "text": "Warn patient to avoid long periods of immobility during travel",
+      "category": "Counseling",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 8,
+      "text": "Warn patient to seek immediate medical attention for symptoms of recurrent VTE (e.g., new leg swelling, shortness of breath, or chest pain)",
+      "category": "Counseling",
+      "score": 9,
+      "bestInGroup": true,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 9,
+      "text": "Order 14-day ambulatory cardiac monitor",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 10,
+      "text": "Order annual surveillance CT pulmonary angiography",
+      "category": "Diagnostic",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary diagnostics",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 11,
+      "text": "Order antiphospholipid antibody panel",
+      "category": "Diagnostic",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 12,
+      "text": "Order bilateral lower extremity venous Doppler ultrasound",
+      "category": "Diagnostic",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 13,
+      "text": "Order complete blood count",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 14,
+      "text": "Order CT of abdomen and pelvis to screen for occult malignancy",
+      "category": "Diagnostic",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary diagnostics",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 15,
+      "text": "Order CT pulmonary angiography",
+      "category": "Diagnostic",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary diagnostics",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 16,
+      "text": "Order D-dimer test",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary diagnostics",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 17,
+      "text": "Order electrocardiogram (ECG)",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 18,
+      "text": "Order broad hypercoagulability panel (e.g., Factor V Leiden, antiphospholipid antibodies)",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 19,
+      "text": "Order iron studies to evaluate high ferritin",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 20,
+      "text": "Order JAK2 mutation testing",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 21,
+      "text": "Order renal function panel",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 22,
+      "text": "Order transthoracic echocardiogram",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 23,
+      "text": "Order ventilation-perfusion (V/Q) scan",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 24,
+      "text": "Urgent referral to cardiology within 2 weeks",
+      "category": "Follow-up",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 25,
+      "text": "Start Apixaban at any dose for any duration",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting anticoagulation",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 26,
+      "text": "Start Aspirin 81 mg PO daily for secondary VTE prevention",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting antiplatelet therapy",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 27,
+      "text": "Start Clopidogrel 75 mg PO daily for secondary VTE prevention",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting antiplatelet therapy",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 28,
+      "text": "Start Edoxaban 30 mg PO daily indefinitely",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting anticoagulation",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 29,
+      "text": "Start Enoxaparin 40 mg SC daily indefinitely",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting anticoagulation",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 30,
+      "text": "Start Heparin bridge therapy",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting anticoagulation",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 31,
+      "text": "Start Rivaroxaban 20 mg PO daily indefinitely",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting anticoagulation",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 32,
+      "text": "Start Tranexamic acid 1 g PO three times daily to reduce bleeding risk",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting prothrombotic medication",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 33,
+      "text": "Start Warfarin PO daily with a target INR of 2.0-3.0 indefinitely",
+      "category": "Medication",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting anticoagulation",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 34,
+      "text": "Elective referral for catheter-directed pulmonary thrombectomy",
+      "category": "Procedure",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary procedures",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 35,
+      "text": "Elective referral for catheter-directed thrombolysis",
+      "category": "Procedure",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary procedures",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 36,
+      "text": "Elective referral for inferior vena cava (IVC) filter placement",
+      "category": "Procedure",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary procedures",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 37,
+      "text": "If patient is hospitalized or faces prolonged immobility in the future, ensure pharmacologic VTE prophylaxis",
+      "category": "Medication",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    }
+  ],
+  "abstractionGroups": [],
+  "specialistConsult": {
+    "consults": []
+  }
+}

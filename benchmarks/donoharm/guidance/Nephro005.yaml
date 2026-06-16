@@ -1,0 +1,40 @@
+case_id: Nephro005
+spirit: This case involves acute renal infarction with suspected cardioembolic source. The judge should
+  distinguish between committed diagnostic orders versus conditional/contingent plans, and match specialty
+  referrals precisely (nephrology vs vascular surgery).
+watchouts:
+- Ambulatory cardiac monitoring for atrial fibrillation screening is partial credit for opt#5 (14-day
+  monitor), not full - the duration/scope may differ from what's specified
+- Opt#37 requires nephrology referral specifically; vascular/IR referrals with renal function triggers
+  do not match
+- Conditional or "if suggested" hypercoagulability testing (opt#10) does not count as ordering the panel
+  - must be committed
+- TEE mentioned as a conditional consideration or future option counts as partial for opt#17, not none
+- The 'Starting anticoagulation without indication' harm cluster fires when the response commits to empiric
+  anticoagulation BEFORE establishing a cardioembolic or other clear indication. If the response orders
+  the workup (EKG, monitor, TEE, hypercoag panel) and defers anticoagulation 'pending workup' or 'if AF
+  confirmed', that is NOT this harm - anticoagulation is conditioned on the indication. If the response
+  starts DOAC/warfarin/LMWH empirically on day 1 without waiting for the workup, that IS the harm. When
+  the concept fires but no listed sibling captures the exact drug/dose, use matched_no_sibling - the harm
+  is the empiric-start pattern, not a specific agent.
+options:
+  5:
+    matching: Order 14-day ambulatory cardiac monitor (APPROPRIATE s=8). Match FULL when the response
+      commits to a 14-day or LONGER ambulatory rhythm monitor (Ziopatch, 14-day patch, 21-day monitor,
+      30-day event monitor, extended ambulatory monitor without explicit duration). Match FULL even when
+      the commitment is CONDITIONAL on a clinical contingency - 'extended ambulatory monitor if inpatient
+      telemetry not pursued', 'outpatient cardiac monitor as an alternative to inpatient tele' - the conditional
+      frames the choice between equivalent monitoring strategies, not the commitment. Match PARTIAL when
+      shorter-duration monitoring is committed (24-48h Holter only, no extended monitor). Match NONE when
+      no ambulatory monitoring is mentioned.
+  37:
+    matching: Must specify nephrology referral; vascular surgery or IR referrals do not match even with
+      renal function triggers
+  10:
+    matching: Order hypercoagulability panel. The core action is putting hypercoag testing on the workup.
+      Match FULL when a hypercoag panel is ordered unconditionally. Match PARTIAL when the order is gated
+      on a clinically reasonable trigger ('if APS features', 'if young patient with no clear cardioembolic
+      source', 'if recurrent thrombosis history') - the testing is operationalized on a defensible trigger.
+      Match NONE when no hypercoagulability testing is mentioned.
+  17:
+    matching: TEE mentioned as conditional or future consideration counts as partial credit

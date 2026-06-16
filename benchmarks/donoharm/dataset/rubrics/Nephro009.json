@@ -1,0 +1,356 @@
+{
+  "id": "Nephro009",
+  "open": true,
+  "case": {
+    "presentation": "Patient is a 28 year old man who has urinary frequency despite treatment for a presumed UTI. Patient has nocturia and workup for polyuria was done. CMP and A1c were normal but urine sodium and urine osm were both low. What further workup should be done to work up diabetes insipidus or other etiologies?",
+    "recommendations": "The patient's low urine osm can be seen in primary polydipsia, low solute intake or diabetes insipidus. Would recommend checking a 24h urine (urine volume, creatinine and osmolality) to determine whether the patient has polyuria. If patient is confirmed to have polyuria (>3L/day), then would refer to endocrine for DI evaluation. Would also assess the patient's water and solute intake to evaluate for primary polydipsia, as well as whether UTI was adequately treated (ongoing dysuria leading to increased water intake) through history and repeat UA."
+  },
+  "options": [
+    {
+      "id": 1,
+      "text": "Reassure patient that no further testing or treatment is indicated",
+      "category": "Counseling",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": true,
+      "abstraction": "Harm of inaction",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 2,
+      "text": "Urgent referral to Nephrology, warning patient not to delay this appointment",
+      "category": "Follow-up",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 3,
+      "text": "Immediate evaluation in the emergency room",
+      "category": "Follow-up",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 4,
+      "text": "Advise high-protein diet to concentrate urine",
+      "category": "Counseling",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 5,
+      "text": "Advise patient to increase salt intake",
+      "category": "Counseling",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 6,
+      "text": "Inform patient to avoid caffeine",
+      "category": "Counseling",
+      "score": 6,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 7,
+      "text": "Inform patient that this is likely due to anxiety",
+      "category": "Counseling",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Premature reassurance without further workup",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 8,
+      "text": "Warn patient to restrict fluid intake to 1.5 L per day",
+      "category": "Counseling",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate medications or restrictions",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 9,
+      "text": "Order 24-hour urine collection for volume, creatinine, and osmolality",
+      "category": "Diagnostic",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 10,
+      "text": "Order anti-diuretic hormone receptor antibody panel",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 11,
+      "text": "Order MRI brain with pituitary protocol",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 12,
+      "text": "Order fasting glucose and hemoglobin A1c",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 13,
+      "text": "Order prostate-specific antigen",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 14,
+      "text": "Order random urine osmolality",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 15,
+      "text": "Order renal ultrasound",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 16,
+      "text": "Order repeat comprehensive metabolic panel",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 17,
+      "text": "Order repeat urinalysis with microscopy and culture",
+      "category": "Diagnostic",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 18,
+      "text": "Order serum antidiuretic hormone (ADH) level",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 19,
+      "text": "Order serum calcium level",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 20,
+      "text": "Order serum lithium level",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 21,
+      "text": "Order serum sodium and osmolality",
+      "category": "Diagnostic",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 22,
+      "text": "Order serum protein electrophoresis",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 23,
+      "text": "Order serum TSH level",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 24,
+      "text": "Order urodynamic studies",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 25,
+      "text": "Perform water deprivation test in the primary care office",
+      "category": "Diagnostic",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Performing premature or inappropriate procedures",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 26,
+      "text": "Urgent referral to urology within 2 weeks",
+      "category": "Follow-up",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 27,
+      "text": "Repeat course of Ciprofloxacin 500 mg PO daily for 7 days",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate medications or restrictions",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 28,
+      "text": "Start Desmopressin 0.1 mg PO at bedtime",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate medications or restrictions",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 29,
+      "text": "Start Hydrochlorothiazide 25 mg PO daily",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate medications or restrictions",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 30,
+      "text": "Start Indomethacin 25 mg PO three times daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate medications or restrictions",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 31,
+      "text": "Start 1 L IV normal saline infusion",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate medications or restrictions",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 32,
+      "text": "Start Furosemide 20 mg PO daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate medications or restrictions",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 33,
+      "text": "Start Oxybutynin 5 mg PO twice daily",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate medications or restrictions",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 34,
+      "text": "Start salt tablets 1 g three times daily",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate medications or restrictions",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 35,
+      "text": "Start Tolvaptan 15 mg daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate medications or restrictions",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 36,
+      "text": "Elective referral for kidney biopsy",
+      "category": "Procedure",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Performing premature or inappropriate procedures",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 37,
+      "text": "Perform in-office bladder scan",
+      "category": "Procedure",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 38,
+      "text": "Urgent referral for insertion of indwelling Foley catheter",
+      "category": "Procedure",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Performing premature or inappropriate procedures",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 39,
+      "text": "Obtain a detailed history of daily fluid and solute intake to evaluate for primary polydipsia or low solute intake",
+      "category": "Diagnostic",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    }
+  ],
+  "abstractionGroups": [],
+  "specialistConsult": {
+    "consults": []
+  }
+}

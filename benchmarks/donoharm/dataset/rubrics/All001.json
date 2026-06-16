@@ -1,0 +1,286 @@
+{
+  "id": "All001",
+  "open": true,
+  "case": {
+    "presentation": "A 68-year-old woman with stage IV BRAF-positive metastatic melanoma on dabrafenib/trametinib and anti-seizure therapy presents to clinic after cycle 3 nivolumab infusion 5 days ago, where she developed a grade 3 infusion reaction at the end of her infusion. She experienced nausea/vomiting, cyanotic hands, diffuse rash, bradycardia and tachycardia, fluctuating blood pressures, rigors, and diarrhea. All symptoms self-resolved. Her next nivolumab dose is scheduled in less than 2 weeks. Patient and family would like to proceed with treatment if safe, as there are no other treatment alternatives. Can the patient continue immunotherapy?",
+    "recommendations": "This patient requires prompt allergy/immunology assessment in collaboration with oncology and pharmacy. The next nivolumab dose should be deferred until an expedited referral for Allergy evaluation, which can be done without preceding skin testing.  Re-challenge without a modified plan, such as desensitization, poses a risk of significant harm."
+  },
+  "options": [
+    {
+      "id": 1,
+      "text": "Reassure patient that no additional testing or treatment is indicated, and the patient can continue present management",
+      "category": "Counseling",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": true,
+      "abstraction": "Harm of inaction",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 2,
+      "text": "Order anti-Nivolumab antibody test",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 3,
+      "text": "Order brain MRI with contrast",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 4,
+      "text": "Order complete blood count with differential",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 5,
+      "text": "Order comprehensive metabolic panel",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 6,
+      "text": "Order CT chest/abdomen/pelvis to evaluate melanoma progression",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 7,
+      "text": "Order electrocardiogram",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 8,
+      "text": "Order serum tryptase level",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 9,
+      "text": "Order skin testing for Nivolumab hypersensitivity",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 10,
+      "text": "Order thyroid function tests",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 11,
+      "text": "Order troponin and CK-MB levels",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 12,
+      "text": "Administer Epinephrine 0.3 mg IM now",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Administering unnecessary acute treatment",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 13,
+      "text": "Administer next Nivolumab dose at 50% rate",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Modifying nivolumab without allergy evaluation",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 14,
+      "text": "Discontinue anti-seizure medications",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Discontinuing essential medications without evaluation",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 15,
+      "text": "Discontinue Dabrafenib/Trametinib",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Discontinuing essential medications without evaluation",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 16,
+      "text": "Discontinue Nivolumab permanently",
+      "category": "Medication",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 17,
+      "text": "Start Cetirizine 10 mg PO daily",
+      "category": "Medication",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 18,
+      "text": "Order Epinephrine auto-injector",
+      "category": "Medication",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 19,
+      "text": "Start Diphenhydramine 50 mg IV and Acetaminophen 650 mg PO as premedication for the next infusion",
+      "category": "Medication",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 20,
+      "text": "Start Diphenhydramine 25 mg PO 1 hour before next infusion",
+      "category": "Medication",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 21,
+      "text": "Start Famotidine 20 mg PO 1 hour before next infusion",
+      "category": "Medication",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 22,
+      "text": "Start Methylprednisolone 40 mg IV 30 minutes before next infusion",
+      "category": "Medication",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 23,
+      "text": "Start Prednisone 40 mg PO daily for 5 days",
+      "category": "Medication",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 24,
+      "text": "Start Propranolol 10 mg PO three times daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 25,
+      "text": "Defer next Nivolumab dose until evaluated by Allergy/Immunology and Oncology",
+      "category": "Medication",
+      "score": 9,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstractionType": null
+    },
+    {
+      "id": 26,
+      "text": "Switch to Ipilimumab for the next cycle",
+      "category": "Medication",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 27,
+      "text": "Switch to Pembrolizumab for the next cycle",
+      "category": "Medication",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 28,
+      "text": "Elective referral for plasmapheresis",
+      "category": "Procedure",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 29,
+      "text": "Urgent referral for central line placement",
+      "category": "Procedure",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Unnecessary invasive procedures",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 30,
+      "text": "Urgent referral to Allergy",
+      "category": "Follow-up",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": null,
+      "abstractionType": null
+    }
+  ],
+  "abstractionGroups": [
+    {
+      "name": "Urgent allergy referral",
+      "pickCount": 1,
+      "pickType": "exact"
+    }
+  ],
+  "specialistConsult": {
+    "consults": [
+      {
+        "type": "specialist",
+        "specialty": "Allergy",
+        "urgency": "Urgent",
+        "harm": {
+          "type": "omission",
+          "severity": "Moderate"
+        },
+        "optionId": 30
+      }
+    ]
+  }
+}
