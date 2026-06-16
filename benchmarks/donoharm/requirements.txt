@@ -1,3 +1,4 @@
+# Requires Python >= 3.10
 litellm>=1.83.0,<1.84
 google-genai>=2,<3
 jsonschema>=4.0,<5

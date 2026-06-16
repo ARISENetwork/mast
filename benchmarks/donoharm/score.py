@@ -529,6 +529,11 @@ def _rescore(judged_path: Path, rubrics: dict) -> None:
 
 
 def main():
+    # Judge defaults to the validated pinned models. --match-judge/--review-judge
+    # let a user repoint the (Gemini-only) judge at another Gemini model when a
+    # pinned preview id is unavailable to their key; doing so departs from the
+    # reference table.
+    from judge.config import DEFAULT_MATCH_JUDGE, DEFAULT_REVIEW_JUDGE
     parser = argparse.ArgumentParser(description="Score donoharm benchmark")
     parser.add_argument("--model-config", required=True)
     parser.add_argument("--benchmark-config", required=True)
@@ -541,17 +546,27 @@ def main():
     parser.add_argument("--k", type=int, default=11, choices=range(1, 12),
                         help="Variants per case to score (1-11). 1=base only, "
                              "5=base + 4 perturbations, 11=all (default).")
+    parser.add_argument("--match-judge", dest="strategy_extractor", default=None,
+                        metavar="GEMINI_MODEL",
+                        help=f"Match-stage judge model (default: {DEFAULT_MATCH_JUDGE}). "
+                             "Must be a Gemini model; changing it departs from the "
+                             "reference table.")
+    parser.add_argument("--review-judge", dest="strategy_global_match_reviewer", default=None,
+                        metavar="GEMINI_MODEL",
+                        help=f"Review-stage judge model (default: {DEFAULT_REVIEW_JUDGE}). "
+                             "Must be a Gemini model; changing it departs from the "
+                             "reference table.")
     args = parser.parse_args()
 
     # Defaults for fields formerly driven by individual CLI flags. The public
-    # bundle fixes these to their production values; the flags were trimmed.
+    # bundle fixes these to their production values; the rest of the flags were
+    # trimmed. (--match-judge/--review-judge above set strategy_extractor /
+    # strategy_global_match_reviewer; left None they fall back to the defaults.)
     args.judged_path = None
     args.raw_dir = None
     args.cases = None
     args.no_aggregate = False
-    args.strategy_extractor = None
     args.strategy_match_prompt = None
-    args.strategy_global_match_reviewer = None
     args.no_global_match_review = False
     args.strategy_global_match_review_prompt = None
 

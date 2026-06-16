@@ -8,6 +8,8 @@ NOHARM is a clinical-harm benchmark where models write free-text management plan
 
 ## Installation
 
+Requires Python >= 3.10.
+
 ```bash
 pip install -r requirements.txt
 cp .env.example .env   # fill in your model key AND GEMINI_API_KEY (judge)
