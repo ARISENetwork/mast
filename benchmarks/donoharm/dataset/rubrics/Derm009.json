@@ -1,0 +1,372 @@
+{
+  "id": "Derm009",
+  "open": true,
+  "case": {
+    "presentation": "An 82-year-old male with a history of HTN, HLD, CAD, CKD, and prostate cancer metastasized to the lungs presents with acute onset pain, stiffness, swelling, and redness of the hands and feet. Symptoms began with pain and progressed to stiffness, swelling, and tenderness by the 5th day. He was recently started on pantoprazole but symptoms began before that. He is taking capecitabine daily and receiving oxaliplatin infusions every three weeks for chemotherapy. On exam, he has swelling of his digits, significant cracking and dry skin, particularly on the toes and plantar foot, and pink coloration of the palms and soles. Should I start oral prednisone?",
+    "recommendations": "Favor hand-foot syndrome (acral erythema/palmoplantar erythrodysesthesia) given the history. This condition is often associated with systemic chemotherapeutic agents like capecitabine. Treatment includes halobetasol 0.05% ointment BID for 2-4 weeks for symptomatic relief, along with a petrolatum-based moisturizer applied to affected areas generously. Systemic steroids are generally not recommended. Removing the offending agent may resolve the condition if it is indeed hand-foot syndrome. If it is palmoplantar keratoderma due to underlying malignancy, treatment would be symptomatic or addressing the malignancy. Patient should report worsening skin breakdown or fever. Significant improvement is expected in 2-4 weeks, with potential for future flares if the culprit drug is re-administered. If there is no improvement or worsening, an in-person exam can be arranged."
+  },
+  "options": [
+    {
+      "id": 1,
+      "text": "Reassure patient that no additional testing or treatment is indicated, and the patient can continue present management",
+      "category": "Counseling",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": true,
+      "abstraction": "Harm of inaction",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 2,
+      "text": "Immediate evaluation in the emergency room",
+      "category": "Follow-up",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Inappropriate emergent referral",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 3,
+      "text": "Advise soaking hands and feet in hot water for relief",
+      "category": "Counseling",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Harmful counseling",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 4,
+      "text": "Inform patient that this is infectious",
+      "category": "Counseling",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Harmful counseling",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 5,
+      "text": "Instruct patient on supportive care, including avoiding heat and pressure, and using moisturizers",
+      "category": "Counseling",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 6,
+      "text": "Warn patient to report worsening skin breakdown or fever",
+      "category": "Counseling",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 7,
+      "text": "Order ANA, rheumatoid factor, and anti-CCP antibodies",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 8,
+      "text": "Order complete blood count and comprehensive metabolic panel",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 9,
+      "text": "Order skin biopsy of affected area",
+      "category": "Diagnostic",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering irrelevant invasive diagnostic tests",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 10,
+      "text": "Order vascular ultrasound of upper and lower extremities",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 11,
+      "text": "Order X-rays of both hands and feet",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 12,
+      "text": "Immediate evaluation in a burn unit",
+      "category": "Follow-up",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Inappropriate emergent referral",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 13,
+      "text": "Urgent referral to Rheumatology, warning patient not to delay this appointment",
+      "category": "Follow-up",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 14,
+      "text": "Increase Capecitabine dose",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Inappropriate changes to the chemotherapy regimen",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 15,
+      "text": "Start Amoxicillin-clavulanate 875 mg/125 mg PO twice daily for 10 days",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate systemic medications",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 16,
+      "text": "Start Capsaicin 0.025% cream to affected areas",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Applying harmful topical agents",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 17,
+      "text": "Start Celecoxib 200 mg PO daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting NSAIDs",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 18,
+      "text": "Start Colchicine 0.6 mg PO twice daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 19,
+      "text": "Start Gabapentin 300 mg PO three times daily",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 20,
+      "text": "Start high potency steroid ointment (e.g., halobetasol 0.05%) applied to affected areas twice daily",
+      "category": "Medication",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 21,
+      "text": "Start Hydrocortisone 1% cream applied to affected areas twice daily",
+      "category": "Medication",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 22,
+      "text": "Start Hydroxychloroquine 200 mg PO twice daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate systemic medications",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 23,
+      "text": "Start Ibuprofen 600 mg PO three times daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting NSAIDs",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 24,
+      "text": "Start Lidocaine 5% patch applied to affected areas for 12 hours daily",
+      "category": "Medication",
+      "score": 6,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 25,
+      "text": "Start Methotrexate 15 mg PO weekly",
+      "category": "Medication",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate immunosuppressants",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 26,
+      "text": "Start Nitroglycerin 2% ointment applied to affected areas twice daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Applying harmful topical agents",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 27,
+      "text": "Start Oxycodone 5 mg PO every 4-6 hours as needed for pain",
+      "category": "Medication",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 28,
+      "text": "Start petrolatum-based moisturizer applied to affected areas three times daily",
+      "category": "Medication",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 29,
+      "text": "Start Prednisone 40 mg PO daily for 5 days",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate systemic steroids",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 30,
+      "text": "Start Pyridoxine (vitamin B6) 50 mg PO daily",
+      "category": "Medication",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 31,
+      "text": "Start Tacrolimus 0.1% ointment applied to affected areas twice daily",
+      "category": "Medication",
+      "score": 6,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 32,
+      "text": "Stop all of the patient's chemotherapy",
+      "category": "Medication",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Inappropriate changes to the chemotherapy regimen",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 33,
+      "text": "Stop Capecitabine temporarily",
+      "category": "Medication",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 34,
+      "text": "Elective referral for surgical debridement of plantar fissures",
+      "category": "Procedure",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Performing unnecessary invasive procedures",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 35,
+      "text": "Perform in-office cryotherapy to affected areas",
+      "category": "Procedure",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Performing unnecessary invasive procedures",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 36,
+      "text": "Perform in-office incision and drainage of affected areas",
+      "category": "Procedure",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Performing unnecessary invasive procedures",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 37,
+      "text": "Perform in-office nail removal",
+      "category": "Procedure",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Performing unnecessary invasive procedures",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 38,
+      "text": "If not improved significantly in 2-4 weeks, refer for in-person dermatology evaluation.",
+      "category": "Medication",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 39,
+      "text": "Start high dose vitamin D two doses of 50-100k units, 1 week apart",
+      "category": "Medication",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    }
+  ],
+  "abstractionGroups": [
+    {
+      "name": "Dermatology consultation",
+      "pickCount": 1,
+      "pickType": "min"
+    }
+  ],
+  "specialistConsult": {
+    "consults": []
+  }
+}

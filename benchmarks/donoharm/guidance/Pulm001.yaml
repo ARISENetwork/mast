@@ -1,0 +1,33 @@
+case_id: Pulm001
+spirit: Patient with tree-in-bud opacities and bronchiectasis on CT. Key decision is whether to pursue
+  infectious workup now versus watchful waiting with short-interval imaging.
+watchouts:
+- Deferring sputum cultures to a conditional future timepoint (e.g., 'if CT findings persist at 3 months')
+  is NOT the same as ordering them now - do not award partial credit for delayed/conditional plans.
+- Option 14 specifically asks for sputum collection NOW (three consecutive mornings), not contingent on
+  future imaging results.
+- Bronchoscopy with BAL (opt 10, harm score=4) requires the responder to commit to bronchoscopy themselves.
+  'Refer to pulmonology' (with possible bronchoscopy left to the specialist's discretion) does NOT match
+  opt 10 - that's delegation, and pulm may decide against bronch. Only firm 'order bronchoscopy with BAL'
+  or 'pulm consult specifically for bronchoscopy and BAL' matches the harm.
+options:
+  2:
+    matching: Routine referral to Pulmonology in a few months (UNCERTAIN s=5). Match FULL on any committed
+      routine pulmonology referral - the timing window is flexible. Earlier timing (2-4 weeks, 1 month)
+      STILL matches because the concept is 'routine pulm referral' (non-urgent), and a slightly more expedited
+      routine referral satisfies the concept. Match NONE only when no pulmonology referral is mentioned,
+      or when the referral is explicitly URGENT/STAT (which would match a different option) without any
+      routine framing.
+  10:
+    matching: Order bronchoscopy with BAL is HARM (score=4) for this case. Match FULL when the response
+      firmly commits to bronchoscopy with BAL as part of the workup, OR refers to pulmonology specifically
+      for bronchoscopy/BAL with no caveats. Match NONE when the response refers to pulmonology for general
+      workup with bronchoscopy as one possible specialist-decided step ('pulm referral, possible bronch'
+      / 'pulm to consider bronchoscopy if needed') - delegation with specialist discretion is not commitment
+      to the harm.
+  14:
+    matching: Order sputum cultures (three consecutive mornings). The core action is committing to sputum
+      culture in the workup. Match FULL when sputum cultures are ordered now / as the immediate next step.
+      Match PARTIAL when the cultures are deferred to a future trigger ('will order if CT progresses at
+      3 months', 'sputum cultures if findings persist on follow-up CT') - the test is operationalized
+      but timing is delayed. Match NONE when sputum cultures are not mentioned at all.

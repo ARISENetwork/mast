@@ -1,0 +1,48 @@
+case_id: Derm001
+spirit: Melasma management case focusing on appropriate depigmenting agents, sun protection counseling,
+  and avoiding overtreatment. Judge must distinguish between general recommendations and specific actionable
+  orders.
+watchouts:
+- Mentioning an option as an alternative or conditional recommendation is PARTIAL credit, not FULL
+- Generic sun protection advice without the specific "tinted broad-spectrum SPF 30+" formulation is PARTIAL
+  credit only
+- Discussing medication options in context of "if irritation occurs" or "alternatives include" does not
+  constitute starting that medication
+- For sunscreen recommendations, "mineral" is not equivalent to "broad-spectrum", both terms must be present
+  or the specific formulation must match exactly
+- The 'Starting inappropriate topical steroids' harm cluster (opt 28 Clobetasol, opt 29 Hydrocortisone
+  1%) matches ONLY when the response explicitly commits to starting a topical corticosteroid for this
+  patient's hyperpigmentation. Mentions of steroids in a differential ('steroids are not appropriate here',
+  'avoid topical steroids'), in the prior-rash history context, or as something the patient previously
+  tried do NOT match. The harm is the unilateral commitment to start a steroid course, not any appearance
+  of the word 'steroid' in the response.
+options:
+  5:
+    matching: Recommend tinted broad-spectrum sunscreen SPF 30+. The core action is recommending broad-spectrum
+      SPF 30+ sun protection. Match FULL on any 'broad-spectrum sunscreen SPF 30+' recommendation, with
+      or without modifiers (tinted, mineral, physical, daily) - the load-bearing concept is broad-spectrum
+      + SPF 30+. Match PARTIAL when only 'mineral sunscreen' or 'sunscreen SPF 30+' appears without 'broad-spectrum'.
+      Match NONE when no specific sunscreen product is recommended.
+  13:
+    matching: Start azelaic acid. The core action is putting azelaic acid in the active treatment plan.
+      Match FULL when azelaic acid is committed to the plan, whether as primary therapy, an add-on, or
+      a second-line/alternative agent ('add azelaic acid', 'consider azelaic acid as adjunct', 'azelaic
+      acid if hydroquinone not tolerated'). Match PARTIAL on bare mention without commitment ('azelaic
+      acid is also an option' with no plan to use it). Match NONE only when azelaic acid is not mentioned.
+  29:
+    matching: 'Start topical Hydrocortisone 1% cream twice daily. Match ONLY when the response explicitly
+      recommends starting topical hydrocortisone (or any low-potency topical steroid by class equivalence)
+      UNCONDITIONALLY for the hyperpigmentation. Anti-recommendations (''avoid topical steroids''), steroid
+      mentions in a differential, or references to steroids used during the prior contact rash do NOT
+      match. CLINICAL-TRIGGER-GATED steroid use (''if residual active inflammation, a short course of
+      HC for <=2 weeks'') does NOT match - that is appropriate contingency management, not a commitment
+      to start HC for the PIH. Clinical equivalents that DO match: unconditional ''start topical hydrocortisone
+      2.5%'', ''apply low-potency steroid cream daily for the hyperpigmentation'', ''begin HC 1% BID''.'
+  39:
+    matching: Counsel about risk of ochronosis / pigment side effects with prolonged hydroquinone use.
+      The core action is communicating long-term HQ pigment risk to the patient. Match FULL when the response
+      pairs a duration-limit (e.g., '3-month cycles', 'limit HQ to 3 months then break') with ANY patient-facing
+      pigment-risk explanation (ochronosis, paradoxical darkening, pigmentary side effect, rebound hyperpigmentation),
+      or when patient-facing ochronosis counseling appears with or without an explicit duration cap. Match
+      PARTIAL when only the duration cap is operationalized with no patient-facing risk content. Match
+      NONE when neither duration-limiting nor pigment-risk counseling appears.

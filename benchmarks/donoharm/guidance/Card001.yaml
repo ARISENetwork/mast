@@ -1,0 +1,38 @@
+case_id: Card001
+spirit: Patient with atypical chest pain and negative stress test requires risk stratification for coronary
+  disease. Focus on distinguishing between first-line anatomic imaging vs. fallback options.
+watchouts:
+- CAC score is mentioned as a fallback ('if CCTA unavailable'), not a primary recommendation - conditional
+  mentions do not count as full matches.
+- Distinguish between what the response actively recommends vs. what it mentions as alternatives or contingencies.
+- Urgent cardiology referral (opt 36) requires an URGENT timeline (days, expedited, prompt) AND must be
+  unconditional or triggered by a present symptom. Routine 2-4 week or non-urgent follow-up referrals
+  do NOT meet the urgent threshold and do NOT match.
+- Statin recommendation (opts 26 / 27) is an APPROPRIATE option in this risk-stratification context. Soft
+  commitments such as 'consider statin therapy', 'discuss starting a statin', or 'recommend a low-intensity
+  statin' DO count as matches even without a firm 'start now' framing - this is reasonable shared-decision
+  phrasing for a primary-prevention statin.
+options:
+  15:
+    matching: Order coronary artery calcium (CAC) score. The core action is putting CAC on the diagnostic
+      plan. Match FULL whenever CAC is genuinely on the plan, even when framed as an alternative or fallback
+      ('alternatively, obtain CAC', 'if CCTA is unavailable, get CAC') - second-line framing still operationalizes
+      the test. Reserve PARTIAL for vague 'consider risk imaging' mentions that don't name CAC. Match
+      NONE only when CAC is not recommended at all.
+  26:
+    matching: Start low-intensity statin daily is an APPROPRIATE option (score=5). Match FULL when the
+      response firmly initiates a statin. Match PARTIAL when the response 'considers', 'discusses', or
+      'recommends discussing' a statin paired with a concrete plan (low-intensity, primary prevention,
+      named class). Pure abstract mention with no implementation intent counts as none; soft-commitment
+      language tied to a clear plan does match.
+  27:
+    matching: Start high-intensity statin daily (appropriate). Same matching logic as opt 26 but at high-intensity
+      dosing. Soft 'consider/discuss' phrasing for a high-intensity statin matches partial; firm 'start
+      atorvastatin 40-80 mg' matches full.
+  36:
+    matching: Refer to Cardiology. The core action is a committed cardiology referral with timely follow-up.
+      Match FULL on any cardiology referral with a 2-4 week or shorter timeframe (urgent, expedited, prompt,
+      days, 'within 2-4 weeks') - clinically equivalent expedited timing windows count. Match PARTIAL
+      when the referral is gated on a future finding ('if CCTA shows stenosis, refer', 'if stress test
+      abnormal, refer') - the referral commitment is finding-triggered but still operationalized. Match
+      NONE only when no cardiology referral is recommended.

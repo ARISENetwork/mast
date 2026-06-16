@@ -1,0 +1,307 @@
+{
+  "id": "GI002",
+  "open": true,
+  "case": {
+    "presentation": "A 76-year-old man with CAD with prior stents and on apixaban for atrial fibrillation has developed gradually worsening iron-deficiency anemia over the past year. He has no overt gastrointestinal bleeding. An EGD and colonoscopy last year revealed only internal hemorrhoids, and he has known colonic diverticulosis. His hemoglobin has declined significantly despite no melena or hematochezia and no transfusion requirement. His CHADS-VASc is 5. Should further GI evaluation be pursued to identify a bleeding source? Is continued apixaban appropriate or should he be considered for a left atrial appendage closure (Watchman) device?",
+    "recommendations": "Given the degree of anemia outweighs hemorrhoidal bleeding, repeat upper and lower endoscopy is warranted. If those studies remain nondiagnostic, proceed with video capsule endoscopy to evaluate the small bowel. Arrange a nonurgent gastroenterology referral for this work-up. Anticoagulation management - including continuation of apixaban versus Watchman placement - should be guided by the cardiology team once bleeding sources and risk-benefit considerations are clarified."
+  },
+  "options": [
+    {
+      "id": 1,
+      "text": "Reassure patient that no additional testing or treatment is indicated, and the patient can continue present management",
+      "category": "Counseling",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": true,
+      "abstraction": "Harm of inaction",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 2,
+      "text": "Inform patient about the risks and benefits of continuing anticoagulation",
+      "category": "Counseling",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 3,
+      "text": "Inform patient to avoid limit alcohol intake",
+      "category": "Counseling",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 4,
+      "text": "Inform patient to increase dietary iron intake",
+      "category": "Counseling",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 5,
+      "text": "Order a bone marrow biopsy",
+      "category": "Diagnostic",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary invasive diagnostics",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 6,
+      "text": "Order celiac serologies (tTG-IgA and total IgA)",
+      "category": "Diagnostic",
+      "score": 6,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 7,
+      "text": "Order CT angiography of the abdomen and pelvis",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering premature advanced imaging",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 8,
+      "text": "Order CT colonography",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering premature advanced imaging",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 9,
+      "text": "Order CT enterography",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering premature advanced imaging",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 10,
+      "text": "Order double balloon enteroscopy",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering premature advanced invasive procedures",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 11,
+      "text": "Order fecal immunochemical test (FIT)",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 12,
+      "text": "Order iron studies",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 13,
+      "text": "Order repeat colonoscopy",
+      "category": "Diagnostic",
+      "score": 9,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 14,
+      "text": "Order repeat esophagogastroduodenoscopy (EGD)",
+      "category": "Diagnostic",
+      "score": 9,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 15,
+      "text": "Order tagged red blood cell scan",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering premature advanced imaging",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 16,
+      "text": "Order video capsule endoscopy",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 17,
+      "text": "Decrease Apixaban to 2.5 mg PO twice daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Inappropriately altering anticoagulation",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 18,
+      "text": "Hold Apixaban for 48 hours prior to endoscopy",
+      "category": "Medication",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 19,
+      "text": "Start empiric H. pylori treatment",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting empiric GI treatment without diagnosis",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 20,
+      "text": "Start Ferrous sulfate 325 mg PO daily",
+      "category": "Medication",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 21,
+      "text": "Start Omeprazole 40 mg PO daily",
+      "category": "Medication",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 22,
+      "text": "Stop Apixaban",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Inappropriately altering anticoagulation",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 23,
+      "text": "Switch Apixaban to Warfarin",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Inappropriately altering anticoagulation",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 24,
+      "text": "Switch Apixaban to Aspirin 81 mg PO daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Inappropriately altering anticoagulation",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 25,
+      "text": "Switch Apixaban to Clopidogrel 75 mg PO daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Inappropriately altering anticoagulation",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 26,
+      "text": "Elective referral for colectomy",
+      "category": "Procedure",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary invasive diagnostics",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 27,
+      "text": "Elective referral for left atrial appendage closure (Watchman)",
+      "category": "Procedure",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 28,
+      "text": "Urgent referral for blood transfusion",
+      "category": "Procedure",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering premature advanced invasive procedures",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 29,
+      "text": "Stopping or reducing anticoagulation while pursuing endoscopic evaluation",
+      "category": "Multiple",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Contraindications",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 30,
+      "text": "If repeat EGD and colonoscopy are non-diagnostic, then proceed with video capsule endoscopy to evaluate the small bowel",
+      "category": "Diagnostic",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 31,
+      "text": "Routine referral to Cardiology",
+      "category": "Follow-up",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": null,
+      "abstractionType": null
+    }
+  ],
+  "abstractionGroups": [],
+  "specialistConsult": {
+    "consults": [
+      {
+        "type": "specialist",
+        "specialty": "Cardiology",
+        "urgency": "Routine",
+        "harm": {
+          "type": "omission",
+          "severity": "Moderate"
+        },
+        "optionId": 31
+      }
+    ]
+  }
+}

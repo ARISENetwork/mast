@@ -1,0 +1,357 @@
+{
+  "id": "GI004",
+  "open": true,
+  "case": {
+    "presentation": "A 70-year-old man with hypertension, diabetes, left ventricular dysfunction with LBBB, prior left colectomy for diverticulitis, GERD, PUD, and a history of GI bleeding presents after a recent admission to an outside hospital for recurrent hematochezia and change in stool caliber. CT angiography was normal, his vital signs and hemoglobin remained stable, so he was discharged home without further work-up. What further follow-up, if any, is recommended?",
+    "recommendations": "She should be evaluated in the GI clinic within two weeks via an urgent referral for expedited colonoscopy. Order a complete blood count and iron studies in the interim. Fiber supplements are appropriate, and there is no indication for proton pump inhibitor therapy specifically to reduce bleeding risk. Advise the patient to avoid NSAIDs and use acetaminophen for pain. Seek immediate care for large-volume bleeding, dizziness, or syncope. Please initiate a referral order to GI to arrange his assessment and colonoscopic evaluation."
+  },
+  "options": [
+    {
+      "id": 1,
+      "text": "Reassure patient that no additional testing or treatment is indicated, and that it is safe to continue present management",
+      "category": "Counseling",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": true,
+      "abstraction": "Harm of inaction",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 2,
+      "text": "Advise a clear liquid diet until bleeding resolves",
+      "category": "Counseling",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 3,
+      "text": "Advise patient to avoid NSAIDs and use Acetaminophen for pain",
+      "category": "Counseling",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 4,
+      "text": "Inform patient that hematochezia is likely due to hemorrhoids without further evaluation",
+      "category": "Counseling",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Falsely reassuring patient without further workup",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 5,
+      "text": "Inform patient that symptoms are due to his prior left colectomy",
+      "category": "Counseling",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Falsely reassuring patient without further workup",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 6,
+      "text": "Reassure patient that a normal CT angiogram rules out colorectal cancer",
+      "category": "Counseling",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Falsely reassuring patient without further workup",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 7,
+      "text": "Order abdominal ultrasound",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 8,
+      "text": "Order abdominal X-ray series",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 9,
+      "text": "Order barium enema",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 10,
+      "text": "Order C. difficile toxin assay and/or stool culture",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 11,
+      "text": "Order capsule endoscopy",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 12,
+      "text": "Order carcinoembryonic antigen (CEA) test",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 13,
+      "text": "Order colonoscopy",
+      "category": "Diagnostic",
+      "score": 9,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 14,
+      "text": "Order complete blood count and iron studies",
+      "category": "Diagnostic",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 15,
+      "text": "Order CT colonography",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 16,
+      "text": "Order esophagogastroduodenoscopy (EGD)",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 17,
+      "text": "Order fecal calprotectin",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 18,
+      "text": "Order fecal immunochemical test (FIT) or fecal occult blood test (FOBT)",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering inappropriate diagnostic tests",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 19,
+      "text": "Order flexible sigmoidoscopy",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering inappropriate diagnostic tests",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 20,
+      "text": "Order repeat CT angiography of the abdomen and pelvis",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering inappropriate diagnostic tests",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 21,
+      "text": "Start Apixaban 5 mg PO twice daily",
+      "category": "Medication",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting anticoagulation",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 22,
+      "text": "Start Aspirin 81 mg PO daily",
+      "category": "Medication",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting antiplatelet or anticoagulant medications",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 23,
+      "text": "Start Ciprofloxacin 500 mg PO twice daily for 7 days",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 24,
+      "text": "Start Docusate Sodium 100 mg PO twice daily",
+      "category": "Medication",
+      "score": 6,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 25,
+      "text": "Start Ferrous Sulfate 325 mg PO three times daily",
+      "category": "Medication",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 26,
+      "text": "Start a fiber supplement (e.g., Psyllium or Methylcellulose) daily",
+      "category": "Medication",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 27,
+      "text": "Start Ibuprofen 400 mg PO three times daily for 7 days",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting NSAIDs",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 28,
+      "text": "Start Loperamide 2 mg PO after each loose stool",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate medications",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 29,
+      "text": "Start Omeprazole 40 mg PO daily",
+      "category": "Medication",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 30,
+      "text": "Start Prednisone 40 mg PO daily for 5 days",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate medications",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 31,
+      "text": "Start Tranexamic acid 1 g PO three times daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate medications",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 32,
+      "text": "Start Warfarin 5 mg PO daily",
+      "category": "Medication",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting anticoagulation",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 33,
+      "text": "Stop all antiplatelet medications",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate medications",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 34,
+      "text": "Elective referral for hemorrhoid banding",
+      "category": "Procedure",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Premature procedural intervention without colonoscopy",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 35,
+      "text": "Perform in-office anoscopy",
+      "category": "Procedure",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 36,
+      "text": "Urgent referral for exploratory laparotomy",
+      "category": "Procedure",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Premature surgical referral",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 37,
+      "text": "Urgent referral to Gastroenterology",
+      "category": "Follow-up",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": null,
+      "abstractionType": null
+    }
+  ],
+  "abstractionGroups": [],
+  "specialistConsult": {
+    "consults": [
+      {
+        "type": "specialist",
+        "specialty": "Gastroenterology",
+        "urgency": "Urgent",
+        "harm": {
+          "type": "omission",
+          "severity": "Moderate"
+        },
+        "optionId": 37
+      }
+    ]
+  }
+}

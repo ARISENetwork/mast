@@ -1,0 +1,49 @@
+case_id: ID003
+spirit: Latent TB in asymptomatic patient from endemic country with positive IGRA and negative CXR. Treatment
+  is recommended but non-urgent; preferred regimens are specific dose/duration combinations.
+watchouts:
+- Match the LTBI regimen CONCEPT first, then refine on dose specificity. A response that names the right
+  two-drug combination + weekly cadence + 12-week duration matches the 3HP regimen at PARTIAL even if
+  dose details are wrong (e.g., INH 300 mg weekly is an underdose but the 3HP shape is correct - that's
+  concept-fire/partial).
+- FULL match requires both drug doses (INH 900 mg + rifapentine 900 mg) AND the 12-week weekly cadence.
+  Bare '3HP' with no doses falls to PARTIAL when paired with a clear regimen plan, not none.
+- For HIV-aware LTBI prioritization (opt 34), any commitment to HIV testing PLUS guidance to expedite/prioritize
+  LTBI treatment if HIV is positive matches FULL - the response does not need to literally mirror an if-then
+  sentence structure. Recognizing the HIV-LTBI interaction and adjusting urgency accordingly is the underlying
+  concept.
+options:
+  20:
+    matching: INH monotherapy for 9 months daily (9H regimen). The core action is committing to an INH-monotherapy
+      LTBI course at the 9-month duration. Match FULL when the response commits to daily INH monotherapy
+      for 9 months even if the exact dose (300 mg) is not specified - the 9H concept fires on the duration
+      + monotherapy + daily cadence. Match PARTIAL on a 6-9 month INH range, or '6 months INH', or daily
+      INH without a clear duration commitment - the regimen concept fires partially. Match NONE only when
+      INH monotherapy is not committed at any duration.
+    aliases:
+    - isoniazid 300 mg daily for 9 months
+    - 9H regimen
+    - INH daily x 9 months
+  29:
+    matching: Start Rifapentine 900 mg + Isoniazid 900 mg weekly x 12 weeks. Match FULL when both 900
+      mg doses AND 12-week weekly cadence are stated. Match PARTIAL when the response names the 3HP regimen
+      (or weekly INH+rifapentine x 12 weeks) but the dose for one or both drugs is wrong/missing - the
+      concept fires (3HP-shaped regimen committed) even when dose specifics are off. Match NONE only when
+      no weekly INH+rifapentine combination is mentioned.
+    aliases:
+    - isoniazid 900 mg weekly plus rifapentine 900 mg weekly for 12 weeks
+    - 3HP regimen
+    - weekly INH+rifapentine x 12 weeks
+  34:
+    matching: If HIV is positive, initiate LTBI treatment more urgently. Match FULL whenever the response
+      (a) commits to HIV testing as part of workup AND (b) acknowledges that a positive HIV result should
+      expedite or prioritize LTBI treatment - whether phrased as an explicit 'if-then' contingency, a
+      general urgency-with-HIV statement, or guidance that HIV co-infection raises priority. The response
+      does NOT need to literally mirror the if-HIV-then-treat-urgently sentence structure.
+  36:
+    matching: Refer to Infectious Diseases / TB clinic (APPROPRIATE s=7). The core action is committing
+      to ID/TB-clinic referral. Match FULL on any committed ID/TB-clinic referral, including routine ('refer
+      to ID for LTBI follow-up', 'establish with TB clinic') AND urgent/expedited ('urgent referral to
+      TB clinic', 'expedited ID consult') - an urgent referral strictly exceeds the routine threshold
+      and operationalizes the same specialty involvement. Match PARTIAL on vague ID involvement without
+      a firm referral. Match NONE only when no ID/TB-clinic referral appears.

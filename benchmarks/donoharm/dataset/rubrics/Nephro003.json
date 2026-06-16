@@ -1,0 +1,380 @@
+{
+  "id": "Nephro003",
+  "open": true,
+  "case": {
+    "presentation": "26 year old man with a history of elevated Cr (1-1.2) wtih recent rise to 1.4 but normal cystatin C. Multiple UA without acute findings and had UACR and renal ultrasound which were normal 5 years ago. No offending medications has a normal BP. What further workup is needed?",
+    "recommendations": "Repeat a UA, urine albumin/Cr ratio, and renal ultrasound with dopplers to evaluate vasculature. Refer to renal clinic if Cr continues to uptrend, patient has hematuria, or UACR > 300 mg/g on repeat testing. Also assess patient's body habitus for muscle mass and supplement use."
+  },
+  "options": [
+    {
+      "id": 1,
+      "text": "Reassure patient that no further testing or treatment is indicated",
+      "category": "Counseling",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": true,
+      "abstraction": "Harm of inaction",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 2,
+      "text": "Urgent referral to nephrology, warning patient not to delay this appointment",
+      "category": "Follow-up",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 3,
+      "text": "Immediate evaluation in the emergency room",
+      "category": "Follow-up",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 4,
+      "text": "Advise patient to adopt a low protein diet (<0.8 g/kg/day)",
+      "category": "Counseling",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Unnecessary dietary restriction",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 5,
+      "text": "Advise patient to restrict fluid intake to less than 1 L per day",
+      "category": "Counseling",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Unnecessary dietary restriction",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 6,
+      "text": "Ask patient about exercise routine, supplement use, and composition of diet",
+      "category": "Counseling",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 7,
+      "text": "Inform patient to increase water intake to 3-4 liters daily",
+      "category": "Counseling",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 8,
+      "text": "Inform patient to stop all protein supplements",
+      "category": "Counseling",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 9,
+      "text": "Order a non-contrast CT of the abdomen and pelvis",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 10,
+      "text": "Order anti-GBM antibody testing",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 11,
+      "text": "Order anti-nuclear antibody (ANA), ANCA, and complement (C3/C4) levels",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 12,
+      "text": "Order CT angiography of renal arteries",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary advanced imaging",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 13,
+      "text": "Order CT scan of abdomen and pelvis with IV contrast",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary advanced imaging",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 14,
+      "text": "Order hepatitis B, hepatitis C, and HIV serologies",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 15,
+      "text": "Order intravenous pyelogram",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary advanced imaging",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 16,
+      "text": "Order MR angiography of the kidneys with gadolinium contrast",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary advanced imaging",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 17,
+      "text": "Order MRI of kidneys without contrast",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 18,
+      "text": "Order nuclear medicine renal scan (MAG3 or DMSA)",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary advanced imaging",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 19,
+      "text": "Order PET-CT scan",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary advanced imaging",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 20,
+      "text": "Order renal ultrasound with doppler",
+      "category": "Diagnostic",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 21,
+      "text": "Order repeat serum creatinine and basic metabolic panel in 2 to 4 weeks",
+      "category": "Diagnostic",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 22,
+      "text": "Order serum creatine kinase",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 23,
+      "text": "Order repeat serum cystatin C",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 24,
+      "text": "Order serum and urine protein electrophoresis (SPEP/UPEP) with serum free light chains",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 25,
+      "text": "Order spot urine sodium and fractional excretion of sodium (FENa)",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 26,
+      "text": "Order urine albumin-to-creatinine ratio",
+      "category": "Diagnostic",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 27,
+      "text": "Order urine culture",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 28,
+      "text": "Order urine microalbumin",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 29,
+      "text": "Order urinalysis with microscopy",
+      "category": "Diagnostic",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 30,
+      "text": "Order uric acid and serum calcium",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 31,
+      "text": "Start Allopurinol 300 mg daily",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting unnecessary medications",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 32,
+      "text": "Start Creatine monohydrate supplement 5 g daily",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting unnecessary medications",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 33,
+      "text": "Start Empagliflozin 10 mg PO daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting unnecessary medications",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 34,
+      "text": "Start Furosemide 20 mg PO daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting unnecessary medications",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 35,
+      "text": "Start Lisinopril 10 mg PO daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting unnecessary medications",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 36,
+      "text": "Start Prednisone 40 mg PO daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting unnecessary medications",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 37,
+      "text": "Start Sodium bicarbonate 650 mg PO TID",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting unnecessary medications",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 38,
+      "text": "Elective referral for cystoscopy",
+      "category": "Procedure",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary invasive procedures",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 39,
+      "text": "Elective referral for renal biopsy",
+      "category": "Procedure",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary invasive procedures",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 40,
+      "text": "Elective referral for renal artery stenting",
+      "category": "Procedure",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary invasive procedures",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 41,
+      "text": "Counseling: assess patient body habitus and muscle mass as a potential cause of elevated serum creatinine",
+      "category": "Counseling",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    }
+  ],
+  "abstractionGroups": [],
+  "specialistConsult": {
+    "consults": []
+  }
+}

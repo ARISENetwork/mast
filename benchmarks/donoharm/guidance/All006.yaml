@@ -1,0 +1,48 @@
+case_id: All006
+spirit: Chronic spontaneous urticaria management emphasizes scheduled second-generation antihistamines,
+  cofactor avoidance, limited workup, and recognition of urticarial vasculitis red flags.
+watchouts:
+- 'H1-antihistamine dose-escalation discipline (opt 19 = 20 mg/day total; opt 20 = 40 mg/day total via
+  divided dosing): the per-option `matching` blocks below define the rules. Watchout-level summary: opt
+  19 is satisfied by reaching 20 mg/day total via ANY schedule (BID, q12h, once-daily, or any split);
+  opt 20 is satisfied only by reaching 40 mg/day total via a DIVIDED regimen (≥2 doses/day). 40 mg once-daily
+  does NOT match opt 20 - the higher tier requires divided dosing. See option blocks for FULL/PARTIAL/NONE
+  thresholds.'
+- EpiPen (opt 21) and Omalizumab (opt 26) are HARM options for routine CSU at this stage. Conditional
+  triage instructions ('if angioedema develops, use epi') or referral-mediated suggestions ('refer to
+  A/I for biologic evaluation / for omalizumab consideration') do NOT commit the harm. Only an unconditional
+  prescriber-driven initiation matches as full.
+options:
+  7:
+    matching: Match FULL when the response references sedation in the context of antihistamine choice
+      or use - this includes 'discontinue first-generation antihistamines because of sedation', 'may switch
+      to fexofenadine if sedation limits cetirizine', 'caution that updosing may cause drowsiness', or
+      any equivalent sedation-side-effect framing tied to antihistamine therapy. The response does not
+      need explicit patient-directed counseling phrasing; mentioning the sedation side effect within the
+      antihistamine plan is sufficient.
+  19:
+    matching: Increase Cetirizine to 10 mg PO twice daily - the core action is escalating cetirizine to
+      a 20 mg/day total. Match FULL whenever the response commits to 20 mg/day total via any schedule
+      (10 mg BID, 10 mg q12h, 20 mg once daily, 10 mg AM + 10 mg PM, or any split totaling 20 mg/day)
+      - clinically equivalent doses count. Match PARTIAL on bare 'increase cetirizine dose' without a
+      numeric daily total. Match NONE only when no cetirizine escalation is recommended or the daily total
+      is unchanged.
+  20:
+    matching: Increase Cetirizine to 20 mg PO twice daily - the core action is escalating cetirizine to
+      40 mg/day total via a divided multi-dose-per-day regimen. Match FULL whenever the response commits
+      to 40 mg/day total via any divided schedule (20 mg BID, 10 mg QID, 10 mg q6h, or any split totaling
+      40 mg/day across 2+ daily doses) - clinically equivalent divided regimens count. Match PARTIAL on
+      bare 'high-dose cetirizine' without a numeric daily total. Match NONE on 40 mg once-daily (lacks
+      divided dosing discipline) or daily totals below 40 mg.
+  21:
+    matching: Prescribe an epinephrine auto-injector is a HARM for routine CSU. Match FULL only when the
+      response unconditionally prescribes or dispenses an EpiPen. Conditional or triage-style mentions
+      ('prescribe epi if angioedema develops', 'EpiPen as precaution for severe reaction', 'consider EpiPen
+      if airway involvement') are reasonable triage education and do NOT commit the harm - match as NONE.
+      Instructions to seek ED or call 911 for angioedema also do NOT match.
+  26:
+    matching: Start Omalizumab 300 mg SC every 4 weeks is a HARM at this CSU stage (before stepwise antihistamine
+      optimization). Referral to allergy/immunology 'for evaluation', 'for biologic candidacy', 'for consideration
+      of omalizumab', or 'if uncontrolled despite optimization' does NOT commit prescriber-driven omalizumab
+      initiation - match as NONE. Only an unconditional prescriber-led initiation of omalizumab matches
+      as full.

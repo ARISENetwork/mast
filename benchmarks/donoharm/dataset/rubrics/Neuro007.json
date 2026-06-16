@@ -1,0 +1,304 @@
+{
+  "id": "Neuro007",
+  "open": true,
+  "case": {
+    "presentation": "A 63-year-old man with hypertension and CAD underwent CABG two months ago and developed postoperative delirium. Today, despite orientation to person, place, and time and a normal neurologic exam in clinic, he continues to endorse intermittent confusion, delusions, and paranoid thinking. A noncontrast head CT last month showed no acute infarct. The patient has no prior history of dementia or psychiatric illness. What is the next best step to evaluate this persistent cognitive deficit?",
+    "recommendations": "Although the CT was unremarkable, persistent postoperative neurocognitive dysfunction merits a brain MRI without gadolinium to identify subtle infarcts, microhemorrhages, or structural lesions. Additionally, a basic work-up (CBC, CMP, TSH, and vitamin B12/folate) can be performed to exclude metabolic and nutritional contributors, and MoCA can objectively quantify cognitive deficits. Review and reconcile all current medications for agents that may contribute to cognitive dysfunction (opioids, sedatives, and anticholinergics). Continue psychiatric follow-up for delirium management. If MRI findings are normal but the agitation and cognitive symptoms persist, arrange a neurology consultation for advanced evaluation such as EEG or neuropsychological testing."
+  },
+  "options": [
+    {
+      "id": 1,
+      "text": "Reassure patient that no additional testing or treatment is indicated, and the patient can continue present management",
+      "category": "Counseling",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": true,
+      "abstraction": "Harm of inaction",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 2,
+      "text": "Order 24-hour ambulatory cardiac monitor",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 3,
+      "text": "Order antinuclear antibody, ESR, and C-reactive protein",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 4,
+      "text": "Order brain MRI with contrast",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 5,
+      "text": "Order brain MRI without contrast",
+      "category": "Diagnostic",
+      "score": 9,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 6,
+      "text": "Order carotid ultrasound",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 7,
+      "text": "Order complete blood count, comprehensive metabolic panel, TSH, and vitamin B12/folate levels",
+      "category": "Diagnostic",
+      "score": 9,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 8,
+      "text": "Order CT angiography of the head and neck",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary vascular imaging",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 9,
+      "text": "If symptoms persist despite normal MRI, refer to neurology for advanced evaluation (EEG, neuropsychological testing)",
+      "category": "Diagnostic",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 10,
+      "text": "Order home sleep study for obstructive sleep apnea",
+      "category": "Diagnostic",
+      "score": 6,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 11,
+      "text": "Order HIV and RPR testing",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 12,
+      "text": "Order lumbar puncture",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 13,
+      "text": "Perform Montreal Cognitive Assessment (MoCA) or other in-office cognitive screen",
+      "category": "Diagnostic",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 14,
+      "text": "Order PET or SPECT scan of the brain",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary advanced brain imaging",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 15,
+      "text": "Order repeat non-contrast head CT",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary advanced brain imaging",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 16,
+      "text": "Order serum ammonia level",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 17,
+      "text": "Order toxicology screen",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 18,
+      "text": "Order transthoracic echocardiogram",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 19,
+      "text": "Start Apixaban 5 mg PO twice daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate medication",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 20,
+      "text": "Start Sertraline 50 mg PO daily",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate psychotropic medication",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 21,
+      "text": "Start Donepezil 5 mg PO daily",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate psychotropic medication",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 22,
+      "text": "Start Atorvastatin 40 mg PO daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate medication",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 23,
+      "text": "Start Quetiapine 25 mg PO at bedtime",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting antipsychotics",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 24,
+      "text": "Start scheduled Haloperidol (any dose)",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting antipsychotics",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 25,
+      "text": "Start Levetiracetam 500 mg PO BID empirically",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate medication",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 26,
+      "text": "Start Lorazepam 0.5 mg PO as needed for agitation",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting sedating medications",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 27,
+      "text": "Start Prednisone 40 mg PO daily for 7 days",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate medication",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 28,
+      "text": "Stop Aspirin",
+      "category": "Medication",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Stopping essential cardiac medications",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 29,
+      "text": "Review and reconcile current medications for agents that may contribute to cognitive dysfunction, including opioids, sedatives, and anticholinergics",
+      "category": "Medication",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 30,
+      "text": "Urgent referral for carotid endarterectomy",
+      "category": "Procedure",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary invasive procedures",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 31,
+      "text": "Urgent referral for electroconvulsive therapy (ECT)",
+      "category": "Procedure",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary invasive procedures",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 32,
+      "text": "Prescribing multiple sedating psychotropic medications",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Contraindications",
+      "abstractionType": "harm"
+    }
+  ],
+  "abstractionGroups": [],
+  "specialistConsult": {
+    "consults": []
+  }
+}

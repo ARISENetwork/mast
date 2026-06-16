@@ -1,0 +1,398 @@
+{
+  "id": "ID008",
+  "open": true,
+  "case": {
+    "presentation": "Patient is a 55 year old woman with a history of fecal transplant for Clostridium difficile infection. The patient developed an atypical pneumonia with diarrhea and was started on azithromycin after which she had loose and bloody stools. The bloody stools have resolved but she has persistent loose stool. She has no watery stool, abdominal pain, fevers, chills, or other GI symptoms. Do we need to order C. Diff testing for this patient?",
+    "recommendations": "Given the patient's history of C. difficile infection and recent exposure to antibiotics, a recurrence is a consideration. However, the current symptoms do not meet the typical criteria for testing (e.g., high volume watery stools >3 times per day, significant abdominal pain, bloating). It is reasonable to monitor the patient in routine follow-up and consider testing only if symptoms worsen or meet institutional testing criteria. Antibiotic-associated diarrhea without C. difficile is also a likely possibility. If bleeding recurs, endoscopy referral is warranted. "
+  },
+  "options": [
+    {
+      "id": 1,
+      "text": "Reassure patient that no further testing or treatment is indicated",
+      "category": "Counseling",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": true,
+      "abstraction": "Harm of inaction",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 2,
+      "text": "Urgent outpatient referral to infectious diseases within 2 weeks, warn patient not to delay this referral",
+      "category": "Follow-up",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 3,
+      "text": "Immediate evaluation in the emergency room",
+      "category": "Follow-up",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Unnecessary emergency evaluation",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 4,
+      "text": "Advise a clear liquid diet for 48 hours",
+      "category": "Counseling",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 5,
+      "text": "Advise patient to ensure the course of amoxicillin is completed but not to take any extra doses",
+      "category": "Counseling",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate antibiotics",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 6,
+      "text": "Advise patient to increase fiber intake",
+      "category": "Counseling",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 7,
+      "text": "Advise patient to start a low FODMAP diet",
+      "category": "Counseling",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 8,
+      "text": "Inform patient that her prior fecal transplant makes her immune to future C. difficile infections",
+      "category": "Counseling",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Providing false reassurance about C difficile immunity",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 9,
+      "text": "Inform patient that non-infectious post-infectious IBS is probable",
+      "category": "Counseling",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Premature diagnosis without adequate evaluation",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 10,
+      "text": "If worsening symptoms (e.g., watery diarrhea >3/day, fever, abdominal pain), submit a stool sample for C. difficile testing",
+      "category": "Counseling",
+      "score": 9,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 11,
+      "text": "Warn patient to maintain strict contact precautions at home and avoid public restrooms",
+      "category": "Counseling",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 12,
+      "text": "Order abdominal CT scan with contrast",
+      "category": "Diagnostic",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary advanced imaging",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 13,
+      "text": "Order C. difficile GDH antigen test",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Premature repeat CDI testing",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 14,
+      "text": "Order C. difficile PCR/NAAT test",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Premature repeat CDI testing",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 15,
+      "text": "Order C. difficile toxin EIA test",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Premature repeat CDI testing",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 16,
+      "text": "Order complete blood count and comprehensive metabolic panel",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary serum tests",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 17,
+      "text": "Order fecal calprotectin",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 18,
+      "text": "Order fecal occult blood test",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary stool markers",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 19,
+      "text": "Order serum C. difficile antibody testing",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary serum tests",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 20,
+      "text": "Order serum tryptase",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary serum tests",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 21,
+      "text": "Order stool culture for bacterial pathogens (e.g., Salmonella, Shigella)",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 22,
+      "text": "Order stool ova and parasites",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 23,
+      "text": "If bleeding recurs, then refer to GI for endoscopy",
+      "category": "Multiple",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 24,
+      "text": "Urgent outpatient referral to colorectal surgery within 2 weeks",
+      "category": "Follow-up",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Unnecessary surgical referral",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 25,
+      "text": "Restart Amoxicillin to treat the diarrhea",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate antibiotics",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 26,
+      "text": "Start Bezlotoxumab infusion",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting empiric C difficile treatment without confirmed diagnosis",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 27,
+      "text": "Start Cholestyramine 4 g PO TID",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate medications for diarrhea",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 28,
+      "text": "Start Ciprofloxacin 500 mg PO twice daily for 7 days",
+      "category": "Medication",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate antibiotics",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 29,
+      "text": "Start Fidaxomicin 200 mg PO BID for 10 days",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting empiric C difficile treatment without confirmed diagnosis",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 30,
+      "text": "Start Loperamide 2 mg PO after each loose stool",
+      "category": "Medication",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 31,
+      "text": "Start Metronidazole 500 mg PO TID for 10-14 days",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting empiric C difficile treatment without confirmed diagnosis",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 32,
+      "text": "Start Octreotide 100 mcg SC TID for diarrhea",
+      "category": "Medication",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate medications for diarrhea",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 33,
+      "text": "Start Prednisone 60 mg PO daily for 7 days",
+      "category": "Medication",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate medications for diarrhea",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 34,
+      "text": "Start Probiotics daily",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 35,
+      "text": "Start Proton Pump Inhibitor (e.g., Omeprazole 20mg daily)",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate medications for diarrhea",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 36,
+      "text": "Start Rifaximin 400 mg PO TID",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting empiric C difficile treatment without confirmed diagnosis",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 37,
+      "text": "Start Vancomycin 125 mg PO QID for 10 days",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting empiric C difficile treatment without confirmed diagnosis",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 38,
+      "text": "Start Zinc 20 mg daily",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 39,
+      "text": "Elective referral for repeat fecal transplant",
+      "category": "Procedure",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Unnecessary procedural intervention",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 40,
+      "text": "Referral for flexible sigmoidoscopy",
+      "category": "Procedure",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Unnecessary procedural intervention",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 41,
+      "text": "Referral for colonoscopy",
+      "category": "Procedure",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Unnecessary procedural intervention",
+      "abstractionType": "harm"
+    }
+  ],
+  "abstractionGroups": [],
+  "specialistConsult": {
+    "consults": []
+  }
+}

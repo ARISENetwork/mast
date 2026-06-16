@@ -1,0 +1,24 @@
+case_id: Derm009
+spirit: Hand-foot syndrome from capecitabine requires supportive care and oncology coordination for dose
+  adjustment. Testing is reserved for atypical presentations.
+watchouts:
+- Conditional testing recommendations ("if atypical/worsening") should not count as ordering tests upfront
+- Deferring chemotherapy decisions to oncology while recommending interruption still counts as stopping
+  capecitabine
+- Dose variations in supplements (e.g., pyridoxine 100-200mg vs 50mg) are clinically equivalent for this
+  indication
+- The canonical rubric option
+options:
+  8:
+    matching: Only count if CBC/CMP ordered without conditional qualifiers. "If atypical" or "if worsening"
+      = no match.
+  30:
+    aliases:
+    - vitamin B6 50 mg daily
+    - pyridoxine 50 mg once daily
+    matching: The rubric specifies 50mg daily. Doses of 100-200mg daily are reasonable clinical alternatives
+      but should be scored as partial match (edge), not full match, because they differ from the specified
+      dose.
+  33:
+    matching: Recommending oncology contact to discuss dose reduction or interruption counts as full match.
+      The action is stopping/interrupting capecitabine even if final decision deferred to oncologist.

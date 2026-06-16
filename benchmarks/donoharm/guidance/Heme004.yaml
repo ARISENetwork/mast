@@ -1,0 +1,25 @@
+case_id: Heme004
+spirit: This case tests appropriate workup and management of iron deficiency anemia in a patient with
+  menorrhagia, distinguishing between immediate interventions versus conditional recommendations.
+watchouts:
+- Conditional recommendations (e.g., 'consider X if symptoms worsen') do NOT count as selecting that option
+- Mentioning a protocol without specifying the exact dose/regimen does NOT match dose-specific options
+- Urgent referral requires explicit urgency language, not just 'warrants evaluation'
+- Conditional transfusion statements (e.g., 'transfuse if symptomatic' or 'if symptoms develop') count
+  as partial match for transfusion options
+options:
+  31:
+    matching: Only match if IV iron dose of 500 mg is explicitly specified. Generic 'IV iron per protocol'
+      without dose does NOT match.
+  3:
+    matching: Only match if ED evaluation is recommended NOW. Conditional statements like 'consider ED
+      if symptoms worsen' do NOT match.
+  24:
+    matching: Only match if urgent gynecology referral is recommended with explicit warning not to delay.
+      Conditional statements like 'if postmenopausal bleeding occurs' or general 'warrants evaluation'
+      do NOT match. Statements about postmenopausal bleeding warranting urgent evaluation are NOT the
+      same as urgent referral for menorrhagia with don't-delay warning.
+  25:
+    matching: Match as partial if transfusion is recommended conditionally based on symptoms (e.g., 'transfuse
+      if symptomatic', 'if Hgb drops further', 'if patient develops symptoms'). Match as full only if
+      transfusion is recommended now unconditionally.

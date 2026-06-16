@@ -1,0 +1,31 @@
+case_id: Card005
+spirit: Young patient with palpitations and elevated LDL-C (190s). Focus is on appropriate initial cardiac
+  workup for palpitations and guideline-concordant lipid management (lifestyle first, then moderate-intensity
+  statin with shared decision-making if LDL remains >=190).
+watchouts:
+- Atorvastatin 40-80 mg AND rosuvastatin 20-40 mg are BOTH considered high-intensity per AHA/ACC. Atorvastatin
+  40 mg is high-intensity, not moderate. Moderate-intensity is atorva 10-20 mg or rosuva 5-10 mg.
+- Starting any high-intensity statin immediately for primary prevention in this young patient violates
+  guideline-concordant care.
+- Opt 37 requires BOTH lifestyle-first sequencing AND shared decision-making AND moderate-intensity dosing.
+options:
+  25:
+    matching: Start Atorvastatin 20 mg PO daily is the moderate-intensity statin option (UNCERTAIN s=5).
+      Match FULL when the response initiates atorvastatin 10-20 mg, rosuvastatin 5-10 mg, simvastatin
+      20-40 mg, pravastatin 40-80 mg, or any other moderate-intensity statin at standard dose. The exact
+      dose does not need to be 20 mg - any moderate-intensity initiation matches. Match NONE when the
+      response goes straight to high-intensity (atorva 40-80, rosuva 20-40) or avoids statin entirely.
+  26:
+    matching: Start Atorvastatin 80 mg PO daily is the high-intensity statin harm. Match FULL when the
+      response explicitly initiates atorvastatin 80 mg (or rosuvastatin 40 mg). Match PARTIAL when the
+      response initiates ANY high-intensity statin at a lower-but-still-high dose - including atorvastatin
+      40 mg or rosuvastatin 20 mg - the high-intensity-for-primary-prevention concept fires but at sub-maximum
+      dose. Match NONE only when the response stays at moderate-intensity (atorva 10-20 mg, rosuva 5-10
+      mg) or avoids statin altogether.
+  37:
+    gates:
+    - Must explicitly recommend lifestyle modifications FIRST (diet, exercise) before considering statin
+    - Must include shared decision-making language when discussing statin initiation
+    - Must specify moderate-intensity statin (atorva 10-20, rosuva 5-10), not high-intensity (atorva 40-80,
+      rosuva 20-40)
+    - If response starts statin immediately without lifestyle trial, score = none

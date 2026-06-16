@@ -1,0 +1,29 @@
+case_id: ID006
+spirit: Post-exposure HIV prophylaxis case requiring baseline testing, appropriate PEP initiation, and
+  serial follow-up testing per CDC guidelines. Initial testing should include antigen/antibody combo,
+  not routine RNA testing.
+watchouts:
+- HIV-1 RNA quantitative testing (opt 22, harm) is NOT part of routine initial PEP workup; it is only
+  indicated if acute HIV symptoms present. Ordering RNA unconditionally with initial labs is FULL match
+  for the harm; ordering RNA gated on acute-HIV symptoms is PARTIAL (the test is operationalized on a
+  clinically reasonable trigger, not a true commitment to inappropriate routine ordering); not mentioning
+  RNA at all is NONE.
+- Distinguish between baseline testing (antigen/antibody combo) versus symptom-triggered testing (RNA/NAT)
+- Option 23 timing is specific (2 weeks, 1 month, AND 3 months). Alternative serial-testing cadences (e.g.,
+  6 weeks/3 months/6 months, or 6 weeks alone) are PARTIAL not FULL - the action archetype (serial post-exposure
+  HIV testing) matches but the schedule does not.
+options:
+  22:
+    matching: Order HIV-1 RNA quantitative test as part of initial/baseline labs. The core action is putting
+      HIV-1 RNA on the workup. Match FULL when HIV-1 RNA is ordered unconditionally as part of initial/baseline
+      labs. Match PARTIAL when HIV-1 RNA is ordered conditionally on suspected acute HIV / acute retroviral
+      symptoms ('if acute HIV symptoms', 'if symptomatic, add HIV RNA') - the test is operationalized
+      on a clinically reasonable trigger. Match NONE when HIV-1 RNA is not mentioned at all.
+  23:
+    matching: Order HIV-1/2 antigen/antibody immunoassay at the specific follow-up trio 2 weeks, 1 month,
+      and 3 months. Match FULL only when the response specifies serial HIV ag/ab testing at all three
+      intervals (2w + 1mo + 3mo), allowing minor wording variation ('at 14 days, 1 month, 3 months', 'biweekly
+      through 3 months', etc.). Match PARTIAL when the response commits to serial follow-up HIV testing
+      but at different intervals (e.g., '6 weeks, 3 months, 6 months' or 'at 6 weeks and 3 months' or
+      just '3 months') - the serial post-exposure-testing intent is present but the cadence diverges from
+      the rubric trio. Match NONE when no follow-up HIV testing is mentioned (only baseline).

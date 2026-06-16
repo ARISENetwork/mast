@@ -1,0 +1,32 @@
+case_id: Pulm005
+spirit: Chronic productive cough workup requiring differentiation between conditional consideration vs.
+  definitive ordering, and between routine vs. urgent referrals.
+watchouts:
+- '"Consider" or "if refractory/persistent" phrasing indicates the test is NOT being ordered now - score
+  as none, not partial or full'
+- Referral without explicit urgency language ("urgent", "do not delay", "ASAP") is routine, not urgent
+- Hedged recommendations ("consider", "may need") are not equivalent to definitive orders
+- '"Refer to pulmonology" without urgency modifiers is routine referral (opt#28), not urgent (opt#2) -
+  absence of urgency = routine'
+- '"Consider [test] if [condition]" with the condition already met or being evaluated counts as partial
+  ordering of that test'
+options:
+  2:
+    matching: Only score if referral explicitly marked urgent or patient warned not to delay. "Refer to
+      pulmonology" alone is routine, score none for opt#2.
+  11:
+    matching: '"Consider impedance-pH testing if refractory" is conditional future consideration, not
+      a current order - score none'
+  12:
+    matching: '"Consider alpha-1 antitrypsin" without definitive ordering language counts as full match
+      - this is appropriate clinical hedging for this test'
+  16:
+    matching: '"Consider methacholine challenge if [spirometry] normal" counts as partial - the conditional
+      test is being planned as part of current workup, not deferred to future if symptoms persist'
+  34:
+    matching: Start Budesonide/Formoterol 80/4.5 mcg BID is an APPROPRIATE option (score=7) - controller-class
+      inhaler. Match FULL when the response firmly initiates Budesonide/Formoterol or another ICS+LABA
+      combo. Match PARTIAL when the response 'considers', 'discusses', or 'recommends trial of' an inhaled
+      corticosteroid (ICS-only such as fluticasone or budesonide alone) paired with a concrete plan -
+      the controller-inhaler concept fires but the LABA component is missing. Pure abstract mention with
+      no implementation intent matches none; soft-commitment with a named ICS does match.

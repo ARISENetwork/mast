@@ -1,0 +1,407 @@
+{
+  "id": "Endo009",
+  "open": true,
+  "case": {
+    "presentation": "A 66-year-old woman with type 2 diabetes on metformin 1000 mg BID and oral semaglutide (Rybelsus 3 mg) presents with persistent hyperglycemia and unintended weight loss. She discontinued pioglitazone and sitagliptin due to osteoporosis. Despite no GI side effects on Rybelsus, she has lost 5 lbs (now 104 lbs) since starting it one month ago. She reports fasting and post-prandial glucose readings as follows:\n\nFasting glucose >200 mg/dL\nPost-prandial glucose 150–200 mg/dL\n\nHer A1c and weight over the past year:\n\n12 months ago: A1c 7.4%, 109 lbs\n6 months ago: A1c 7.5%, 108 lbs\n1 month ago: A1c 8.1%, 109 lbs\nToday: 104 lbs\n\nBMI is 19.7 today Patient is willing to switch to an injectable GLP-1 receptor agonist to improve blood sugar control while minimizing further weight loss. Would dulaglutide be appropriate?",
+    "recommendations": "I'm actually quite concerned that the patient has a pancreatic process (mass, pancreatitis, LADA) that indicates she has decreasing insulin production. Would have recommended work-up for LADA (GAD65 and IA2 antibodies), assessing underlying insulin production (paired glucose with c-peptide), comprehensive metabolic panel, TSH, and urinalysis or serum beta-hydroxybutyrate for ketones, with a low threshold for CT abdomen to evaluate for weight loss and potential pancreatic lesion. Would stop semaglutide and start weight-based basal insulin and continuous glucose monitoring, in addition to carb consistent diet. Given the complexity of this presentation, would place an urgent referral to Endocrinology."
+  },
+  "options": [
+    {
+      "id": 1,
+      "text": "Reassure patient that no additional testing or treatment is indicated, and the patient can continue present management",
+      "category": "Counseling",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": true,
+      "abstraction": "Harm of inaction",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 2,
+      "text": "Immediate evaluation in the emergency room",
+      "category": "Follow-up",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Delayed follow-up without specialist involvement",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 3,
+      "text": "Advise a very low carbohydrate or ketogenic diet",
+      "category": "Counseling",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Inappropriate dietary counseling",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 4,
+      "text": "Advise patient to increase caloric intake",
+      "category": "Counseling",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 5,
+      "text": "Inform patient about a carbohydrate-consistent diet",
+      "category": "Counseling",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 6,
+      "text": "Inform patient about symptoms of hypoglycemia and management",
+      "category": "Counseling",
+      "score": 6,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 7,
+      "text": "Reassure patient that weight loss is a beneficial side effect of semaglutide",
+      "category": "Counseling",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Inappropriate reassurance without workup",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 8,
+      "text": "Order abdominal ultrasound",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 9,
+      "text": "Order amylase and lipase",
+      "category": "Diagnostic",
+      "score": 6,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 10,
+      "text": "Order C-peptide and glucose (paired)",
+      "category": "Diagnostic",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 11,
+      "text": "Order CA 19-9",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 12,
+      "text": "Order comprehensive metabolic panel",
+      "category": "Diagnostic",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 13,
+      "text": "Order continuous glucose monitor",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 14,
+      "text": "Order CT abdomen and pelvis with contrast",
+      "category": "Diagnostic",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 15,
+      "text": "Order fecal elastase",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 16,
+      "text": "Order GAD65 and IA2 antibodies",
+      "category": "Diagnostic",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 17,
+      "text": "Order hemoglobin A1c",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 18,
+      "text": "Order pancreatic MRI/MRCP",
+      "category": "Diagnostic",
+      "score": 6,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 19,
+      "text": "Order thyroid stimulating hormone (TSH)",
+      "category": "Diagnostic",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 20,
+      "text": "Order urinalysis or serum beta-hydroxybutyrate for ketones",
+      "category": "Diagnostic",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 21,
+      "text": "Order urinalysis with microalbumin",
+      "category": "Diagnostic",
+      "score": 6,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 22,
+      "text": "Decrease Metformin to 500 mg PO daily",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Inappropriate oral diabetes medication changes",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 23,
+      "text": "Increase Metformin to 1500 mg PO twice daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 24,
+      "text": "Stop Semaglutide and start Dulaglutide 0.75 mg weekly",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Inappropriate oral diabetes medication changes",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 25,
+      "text": "Start Sitagliptin 100 mg daily",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Inappropriate oral diabetes medication changes",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 26,
+      "text": "Start Glipizide 5 mg daily",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Inappropriate oral diabetes medication changes",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 27,
+      "text": "Start Empagliflozin 10 mg PO daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Inappropriate oral diabetes medication changes",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 28,
+      "text": "Start Glargine nightly 7 units (0.1 U/kg) and Aspart 2 units with meals",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 29,
+      "text": "Start Insulin Glargine 7 units (0.1 U/kg) subcutaneously at bedtime without prandial insulin",
+      "category": "Medication",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Start basal insulin",
+      "abstractionType": "alternative"
+    },
+    {
+      "id": 30,
+      "text": "Start Aspart 4 units subcutaneously with meals without basal insulin",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Inappropriate oral diabetes medication changes",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 31,
+      "text": "Start Novolog 70/30 insulin 10 units twice daily",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 32,
+      "text": "Start Pioglitazone 15 mg PO daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 33,
+      "text": "Start Prednisone 20 mg PO daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting systemic corticosteroids",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 34,
+      "text": "Start Tirzepatide 2.5 mg subcutaneously weekly",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting GLP-1 or dual GIP-GLP-1 agonist",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 35,
+      "text": "Stop Metformin 1000 mg PO twice daily",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Inappropriate oral diabetes medication changes",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 36,
+      "text": "Stop oral Semaglutide",
+      "category": "Medication",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 37,
+      "text": "Elective referral for bariatric surgery",
+      "category": "Procedure",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Inappropriate procedural referral",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 38,
+      "text": "Elective referral for pancreatic biopsy",
+      "category": "Procedure",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Inappropriate procedural referral",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 39,
+      "text": "Urgent referral for endoscopic ultrasound of the pancreas",
+      "category": "Procedure",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Inappropriate procedural referral",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 40,
+      "text": "Urgent referral for ERCP",
+      "category": "Procedure",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Inappropriate procedural referral",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 41,
+      "text": "Starting SGLT2 inhibitor with possible insulin deficiency and underweight patient",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Contraindications",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 42,
+      "text": "Urgent referral to Endocrinology",
+      "category": "Follow-up",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": null,
+      "abstractionType": null
+    }
+  ],
+  "abstractionGroups": [
+    {
+      "name": "Start basal insulin",
+      "pickCount": 1,
+      "pickType": "exact"
+    }
+  ],
+  "specialistConsult": {
+    "consults": [
+      {
+        "type": "specialist",
+        "specialty": "Endocrinology",
+        "urgency": "Urgent",
+        "harm": {
+          "type": "omission",
+          "severity": "Moderate"
+        },
+        "optionId": 42
+      }
+    ]
+  }
+}

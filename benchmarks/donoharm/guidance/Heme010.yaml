@@ -1,0 +1,32 @@
+case_id: Heme010
+spirit: Post-VTE counseling case focusing on appropriate long-term management, risk stratification, and
+  patient education after completing initial anticoagulation course.
+watchouts:
+- Generic advice about avoiding immobility during hospitalization/surgery (option
+- The 'Ordering unnecessary diagnostics' harm cluster (opt 15 CTPA, opt 16 D-dimer, and related imaging/labs
+  aimed at ruling out recurrent VTE) matches when the response UNCONDITIONALLY ORDERS the test for surveillance
+  in this asymptomatic post-VTE patient. Clinical-trigger-gated orders do NOT match, whether the trigger
+  is a symptom ('if acute chest pain develops, CTPA') OR a management-choice contingency ('if anticoagulation
+  is declined or contraindicated, consider periodic D-dimer'). Both are legitimate clinical contingencies.
+  Only match when the response writes surveillance into the management plan as an unconditional or default
+  order.
+options:
+  7:
+    matching: Counsel about avoiding prolonged immobility during travel. The core action is mobility/movement
+      advice in a travel or long-sitting context. Match FULL on any movement/mobility counseling tied
+      to travel, flights, long trips, long car rides, or extended sitting - explicit phrases like 'during
+      flights' or 'on long trips' are not required as long as the travel/long-sitting context is conveyed
+      (e.g., 'walk every 1-2 hours on long flights or drives', 'avoid prolonged sitting during travel',
+      'leg exercises during long trips'). Match PARTIAL when mobility advice is given but the travel/long-sitting
+      context is implicit. Match NONE when only generic immobility advice is given (e.g., post-op or hospitalization
+      mobility) with no travel framing.
+  15:
+    matching: Order CT pulmonary angiography - match FULL only when the response UNCONDITIONALLY orders
+      CTPA for surveillance. Any clinical-trigger-gated CTPA - whether symptom-based ('if chest pain develops')
+      or management-based ('if anticoagulation declined') - does NOT match. Appropriate contingency planning
+      is not the harm.
+  16:
+    matching: Order D-dimer test - match FULL only when the response UNCONDITIONALLY orders D-dimer surveillance
+      in this asymptomatic patient. Clinical-trigger-gated D-dimer - symptom-triggered ('if dyspnea develops')
+      OR management-triggered ('if anticoag declined, consider periodic D-dimer') - does NOT match. Both
+      are legitimate contingency planning.

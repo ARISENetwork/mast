@@ -1,0 +1,54 @@
+case_id: Derm006
+spirit: 'Stable seborrheic keratoses vs. new lesions needing evaluation. The
+
+  response should triage by atypicality (ROS, full skin exam) and
+
+  escalate testing only when the exam or ROS flags something abnormal.
+
+  Routine labs (CMP, CBC) are NOT first-line for asymptomatic stable SKs.
+
+  '
+watchouts:
+- Skin biopsy is a harm (unnecessary invasive procedure) for benign stable SKs. Conditional biopsy triggered
+  on atypical lesion findings is APPROPRIATE management - do not match the unconditional biopsy harm option.
+- CMP (opt 9) gated on abnormal ROS or screening findings is conditional, contingent workup. The case
+  has no ROS triggers, so treat as NONE (not partial).
+- CT abdomen/pelvis (opt 10, harm score=4) is over-investigation for benign stable SKs even when gated
+  on ROS. Match as full when the response orders or directs CT abd/pelvis at all - including 'if ROS positive,
+  order CT abd/pelvis'. The harm is the willingness to escalate to abdominal CT on weak triggers.
+- CT chest with contrast (opt 31, appropriate score=8) is reasonable Leser-Trelat-adjacent workup. Match
+  FULL when CT chest is ordered unconditionally; match PARTIAL when CT chest is gated on ROS findings
+  or pulmonary symptoms - that is reasonable triage and DOES count.
+- Age-appropriate cancer screening (opt 29) requires the response to address screening across MULTIPLE
+  applicable modalities (e.g., mention colonoscopy, mammogram, lung-cancer screening, cervical screening
+  as a set). Citing only one modality (e.g., LDCT alone) is too narrow and does NOT match - the option
+  is about a broad screening posture.
+options:
+  9:
+    matching: Order comprehensive metabolic panel. The core action is putting CMP on the workup. Match
+      FULL when CMP is ordered as a standalone test or as part of an unconditional screening lab bundle.
+      Match PARTIAL when CMP is conditional or bundled into a screening cascade ('if ROS positive, send
+      CMP', 'screening labs including CMP if indicated') - the test is on the plan but with a softer trigger.
+      Match NONE only when CMP is not mentioned at all.
+  10:
+    matching: Order CT abdomen/pelvis with contrast - this is a HARM (over-investigation) for benign stable
+      SKs. Match FULL when the response orders CT abd/pelvis at all, INCLUDING ROS-gated framing ('if
+      ROS positive, order CT abd/pelvis', 'if abnormal screening, proceed with CT torso'). The willingness
+      to escalate to abdominal CT on weak triggers is itself the harm. Only NONE when CT abd/pelvis is
+      genuinely never recommended.
+  29:
+    matching: Ensure age-appropriate cancer screening. The core action is addressing routine cancer screening
+      for this patient. Match FULL when the response addresses MULTIPLE applicable modalities as a set,
+      OR when it explicitly invokes 'age-appropriate cancer screening' as a comprehensive posture. Match
+      PARTIAL when only a single age-appropriate modality is named (e.g., 'colonoscopy per USPSTF', 'LDCT
+      for lung-cancer screening', 'mammogram') - the screening concept fires but the breadth is narrower.
+      Match NONE only when no cancer screening is addressed at all.
+  30:
+    matching: Skin biopsy - this is a harm (unnecessary invasive procedure). Responses that gate biopsy
+      on 'if any lesion is atypical' are practicing appropriate conservative management, NOT committing
+      the harm. Match as none. Only match the harm when the response recommends biopsy unconditionally
+      or without a legitimate atypical-finding trigger.
+  31:
+    matching: Order standard CT chest with contrast - APPROPRIATE option (score=8). Match FULL when ordered
+      unconditionally. Match PARTIAL when gated on ROS / pulmonary findings - reasonable Leser-Trelat
+      workup gating. Match NONE only when CT chest is never mentioned.

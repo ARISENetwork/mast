@@ -1,0 +1,48 @@
+case_id: Nephro009
+spirit: 'Workup of hypotonic polyuria / suspected diabetes insipidus in a young
+
+  man with low urine osm and low urine sodium. Appropriate workup adds
+
+  calcium / potassium / serum osm to the panel and pursues 24-hour urine
+
+  plus endocrine evaluation. Harms include starting empiric desmopressin
+
+  or restricting fluids before evaluation.
+
+  '
+watchouts:
+- 'Opt 19 (''Order serum calcium level''): match FULL when the response adds calcium to the workup panel
+  — including ''consider calcium and potassium if not already included'' or ''obtain BMP/CMP with calcium''
+  — this is standard panel-additive language, not a clinical-trigger gate. The ''if not already included''
+  clause is a default-true redundancy guard, not a deferral. Match PARTIAL when calcium is named only
+  as a downstream specialist consideration. Match NONE when calcium is not named in the workup.'
+- 'Opt 11 (''Order MRI brain pituitary protocol''): the option is inappropriate (s=5) when the workup
+  hasn''t yet confirmed central DI. Phrases like ''if central DI is confirmed, obtain pituitary MRI''
+  are result-gated on a workup not yet done — match NONE per Harm Voider Checklist.'
+options:
+  19:
+    matching: 'Order serum calcium level. Match FULL when the response adds calcium
+
+      to the lab panel for this DI workup, including ''consider calcium and
+
+      potassium if not already included'' — the if-not-already-done clause
+
+      is a routine panel-additive frame and counts as a firm order. Match
+
+      PARTIAL when calcium is suggested only as a possible downstream
+
+      test. Match NONE when calcium is not named.
+
+      '
+  11:
+    matching: 'Order MRI brain pituitary protocol. Result-gated on confirmation of
+
+      central DI (''if central DI is confirmed, obtain pituitary MRI'') →
+
+      match NONE. The MRI is correctly deferred until water-deprivation
+
+      testing identifies central DI. Only match FULL when the response
+
+      orders the MRI unconditionally as part of the initial workup.
+
+      '

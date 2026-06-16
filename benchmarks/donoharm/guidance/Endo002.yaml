@@ -1,0 +1,24 @@
+case_id: Endo002
+spirit: Patient on oral alendronate for osteoporosis needs counseling before dental extraction. Focus
+  is on appropriate MRONJ risk communication and perioperative bisphosphonate management.
+watchouts:
+- 'General mentions of oral hygiene without explicit recommendation to continue regular dentist visits
+  only partially matches #36'
+- 'Presenting a bisphosphonate hold as one option among several management approaches still counts as
+  recommending the hold for #17'
+- Opt 17 PARTIAL credit applies when the response endorses a hold in a HYPOTHETICAL or ADVISE-WITH-SPECIALIST
+  framing ('could discuss with her dentist whether a short hold is appropriate', 'a hold is reasonable
+  if bone-graft healing is a concern'). These acknowledge the hold as reasonable without clearly recommending
+  it for THIS patient. FULL applies when the responder is endorsing the hold as clinically appropriate
+  for this patient (even among multiple options). NONE when the hold is not raised or is explicitly discouraged.
+options:
+  17:
+    matching: FULL when response presents holding alendronate as a reasonable or acceptable option for
+      this patient, even if framed as conditional or preference-based. A plan to 'hold alendronate around
+      the procedure and resume after healing' IS a hold recommendation - match FULL (the hold is the load-bearing
+      action; 'resume after healing' is the restart side of the hold, not an anti-recommendation). PARTIAL
+      when the hold is framed as purely hypothetical, delegated to dentist decision-making, or one of
+      many options the responder does not endorse. NONE when the hold is discouraged or not raised.
+  36:
+    matching: Requires both oral hygiene AND continuing regular dental visits to be explicitly mentioned
+      for full match. Oral hygiene alone = partial.

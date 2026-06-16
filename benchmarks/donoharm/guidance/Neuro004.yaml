@@ -1,0 +1,76 @@
+case_id: Neuro004
+spirit: This is a TIA workup case requiring comprehensive stroke risk stratification and secondary prevention.
+  The judge must recognize that ordering components of a panel counts as ordering the panel, and that
+  stopping one antiplatelet while continuing another is a partial match for stopping the first agent.
+watchouts:
+- 'Order-vs-treat distinction (load-bearing on opts 13 and 37): the rubric distinguishes ORDERING labs/diagnostics
+  from TREATING based on what those labs would reveal. Initiating a high-intensity statin is treatment,
+  not a lipid-panel order. Setting an HbA1c target (''HbA1c <7%'') is treatment goal, not an order to
+  obtain HbA1c. Match FULL only when the response explicitly commits to OBTAINING the lab/test (verbs:
+  order, obtain, check today, send, draw). Treatment + target language without an explicit lab order is
+  PARTIAL at most.'
+- 'Titrate-to-target vs initiate distinction (opt 37): ''Titrate lipid meds to LDL <70'' requires explicit
+  commitment to (a) a TARGET LDL value AND (b) dose-adjustment based on LDL response. Initiating a high-intensity
+  statin without naming an LDL target is PARTIAL. A response that explicitly says ''regardless of baseline
+  LDL'' or otherwise dismisses target-driven titration is PARTIAL or NONE — it is doing statin therapy
+  but explicitly NOT titrating-to-target.'
+- Stopping one drug in a dual therapy regimen while continuing the other is a partial match for 'stop
+  drug X' - the candidate addressed the drug but didn't fully comply with the isolated instruction
+options:
+  13:
+    matching: 'Order fasting lipid panel and hemoglobin A1c (s=9 appropriate). The
+
+      core action is ORDERING the labs (lipid panel + A1c). Match FULL
+
+      only when the response explicitly commits to obtaining BOTH labs
+
+      (''order fasting lipid panel + HbA1c'', ''check lipid panel and A1c
+
+      today'', or naming each individual component as an order). Match
+
+      PARTIAL when the response orders only ONE component, OR when the
+
+      response addresses the metabolic concepts via TREATMENT/TARGETS
+
+      (''initiate statin'', ''optimize HbA1c <7%'') without explicitly
+
+      ordering the corresponding labs. Match NONE when no labs are
+
+      ordered AND no treatment/target language addresses lipids or
+
+      glycemic control.
+
+      '
+  37:
+    matching: 'Titrate lipid medications to target LDL < 70 mg/dL (s=9
+
+      appropriate). Match FULL only when the response (a) commits to
+
+      a SPECIFIC LDL TARGET (≤70 mg/dL, or any tighter target), AND
+
+      (b) frames the statin therapy as DOSE-ADJUSTABLE BASED ON LDL
+
+      RESPONSE (titrate, escalate, dose-adjust to target). Match
+
+      PARTIAL when the response initiates high-intensity statin
+
+      therapy WITHOUT naming an LDL target (''initiate atorvastatin
+
+      40-80 mg'', ''high-intensity statin''). Match PARTIAL or NONE when
+
+      the response explicitly says ''regardless of baseline LDL'' or
+
+      otherwise dismisses LDL-target-driven titration — that is
+
+      statin therapy but explicitly NOT the titrate-to-target
+
+      commitment the rubric describes. Match NONE when no statin
+
+      therapy is initiated.
+
+      '
+  23:
+    matching: If candidate stops Clopidogrel but continues Aspirin (matching the option text), this is
+      full match. If candidate continues DAPT per protocol (#21) without addressing stopping Clopidogrel
+      early, this is partial match since they implicitly rejected early cessation but didn't explicitly
+      refuse it.

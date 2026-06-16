@@ -15,7 +15,8 @@ from typing import Dict, Any, Tuple
 import requests
 
 # Add scripts directory to path for imports
-sys.path.append(str(Path(__file__).parent.parent.parent / "scripts"))
+# validator.py lives in benchmarks/<name>/submission/, so walk up 4 levels to repo root
+sys.path.append(str(Path(__file__).parent.parent.parent.parent / "scripts"))
 from utils import load_config, validate_schema, save_json_file, get_results_dir, extract_openai_content
 
 
@@ -27,8 +28,13 @@ def load_schema() -> Dict[str, Any]:
 
 
 def load_prompt() -> str:
-    """Load the prompt template."""
-    prompt_path = Path(__file__).parent / "prompts" / "default.md"
+    """Load the prompt template.
+
+    Shares the single canonical prompt with the run-it-yourself kit
+    (benchmarks/<name>/prompts/), one level up, so the endpoint submission
+    and the local run send an identical system prompt.
+    """
+    prompt_path = Path(__file__).parent.parent / "prompts" / "default.md"
     with open(prompt_path, 'r', encoding='utf-8') as f:
         return f.read().strip()
 

@@ -1,0 +1,52 @@
+case_id: All001
+spirit: This case tests recognition of immune checkpoint inhibitor infusion reaction management, including
+  appropriate premedication, specialist consultation timing, and when to continue vs. discontinue therapy
+  based on reaction severity.
+watchouts:
+- Conditional discontinuation ("if recurs, discontinue") is NOT the same as immediate permanent discontinuation
+  - count as no match for opt 16. Hedged language like "generally permanently discontinue" or "consider
+  permanently discontinuing" is also NOT a firm permanent cessation - count as none.
+- Multidisciplinary review or consultation arranged counts as full match for referral even if "urgent"
+  not explicitly stated - the timeline context (before next dose) implies urgency.
+- Premedication dosing must match both drug AND dose; different doses are partial credit only. Famotidine
+  route (PO vs IV) is a packaging difference, not a clinical-distinct action - same drug + similar pre-infusion
+  timing matches.
+- '"Defer next dose pending evaluation" (opt 25) matches any phrasing that pauses/holds/delays the next
+  infusion until specialist evaluation - including "hold next dose until A/I review", "do not re-administer
+  until cleared", "rechallenge only after discussion with A/I and Onc". Conservative continue-with-caution
+  framing without an explicit pause does NOT match.'
+options:
+  16:
+    matching: 'Discontinue Nivolumab permanently. Match FULL ONLY when the response unequivocally and
+      immediately commits to permanent discontinuation - using language like ''discontinue nivolumab permanently''
+      WITHOUT any qualifier. ANY hedging language disqualifies the match: ''generally permanently discontinue'',
+      ''recommend permanently discontinuing'', ''consider permanent cessation'', ''lean toward permanent
+      discontinuation'', ''permanently discontinue in most cases''. The qualifiers ''generally'', ''recommend'',
+      ''consider'', ''lean toward'', ''in most cases'' all soften the commitment below the firm threshold
+      required for opt 16. Conditional discontinuation (''discontinue if reaction recurs'') also does
+      not match. Match NONE for ANY of these soft/conditional/hedged frames - opt 16 is reserved for unconditional,
+      immediate, unhedged permanent cessation.'
+  26:
+    matching: Switch to Ipilimumab for the next cycle (UNCERTAIN s=5). Match FULL when the response firmly
+      commits to switching to ipilimumab. Match PARTIAL on soft commitment - 'Consider switching to ipilimumab',
+      'discuss switching to ipilimumab as an alternative', 'recommend switching if continuing ICI desired'.
+      Soft-commitment language for an UNCERTAIN-tier option matches partial; only pure abstract differential
+      mention without any switching plan matches none.
+  21:
+    matching: Start Famotidine 20 mg PO 1 hour before next infusion. Match FULL when the response gives
+      any pre-infusion famotidine - PO or IV - with the standard 20 mg / 1-hour-before pattern. Route
+      differences (PO vs IV) for the same H2 blocker at the same pre-infusion timing are clinically equivalent
+      and DO match. Wrong dose or wrong drug class still partial/none as appropriate.
+  25:
+    matching: Defer next Nivolumab dose until evaluated by Allergy/Immunology and Oncology. Match FULL
+      whenever the response pauses, holds, or delays the next infusion until specialist review - including
+      'hold next dose until A/I clears', 'do not re-administer until evaluated', 'rechallenge after A/I
+      and Onc discussion'. Match PARTIAL when the response defers but only mentions one of the two services.
+      Continue-with-monitoring without an explicit pause does NOT match.
+  30:
+    matching: Arranging allergy/immunology consultation or multidisciplinary review before next dose counts
+      as full match. The 'before next dose' timeline implies appropriate urgency even without the word
+      'urgent'.
+  22:
+    matching: Methylprednisolone dose must match 40 mg for full credit. 100 mg IV is a different dose
+      - count as partial match only (correct drug and timing, wrong dose).

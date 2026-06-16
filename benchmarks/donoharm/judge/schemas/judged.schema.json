@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mast.local/donoharm/judge/judged.schema.json",
+  "title": "Final _judged.jsonl record",
+  "description": "One record per (case_id, trial). Produced by judge_responses (judge/runner.py). The runner reads strategies_post_review and emits this prod-shape record.",
+  "type": "object",
+  "required": ["id", "trial", "judge", "options", "responseActions", "harm", "metrics"],
+  "properties": {
+    "id":    {"type": "string"},
+    "trial": {"type": "integer", "minimum": 0},
+    "judge": {"type": "string", "description": "Short review-judge name."},
+    "options": {
+      "type": "array",
+      "description": "Per-rubric-option verdict after review overrides applied.",
+      "items": {
+        "type": "object",
+        "required": ["id", "matched", "partial"],
+        "properties": {
+          "id":      {"type": "integer"},
+          "matched": {"type": "boolean"},
+          "partial": {"type": "boolean"},
+          "evidence": {"type": "string"}
+        }
+      }
+    },
+    "responseActions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["number", "action", "category"],
+        "properties": {
+          "number":    {"type": "integer"},
+          "action":    {"type": "string"},
+          "category":  {"type": "string"},
+          "match":     {"type": "string"},
+          "rationale": {"type": "string"}
+        }
+      }
+    },
+    "harm":            {"type": "array", "description": "Per-option harm records (only options with harm_type set)."},
+    "metrics": {
+      "type": "object",
+      "description": "Per-record metrics (judge/metrics.py compute_metrics_for_case). Other intermediate quantities are computed transiently to derive these and dropped before writing (see select_persisted_metrics).",
+      "required": ["F1_weighted", "Precision_weighted", "Recall_weighted", "Severe_rate"],
+      "properties": {
+        "F1_weighted": {"type": "number", "description": "Headline: severity-weighted F1 over rubric-matched actions (off-rubric excluded), zeroed when a Severe harm fired (Severe cap); recall-only length correction."},
+        "Precision_weighted": {"type": "number", "description": "Severity-weighted partial precision over rubric-matched actions (off-rubric excluded), uncorrected; NaN when no action matched the rubric."},
+        "Recall_weighted": {"type": "number", "description": "Severity-weighted partial recall of omission-positive options; recall-only length-corrected."},
+        "Severe_rate": {"type": "number", "description": "1.0 if any Severe rubric harm fired (omission or commission), else 0.0."},
+        "Recall_weighted_raw": {"type": "number", "description": "Pre-length-correction value of Recall_weighted; retained so the length-correction figure can show raw vs corrected recall. Present only when length correction ran (response_len available)."}
+      },
+      "additionalProperties": false
+    },
+    "response_len": {"type": "integer", "description": "Character length of the model response; drives the recall length correction. Present only when the response was available."}
+  }
+}

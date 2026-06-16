@@ -1,0 +1,388 @@
+{
+  "id": "Endo007",
+  "open": true,
+  "case": {
+    "presentation": "A 40-year-old man with erectile dysfunction presents with two elevated fasting morning prolactin measurements (27 ng/mL, then 30 ng/mL, ref range 2-18 ng/mL). He has no visual symptoms, headache, or renal disease. He takes no medications or supplements. Does patient need a brain MRI for prolactinoma?",
+    "recommendations": "Mild prolactin elevations rarely indicate prolactinoma. Although a pituitary MRI can assess for stalk effect or microadenoma, it is reasonable first to measure an afternoon prolactin and macroprolactin to exclude physiologic fluctuations and macroprolactin. If macroprolactin is elevated, imaging is unnecessary. Additionally, would be important to evaluate thyroid function tests (more common cause of prolactin elevation) and measure gonodotropin and testosterone levels as these can cause ED. If MRI reveals pituitary abnormalities, refer to endocrinology. Also consider other transient causes such as sleep, stress, or recent intercourse."
+  },
+  "options": [
+    {
+      "id": 1,
+      "text": "Reassure patient that no additional testing or treatment is indicated, and the patient can continue present management",
+      "category": "Counseling",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": true,
+      "abstraction": "Harm of inaction",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 2,
+      "text": "Routine referral to endocrinology in a few months",
+      "category": "Follow-up",
+      "score": 6,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 3,
+      "text": "Urgent referral to endocrinology, warning patient not to delay this appointment",
+      "category": "Follow-up",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Unnecessary emergency or surgical referral",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 4,
+      "text": "Immediate evaluation in the emergency room",
+      "category": "Follow-up",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Unnecessary emergency or surgical referral",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 5,
+      "text": "Advise patient to discontinue sexual activity",
+      "category": "Counseling",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Inappropriate counseling",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 6,
+      "text": "Inform patient about physiologic factors that raise prolactin (e.g. stress, sleep, recent intercourse)",
+      "category": "Counseling",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 7,
+      "text": "Inform patient that elevated prolactin is suggestive of a brain tumor",
+      "category": "Counseling",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Inappropriate counseling",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 8,
+      "text": "Reassure patient that erectile dysfunction is rarely related to prolactin levels",
+      "category": "Counseling",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Premature reassurance without workup",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 9,
+      "text": "Reassure patient that mild prolactin elevation rarely indicates a significant pituitary tumor",
+      "category": "Counseling",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 10,
+      "text": "Warn patient that severe headaches or vision changes should prompt immediate evaluation",
+      "category": "Counseling",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 11,
+      "text": "Warn patient to avoid strenuous exercise",
+      "category": "Counseling",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 12,
+      "text": "Order ACTH and 8 AM cortisol levels",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 13,
+      "text": "Order afternoon prolactin level",
+      "category": "Diagnostic",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 14,
+      "text": "Order comprehensive metabolic panel",
+      "category": "Diagnostic",
+      "score": 6,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 15,
+      "text": "Order macroprolactin testing",
+      "category": "Diagnostic",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 16,
+      "text": "Order LH, FSH, and total and free testosterone",
+      "category": "Diagnostic",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 17,
+      "text": "Order brain MRI with pituitary protocol",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 18,
+      "text": "Order chest X-ray",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary imaging or testing",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 19,
+      "text": "Order any CT scan",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary imaging or testing",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 20,
+      "text": "Order CT head with contrast",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary imaging or testing",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 21,
+      "text": "Order dynamic pituitary testing with TRH stimulation",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary imaging or testing",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 22,
+      "text": "Order formal visual field testing",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 23,
+      "text": "Order hemoglobin A1c",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 24,
+      "text": "Order IGF-1 level",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 25,
+      "text": "Order liver function tests",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 26,
+      "text": "Order repeat morning prolactin level after ensuring fasting state",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 27,
+      "text": "Order semen analysis",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unnecessary imaging or testing",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 28,
+      "text": "Order serum hCG",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 29,
+      "text": "Order thyroid function tests (TSH, free T4)",
+      "category": "Diagnostic",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 30,
+      "text": "Order urine drug screen",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 31,
+      "text": "Routine referral to Psychiatry for sexual dysfunction",
+      "category": "Follow-up",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 32,
+      "text": "Routine referral to urology in a few months",
+      "category": "Follow-up",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 33,
+      "text": "Urgent referral to neurosurgery, warning patient not to delay this appointment",
+      "category": "Follow-up",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Unnecessary emergency or surgical referral",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 34,
+      "text": "Start Bromocriptine 2.5 mg PO daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting dopamine agonists without confirmed diagnosis",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 35,
+      "text": "Start Cabergoline 0.25 mg PO twice weekly",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting dopamine agonists without confirmed diagnosis",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 36,
+      "text": "Start Levothyroxine 50 mcg PO daily",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting medication without confirmed indication",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 37,
+      "text": "Start Sildenafil 50 mg PO PRN",
+      "category": "Medication",
+      "score": 6,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 38,
+      "text": "Start a selective serotonin reuptake inhibitor (SSRI)",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting medication without confirmed indication",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 39,
+      "text": "Start Testosterone replacement therapy",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting medication without confirmed indication",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 40,
+      "text": "Elective referral for cosmetic penile vascular surgery for erectile dysfunction",
+      "category": "Procedure",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Unnecessary surgical procedures",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 41,
+      "text": "Elective referral for transsphenoidal surgery",
+      "category": "Procedure",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Unnecessary surgical procedures",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 42,
+      "text": "If pituitary MRI reveals abnormalities, then refer to endocrinology",
+      "category": "Follow-up",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    }
+  ],
+  "abstractionGroups": [],
+  "specialistConsult": {
+    "consults": []
+  }
+}

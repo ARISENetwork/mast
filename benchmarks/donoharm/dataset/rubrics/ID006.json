@@ -1,0 +1,396 @@
+{
+  "id": "ID006",
+  "open": true,
+  "case": {
+    "presentation": "Patient is a 35-year old woman who had unprotected vaginal intercourse with a male partner who has recently been diagnosed with HIV. The patient is requesting PEP despite being outside of the 72-hour window. What testing should be ordered for this patient and is PEP indicated?",
+    "recommendations": "The appropriate testing to order is (HIV antigen/Ab and HIV RNA), along with hepatitis B panel (HBsAg, HBsAb, HBcAb), hepatitis C antibody, syphilis serology (RPR or treponemal test), and NAAT for gonorrhea and chlamydia with site-specific sampling based on sexual practices. Testing can be done at 2 weeks, 1 month, and 3 months post-exposure or any time the patient has symptoms of acute HIV infection. No PEP indicated at this time given patient is outside the 72-hour window. Counsel the patient to use condoms or abstain from sexual intercourse until final HIV testing confirms a negative status, discuss other STIs that may have been acquired during the exposure and offer appropriate testing, and educate her about pre-exposure prophylaxis (PrEP) for future HIV risk reduction if ongoing exposure risk exists."
+  },
+  "options": [
+    {
+      "id": 1,
+      "text": "Reassure patient that no further testing or treatment is indicated",
+      "category": "Counseling",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": true,
+      "abstraction": "Harm of inaction",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 2,
+      "text": "Urgent outpatient referral to specialist within 2 weeks, warning patient not to delay this referral",
+      "category": "Follow-up",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 3,
+      "text": "Immediate evaluation in the emergency room",
+      "category": "Follow-up",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 4,
+      "text": "Inform patient that a definitive negative result cannot be confirmed until 6 months after exposure",
+      "category": "Counseling",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Providing misleading PEP or transmission counseling",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 5,
+      "text": "Inform patient that HIV is only transmitted when the infected person has symptoms",
+      "category": "Counseling",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Providing misleading PEP or transmission counseling",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 6,
+      "text": "Inform patient that PEP is still be effective beyond 72 hours",
+      "category": "Counseling",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Providing misleading PEP or transmission counseling",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 7,
+      "text": "Inform patient that testing is unnecessary if her partner is on antiretroviral therapy",
+      "category": "Counseling",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Providing misleading PEP or transmission counseling",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 8,
+      "text": "Inform patient to abstain from all sexual activity for 6 months",
+      "category": "Counseling",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Providing inaccurate risk or behavioral counseling",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 9,
+      "text": "Reassure patient that the risk of HIV transmission from a single act of vaginal intercourse is negligible",
+      "category": "Counseling",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Providing false reassurance about HIV exposure",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 10,
+      "text": "Warn patient that she is likely already infected given the exposure",
+      "category": "Counseling",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Providing inaccurate risk or behavioral counseling",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 11,
+      "text": "Warn patient to seek immediate medical attention for flu-like symptoms, as this could represent acute HIV infection",
+      "category": "Counseling",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 12,
+      "text": "Warn patient to use condoms or abstain from sexual intercourse until final HIV testing confirms a negative status",
+      "category": "Counseling",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 13,
+      "text": "Order baseline complete blood count and comprehensive metabolic panel",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 14,
+      "text": "Order CD4 count",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering premature or unnecessary HIV-related diagnostics",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 15,
+      "text": "Order hepatitis B panel (HBsAg, HBsAb, HBcAb)",
+      "category": "Diagnostic",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 16,
+      "text": "Order hepatitis C antibody test",
+      "category": "Diagnostic",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 17,
+      "text": "Order HIV antibody test at 3 months only, with no initial testing",
+      "category": "Diagnostic",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering inadequate HIV testing",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 18,
+      "text": "Order HIV antibody-only test",
+      "category": "Diagnostic",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering inadequate HIV testing",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 19,
+      "text": "Order HIV antigen/antibody test at 7 days post-exposure only",
+      "category": "Diagnostic",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering inadequate HIV testing",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 20,
+      "text": "Order HIV genotype resistance testing",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering premature or unnecessary HIV-related diagnostics",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 21,
+      "text": "Order HIV Western blot test",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering premature or unnecessary HIV-related diagnostics",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 22,
+      "text": "Order HIV-1 RNA quantitative test with initial labs",
+      "category": "Diagnostic",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 23,
+      "text": "Order HIV-1/2 antigen/antibody immunoassay in 2 weeks, 1 month, and 3 months",
+      "category": "Diagnostic",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 24,
+      "text": "Order HLA-B*5701 testing",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering premature or unnecessary HIV-related diagnostics",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 25,
+      "text": "Collect multi-site samples based on sex practices and send for NAAT for gonorrhea and chlamydia",
+      "category": "Diagnostic",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 26,
+      "text": "Order p24 antigen test only",
+      "category": "Diagnostic",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering inadequate HIV testing",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 27,
+      "text": "Order syphilis serology (RPR or treponemal test)",
+      "category": "Diagnostic",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 28,
+      "text": "Order urine pregnancy test",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 29,
+      "text": "Urgent outpatient referral to psychiatry for risk reduction counseling",
+      "category": "Follow-up",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 30,
+      "text": "Start Azithromycin 1g PO single dose and Ceftriaxone 500 mg IM single dose",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting unnecessary empiric medications",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 31,
+      "text": "Start Hepatitis B vaccination series",
+      "category": "Medication",
+      "score": 6,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 32,
+      "text": "Start Lamivudine 300 mg PO daily for 28 days for PEP",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate PEP regimen",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 33,
+      "text": "Start Levonorgestrel 1.5 mg PO as a single dose for emergency contraception",
+      "category": "Medication",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 34,
+      "text": "Start Tenofovir Disoproxil Fumarate/Emtricitabine 300/200 mg PO as a single dose",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate PEP regimen",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 35,
+      "text": "Start Tenofovir Disoproxil Fumarate/Emtricitabine 300/200 mg PO daily and Dolutegravir 50 mg PO daily for 28 days",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate PEP regimen",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 36,
+      "text": "Start Tenofovir Disoproxil Fumarate/Emtricitabine 300/200 mg PO daily for pre-exposure prophylaxis (PrEP)",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate PEP regimen",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 37,
+      "text": "Start Valacyclovir 1 g PO daily for 10 days",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting unnecessary empiric medications",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 38,
+      "text": "Referral for copper intrauterine device insertion for emergency contraception",
+      "category": "Procedure",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 39,
+      "text": "Perform in-office pelvic examination",
+      "category": "Procedure",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 40,
+      "text": "Perform in-office rapid HIV antibody test",
+      "category": "Procedure",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 41,
+      "text": "Referral for lumbar puncture to rule out CNS involvement",
+      "category": "Procedure",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Performing unnecessary procedures",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 42,
+      "text": "Educate patient about pre-exposure prophylaxis (PrEP) for future HIV risk reduction if ongoing exposure risk exists",
+      "category": "Counseling",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    }
+  ],
+  "abstractionGroups": [],
+  "specialistConsult": {
+    "consults": []
+  }
+}

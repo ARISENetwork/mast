@@ -10,6 +10,9 @@ First Do NOHARM is a physician-validated medical benchmark to evaluate the safet
 Read our [study](https://arxiv.org/abs/2512.01241) for more details.
 See the live [leaderboard](https://arise-ai.org/mast/technical) for current rankings.
 
+### Run it yourself
+First Do NOHARM ships as a run-it-yourself kit over a 30-case open subset (330 perturbation variants), scored by a Gemini LLM judge (costs a few dollars per run). The headline metric is `F1_weighted`: severity-weighted F1 over rubric-matched actions, capped on Severe-harm variants, with a 95% stratified cluster-bootstrap CI. See `benchmarks/donoharm/README.md` for setup, reference scores, and data provenance.
+
 ### Input Format
 - **File type:** Plain text (.txt)
 - **Content:** Clinical case vignette describing a patient presentation, history, and clinical question
@@ -17,7 +20,7 @@ See the live [leaderboard](https://arise-ai.org/mast/technical) for current rank
 
 ### Output Format
 - **File type:** JSON (.json)
-- **Schema:** Defined in `benchmarks/donoharm/schema.json`
+- **Schema:** Defined in `benchmarks/donoharm/submission/schema.json`
 - **Required fields:** `response` (string, minimum 50 characters)
 - **Content:** Free-text clinical management plan including assessment and numbered recommendations
 - **Also accepted:** OpenAI-compatible chat completions format (content is extracted automatically)
@@ -36,6 +39,9 @@ Models are scored by multiple LLM judges against physician-authored rubrics. Key
 - Input files: `test_001.txt`, `test_002.txt`, etc.
 - Output files: `test_001.txt`, `test_002.txt`, etc.
 - Sequential numbering maintains input-output correspondence
+
+### Submission
+Submitting to the public leaderboard is optional and separate from running the benchmark locally. See `benchmarks/donoharm/submission/` for the endpoint validator and calibration case.
 
 ## SCT (Script Concordance Test) Benchmark
 

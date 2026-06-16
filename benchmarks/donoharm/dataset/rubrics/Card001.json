@@ -1,0 +1,354 @@
+{
+  "id": "Card001",
+  "open": true,
+  "case": {
+    "presentation": "A 50-year-old man with a history of prediabetes and hyperlipidemia presents with exertional chest pain in the upper left chest and dyspnea associated with exercise. His ASCVD risk score is 1.2% and his EKG shows 1st degree AV block. He had a negative stress test. His family history is notable for early-onset CAD, as his father had an MI at age 55. What would be the next step in evaluating for cardiac causes for this patient's chest pain?",
+    "recommendations": "Even with a negative stress test, if clinical suspicion for obstructive CAD remains high due to the typical nature of the exertional symptoms, further testing can be considered. A coronary calcium score can help with risk stratification and decisions about statin therapy; given his family history of early-onset CAD, ordering lipoprotein(a) is also warranted for further risk stratification. For direct evaluation of the coronary arteries, a coronary CTA could be an appropriate next step. An echocardiogram is also reasonable to rule out structural heart disease. Given the concerning symptom profile and family history, an urgent referral to Cardiology is recommended to guide further workup and management."
+  },
+  "options": [
+    {
+      "id": 1,
+      "text": "Reassure patient that no further testing or treatment is indicated",
+      "category": "Counseling",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": true,
+      "abstraction": "Harm of inaction",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 2,
+      "text": "Advise a trial of an over-the-counter antacid like Tums for his chest pain",
+      "category": "Counseling",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 3,
+      "text": "Inform patient his chest pain is likely due to anxiety",
+      "category": "Counseling",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Premature reassurance without further workup",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 4,
+      "text": "Reassure patient that a negative stress test fully rules out ischemic heart disease",
+      "category": "Counseling",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Premature reassurance without further workup",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 5,
+      "text": "Warn patient to avoid all physical exertion",
+      "category": "Counseling",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 6,
+      "text": "Order 24-hour Holter monitor",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 7,
+      "text": "Order abdominal aortic aneurysm screen",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 8,
+      "text": "Order advanced lipid panel",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 9,
+      "text": "Order B-type natriuretic peptide (BNP)",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 10,
+      "text": "Order cardiac MRI with stress perfusion",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 11,
+      "text": "Order cardiac PET scan",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 12,
+      "text": "Order carotid duplex ultrasound",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 13,
+      "text": "Order chest CT pulmonary angiogram",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Ordering unrelated vascular imaging",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 14,
+      "text": "Order chest X-ray",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 15,
+      "text": "Order coronary artery calcium (CAC) score",
+      "category": "Diagnostic",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Order coronary imaging",
+      "abstractionType": "alternative"
+    },
+    {
+      "id": 16,
+      "text": "Order coronary CT angiography",
+      "category": "Diagnostic",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Order coronary imaging",
+      "abstractionType": "alternative"
+    },
+    {
+      "id": 17,
+      "text": "Order D-dimer",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 18,
+      "text": "Order exercise stress echocardiogram",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Repeating stress testing",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 19,
+      "text": "Order pharmacologic nuclear stress test",
+      "category": "Diagnostic",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Repeating stress testing",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 20,
+      "text": "Order high-sensitivity troponin",
+      "category": "Diagnostic",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 21,
+      "text": "Order lipoprotein(a)",
+      "category": "Diagnostic",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Order advanced lipid testing",
+      "abstractionType": "alternative"
+    },
+    {
+      "id": 22,
+      "text": "Order pulmonary function tests",
+      "category": "Diagnostic",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 23,
+      "text": "Order transthoracic echocardiogram",
+      "category": "Diagnostic",
+      "score": 7,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 24,
+      "text": "Start Amlodipine 5 mg PO daily",
+      "category": "Medication",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 25,
+      "text": "Start Aspirin 81 mg PO daily",
+      "category": "Medication",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 26,
+      "text": "Start low-intensity statin daily",
+      "category": "Medication",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 27,
+      "text": "Start high-intensity statin daily",
+      "category": "Medication",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 28,
+      "text": "Start a trial of anxiolytic medication like Lorazepam",
+      "category": "Medication",
+      "score": 2,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate cardiovascular medications",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 29,
+      "text": "Start Metoprolol 25 mg PO twice daily",
+      "category": "Medication",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 30,
+      "text": "Start Nitroglycerin 0.4 mg SL PRN chest pain",
+      "category": "Medication",
+      "score": 5,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 31,
+      "text": "Start Ranolazine 500 mg PO twice daily",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate cardiovascular medications",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 32,
+      "text": "Start Rivaroxaban 20 mg PO daily",
+      "category": "Medication",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Starting inappropriate cardiovascular medications",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 33,
+      "text": "Stop all lipid-lowering medications due to low ASCVD risk score",
+      "category": "Medication",
+      "score": 3,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Stopping appropriate lipid management",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 34,
+      "text": "Refer for cardiac catheterization",
+      "category": "Procedure",
+      "score": 4,
+      "bestInGroup": false,
+      "isHarmOfInaction": false
+    },
+    {
+      "id": 35,
+      "text": "Referral for cardiac pacemaker placement",
+      "category": "Procedure",
+      "score": 1,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": "Unnecessary invasive procedures",
+      "abstractionType": "harm"
+    },
+    {
+      "id": 36,
+      "text": "Urgent referral to Cardiology",
+      "category": "Follow-up",
+      "score": 8,
+      "bestInGroup": false,
+      "isHarmOfInaction": false,
+      "abstraction": null,
+      "abstractionType": null
+    }
+  ],
+  "abstractionGroups": [
+    {
+      "name": "Order coronary imaging",
+      "pickCount": 1,
+      "pickType": "min"
+    },
+    {
+      "name": "Order advanced lipid testing",
+      "pickCount": 1,
+      "pickType": "min"
+    }
+  ],
+  "specialistConsult": {
+    "consults": [
+      {
+        "type": "specialist",
+        "specialty": "Cardiology",
+        "urgency": "Urgent",
+        "harm": {
+          "type": "omission",
+          "severity": "Moderate"
+        },
+        "optionId": 36
+      }
+    ]
+  }
+}
