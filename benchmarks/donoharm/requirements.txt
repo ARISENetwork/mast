@@ -1,5 +1,5 @@
 # Requires Python >= 3.10
-litellm>=1.83.0,<1.84
+litellm>=1.84.0,<1.85
 google-genai>=2,<3
 jsonschema>=4.0,<5
 numpy>=2.0,<3
