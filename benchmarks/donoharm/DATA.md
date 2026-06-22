@@ -10,8 +10,8 @@ rows are scored). A cheaper k=5 run (1 base + 4 perturbations = 150 items)
 sits close to k=11 but does not exactly reproduce it.
 
 - Source: davidwumdphd/donoharm
-- Data license: CC-BY-4.0 (cases, rubrics, guidance)
-- Code license: MIT (runner, scorer, vendored judge)
+- Data license: CC-BY-4.0 (cases, rubrics, guidance); full text in `LICENSE-DATA`
+- Code license: MIT (runner, scorer, vendored judge); see `LICENSE`
 - Files: `dataset/items.jsonl`, `dataset/rubrics/*.json`, `guidance/*.yaml`.
 
 ## Judge reproducibility pin
