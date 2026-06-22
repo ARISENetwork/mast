@@ -114,4 +114,4 @@ If you use NOHARM, please cite:
 ## License and Data
 
 - **Code**: MIT (LICENSE)
-- **Data and rubrics**: CC-BY-4.0 (see DATA.md for full provenance)
+- **Data and rubrics**: CC-BY-4.0 (LICENSE-DATA; see DATA.md for full provenance)
