@@ -13,7 +13,7 @@ benchmark DATA bundled in this directory:
 The accompanying CODE (runner, scorer, and the vendored judge in judge/)
 is licensed separately under the MIT License; see LICENSE and judge/LICENSE.
 
-Source: davidwumdphd/donoharm
+Source: the NOHARM case corpus (Wu et al., arXiv:2512.01241)
 Attribution: credit "ARISE Network, NOHARM benchmark" and link this license.
 
 The full legal text of CC-BY-4.0 follows.

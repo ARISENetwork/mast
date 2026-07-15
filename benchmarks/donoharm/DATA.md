@@ -9,7 +9,7 @@ matching the reference table in the README (and how the frontier leaderboard
 rows are scored). A cheaper k=5 run (1 base + 4 perturbations = 150 items)
 sits close to k=11 but does not exactly reproduce it.
 
-- Source: davidwumdphd/donoharm
+- Source: the NOHARM case corpus (Wu et al., arXiv:2512.01241); the open subset is distributed here
 - Data license: CC-BY-4.0 (cases, rubrics, guidance); full text in `LICENSE-DATA`
 - Code license: MIT (runner, scorer, vendored judge); see `LICENSE`
 - Files: `dataset/items.jsonl`, `dataset/rubrics/*.json`, `guidance/*.yaml`.
