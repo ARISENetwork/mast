@@ -88,9 +88,9 @@ def variant_within_k(variant_id: str, k: int) -> bool:
     """True if `variant_id` is among the first k variants of its base case:
     the base (no numeric suffix) plus perturbation suffixes 0..k-2.
 
-    Single source of truth for the `--k` subset, shared by run.py (inference)
-    and score.py (scoring) so both select identical variants regardless of how
-    the dataset file is ordered.
+    Single source of truth for the `--k` variant subset, used by score.py to
+    scope both judging and CSV aggregation to the requested k regardless of
+    what the judged cache happens to contain.
     """
     if "-" not in variant_id:
         return True  # base case
@@ -98,17 +98,3 @@ def variant_within_k(variant_id: str, k: int) -> bool:
     if not suffix.isdigit():
         return True  # non-numeric suffix: treat as a standalone item, keep
     return int(suffix) < k - 1
-
-
-def base_case_id(variant_id: str) -> str:
-    """Base case id for a variant: strips a trailing numeric perturbation
-    suffix. 'All001-3' -> 'All001'; 'All001' -> 'All001'.
-
-    A non-numeric suffix is treated as part of a standalone id (kept whole),
-    consistent with variant_within_k. Used to define the `--limit` subset
-    (first N base cases) identically in run.py and score.py.
-    """
-    if "-" not in variant_id:
-        return variant_id
-    head, suffix = variant_id.rsplit("-", 1)
-    return head if suffix.isdigit() else variant_id

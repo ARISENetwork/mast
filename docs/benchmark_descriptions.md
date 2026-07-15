@@ -11,7 +11,7 @@ Read our [study](https://arxiv.org/abs/2512.01241) for more details.
 See the live [leaderboard](https://arise-ai.org/mast/technical) for current rankings.
 
 ### Run it yourself
-First Do NOHARM ships as a run-it-yourself kit over a 30-case open subset (330 perturbation variants), scored by a Gemini LLM judge (costs a few dollars per run). The headline metric is `F1_weighted`: severity-weighted F1 over rubric-matched actions, capped on Severe-harm variants, with a 95% stratified cluster-bootstrap CI. See `benchmarks/donoharm/README.md` for setup, reference scores, and data provenance.
+First Do NOHARM ships as a run-it-yourself kit over a 30-case open subset (330 perturbation variants), scored by a Gemini LLM judge (costs a few dollars per run). The headline metric is `F1_weighted`: severity-weighted F1 over rubric-matched actions (no severity cap; Severe harms are reported separately as `Severe_rate`), with a 95% stratified cluster-bootstrap CI. See `benchmarks/donoharm/README.md` for setup, reference scores, and data provenance.
 
 ### Input Format
 - **File type:** Plain text (.txt)

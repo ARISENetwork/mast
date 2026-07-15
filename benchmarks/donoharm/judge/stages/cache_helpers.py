@@ -20,8 +20,7 @@ resolve_model_name(explicit, *cache_paths)
     `model` fields.
 
 Note: match_helpers.py (this directory) has its own load_completed returning
-a 2-tuple (case_id, trial) set; that one is unrelated and stays in place
-for match_eval's internal use.
+a 2-tuple (case_id, trial) set; that one is unrelated and stays in place.
 """
 from __future__ import annotations
 

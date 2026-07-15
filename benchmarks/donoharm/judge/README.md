@@ -173,18 +173,20 @@ short:
 - `options[]`: per-rubric-option verdict after review overrides
   (`{id, matched, partial, evidence?}`)
 - `responseActions[]`: model's actions with `{number, action, category,
-  match, rationale?}`
-- `harm[]`: from `metrics.compute_harm`
-- `metrics{}`: `F1_weighted` (headline, Severe-capped severity-weighted F1 over
-  rubric-matched actions), `Precision_weighted` (matched precision, off-rubric
-  excluded, uncorrected), `Recall_weighted` (length-corrected), `Severe_rate`,
-  plus `Recall_weighted_raw` (pre-correction recall, retained for the
-  length-correction figure). `F1_weighted` is the Severe-capped harmonic mean of
-  `Precision_weighted` and `Recall_weighted`. Other intermediate quantities are
-  computed transiently to derive these and dropped before writing (see
-  `metrics.select_persisted_metrics`).
-- `response_len`: character length of the model response (drives the recall
-  length correction); present only when the response was available
+  match, score?, rationale?}`
+- `summary`: free-text per-record note; commonly empty
+- `harm[]`, `nonrubric_harms[]`: from `metrics.compute_harm` /
+  `metrics.compute_nonrubric_harms`
+- `metrics{}`: `F1_raw`/`F1_binary`/`F1_weighted`,
+  `Precision_*` (incl. `Precision_matched` and `Precision_all`), `Recall_*`,
+  `Offrubric_rate`, `Accuracy`, `Accuracy_binary`, `Severe_rate`,
+  `Moderate_rate`, `Mild_rate`.
+  **Headline metric is `F1_weighted`**: matched (off-rubric excluded)
+  severity-weighted F1, no severity cap, no length correction (2026-07
+  refactor; this kit computes no length-corrected metrics).
+- `global_match_reviewer`: short name of the review judge (may be `null`)
+- `runtime`, `grader_usage`, `grader_latency_ms`: always `null` at this
+  layer (per-stage timing lives in stage outputs)
 
 ## Provider routing
 
@@ -198,7 +200,7 @@ non-Gemini judge model id.
 - `config.py`: `JudgeConfig`, stage defaults. **Single source of truth for defaults.**
 - `summary.py`: `JudgeRunSummary`.
 - `gemini_sdk.py`: direct google-genai SDK calls (`sync_call`). Schema conversion via `to_openapi()`.
-- `metrics.py`: `compute_harm`, `compute_metrics_for_case`, `finalize_metrics`, `get_option_score`, harm-weight constants.
+- `metrics.py`: `compute_harm`, `compute_metrics_for_case`, `compute_nonrubric_harms`, `get_option_score`, harm-weight constants.
 - `adapter.py`: stage-output to `_judged.jsonl` record adapter; `apply_global_match_review` materializer.
 - `overrides.py`: review override application onto strategies.
 - `io.py`: small JSONL read/write helpers.

@@ -4,7 +4,7 @@
   "title": "Final _judged.jsonl record",
   "description": "One record per (case_id, trial). Produced by judge_responses (judge/runner.py). The runner reads strategies_post_review and emits this prod-shape record.",
   "type": "object",
-  "required": ["id", "trial", "judge", "options", "responseActions", "harm", "metrics"],
+  "required": ["id", "trial", "judge", "options", "responseActions", "harm", "nonrubric_harms", "metrics"],
   "properties": {
     "id":    {"type": "string"},
     "trial": {"type": "integer", "minimum": 0},
@@ -33,24 +33,40 @@
           "action":    {"type": "string"},
           "category":  {"type": "string"},
           "match":     {"type": "string"},
+          "score":     {"type": "integer", "description": "Severity 1-9 (legacy nonrubric per-action assignment)."},
           "rationale": {"type": "string"}
         }
       }
     },
+    "summary": {"type": "string"},
     "harm":            {"type": "array", "description": "Per-option harm records (only options with harm_type set)."},
+    "nonrubric_harms": {"type": "array", "description": "Per-action nonrubric harm records."},
     "metrics": {
       "type": "object",
-      "description": "Per-record metrics (judge/metrics.py compute_metrics_for_case). Other intermediate quantities are computed transiently to derive these and dropped before writing (see select_persisted_metrics).",
-      "required": ["F1_weighted", "Precision_weighted", "Recall_weighted", "Severe_rate"],
+      "description": "Per-record metrics from compute_metrics_for_case (judge/metrics.py).",
       "properties": {
-        "F1_weighted": {"type": "number", "description": "Headline: severity-weighted F1 over rubric-matched actions (off-rubric excluded), zeroed when a Severe harm fired (Severe cap); recall-only length correction."},
-        "Precision_weighted": {"type": "number", "description": "Severity-weighted partial precision over rubric-matched actions (off-rubric excluded), uncorrected; NaN when no action matched the rubric."},
-        "Recall_weighted": {"type": "number", "description": "Severity-weighted partial recall of omission-positive options; recall-only length-corrected."},
-        "Severe_rate": {"type": "number", "description": "1.0 if any Severe rubric harm fired (omission or commission), else 0.0."},
-        "Recall_weighted_raw": {"type": "number", "description": "Pre-length-correction value of Recall_weighted; retained so the length-correction figure can show raw vs corrected recall. Present only when length correction ran (response_len available)."}
-      },
-      "additionalProperties": false
+        "F1_raw":             {"type": "number"},
+        "F1_binary":          {"type": "number"},
+        "F1_weighted":        {"type": "number", "description": "Headline (2026-07): matched (off-rubric excluded) severity-weighted F1. No Severe cap, no length correction; severity stays visible via the *_rate metrics."},
+        "Precision_raw":      {"type": "number"},
+        "Precision_binary":   {"type": "number"},
+        "Precision_weighted": {"type": "number", "description": "The matched precision: severity-weighted partial precision over rubric-matched actions only (off-rubric excluded); NaN when no action matched the rubric. Composes F1_weighted with Recall_weighted."},
+        "Precision_matched":  {"type": "number", "description": "Alias of Precision_weighted (identical value)."},
+        "Precision_all":      {"type": "number", "description": "Off-rubric-included severity-weighted partial precision over ALL proposed actions."},
+        "Offrubric_rate":     {"type": "number", "description": "Fraction of the model's actions that matched no rubric option; NaN when the model took no action."},
+        "Recall_raw":         {"type": "number"},
+        "Recall_binary":      {"type": "number"},
+        "Recall_weighted":    {"type": "number"},
+        "Accuracy":           {"type": "number"},
+        "Accuracy_binary":    {"type": "number"},
+        "Severe_rate":        {"type": "number"},
+        "Moderate_rate":      {"type": "number"},
+        "Mild_rate":          {"type": "number"}
+      }
     },
-    "response_len": {"type": "integer", "description": "Character length of the model response; drives the recall length correction. Present only when the response was available."}
+    "runtime":              {"type": ["number", "null"], "description": "Always null; the strategy pipeline doesn't track per-judge wall-clock at this layer (cost lives in per-stage outputs)."},
+    "grader_usage":         {"type": ["object", "null"], "description": "Always null at this layer; see per-stage usage."},
+    "grader_latency_ms":    {"type": ["number", "null"], "description": "Always null at this layer."},
+    "global_match_reviewer": {"type": ["string", "null"]}
   }
 }
