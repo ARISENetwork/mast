@@ -71,10 +71,10 @@ Each benchmark makes HTTPS POST requests with:
 - **Headers**:
   - `Authorization: Bearer {token}`
   - `Content-Type: text/plain`
-- **Body**: `prompts/default.md + "\n" + test_input.txt`
+- **Body**: `benchmarks/donoharm/prompts/default.md + "\n" + test_input.txt`
 - **Timeout**: Up to 300 seconds
 
-The body contains the full system prompt followed by the clinical case. See `benchmarks/donoharm/submission/prompts/default.md` for the exact prompt and `benchmarks/donoharm/submission/inputs/test_001.txt` for an example case. Alternative prompt variants used for sensitivity analyses are in the same `submission/prompts/` directory.
+The default prompt is unprompted: `benchmarks/donoharm/prompts/default.md` is empty, so the body is effectively the bare clinical case (a leading newline followed by the case text) with no format or length instruction, and your endpoint should return a free-text management plan. See `benchmarks/donoharm/submission/inputs/test_001.txt` for an example case. The paper's prompted arms (`concise.md`, `thorough.md`) live in `benchmarks/donoharm/prompts/`; the validator and the leaderboard evaluation use the unprompted default.
 
 ## Response Format
 

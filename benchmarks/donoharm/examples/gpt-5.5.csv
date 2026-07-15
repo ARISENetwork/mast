@@ -1,7 +1,6 @@
 category,metric,trials,mean,ci,ci_lo,ci_hi
 Overall,F1_raw,1,0.475,0.0,0.475,0.475
 Overall,F1_weighted,1,0.997,0.0,0.997,0.997
-Overall,F1_weighted_len,1,0.9857,0.0,0.9857,0.9857
 Overall,Precision_raw,1,0.3172,0.0,0.3172,0.3172
 Overall,Precision_weighted,1,0.994,0.0,0.994,0.994
 Overall,Recall_raw,1,1.0,0.0,1.0,1.0

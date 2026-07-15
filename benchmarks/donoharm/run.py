@@ -165,7 +165,6 @@ def main():
     parser.add_argument("--k", type=int, default=11, choices=range(1, 12),
                         help="Variants per case (1-11). 1=base only, "
                              "5=base + 4 perturbations, 11=all (default).")
-    parser.add_argument("--open-only", action="store_true", help="Restrict to cases where metadata.open is True (public subset)")
     args = parser.parse_args()
 
     if args.threads is not None and (args.threads < 1 or args.threads > 200):
@@ -217,10 +216,6 @@ def main():
 
     limit = final_config.get("benchmark", {}).get("limit")
     items = list(loader.load_items(limit=limit))
-    if args.open_only:
-        before = len(items)
-        items = [item for item in items if (item.metadata or {}).get("open")]
-        print(f"Open-only mode: {len(items)}/{before} items (metadata.open=True)")
     if args.k is not None:
         # Keep k variants per case: 1 base + (k - 1) perturbations.
         from collections import defaultdict

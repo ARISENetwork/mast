@@ -39,34 +39,11 @@ from pathlib import Path
 
 from .io import load_jsonl
 from .metrics import (
-    apply_length_correction,
     compute_harm,
     compute_metrics_for_case,
     compute_nonrubric_harms,
 )
 from .schemas import validate_record
-
-
-def _load_response_lens_by_key(responses_path: Path | None) -> dict[tuple[str, int], int]:
-    """Read a `responses.jsonl` cache and return `(id, trial) -> len(response)`.
-
-    The cache (written by `io.write_responses_file`) is model-less; the
-    adapter is per-model, so (id, trial) is the right key. Empty/missing
-    response strings are dropped, so length-correction silently no-ops
-    on those records (same behavior as `score._rescore`).
-    """
-    if responses_path is None or not responses_path.exists():
-        return {}
-    out: dict[tuple[str, int], int] = {}
-    for r in load_jsonl(responses_path):
-        resp = r.get("response")
-        if not isinstance(resp, str) or not resp:
-            continue
-        rid = r.get("id")
-        if rid is None:
-            continue
-        out[(str(rid), int(r.get("trial", 1)))] = len(resp)
-    return out
 
 
 def _build_judged_record(
@@ -76,7 +53,6 @@ def _build_judged_record(
     rubric: dict,
     judge_short: str,
     global_match_reviewer_short: str | None,
-    response_len: int | None = None,
 ) -> dict:
     """Assemble one production-shape judged record from per-stage outputs.
 
@@ -96,9 +72,9 @@ def _build_judged_record(
     nonrubric = compute_nonrubric_harms(prod.get("responseActions", []))
 
     # Canonical metrics: keep all responseActions (un-stripped), so off-rubric
-    # verbosity contributes to Precision_weighted denominator and is penalized,
-    # aligning with the length-bias philosophy: verbose off-rubric content
-    # costs precision.
+    # verbosity is penalized via Precision_all (off-rubric-included precision)
+    # and surfaced as Offrubric_rate; the headline Precision_weighted is
+    # matched precision and excludes it.
     response_actions = prod.get("responseActions", [])
     metrics = compute_metrics_for_case(harm_results, response_actions, rubric)
 
@@ -119,15 +95,6 @@ def _build_judged_record(
         "grader_latency_ms": None,
         "global_match_reviewer": global_match_reviewer_short,
     }
-
-    # Production length-bias correction. Set response_len at record top
-    # level so score._rescore picks it up without re-judging; also apply
-    # in place to the freshly computed metrics block so the file written
-    # here is already length-corrected. Matches the contract documented
-    # at score._rescore:670-673.
-    if response_len is not None:
-        rec["response_len"] = int(response_len)
-        apply_length_correction(rec["metrics"], response_len)
     return rec
 
 
@@ -139,7 +106,6 @@ def adapt_model(
     judged_path: Path,
     judge_short: str,
     global_match_reviewer_short: str | None,
-    responses_path: Path | None = None,
 ) -> tuple[int, int]:
     """Assemble the per-model `judged.jsonl` from per-stage cache outputs.
 
@@ -154,8 +120,6 @@ def adapt_model(
     review_by_key = {
         (r["id"], r.get("trial", 1)): r for r in load_jsonl(review_path)
     } if review_path else {}
-    response_lens = _load_response_lens_by_key(responses_path)
-
     judged_path.parent.mkdir(parents=True, exist_ok=True)
     n_written = n_missing_rubric = 0
     with judged_path.open("w") as fout:
@@ -171,7 +135,6 @@ def adapt_model(
                 rubric=rubric,
                 judge_short=judge_short,
                 global_match_reviewer_short=global_match_reviewer_short,
-                response_len=response_lens.get((str(case_id), int(trial))),
             )
             validate_record(rec, "judged")
             fout.write(json.dumps(rec) + "\n")

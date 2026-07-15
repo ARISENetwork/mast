@@ -151,7 +151,6 @@ def judge_responses(
         review_path=review_path,
         rubrics=rubrics,
         judged_path=judged_path,
-        responses_path=cache_dir / "responses.jsonl",
         judge_short=derive_record_judge_short(config.review_judge),
         global_match_reviewer_short=(
             _judge_short_name(config.review_judge) if config.review_judge else None

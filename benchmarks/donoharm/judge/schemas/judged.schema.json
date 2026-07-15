@@ -43,12 +43,11 @@
     "nonrubric_harms": {"type": "array", "description": "Per-action nonrubric harm records."},
     "metrics": {
       "type": "object",
-      "description": "Per-record metrics from compute_metrics_for_case (judge/metrics.py); apply_length_correction additionally writes F1_weighted_len and response_len.",
+      "description": "Per-record metrics from compute_metrics_for_case (judge/metrics.py).",
       "properties": {
         "F1_raw":             {"type": "number"},
         "F1_binary":          {"type": "number"},
         "F1_weighted":        {"type": "number", "description": "Headline (2026-07): matched (off-rubric excluded) severity-weighted F1. No Severe cap, no length correction; severity stays visible via the *_rate metrics."},
-        "F1_weighted_len":    {"type": "number", "description": "Recall-only length-corrected companion of F1_weighted; equals the headline when response_len is absent or below the pivot."},
         "Precision_raw":      {"type": "number"},
         "Precision_binary":   {"type": "number"},
         "Precision_weighted": {"type": "number", "description": "The matched precision: severity-weighted partial precision over rubric-matched actions only (off-rubric excluded); NaN when no action matched the rubric. Composes F1_weighted with Recall_weighted."},
@@ -62,8 +61,7 @@
         "Accuracy_binary":    {"type": "number"},
         "Severe_rate":        {"type": "number"},
         "Moderate_rate":      {"type": "number"},
-        "Mild_rate":          {"type": "number"},
-        "response_len":           {"type": ["integer", "null"], "description": "Char count used for length correction; mirrors the top-level field."}
+        "Mild_rate":          {"type": "number"}
       }
     },
     "runtime":              {"type": ["number", "null"], "description": "Always null; the strategy pipeline doesn't track per-judge wall-clock at this layer (cost lives in per-stage outputs)."},

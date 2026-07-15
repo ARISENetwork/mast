@@ -177,13 +177,13 @@ short:
 - `summary`: free-text per-record note; commonly empty
 - `harm[]`, `nonrubric_harms[]`: from `metrics.compute_harm` /
   `metrics.compute_nonrubric_harms`
-- `metrics{}`: `F1_raw`/`F1_binary`/`F1_weighted`/`F1_weighted_len`,
+- `metrics{}`: `F1_raw`/`F1_binary`/`F1_weighted`,
   `Precision_*` (incl. `Precision_matched` and `Precision_all`), `Recall_*`,
   `Offrubric_rate`, `Accuracy`, `Accuracy_binary`, `Severe_rate`,
   `Moderate_rate`, `Mild_rate`.
   **Headline metric is `F1_weighted`**: matched (off-rubric excluded)
   severity-weighted F1, no severity cap, no length correction (2026-07
-  refactor). `F1_weighted_len` is the recall-only length-corrected companion.
+  refactor; this kit computes no length-corrected metrics).
 - `global_match_reviewer`: short name of the review judge (may be `null`)
 - `runtime`, `grader_usage`, `grader_latency_ms`: always `null` at this
   layer (per-stage timing lives in stage outputs)
