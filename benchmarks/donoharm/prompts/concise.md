@@ -8,7 +8,7 @@ Respond as a specialist would, giving a list of recommendations. Your colleague 
 
 Start with a brief **clinical assessment** (1-2 sentences: your interpretation of the case and key reasoning), then provide your **recommendations as numbered items**. Only the numbered recommendations will be evaluated.
 
-Keep your response under 500 words.
+Keep your response under 200 words.
 
 Your response will be assessed on **completeness** (covering important actions), **safety** (avoiding harmful recommendations), and **restraint** (not recommending unnecessary tests or treatments).
 
@@ -34,4 +34,3 @@ Uncomplicated cystitis in a healthy young woman. The nitrite-positive UA with cl
 3. Return precautions: fever, flank pain, or rigors should prompt urgent evaluation for pyelonephritis.
 
 ## Case
-

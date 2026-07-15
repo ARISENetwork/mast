@@ -8,7 +8,7 @@ Usage:
 Arguments:
     --model-config      Path to model YAML (e.g., config/models/gpt-4o.yaml)
     --benchmark-config  Path to benchmark YAML (e.g., config/benchmarks/donoharm.yaml)
-    --limit             Optional: limit to the first N base cases (for testing)
+    --limit             Optional: limit number of items for testing
     --threads           Optional: number of parallel threads (default: 20)
 """
 
@@ -32,7 +32,7 @@ load_dotenv(override=True)
 
 import sys
 sys.path.insert(0, str(Path(__file__).parent))
-from data_loader import base_case_id, create_loader, variant_within_k
+from data_loader import create_loader
 
 
 def load_yaml(path: str) -> dict:
@@ -159,16 +159,13 @@ def main():
     parser = argparse.ArgumentParser(description="Run DonoHarm benchmark")
     parser.add_argument("--model-config", required=True, help="Path to model config YAML")
     parser.add_argument("--benchmark-config", required=True, help="Path to benchmark config YAML")
-    parser.add_argument("--limit", type=int, default=None,
-                        help="Limit to the first N base cases (all variants of "
-                             "the first N cases); matches score.py --limit.")
+    parser.add_argument("--limit", type=int, default=None, help="Limit number of items")
     parser.add_argument("--threads", type=int, default=20, help="Number of parallel threads")
-    parser.add_argument("--prompt", type=str, default=None,
-                        help="Prompt variant matching prompts/<name>.md "
-                             "(default, limit500, limitnone, zero). Default: default.")
+    parser.add_argument("--prompt", type=str, default=None, help="Prompt variant name (from prompts/)")
     parser.add_argument("--k", type=int, default=11, choices=range(1, 12),
                         help="Variants per case (1-11). 1=base only, "
                              "5=base + 4 perturbations, 11=all (default).")
+    parser.add_argument("--open-only", action="store_true", help="Restrict to cases where metadata.open is True (public subset)")
     args = parser.parse_args()
 
     if args.threads is not None and (args.threads < 1 or args.threads > 200):
@@ -219,18 +216,40 @@ def main():
     print(f"Provider: litellm ({platform or 'auto'})")
 
     limit = final_config.get("benchmark", {}).get("limit")
-    items = list(loader.load_items())
-    if limit is not None:
-        # --limit N = first N base cases (by case id), matching score.py's
-        # rubric-file slice, so run.py and score.py select the same cases.
-        keep_cases = set(sorted({base_case_id(item.id) for item in items})[:limit])
-        items = [item for item in items if base_case_id(item.id) in keep_cases]
+    items = list(loader.load_items(limit=limit))
+    if args.open_only:
+        before = len(items)
+        items = [item for item in items if (item.metadata or {}).get("open")]
+        print(f"Open-only mode: {len(items)}/{before} items (metadata.open=True)")
     if args.k is not None:
-        # Keep k variants per case: base + perturbation suffixes 0..k-2.
-        # variant_within_k is the single source of truth shared with score.py.
-        items = [item for item in items if variant_within_k(item.id, args.k)]
+        # Keep k variants per case: 1 base + (k - 1) perturbations.
+        from collections import defaultdict
+        perturb_count: dict[str, int] = defaultdict(int)
+        filtered = []
+        for item in items:
+            if "-" not in item.id:
+                filtered.append(item)
+            else:
+                base = item.id.rsplit("-", 1)[0]
+                if perturb_count[base] < args.k - 1:
+                    filtered.append(item)
+                    perturb_count[base] += 1
+        items = filtered
         print(f"k={args.k}: {len(items)} items "
               f"(base + {args.k - 1} perturbations per case)")
+
+    # Breadth-first ordering: every base case first, then the 1st perturbation
+    # of each, then the 2nd, etc. An early stop then yields complete base-case
+    # coverage (the headline F1_weighted signal) rather than a handful of
+    # fully-perturbed cases. Order-only; results are per-item independent.
+    def _perturbation_order(item):
+        if "-" not in item.id:
+            return (0, item.id)
+        base, suffix = item.id.rsplit("-", 1)
+        level = int(suffix) + 1 if suffix.isdigit() else 999
+        return (level, base)
+    items.sort(key=_perturbation_order)
+
     trials = final_config.get("benchmark", {}).get("trials", 1)
 
     all_tasks = [(item, trial) for item in items for trial in range(1, trials + 1)]

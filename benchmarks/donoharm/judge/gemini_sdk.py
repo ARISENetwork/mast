@@ -1,8 +1,7 @@
 """Direct google-genai SDK calls for Gemini judges.
 
-Uses the google-genai SDK directly, passing the rubric JSON Schema via
-`response_schema` (converted to Gemini's OpenAPI subset by `to_openapi`).
-This bundle judges with Gemini only.
+Uses the google-genai SDK directly for reliable `response_json_schema`
+support. This bundle judges with Gemini only.
 
     parsed, runtime, usage = sync_call(model, prompt, schema)
 

@@ -38,14 +38,13 @@ land in `<repo-root>/results/raw/donoharm/<prompt>/` and score CSVs in
 `<repo-root>/results/scores/donoharm/<prompt>/`.
 
 `<prompt>` is `default` unless you pass `--prompt` (to both `run.py` and
-`score.py`). The alternates change only the length instruction - `limit500`
-(under 500 words), `limitnone` (no word cap), `zero` (no system prompt at all)
-- and exist for the paper's length-sensitivity analysis. Use `default` to
-match the reference table.
+`score.py`). Use `default` to match the reference table.
 
 ## How It Works
 
 `run.py` generates responses and writes them to `results/raw/donoharm/default/<model>.jsonl` with records containing `{id, trial, response, usage}`. Here `<model>` is the `name` field in your model config (the output/cache namespace), which is separate from `model_id` (the model litellm actually calls). You may also supply your own JSONL file with at least `{id, trial, response}` fields and skip the inference step.
+
+The default prompt is **unprompted**: `prompts/default.md` is empty, so the model receives only the case text with no format or length instruction. This is the protocol behind the reference table below. The previous structured ~200-word instruction ships as `prompts/concise.md` (`--prompt concise`) if you want to reproduce the length-constrained condition; its outputs land under `results/raw/donoharm/concise/`.
 
 The judge caches per `(case, trial)` under `_strategy/<model>/`, so if you change a model's responses and re-score, clear that model's cache (or score under a new model name) to force a re-judge. Because outputs and the cache are keyed on `name` (not `model_id`), switching `model_id` while keeping the same `name` reuses the previous model's cached responses and judgments - rename `name` when you change models.
 
@@ -60,19 +59,20 @@ The bundle contains 30 open base cases with up to 11 variants each (330 total av
 - `--k 5`: 150 items per model (1 base + 4 perturbations); a cheaper run whose metrics sit close to k=11 (saturation-validated) but does not exactly reproduce the reference table
 - `--k N` (N from 1 to 11): cap variants per case at N
 
-`--k` (and `--limit`) is applied at generation, judging, and scoring, so the
-CSV always reflects exactly the variants/cases you ask for. Re-running
-`score.py` at a different `--k` just works, with no cache or file to clear
-first (the judge cache grows to cover any newly added variants and never
-re-bills the ones already judged). `python score.py --rescore` recomputes
-metrics from the existing judged file without new judge calls (useful after a
-metric-definition change), then scores the requested `--k`/`--limit` scope.
+`--k` scopes generation and judging: re-running at a higher `--k` judges only
+the newly added variants (the cache never re-bills records already judged).
+Aggregation reads every record in the model's `_judged.jsonl`, so after a
+higher-k run, re-scoring at a lower `--k` still aggregates all previously
+judged variants; score under a fresh model name (or delete that model's
+`_judged.jsonl`) for a clean lower-k run. `python score.py --rescore`
+recomputes metrics from the existing judged file without new judge calls
+(useful after a metric-definition change).
 
 ## Metric
 
-The headline metric is **F1_weighted**: a severity-weighted F1 scored over the rubric-matched actions in the model's plan (off-rubric verbosity excluded), capped to 0 on any variant that commits a Severe harm. It is the Severe-capped harmonic mean of `Precision_weighted` (severity-weighted precision over rubric-matched actions, uncorrected) and `Recall_weighted` (severity-weighted recall, length-corrected). Reported with a 95% stratified cluster bootstrap confidence interval (B=2000 bootstrap samples).
+The headline metric is **F1_weighted**: a severity-weighted F1 scored over the rubric-matched actions in the model's plan (off-rubric verbosity excluded). No severity cap and no length correction apply to the headline (2026-07 refactor); severe harms stay visible through `Severe_rate`, and a recall-only length-corrected companion is reported as `F1_weighted_len`. Reported with a 95% stratified cluster bootstrap confidence interval (B=10000 bootstrap samples).
 
-The score CSV reports `F1_weighted`, `Precision_weighted`, `Recall_weighted`, `Severe_rate`, and the aggregate-only `F1_floor` (worst-variant `F1_weighted`). See DATA.md for full definitions, rubric scale, and bootstrap methodology.
+The score CSV reports the weighted family (`F1_weighted`, `F1_weighted_len`, `Precision_weighted`, `Recall_weighted`), the unweighted family (`F1_raw`, `Precision_raw`, `Recall_raw`), `Severe_rate`, and the aggregate-only `F1_floor` (worst-variant `F1_weighted`) and `Resilience` (per-option consistency across perturbations). See DATA.md for full definitions, rubric scale, and bootstrap methodology.
 
 ## Judge
 
@@ -84,15 +84,15 @@ For details on judge reproducibility, see DATA.md. Note that Gemini preview mode
 
 ## Comparing Your Numbers
 
-Reference scores on this open subset (30 cases, **k=11**: all 330 variants), headline metric `F1_weighted` with weighted Precision/Recall alongside. Values are mean +/- 95% stratified cluster bootstrap half-width (B=2000, seeded).
+Reference scores on this open subset (30 cases, **k=11**: all 330 variants, **unprompted** default prompt), headline metric `F1_weighted` with weighted Precision/Recall alongside. Values are mean +/- 95% stratified cluster bootstrap half-width (B=10000, seeded).
 
 | Model | F1_weighted | Precision (weighted) | Recall (weighted) |
 | --- | --- | --- | --- |
-| GPT-5.5 | 0.726 +/- 0.072 | 0.886 +/- 0.046 | 0.752 +/- 0.052 |
-| Claude Opus 4.7 | 0.619 +/- 0.086 | 0.827 +/- 0.062 | 0.687 +/- 0.061 |
-| Gemini 3.1 Pro | 0.569 +/- 0.082 | 0.807 +/- 0.063 | 0.587 +/- 0.068 |
+| GPT-5.5 | 0.720 +/- 0.049 | 0.901 +/- 0.028 | 0.654 +/- 0.057 |
+| Claude Opus 4.7 | 0.674 +/- 0.049 | 0.828 +/- 0.058 | 0.621 +/- 0.046 |
+| Gemini 3.1 Pro | 0.664 +/- 0.063 | 0.829 +/- 0.054 | 0.595 +/- 0.067 |
 
-These were produced with the pinned judge (see DATA.md) at k=11, which is the default, so the default run is directly comparable. Your numbers may still differ because the judge routes to Gemini models that can drift across revisions; a cheaper `--k 5` run differs further, since it scores only a subset of the variants behind this table. Treat these as reference points rather than exact targets.
+These were produced with the pinned judge (see DATA.md) at k=11 under the unprompted default prompt, so the default run is directly comparable. Your numbers may still differ because the judge routes to Gemini models that can drift across revisions; a cheaper `--k 5` run differs further, since it scores only a subset of the variants behind this table. Treat these as reference points rather than exact targets.
 
 ## Citation
 

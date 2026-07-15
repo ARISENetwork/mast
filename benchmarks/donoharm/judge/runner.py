@@ -25,7 +25,7 @@ Cache subdirs:
 
 Final output: results/raw/donoharm/{prompt}/{model}_judged.jsonl, shape-
 compatible with the legacy combined-judge pipeline so downstream
-compute_metrics_for_case consumers don't change.
+compute_metrics_for_case + compute_resilience consumers don't change.
 """
 from __future__ import annotations
 
@@ -153,6 +153,9 @@ def judge_responses(
         judged_path=judged_path,
         responses_path=cache_dir / "responses.jsonl",
         judge_short=derive_record_judge_short(config.review_judge),
+        global_match_reviewer_short=(
+            _judge_short_name(config.review_judge) if config.review_judge else None
+        ),
     )
 
     log.info(

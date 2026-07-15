@@ -39,9 +39,10 @@ from pathlib import Path
 
 from .io import load_jsonl
 from .metrics import (
+    apply_length_correction,
     compute_harm,
     compute_metrics_for_case,
-    finalize_metrics,
+    compute_nonrubric_harms,
 )
 from .schemas import validate_record
 
@@ -74,6 +75,7 @@ def _build_judged_record(
     review_rec: dict | None,
     rubric: dict,
     judge_short: str,
+    global_match_reviewer_short: str | None,
     response_len: int | None = None,
 ) -> dict:
     """Assemble one production-shape judged record from per-stage outputs.
@@ -91,10 +93,12 @@ def _build_judged_record(
         prod = apply_global_match_review(prod, review_rec.get("overrides", []))
 
     harm_results = compute_harm(prod["options"], rubric)
+    nonrubric = compute_nonrubric_harms(prod.get("responseActions", []))
 
-    # Pass full responseActions (un-stripped) to the scorer. Precision_weighted
-    # excludes off-rubric actions from its denominator; verbosity is instead
-    # handled by the recall length-bias correction.
+    # Canonical metrics: keep all responseActions (un-stripped), so off-rubric
+    # verbosity contributes to Precision_weighted denominator and is penalized,
+    # aligning with the length-bias philosophy: verbose off-rubric content
+    # costs precision.
     response_actions = prod.get("responseActions", [])
     metrics = compute_metrics_for_case(harm_results, response_actions, rubric)
 
@@ -104,17 +108,26 @@ def _build_judged_record(
         "judge": judge_short,
         "options": prod["options"],
         "responseActions": prod.get("responseActions", []),
+        "summary": prod.get("summary", ""),
         "harm": [h for h in harm_results if h["harm_type"]],
+        "nonrubric_harms": nonrubric,
         "metrics": metrics,
+        # Strategy pipeline doesn't track per-judge runtime/usage at this
+        # layer; aggregate cost lives in the per-stage outputs.
+        "runtime": None,
+        "grader_usage": None,
+        "grader_latency_ms": None,
+        "global_match_reviewer": global_match_reviewer_short,
     }
 
-    # finalize_metrics applies the recall length correction, derives F1, and
-    # reduces to the persisted block, so the file written here is already
-    # length-corrected. Set response_len at the record top level so
-    # score._rescore can re-finalize without re-judging (same contract).
+    # Production length-bias correction. Set response_len at record top
+    # level so score._rescore picks it up without re-judging; also apply
+    # in place to the freshly computed metrics block so the file written
+    # here is already length-corrected. Matches the contract documented
+    # at score._rescore:670-673.
     if response_len is not None:
         rec["response_len"] = int(response_len)
-    rec["metrics"] = finalize_metrics(rec["metrics"], response_len)
+        apply_length_correction(rec["metrics"], response_len)
     return rec
 
 
@@ -125,6 +138,7 @@ def adapt_model(
     rubrics: dict,
     judged_path: Path,
     judge_short: str,
+    global_match_reviewer_short: str | None,
     responses_path: Path | None = None,
 ) -> tuple[int, int]:
     """Assemble the per-model `judged.jsonl` from per-stage cache outputs.
@@ -156,6 +170,7 @@ def adapt_model(
                 review_rec=review_by_key.get(key),
                 rubric=rubric,
                 judge_short=judge_short,
+                global_match_reviewer_short=global_match_reviewer_short,
                 response_len=response_lens.get((str(case_id), int(trial))),
             )
             validate_record(rec, "judged")
@@ -192,11 +207,13 @@ def adapt_judge_to_prod(
             n = sa["id"]
             mres = sa.get("match_resolved", [])
             if mres:
-                # Anchored to rubric option(s)
+                # Anchored to rubric option(s) - score=0 (rubric handles it)
                 match_str = ",".join(str(x) for x in mres)
+                score = 0
                 rationale = sa.get("fallback_evidence", "") or ""
             else:
-                # Off-rubric sub_action
+                # Off-rubric sub_action - benign, default 5
+                score = 5
                 rationale = ""
                 match_str = ""
             response_actions.append({
@@ -204,12 +221,14 @@ def adapt_judge_to_prod(
                 "action": sa.get("action", ""),
                 "category": sa.get("category", ""),
                 "match": match_str,
+                "score": score,
                 "rationale": rationale,
             })
 
     return {
         "options": _build_prod_options(refined_record, rubric),
         "responseActions": response_actions,
+        "summary": "",
     }
 
 
@@ -297,9 +316,10 @@ def apply_global_match_review(
       - When the flip demotes (true -> false via no), opt.evidence is cleared
         AND any responseAction whose `match` string referenced the demoted oid
         has that oid removed from its `match`. If an action's `match` becomes
-        empty it becomes off-rubric, which Precision_weighted excludes from its
-        denominator. This keeps the precision denominator consistent with the
-        new option graph.
+        empty as a result, its existing `score` is left alone (rubric-anchored
+        actions had score=0; downstream metrics handle the empty-match case
+        without inventing a severity). This keeps Precision and
+        compute_nonrubric_harms consistent with the new option graph.
       - Promotions (false -> true) do NOT mutate responseActions; we cannot
         reliably identify which action the reviewer credited from evidence
         text alone. Recall picks up the promotion via the option flag flip.
