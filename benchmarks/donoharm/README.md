@@ -44,7 +44,7 @@ land in `<repo-root>/results/raw/donoharm/<prompt>/` and score CSVs in
 
 `run.py` generates responses and writes them to `results/raw/donoharm/default/<model>.jsonl` with records containing `{id, trial, response, usage}`. Here `<model>` is the `name` field in your model config (the output/cache namespace), which is separate from `model_id` (the model litellm actually calls). You may also supply your own JSONL file with at least `{id, trial, response}` fields and skip the inference step.
 
-The default prompt is **unprompted**: `prompts/default.md` is empty, so the model receives only the case text with no format or length instruction. This is the protocol behind the reference table below. The previous structured ~200-word instruction ships as `prompts/concise.md` (`--prompt concise`) if you want to reproduce the length-constrained condition; its outputs land under `results/raw/donoharm/concise/`.
+The default prompt is **unprompted**: `prompts/default.md` is empty, so the model receives only the case text with no format or length instruction. This is the protocol behind the reference table below and the paper's Unprompted arm. The paper's two prompted arms also ship: `prompts/concise.md` (structured instruction, under 200 words; `--prompt concise`) and `prompts/thorough.md` (same instruction, under 500 words; `--prompt thorough`). A variant's outputs land under `results/raw/donoharm/<prompt>/`.
 
 The judge caches per `(case, trial)` under `_strategy/<model>/`, so if you change a model's responses and re-score, clear that model's cache (or score under a new model name) to force a re-judge. Because outputs and the cache are keyed on `name` (not `model_id`), switching `model_id` while keeping the same `name` reuses the previous model's cached responses and judgments - rename `name` when you change models.
 
@@ -59,14 +59,14 @@ The bundle contains 30 open base cases with up to 11 variants each (330 total av
 - `--k 5`: 150 items per model (1 base + 4 perturbations); a cheaper run whose metrics sit close to k=11 (saturation-validated) but does not exactly reproduce the reference table
 - `--k N` (N from 1 to 11): cap variants per case at N
 
-`--k` scopes generation and judging: re-running at a higher `--k` judges only
-the newly added variants (the cache never re-bills records already judged).
-Aggregation reads every record in the model's `_judged.jsonl`, so after a
-higher-k run, re-scoring at a lower `--k` still aggregates all previously
-judged variants; score under a fresh model name (or delete that model's
-`_judged.jsonl`) for a clean lower-k run. `python score.py --rescore`
-recomputes metrics from the existing judged file without new judge calls
-(useful after a metric-definition change).
+`--k` is applied at generation, judging, and scoring, and the CSV aggregation
+is scoped to the requested `--k`/`--limit`, so the CSV always reflects exactly
+the variants/cases you ask for regardless of what the judge cache holds.
+Re-running `score.py` at a different `--k` just works, with no cache or file
+to clear first (the judge cache grows to cover newly added variants and never
+re-bills the ones already judged). `python score.py --rescore` recomputes
+metrics from the existing judged file without new judge calls (useful after a
+metric-definition change), then scores the requested `--k`/`--limit` scope.
 
 ## Metric
 

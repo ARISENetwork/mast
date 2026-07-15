@@ -82,3 +82,19 @@ class DonoHarmLoader:
 
 def create_loader(config: Dict[str, Any], prompt_name: str = "default") -> DonoHarmLoader:
     return DonoHarmLoader(config, prompt_name=prompt_name)
+
+
+def variant_within_k(variant_id: str, k: int) -> bool:
+    """True if `variant_id` is among the first k variants of its base case:
+    the base (no numeric suffix) plus perturbation suffixes 0..k-2.
+
+    Single source of truth for the `--k` variant subset, used by score.py to
+    scope both judging and CSV aggregation to the requested k regardless of
+    what the judged cache happens to contain.
+    """
+    if "-" not in variant_id:
+        return True  # base case
+    suffix = variant_id.rsplit("-", 1)[1]
+    if not suffix.isdigit():
+        return True  # non-numeric suffix: treat as a standalone item, keep
+    return int(suffix) < k - 1

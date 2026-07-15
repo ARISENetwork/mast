@@ -23,6 +23,7 @@ import yaml
 from dotenv import load_dotenv
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from data_loader import variant_within_k  # noqa: E402
 from judge.metrics import (  # noqa: E402
     compute_harm,
     compute_metrics_for_case,
@@ -274,16 +275,29 @@ def _aggregate_metric_set(
 def aggregate_across_judges(
     judged_path: Path,
     judge_names: list[str],
+    k: int | None = None,
+    rubric_ids: set[str] | None = None,
 ) -> pd.DataFrame:
     """Aggregate metrics: mean across cases per judge, then CI across judges.
 
     Emits rows from `rec["metrics"]` under the canonical metric names.
+
+    Scoped to the requested `--k`/`--limit`: the judged file is a cache that
+    can hold a superset of the current request (it grows but never prunes),
+    so the CSV reflects exactly the variants/cases asked for regardless of
+    cache state, not "whatever happens to be in the file".
     """
     records = []
     if judged_path.exists():
         for line in judged_path.read_text().splitlines():
             if line.strip():
                 records.append(json.loads(line))
+
+    records = [
+        r for r in records
+        if (k is None or variant_within_k(r["id"], k))
+        and (rubric_ids is None or parse_variant_id(r["id"])[0] in rubric_ids)
+    ]
 
     if not records:
         log.error("No judged results to aggregate")
@@ -398,6 +412,7 @@ def compute_resilience(
     judged_path: Path,
     judge_names: list[str],
     rubrics: dict,
+    k: int | None = None,
 ) -> pd.DataFrame:
     """Compute severity-weighted entropy resilience across perturbation variants.
 
@@ -406,13 +421,17 @@ def compute_resilience(
     are derived from the rubric's harm scale (1-9 mapped to 0-3).
 
     Returns a DataFrame with a single 'Resilience' metric (1=perfectly consistent, 0=maximally inconsistent),
-    aggregated across judges with CI.
+    aggregated across judges with CI. Scoped to the requested `--k` (see
+    aggregate_across_judges); the rubric filter is implicit via `rubrics`.
     """
     records = []
     if judged_path.exists():
         for line in judged_path.read_text().splitlines():
             if line.strip():
                 records.append(json.loads(line))
+
+    if k is not None:
+        records = [r for r in records if variant_within_k(r["id"], k)]
 
     if not records:
         return pd.DataFrame()
@@ -719,10 +738,12 @@ def score_one(args):
     }) if judged_path.exists() else []
     if not jnames:
         jnames = [_judge_short_name(DEFAULT_REVIEW_JUDGE)]
-    scores_df = aggregate_across_judges(judged_path, jnames)
+    scores_df = aggregate_across_judges(
+        judged_path, jnames, k=args.k, rubric_ids=set(rubrics),
+    )
 
     # Fragility
-    resilience_df = compute_resilience(judged_path, jnames, rubrics)
+    resilience_df = compute_resilience(judged_path, jnames, rubrics, k=args.k)
     if not resilience_df.empty:
         scores_df = pd.concat([scores_df, resilience_df], ignore_index=True)
         log.info("Added resilience metrics (%d rows)", len(resilience_df))
