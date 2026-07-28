@@ -3,7 +3,7 @@ name = "mast"
 version = "0.1.0"
 description = "Medical AI Superintelligence Test - API-based benchmark validation system"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.10"
 dependencies = [
     "jsonschema>=4.25.0",
     "requests>=2.32.0",
