@@ -91,8 +91,7 @@ def sync_call_raw(
     null-loop detector) use this directly. Most callers want the parsed
     convenience wrapper `sync_call` below.
 
-    Usage dict shape matches `fix_pool_to_161.sync_call` for cost parity with
-    the validation runs:
+    Usage dict shape (normalized across stages for cost accounting):
         {prompt_tokens, completion_tokens, thinking_tokens}
 
     Retries on 429 / ResourceExhausted up to 3x with 60-s backoff so direct
