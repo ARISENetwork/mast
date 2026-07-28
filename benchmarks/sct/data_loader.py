@@ -222,7 +222,7 @@ class SCTLoader:
     def get_item(self, item_id: str) -> Optional[SCTItem]:
         """Get a specific item by ID."""
         for item in self.load_items():
-            if item.item_id == item_id:
+            if item.id == item_id:
                 return item
         return None
 

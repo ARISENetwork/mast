@@ -30,14 +30,14 @@ Currently includes:
 - `test_001`: Example case involving immunotherapy management (open-source case from the study)
 
 ### Scoring
-Models are scored by multiple LLM judges against physician-authored rubrics. Key metrics include Safety, Completeness, Restraint, Precision, Recall, and an Overall Score (harmonic mean of Safety, Completeness, and Restraint). Scoring is performed by the MAST team after submission.
+Models are scored by an LLM judge pipeline (Gemini match + review stages) against physician-authored rubrics. The headline metric is `F1_weighted`: severity-weighted F1 over rubric-matched actions, reported alongside weighted Precision/Recall, `Severe_rate`, and the perturbation aggregates `F1_floor` and `Resilience` (see `benchmarks/donoharm/README.md` for definitions). Scoring for leaderboard submissions is performed by the MAST team after submission.
 
 ### Validation Process
 **Schema Validation:** Output must conform to the benchmark's JSON schema (JSON object with a `response` string field of at least 50 characters).
 
 ### File Naming Conventions
 - Input files: `test_001.txt`, `test_002.txt`, etc.
-- Output files: `test_001.txt`, `test_002.txt`, etc.
+- Reference output files: `test_001.txt`, `test_002.txt`, etc. — these contain the plain-text content of the `response` field; the API itself must return the JSON envelope described above
 - Sequential numbering maintains input-output correspondence
 
 ### Submission

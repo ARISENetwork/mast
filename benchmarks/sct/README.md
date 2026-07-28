@@ -36,6 +36,8 @@ python score.py --model-config config/models/example.yaml --benchmark-config con
 
 `run.py` writes `results/raw/sct/<model>.jsonl` with id, trial, response, usage, and metadata. You can skip `run.py` and supply your own JSONL with at least `{id, trial, response}`.
 
+> **Response format note:** the local kit and the leaderboard submission path use different response contracts. The kit's prompt elicits plain text (`Rating: X`), which `score.py` parses; the submission endpoint (see [`submission/`](submission/)) returns JSON (`{"Rating": N, "Rationale": "..."}`), which `score.py` does **not** parse. If you supply your own JSONL, each `response` must contain the plain-text `Rating:` form, not the submission JSON.
+
 ### Metric
 
 The headline metric is `sct_score`: alignment with the expert consensus distribution, scaled 0 to 1. Scores include an item-level percentile bootstrap confidence interval (B=2000, seed=0).

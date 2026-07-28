@@ -189,10 +189,13 @@ def _aggregate_metric_set(
     (median variants/case < MIN_VARIANTS_FOR_FLOOR) skip floor columns.
     """
     # CSV reporting surface. The per-record `metrics` block additionally
-    # carries the *_binary variants (partial matches counted as misses),
-    # Accuracy / Accuracy_binary, and Moderate_rate / Mild_rate; they are
-    # kept in the records for schema compatibility but not aggregated into
-    # the score CSV.
+    # carries the *_binary family (severity-weighted with partial matches
+    # at FULL credit, and Precision_binary keeps off-rubric actions in its
+    # denominator -- unlike the *_weighted family, which half-credits
+    # partials and excludes off-rubric from precision), Accuracy /
+    # Accuracy_binary (Accuracy_binary alone counts partials as misses),
+    # and Moderate_rate / Mild_rate; they are kept in the records for
+    # schema compatibility but not aggregated into the score CSV.
     metric_names = [
         "F1_raw",
         "F1_weighted",
