@@ -98,6 +98,9 @@ def validate_benchmark(benchmark_name: str) -> Dict[str, Any]:
             "benchmark": benchmark_name,
             "status": "no_tests",
             "message": "No test cases found",
+            "total_tests": 0,
+            "passed": 0,
+            "failed": 0,
             "test_cases": []
         }
 
