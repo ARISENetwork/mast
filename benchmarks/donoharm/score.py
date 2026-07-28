@@ -162,6 +162,60 @@ def parse_variant_id(variant_id: str) -> tuple[str, int]:
     return variant_id, -1
 
 
+def _fmt_keys(keys, limit: int = 10) -> str:
+    """Render a sample of (id, trial) or bare-id keys for an error message."""
+    ordered = sorted(keys)
+    shown = ", ".join(
+        f"{k[0]}/t{k[1]}" if isinstance(k, tuple) else str(k)
+        for k in ordered[:limit]
+    )
+    return shown + (f", ... (+{len(ordered) - limit} more)" if len(ordered) > limit else "")
+
+
+def require_complete_responses(responses: list, expected_ids: set, source) -> None:
+    """Refuse to score a response set that can't produce a comparable number.
+
+    Empty and errored records are dropped before judging (judge/io.py), so a
+    missing variant shrinks the scored denominator instead of scoring 0. Case
+    means are averaged across cases, so a wholly failed case also drops out of
+    the outer denominator and the bootstrap population. Both biases are upward
+    and invisible in the CSV, which is why this blocks rather than warns.
+    """
+    seen, dupes, bad = set(), set(), set()
+    for r in responses:
+        key = (r["id"], r.get("trial", 1))
+        if key in seen:
+            dupes.add(key)
+        seen.add(key)
+        if r.get("error") or not str(r.get("response") or "").strip():
+            bad.add(key)
+
+    valid_ids = {cid for (cid, _trial) in seen - bad}
+    missing = expected_ids - valid_ids
+    extra = valid_ids - expected_ids
+
+    problems = []
+    if missing:
+        problems.append(
+            f"missing a usable response: {len(missing)} of {len(expected_ids)} "
+            f"expected variants ({_fmt_keys(missing)})"
+        )
+    if bad:
+        problems.append(f"empty or errored records: {len(bad)} ({_fmt_keys(bad)})")
+    if dupes:
+        problems.append(f"duplicate (id, trial) keys: {len(dupes)} ({_fmt_keys(dupes)})")
+    if extra:
+        problems.append(f"outside the dataset manifest: {len(extra)} ({_fmt_keys(extra)})")
+    if not problems:
+        return
+
+    raise SystemExit(
+        f"Refusing to score {source}: " + "; ".join(problems) + ".\n"
+        "Scores over an incomplete set are NOT comparable to the reference table. "
+        "Re-run to fill the gaps, or narrow the scope explicitly with --cases / --k / --limit."
+    )
+
+
 
 # Higher-is-better weighted metrics that get a worst-tail "floor" companion
 # column: per-case worst variant instead of per-case mean. F1_floor = literal
@@ -650,37 +704,21 @@ def score_one(args):
         responses = [r for r in responses if parse_variant_id(r["id"])[1] < args.k - 1]
     log.info("Loaded %d responses for %s", len(responses), model_name)
 
-    # Partial-run guard (warn, do not block): a silently incomplete run still
-    # writes a CSV that looks directly comparable to the reference table.
-    # Expected count comes from the dataset manifest for the cases/k actually
-    # in scope, so intentional subsets (--cases, --k, --limit) shrink `rubrics`
-    # and don't false-alarm.
+    # Completeness gate. Expected keys come from the dataset manifest for the
+    # cases/k actually in scope, so intentional subsets (--cases, --k, --limit)
+    # shrink `rubrics` and don't false-alarm.
     items_path = dataset_dir / "items.jsonl"
     if items_path.exists():
-        n_expected = 0
+        expected_ids = set()
         for line in items_path.read_text().splitlines():
             if not line.strip():
                 continue
-            base, suffix = parse_variant_id(json.loads(line)["id"])
+            variant_id = json.loads(line)["id"]
+            base, suffix = parse_variant_id(variant_id)
             if base in rubrics and not (args.k is not None and suffix >= args.k - 1):
-                n_expected += 1
-        if n_expected and len(responses) < n_expected:
-            log.warning(
-                "Partial run: %d responses loaded but the dataset offers %d "
-                "for the cases/k in scope. Scores below are over an INCOMPLETE "
-                "set and are NOT comparable to the reference table.",
-                len(responses), n_expected,
-            )
-    n_bad = sum(
-        1 for r in responses
-        if r.get("error") or not str(r.get("response") or "").strip()
-    )
-    if n_bad:
-        log.warning(
-            "%d of %d loaded responses are empty or carry an error field; "
-            "their scores will be degenerate and drag the aggregate down.",
-            n_bad, len(responses),
-        )
+                expected_ids.add(variant_id)
+        if expected_ids:
+            require_complete_responses(responses, expected_ids, response_path)
 
     # Run the strategy judge pipeline (the only judging pipeline)
     judged_path = Path(args.judged_path) if args.judged_path else raw_dir / f"{model_name}_judged.jsonl"
