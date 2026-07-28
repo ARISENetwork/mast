@@ -146,6 +146,7 @@ Thumbs.db
 !benchmarks/*/examples/**
 
 # Benchmark results (if generated)
+results/
 temp/
 cache/
 
