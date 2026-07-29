@@ -13,7 +13,7 @@ import logging
 import re
 import sys
 import time
-from collections import defaultdict
+from collections import Counter, defaultdict
 from collections.abc import Callable
 from pathlib import Path
 
@@ -160,6 +160,38 @@ def parse_variant_id(variant_id: str) -> tuple[str, int]:
         except ValueError:
             return variant_id, -1
     return variant_id, -1
+
+
+def require_complete(records: list, expected: set, source, usable=None) -> None:
+    """Refuse to score a record set that can't produce a comparable number.
+
+    `expected` is the (id, trial) key set the scope demands. `usable` is an
+    optional per-record validity predicate (raw responses need one; judged
+    records are usable by existence).
+
+    Empty and errored records are dropped before judging (judge/io.py), so a
+    missing variant shrinks the scored denominator instead of scoring 0. Case
+    means are averaged across cases, so a wholly failed case also drops out of
+    the outer denominator and the bootstrap population. Both biases are upward
+    and invisible in the CSV, which is why this blocks rather than warns.
+    """
+    keys = [(r["id"], r.get("trial", 1)) for r in records]
+    bad = {k for k, r in zip(keys, records) if usable and not usable(r)}
+    dupes = {k for k, n in Counter(keys).items() if n > 1}
+    missing = expected - (set(keys) - bad)
+    extra = set(keys) - expected
+    if not (missing or bad or dupes or extra):
+        return
+
+    sample = sorted(missing | bad | dupes | extra)[:10]
+    shown = ", ".join(f"{cid}/t{trial}" for cid, trial in sample)
+    raise SystemExit(
+        f"Refusing to score {source}: of {len(expected)} expected (id, trial) "
+        f"records, missing={len(missing)} empty-or-errored={len(bad)} "
+        f"duplicate={len(dupes)} off-manifest={len(extra)}; e.g. {shown}.\n"
+        "Scores over an incomplete set are NOT comparable to the reference table. "
+        "Re-run to fill the gaps, or narrow the scope explicitly with --cases / --k."
+    )
 
 
 
@@ -557,7 +589,16 @@ def main():
     parser = argparse.ArgumentParser(description="Score donoharm benchmark")
     parser.add_argument("--model-config", required=True)
     parser.add_argument("--benchmark-config", required=True)
-    parser.add_argument("--limit", type=int, default=None)
+    parser.add_argument("--limit", type=int, default=None,
+                        help="Score only the first N base cases (alphabetical). "
+                             "The completeness gate still expects every variant "
+                             "of those cases; note run.py --limit counts "
+                             "individual variants, not cases, so the two flags "
+                             "do not select matching subsets.")
+    parser.add_argument("--cases", type=str, default=None,
+                        help="Comma-separated base case ids to score "
+                             "(e.g. All001,Derm006). The completeness gate "
+                             "expects every in-scope variant of each.")
     parser.add_argument("--threads", type=int, default=40)
     parser.add_argument("--rescore", action="store_true",
                         help="recompute metrics from existing judged JSONL (no LLM calls)")
@@ -584,7 +625,6 @@ def main():
     # strategy_global_match_reviewer; left None they fall back to the defaults.)
     args.judged_path = None
     args.raw_dir = None
-    args.cases = None
     args.no_aggregate = False
     args.strategy_match_prompt = None
     args.no_global_match_review = False
@@ -650,36 +690,33 @@ def score_one(args):
         responses = [r for r in responses if parse_variant_id(r["id"])[1] < args.k - 1]
     log.info("Loaded %d responses for %s", len(responses), model_name)
 
-    # Partial-run guard (warn, do not block): a silently incomplete run still
-    # writes a CSV that looks directly comparable to the reference table.
-    # Expected count comes from the dataset manifest for the cases/k actually
-    # in scope, so intentional subsets (--cases, --k, --limit) shrink `rubrics`
-    # and don't false-alarm.
+    # Completeness gate. Expected keys come from the dataset manifest for the
+    # cases/k/trials actually in scope, so intentional subsets (--cases, --k)
+    # shrink `rubrics` and don't false-alarm. Fails closed: no manifest, no
+    # comparable score.
     items_path = dataset_dir / "items.jsonl"
-    if items_path.exists():
-        n_expected = 0
-        for line in items_path.read_text().splitlines():
-            if not line.strip():
-                continue
-            base, suffix = parse_variant_id(json.loads(line)["id"])
-            if base in rubrics and not (args.k is not None and suffix >= args.k - 1):
-                n_expected += 1
-        if n_expected and len(responses) < n_expected:
-            log.warning(
-                "Partial run: %d responses loaded but the dataset offers %d "
-                "for the cases/k in scope. Scores below are over an INCOMPLETE "
-                "set and are NOT comparable to the reference table.",
-                len(responses), n_expected,
-            )
-    n_bad = sum(
-        1 for r in responses
-        if r.get("error") or not str(r.get("response") or "").strip()
-    )
-    if n_bad:
-        log.warning(
-            "%d of %d loaded responses are empty or carry an error field; "
-            "their scores will be degenerate and drag the aggregate down.",
-            n_bad, len(responses),
+    if not items_path.exists():
+        raise SystemExit(
+            f"Dataset manifest not found: {items_path}. "
+            "Cannot verify run completeness, refusing to score."
+        )
+    n_trials = config.get("benchmark", {}).get("trials", 1)
+    expected_keys = set()
+    for line in items_path.read_text().splitlines():
+        if not line.strip():
+            continue
+        variant_id = json.loads(line)["id"]
+        base, suffix = parse_variant_id(variant_id)
+        if base in rubrics and not (args.k is not None and suffix >= args.k - 1):
+            for trial in range(1, n_trials + 1):
+                expected_keys.add((variant_id, trial))
+    # Under --rescore the judged file is the artifact that matters; it gets
+    # its own gate before aggregation, and an incomplete raw file shouldn't
+    # block rescoring a complete judged one.
+    if not args.rescore:
+        require_complete(
+            responses, expected_keys, response_path,
+            usable=lambda r: not r.get("error") and str(r.get("response") or "").strip(),
         )
 
     # Run the strategy judge pipeline (the only judging pipeline)
@@ -726,10 +763,11 @@ def score_one(args):
                            if args.strategy_global_match_review_prompt
                            else DEFAULT_REVIEW_PROMPT),
             threads=args.threads,
-            cases_filter=(
-                [s.strip() for s in args.cases.split(",") if s.strip()]
-                if args.cases else None
-            ),
+            # NOT args.cases: the stages compare cases_filter against full
+            # variant ids, so a base id like All001 would silently skip every
+            # perturbation. `rubrics` is already filtered to the requested
+            # cases and the stages skip anything whose base is not in it.
+            cases_filter=None,
         )
         judge_responses(
             model_name=model_name,
@@ -742,6 +780,23 @@ def score_one(args):
     if args.no_aggregate:
         log.info("--no-aggregate set; skipping scores CSV")
         return
+
+    # Gate the judged file too: it is the artifact actually aggregated, and
+    # the only one --rescore reads. A partially judged cache or a truncated
+    # judged file would otherwise pass the raw-response gate and still publish.
+    # Out-of-scope records (a full-run judged file scored with --k) are
+    # filtered exactly as aggregation filters them, so they don't false-alarm.
+    judged_records = [
+        json.loads(line)
+        for line in judged_path.read_text().splitlines()
+        if line.strip()
+    ] if judged_path.exists() else []
+    in_scope = [
+        r for r in judged_records
+        if (args.k is None or variant_within_k(r["id"], args.k))
+        and parse_variant_id(r["id"])[0] in rubrics
+    ]
+    require_complete(in_scope, expected_keys, judged_path)
 
     # Aggregate. Auto-discover the judge identifier set from the judged
     # file's `judge` field. Falls back to the review-judge name only when

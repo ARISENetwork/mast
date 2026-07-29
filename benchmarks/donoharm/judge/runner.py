@@ -47,6 +47,32 @@ from .summary import JudgeRunSummary
 log = logging.getLogger(__name__)
 
 
+def _cache_keys(path: Path) -> set[tuple[str, int]]:
+    return {(r["id"], r.get("trial", 1)) for r in load_jsonl(path)}
+
+
+def _require_stage_complete(stage: str, expected: set, path: Path) -> None:
+    """Abort when a stage silently skipped work.
+
+    Both stages return without writing on exhausted retries, and neither the
+    adapter nor score.py reconciles what came back against what went in: a
+    failed review still yields a judged record (match-only, stamped with the
+    review judge), so a downstream count check cannot see it.
+    """
+    missing = expected - _cache_keys(path)
+    if not missing:
+        return
+    shown = ", ".join(f"{cid}/t{trial}" for cid, trial in sorted(missing)[:10])
+    if len(missing) > 10:
+        shown += f", ... (+{len(missing) - 10} more)"
+    raise RuntimeError(
+        f"{stage} stage is incomplete: {len(missing)} of {len(expected)} expected "
+        f"records are missing from {path} ({shown}). Scores from an incomplete "
+        f"judge run are not comparable to the reference table. Re-run to fill the "
+        f"cache; completed records are cached and will not be re-billed."
+    )
+
+
 def judge_responses(
     *,
     model_name: str,
@@ -76,7 +102,7 @@ def judge_responses(
         needed).
     """
     from .adapter import adapt_model
-    from .stages.match_stage import run_match, emit_strategies
+    from .stages.match_stage import base_case_id, run_match, emit_strategies
     from .stages.review_stage import run_review
 
     t_start = time.perf_counter()
@@ -88,6 +114,15 @@ def judge_responses(
     # stage functions consume the in-memory dict, not this file.
     write_responses_file(responses, cache_dir / "responses.jsonl")
     responses_dict = responses_to_dict(responses)
+    # responses_to_dict drops falsy responses. Silently judging fewer records
+    # than the caller handed us is the exact bias this pipeline must not have.
+    n_dropped = len(responses) - len(responses_dict)
+    if n_dropped:
+        raise ValueError(
+            f"{n_dropped} of {len(responses)} response records are empty or "
+            f"duplicate keys; they would be dropped before judging and shrink "
+            f"the scored denominator. Filter or fix them before judging."
+        )
 
     log.info(
         "[strategy] cache_dir=%s; responses=%d; global-match-reviewer=%s",
@@ -109,6 +144,14 @@ def judge_responses(
     )
     if not match_path.exists():
         raise RuntimeError(f"match stage produced no output at {match_path}")
+    # Mirrors run_match's own task predicates so the expected set is exactly
+    # what that stage should have produced.
+    expected_match = {
+        (case, trial)
+        for (_m, case, trial) in responses_dict
+        if (not case_filter or case in case_filter) and base_case_id(case) in rubrics
+    }
+    _require_stage_complete("match", expected_match, match_path)
     strategies_path = cache_dir / "strategies.jsonl"
     emit_strategies(match_path, strategies_path)
 
@@ -134,6 +177,18 @@ def judge_responses(
             threads=config.threads, model_name=model_name,
             case_filter=case_filter,
         )
+        # Mirrors run_review's task predicates. A review failure writes no
+        # cache record but still yields a judged record downstream, so this is
+        # the only place the omission is visible.
+        response_keys = {(case, trial) for (_m, case, trial) in responses_dict}
+        expected_review = {
+            (case, trial)
+            for (_m, case, trial) in refined_by_key
+            if (not case_filter or case in case_filter)
+            and base_case_id(case) in rubrics
+            and (case, trial) in response_keys
+        }
+        _require_stage_complete("review", expected_review, review_path)
 
     # Apply review overrides at the strategy level. Below-threshold
     # (unattributed) promotions fall through unchanged and are picked up by
