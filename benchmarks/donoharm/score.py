@@ -13,7 +13,7 @@ import logging
 import re
 import sys
 import time
-from collections import defaultdict
+from collections import Counter, defaultdict
 from collections.abc import Callable
 from pathlib import Path
 
@@ -177,7 +177,7 @@ def require_complete(records: list, expected: set, source, usable=None) -> None:
     """
     keys = [(r["id"], r.get("trial", 1)) for r in records]
     bad = {k for k, r in zip(keys, records) if usable and not usable(r)}
-    dupes = {k for k in set(keys) if keys.count(k) > 1}
+    dupes = {k for k, n in Counter(keys).items() if n > 1}
     missing = expected - (set(keys) - bad)
     extra = set(keys) - expected
     if not (missing or bad or dupes or extra):
@@ -597,7 +597,7 @@ def main():
                              "do not select matching subsets.")
     parser.add_argument("--cases", type=str, default=None,
                         help="Comma-separated base case ids to score "
-                             "(e.g. All001,Derm003). The completeness gate "
+                             "(e.g. All001,Derm006). The completeness gate "
                              "expects every in-scope variant of each.")
     parser.add_argument("--threads", type=int, default=40)
     parser.add_argument("--rescore", action="store_true",
