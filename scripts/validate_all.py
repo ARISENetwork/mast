@@ -229,6 +229,10 @@ def main():
         total_failed += results['failed']
         print_benchmark_results(results)
 
+    # A benchmark with a validator but no test inputs validated nothing; a
+    # green exit over it would hide missing or misnamed inputs/test_*.txt.
+    no_test_benchmarks = [r['benchmark'] for r in all_results if r['status'] == 'no_tests']
+
     # Summary
     print(f"\n{'='*80}")
     print("📈 FINAL SUMMARY")
@@ -238,15 +242,20 @@ def main():
     print(f"Successful responses: {total_passed}")
     print(f"Failed responses: {total_failed}")
 
-    if total_failed == 0:
+    if total_failed == 0 and not no_test_benchmarks:
         print("\n🎉 All API tests passed! Responses saved to results/ directory.")
         print("📁 Check results/ for detailed API responses and validation results.")
         sys.exit(0)
-    else:
+
+    if no_test_benchmarks:
+        print(f"\nNo test cases found for: {', '.join(no_test_benchmarks)}")
+        print("These benchmarks validated nothing. Check that inputs/test_*.txt exist "
+              "in the benchmark's submission/ dir (or benchmark root).")
+    if total_failed > 0:
         print(f"\n❌ {total_failed} API test(s) failed!")
         print("📁 Check results/ directory for detailed error information.")
         print("🔍 Look for _response.json files (raw API responses) and _validation.json files (error details).")
-        sys.exit(1)
+    sys.exit(1)
 
 
 if __name__ == "__main__":
