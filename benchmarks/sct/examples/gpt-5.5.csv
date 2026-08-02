@@ -1,0 +1,16 @@
+category,metric,trials,mean,ci,ci_lo,ci_hi
+Overall,sct_score,174,0.7453,0.0531,0.6912,0.7974
+Overall,pct_in_expert_set,174,0.931,0.0374,0.8908,0.9655
+Overall,overconfidence_rate,68,0.4412,0.1176,0.3235,0.5588
+Overall,underconfidence_rate,75,0.2,0.0867,0.12,0.2933
+Overall,distractor_susceptibility,19,0.7895,0.1842,0.5789,0.9474
+adelaide,sct_score,102,0.7696,0.0662,0.701,0.8333
+adelaide,pct_in_expert_set,102,0.9216,0.0539,0.8627,0.9706
+adelaide,overconfidence_rate,35,0.4571,0.1714,0.2857,0.6286
+adelaide,underconfidence_rate,48,0.1667,0.1146,0.0625,0.2917
+adelaide,distractor_susceptibility,13,0.6923,0.2308,0.4615,0.9231
+open_medical,sct_score,72,0.7109,0.0803,0.6318,0.7923
+open_medical,pct_in_expert_set,72,0.9444,0.0486,0.8889,0.9861
+open_medical,overconfidence_rate,33,0.4242,0.1667,0.2727,0.6061
+open_medical,underconfidence_rate,27,0.2593,0.1667,0.1111,0.4444
+open_medical,distractor_susceptibility,6,1.0,0.0,1.0,1.0

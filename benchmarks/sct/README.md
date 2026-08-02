@@ -36,7 +36,9 @@ python score.py --model-config config/models/example.yaml --benchmark-config con
 
 `run.py` writes `results/raw/sct/<model>.jsonl` with id, trial, response, usage, and metadata. You can skip `run.py` and supply your own JSONL with at least `{id, trial, response}`.
 
-> **Response format note:** the local kit and the leaderboard submission path use different response contracts. The kit's prompt elicits plain text (`Rating: X`), which `score.py` parses; the submission endpoint (see [`submission/`](submission/)) returns JSON (`{"Rating": N, "Rationale": "..."}`), which `score.py` does **not** parse. If you supply your own JSONL, each `response` must contain the plain-text `Rating:` form, not the submission JSON.
+`score.py` reads the rating from either shape a model might return: the plain-text answer line the kit's prompt elicits (`Rating: X`), or a JSON field (`{"Rating": N, ...}`) as produced by structured outputs and by the leaderboard submission endpoint (see [`submission/`](submission/)). Both parse identically, so a JSONL captured from a submission-format endpoint scores without conversion.
+
+A complete worked run is in [`examples/`](examples/): a real GPT-5.5 run over all 174 items plus the score outputs it produced.
 
 ### Metric
 
@@ -44,13 +46,13 @@ The headline metric is `sct_score`: alignment with the expert consensus distribu
 
 ### Reference scores
 
-On the open subset (174 items), scored with this bundle's `dataset/` + `score.py` (deterministic, so exactly reproducible). Values are mean +/- 95% item-level percentile bootstrap half-width.
+On the open subset (174 items), scored with this bundle's `dataset/` + `score.py` (deterministic, so exactly reproducible). Values are mean +/- 95% item-level percentile bootstrap half-width. The GPT-5.5 row is reproducible from the run shipped in [`examples/`](examples/).
 
 | Model | sct_score |
 | --- | --- |
-| GPT-5.5 | 0.745 +/- 0.052 |
-| Claude Opus 4.7 | 0.756 +/- 0.056 |
-| Gemini 3.1 Pro | 0.721 +/- 0.053 |
+| GPT-5.5 | 0.745 +/- 0.053 |
+| Claude Opus 4.7 | 0.756 +/- 0.057 |
+| Gemini 3.1 Pro | 0.721 +/- 0.058 |
 
 ## Scoring
 
@@ -58,6 +60,14 @@ Responses are scored against expert physician panel distributions:
 
 - **SCT Score (0-1)**: weighted alignment with expert consensus. A response matching the most common expert answer scores 1.0; responses matching less common expert answers score proportionally lower.
 - **Expert Set Match**: binary measure of whether the response matches any expert's answer.
+
+The scorecard also carries three directional error rates, each defined only on the items that create the opportunity (so each has its own denominator, reported in the CSV's `trials` column):
+
+- **Overconfidence**: on items where the expert mode is +/-1, how often the model answered +/-2 in the same direction.
+- **Underconfidence**: on items where the expert mode is +/-2, how often the model answered +/-1 in the same direction.
+- **Distractor Susceptibility**: on items where the expert mode is 0, how often the model moved off 0.
+
+Items whose expert mode is tied are excluded from all three. These are diagnostic breakdowns, not part of the headline `sct_score`.
 
 See `DATA.md` for data provenance and sources.
 
