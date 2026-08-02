@@ -26,6 +26,11 @@ mast/
 │   │   ├── README.md           # Setup, F1_weighted metric, reference scores
 │   │   └── submission/         # Optional endpoint validator (validator.py, schema.json, inputs/, outputs/)
 │   ├── sct/                    # Script Concordance Test benchmark
+│   │   ├── run.py, score.py    # Run-it-yourself eval on the open subset (deterministic scoring)
+│   │   ├── dataset/            # 174 open items + expert consensus distributions
+│   │   ├── examples/           # A full GPT-5.5 reference run + its score outputs
+│   │   ├── README.md           # Setup, sct_score metric, reference scores
+│   │   └── submission/         # Optional endpoint validator (validator.py, schema.json, inputs/, outputs/)
 │   └── template/               # Template for new benchmarks
 ├── results/                    # API response storage (per-benchmark)
 ├── scripts/
