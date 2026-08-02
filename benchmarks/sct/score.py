@@ -29,6 +29,13 @@ import pandas as pd
 import yaml
 from tqdm import tqdm
 
+SCT_RATINGS = [-2, -1, 0, 1, 2]
+CONFIDENCE_METRIC_LABELS = {
+    "overconfidence_rate": "Overconfidence",
+    "underconfidence_rate": "Underconfidence",
+    "distractor_susceptibility": "Distractor Susceptibility",
+}
+
 
 def load_yaml(path: str) -> dict:
     """Load YAML config file."""
@@ -44,7 +51,9 @@ def parse_response(response: str) -> Optional[int]:
     """
     Extract rating from LLM response text.
 
-    Looks for pattern "Rating: X" where X is -2, -1, 0, +1, or +2.
+    Handles two output shapes: a JSON-style {"Rating": X} field (structured
+    outputs, e.g. the submission endpoint format) and the plain-text
+    "Rating: X" answer line, where X is -2, -1, 0, +1, or +2.
 
     Args:
         response: Raw text response from LLM.
@@ -56,6 +65,16 @@ def parse_response(response: str) -> Optional[int]:
         return None
 
     try:
+        # Structured JSON rating, e.g. {"Rating": 2} or {"rating": "-1"}. The
+        # quote before the colon distinguishes this from the plain-text
+        # "Rating: X" heading, so this branch only fires for JSON outputs (the
+        # plain-text path below is left byte-identical for every other model).
+        json_matches = re.findall(r'"[Rr]ating"\s*:\s*"?([+-]?[012])"?', response)
+        if json_matches:
+            rating = int(json_matches[-1])
+            if rating in [-2, -1, 0, 1, 2]:
+                return rating
+
         # Look for "Rating:" followed by the score. Use the LAST occurrence so
         # chain-of-thought reasoning that mentions "**Rating:**" as a heading
         # earlier in the response doesn't preempt the final answer line.
@@ -173,6 +192,50 @@ def score_single_response(expert_distribution: List[float], response: int) -> di
         "normalized_score": float(normalized_score),
         "in_expert_set": bool(in_expert_set),
     }
+
+
+def unique_modal_expert_rating(expert_distribution: List[float]) -> Optional[int]:
+    """Return the unique modal expert rating, or None when the mode is tied."""
+    expert_distribution = np.asarray(expert_distribution, dtype=float)
+    if expert_distribution.size != len(SCT_RATINGS):
+        return None
+
+    row_max = np.max(expert_distribution)
+    if row_max <= 0:
+        return None
+
+    modal_indices = np.flatnonzero(expert_distribution == row_max)
+    if len(modal_indices) != 1:
+        return None
+
+    return SCT_RATINGS[int(modal_indices[0])]
+
+
+def confidence_error_indicators(
+    expected_rating: Optional[int],
+    response: int,
+) -> Dict[str, float]:
+    """Opportunity-normalized directional errors against the expert mode.
+
+    The metrics are defined only when an item creates the relevant opportunity:
+    overconfidence for unique-modal +/-1 items, underconfidence for unique-modal
+    +/-2 items, and distractor susceptibility for unique-modal 0 items.
+    """
+    if expected_rating is None:
+        return {}
+
+    if expected_rating == 1:
+        return {"overconfidence_rate": 1.0 if response == 2 else 0.0}
+    if expected_rating == -1:
+        return {"overconfidence_rate": 1.0 if response == -2 else 0.0}
+    if expected_rating == 2:
+        return {"underconfidence_rate": 1.0 if response == 1 else 0.0}
+    if expected_rating == -2:
+        return {"underconfidence_rate": 1.0 if response == -1 else 0.0}
+    if expected_rating == 0:
+        return {"distractor_susceptibility": 1.0 if response != 0 else 0.0}
+
+    return {}
 
 
 def compute_student_score_from_distribution(expert_dist: List[float], student_dist: List[float]) -> float:
@@ -363,8 +426,14 @@ def main():
     # Per-subtest item-level scores (kept as flat lists for bootstrap)
     overall_sct_per_item: List[float] = []
     overall_inset_per_item: List[float] = []
+    overall_confidence_per_item: Dict[str, List[float]] = {
+        metric: [] for metric in CONFIDENCE_METRIC_LABELS
+    }
     subtest_sct: Dict[str, List[float]] = defaultdict(list)
     subtest_inset: Dict[str, List[float]] = defaultdict(list)
+    subtest_confidence: Dict[str, Dict[str, List[float]]] = defaultdict(
+        lambda: {metric: [] for metric in CONFIDENCE_METRIC_LABELS}
+    )
     subtest_names = set()
 
     # Per-item bookkeeping for human comparison (uses the same single-trial scores)
@@ -394,9 +463,15 @@ def main():
         score_result = score_single_response(expert_dist, rating)
         per_item_score = float(score_result["normalized_score"])
         per_item_inset = 1.0 if score_result["in_expert_set"] else 0.0
+        expert_modal_rating = unique_modal_expert_rating(expert_dist)
+        confidence_indicators = confidence_error_indicators(
+            expert_modal_rating, rating
+        )
 
         overall_sct_per_item.append(per_item_score)
         overall_inset_per_item.append(per_item_inset)
+        for metric, value in confidence_indicators.items():
+            overall_confidence_per_item[metric].append(value)
 
         item_trial_scores[item_id].append(per_item_score)
 
@@ -405,14 +480,19 @@ def main():
         item_source[item_id] = source_short
         subtest_sct[source_short].append(per_item_score)
         subtest_inset[source_short].append(per_item_inset)
+        for metric, value in confidence_indicators.items():
+            subtest_confidence[source_short][metric].append(value)
 
-        question_results.append({
+        detail = {
             "id": item_id,
             "trial": trial,
             "rating": rating,
+            "expert_modal_rating": expert_modal_rating,
             "normalized_score": per_item_score,
             "in_expert_set": score_result["in_expert_set"],
-        })
+        }
+        detail.update(confidence_indicators)
+        question_results.append(detail)
 
     # -------------------------------------------------------------------------
     # 6. AGGREGATION
@@ -444,6 +524,16 @@ def main():
         metrics_list.append({"category": "Overall", "metric": "pct_in_expert_set",
                              "trials": b["n"], "mean": b["mean"], "ci": b["ci"],
                              "ci_lo": b["ci_lo"], "ci_hi": b["ci_hi"]})
+
+        for metric, label in CONFIDENCE_METRIC_LABELS.items():
+            values = overall_confidence_per_item[metric]
+            if not values:
+                continue
+            b = bootstrap_ci(values, n_boot=args.n_boot, seed=args.seed)
+            print(f"{label + ':':<18} {b['mean']:.4f} (±{b['ci']:.4f}, 95% CI [{b['ci_lo']:.4f}, {b['ci_hi']:.4f}], n={b['n']})")
+            metrics_list.append({"category": "Overall", "metric": metric,
+                                 "trials": b["n"], "mean": b["mean"], "ci": b["ci"],
+                                 "ci_lo": b["ci_lo"], "ci_hi": b["ci_hi"]})
         print()
 
     # Per-subtest metrics (item-level bootstrap)
@@ -466,6 +556,14 @@ def main():
             metrics_list.append({"category": source_short, "metric": "pct_in_expert_set",
                                  "trials": b_pct["n"], "mean": b_pct["mean"], "ci": b_pct["ci"],
                                  "ci_lo": b_pct["ci_lo"], "ci_hi": b_pct["ci_hi"]})
+            for metric in CONFIDENCE_METRIC_LABELS:
+                values = subtest_confidence[source_short][metric]
+                if not values:
+                    continue
+                b_metric = bootstrap_ci(values, n_boot=args.n_boot, seed=args.seed)
+                metrics_list.append({"category": source_short, "metric": metric,
+                                     "trials": b_metric["n"], "mean": b_metric["mean"], "ci": b_metric["ci"],
+                                     "ci_lo": b_metric["ci_lo"], "ci_hi": b_metric["ci_hi"]})
 
     # -------------------------------------------------------------------------
     # 7. HUMAN COMPARISON (console output only)

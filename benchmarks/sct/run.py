@@ -69,10 +69,13 @@ def read_existing_ids(output_file: Path) -> set:
                     try:
                         obj = json.loads(line)
                         response = obj.get("response")
-                        # Only count as completed if:
-                        # 1. No error field
-                        # 2. Response exists and is not None
-                        if "error" not in obj and response is not None:
+                        # Only count as completed if no error field AND the
+                        # response is non-empty. Blank/whitespace responses are
+                        # re-attempted, not accepted.
+                        has_nonempty_response = response is not None and (
+                            not isinstance(response, str) or bool(response.strip())
+                        )
+                        if "error" not in obj and has_nonempty_response:
                             item_id = obj.get("id")
                             trial = obj.get("trial", 1)
                             completed.add((item_id, trial))
@@ -143,6 +146,7 @@ class LiteLLMWrapper:
 
         self.temperature = bench_config.get("temperature", 0.0)
         self.max_tokens = bench_config.get("max_tokens", 4096)
+        self.completion_kwargs = model_config.get("completion_kwargs", {}) or {}
 
     def generate(self, prompt: str) -> tuple[str, dict]:
         kwargs = {
@@ -156,6 +160,13 @@ class LiteLLMWrapper:
             kwargs["api_base"] = self.api_base
         if self.api_key:
             kwargs["api_key"] = self.api_key
+
+        kwargs.update(self.completion_kwargs)
+        if "reasoning_effort" in self.completion_kwargs or "thinking" in self.completion_kwargs:
+            kwargs["temperature"] = 1
+        # A YAML completion_kwargs key set to null strips the parameter entirely
+        # (e.g. for reasoning models that reject a non-default temperature).
+        kwargs = {k: v for k, v in kwargs.items() if v is not None}
 
         response = completion(**kwargs, timeout=self.request_timeout)
         content = response.choices[0].message.content
@@ -264,6 +275,8 @@ def main():
         try:
             start_time = time.time()
             response, usage = model.generate(item.prompt)
+            if isinstance(response, str) and not response.strip():
+                raise ValueError("Model returned an empty/whitespace response")
             end_time = time.time()
             runtime = int(round(end_time - start_time))
 
