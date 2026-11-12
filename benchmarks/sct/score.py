@@ -29,6 +29,8 @@ import pandas as pd
 import yaml
 from tqdm import tqdm
 
+from data_loader import SOURCE_TO_SHORT
+
 SCT_RATINGS = [-2, -1, 0, 1, 2]
 CONFIDENCE_METRIC_LABELS = {
     "overconfidence_rate": "Overconfidence",
@@ -398,7 +400,9 @@ def main():
                 item_id = item.get("id") or item.get("item_id")
                 trial = item.get("trial", 1)
                 if item_id:
-                    responses[(item_id, trial)] = item
+                    # Ids are strings in dataset/ and rubrics; a hand-written
+                    # JSONL with integer ids would otherwise miss every rubric.
+                    responses[(str(item_id), trial)] = item
 
     # Apply --limit (first N unique item IDs)
     unique_ids = sorted(set(id for id, _ in responses.keys()))
@@ -475,7 +479,11 @@ def main():
 
         item_trial_scores[item_id].append(per_item_score)
 
-        source_short = item.get("metadata", {}).get("source_short", "unknown")
+        # The documented minimum record is {id, trial, response}; fall back to
+        # the rubric's source so per-subtest rows don't collapse to "unknown".
+        source_short = (item.get("metadata") or {}).get("source_short") or SOURCE_TO_SHORT.get(
+            rubric.get("source"), rubric.get("source", "unknown")
+        )
         subtest_names.add(source_short)
         item_source[item_id] = source_short
         subtest_sct[source_short].append(per_item_score)
