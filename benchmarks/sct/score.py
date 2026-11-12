@@ -29,6 +29,8 @@ import pandas as pd
 import yaml
 from tqdm import tqdm
 
+from data_loader import create_loader
+
 SCT_RATINGS = [-2, -1, 0, 1, 2]
 CONFIDENCE_METRIC_LABELS = {
     "overconfidence_rate": "Overconfidence",
@@ -70,7 +72,8 @@ def require_complete(records: list, expected: set, source) -> None:
         f"records, missing={len(missing)} empty-or-errored={len(bad)} "
         f"duplicate={len(dupes)} off-manifest={len(extra)}; e.g. {shown}.\n"
         "Scores over an incomplete set are NOT comparable to the reference table. "
-        "Re-run to fill the gaps, or narrow the scope explicitly with --limit."
+        "Re-run to fill the gaps, or narrow the scope explicitly with --limit "
+        "or benchmark.subset."
     )
 
 
@@ -443,14 +446,27 @@ def main():
             "Cannot verify run completeness, refusing to score."
         )
     with open(items_file, 'r') as f:
-        manifest_ids = [str(json.loads(line)["id"]) for line in f if line.strip()]
-    all_manifest = set(manifest_ids)
+        all_manifest = {str(json.loads(line)["id"]) for line in f if line.strip()}
 
-    # Apply --limit: the first N manifest items, the same items run.py --limit N runs
-    if args.limit is not None:
-        manifest_ids = manifest_ids[:args.limit]
-        print(f"Limited to {len(manifest_ids)} items")
-    unique_ids = sorted(set(manifest_ids))
+    # Scope: the items run.py runs for this config (benchmark.subset,
+    # sct.test_mode, then the limit), selected by the same loader with the
+    # same precedence: benchmark config over model config, --limit over
+    # benchmark.limit.
+    run_config = dict(model_config)
+    for section in ("benchmark", "sct"):
+        run_config[section] = {
+            **(model_config.get(section) or {}), **(bench_config.get(section) or {})
+        }
+    limit = args.limit if args.limit is not None else run_config["benchmark"].get("limit")
+    subset = run_config["benchmark"].get("subset", "all")
+    loader = create_loader(run_config)
+    unique_ids = sorted({item.id for item in loader.load_items(subset=subset, limit=limit)})
+    if limit is not None:
+        print(f"Limited to {len(unique_ids)} items")
+    if not unique_ids:
+        raise SystemExit(
+            f"No dataset items in scope (subset={subset!r}, limit={limit}); nothing to score."
+        )
     in_scope = set(unique_ids)
     responses = {k: v for k, v in responses.items() if k[0] in in_scope}
 
