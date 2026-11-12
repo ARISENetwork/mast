@@ -20,7 +20,7 @@ Output:
 import argparse
 import json
 import re
-from collections import defaultdict
+from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Optional, List, Dict
 
@@ -41,6 +41,37 @@ def load_yaml(path: str) -> dict:
     """Load YAML config file."""
     with open(path, 'r') as f:
         return yaml.safe_load(f)
+
+
+def require_complete(records: list, expected: set, source) -> None:
+    """Refuse to score a record set that can't produce a comparable number.
+
+    `expected` is the (id, trial) key set the scope demands. Errored, empty,
+    and absent records are skipped by the scoring loop, so without this gate a
+    failed item shrinks the denominator instead of counting against the model.
+    The bias is upward and invisible in the CSV, which is why this blocks
+    rather than warns. Mirrors the donoharm gate.
+    """
+    keys = [(r["id"], r.get("trial", 1)) for r in records]
+    bad = {
+        k for k, r in zip(keys, records)
+        if r.get("error") or not str(r.get("response") or "").strip()
+    }
+    dupes = {k for k, n in Counter(keys).items() if n > 1}
+    missing = expected - (set(keys) - bad)
+    extra = set(keys) - expected
+    if not (missing or bad or dupes or extra):
+        return
+
+    sample = sorted(missing | bad | dupes | extra, key=lambda k: (str(k[0]), k[1]))[:10]
+    shown = ", ".join(f"{item_id}/t{trial}" for item_id, trial in sample)
+    raise SystemExit(
+        f"Refusing to score {source}: of {len(expected)} expected (id, trial) "
+        f"records, missing={len(missing)} empty-or-errored={len(bad)} "
+        f"duplicate={len(dupes)} off-manifest={len(extra)}; e.g. {shown}.\n"
+        "Scores over an incomplete set are NOT comparable to the reference table. "
+        "Re-run to fill the gaps, or narrow the scope explicitly with --limit."
+    )
 
 
 # =============================================================================
@@ -390,6 +421,7 @@ def main():
     # 4. LOAD RESPONSES - group by (id, trial)
     # -------------------------------------------------------------------------
     responses: Dict[tuple, dict] = {}  # (id, trial) -> item
+    records: List[dict] = []  # every keyed record, duplicates kept, for the gate
 
     with open(input_file, 'r') as f:
         for line in f:
@@ -399,22 +431,44 @@ def main():
                 trial = item.get("trial", 1)
                 if item_id:
                     responses[(item_id, trial)] = item
+                    records.append({**item, "id": item_id, "trial": trial})
 
-    # Apply --limit (first N unique item IDs)
-    unique_ids = sorted(set(id for id, _ in responses.keys()))
+    # Expected items come from the dataset manifest, not from the raw file, so
+    # an item that is absent from the run is caught rather than silently
+    # dropped. Fails closed: no manifest, no comparable score.
+    items_file = script_dir / "dataset" / "items.jsonl"
+    if not items_file.exists():
+        raise SystemExit(
+            f"Dataset manifest not found: {items_file}. "
+            "Cannot verify run completeness, refusing to score."
+        )
+    with open(items_file, 'r') as f:
+        manifest_ids = [str(json.loads(line)["id"]) for line in f if line.strip()]
+    all_manifest = set(manifest_ids)
+
+    # Apply --limit: the first N manifest items, the same items run.py --limit N runs
     if args.limit is not None:
-        unique_ids = unique_ids[:args.limit]
-        limited_set = set(unique_ids)
-        responses = {k: v for k, v in responses.items() if k[0] in limited_set}
-        print(f"Limited to {len(unique_ids)} items")
+        manifest_ids = manifest_ids[:args.limit]
+        print(f"Limited to {len(manifest_ids)} items")
+    unique_ids = sorted(set(manifest_ids))
+    in_scope = set(unique_ids)
+    responses = {k: v for k, v in responses.items() if k[0] in in_scope}
 
     # Determine trials from data
     trial_numbers = sorted(set(t for _, t in responses.keys()))
     n_trials = len(trial_numbers)
     print(f"Detected {n_trials} trial(s); scoring trial={args.trial}")
-    if args.trial not in trial_numbers:
-        print(f"Error: trial {args.trial} not present in raw data (available: {trial_numbers})")
-        return
+
+    # Completeness gate for the trial being scored. Records for ids outside the
+    # --limit scope are out of scope, not off-manifest; ids that are not in the
+    # manifest at all are rejected.
+    scored_records = [
+        r for r in records
+        if r["trial"] == args.trial and (r["id"] in in_scope or r["id"] not in all_manifest)
+    ]
+    require_complete(
+        scored_records, {(item_id, args.trial) for item_id in unique_ids}, input_file
+    )
 
     # -------------------------------------------------------------------------
     # 5. SCORE PER ITEM (single trial; item-level bootstrap CIs)
