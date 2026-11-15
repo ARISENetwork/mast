@@ -34,6 +34,8 @@ python score.py --model-config config/models/example.yaml --benchmark-config con
 # -> results/scores/sct/<model>.csv  (headline: sct_score + bootstrap CI)
 ```
 
+`config/benchmark.yaml` sends `temperature: 0.0`. Some models accept only their default temperature (for example, Claude Opus 5.5 accepts only 1) and fail every request with `UnsupportedParamsError`; `run.py` retries each one three times, then finishes with a warning that every task still has errors. For these models, set `completion_kwargs: {temperature: 1}` in the model config (or `temperature: null` to leave it out). Their outputs are then sampled, so one run is one draw: to see run-to-run variation, set `trials` above 1 and score each with `score.py --trial N` (it scores trial 1 by default).
+
 `run.py` writes `results/raw/sct/<model>.jsonl` with id, trial, response, usage, and metadata. You can skip `run.py` and supply your own JSONL with at least `{id, trial, response}`.
 
 `score.py` reads the rating from either shape a model might return: the plain-text answer line the kit's prompt elicits (`Rating: X`), or a JSON field (`{"Rating": N, ...}`) as produced by structured outputs and by the leaderboard submission endpoint (see [`submission/`](submission/)). Both parse identically, so a JSONL captured from a submission-format endpoint scores without conversion.
