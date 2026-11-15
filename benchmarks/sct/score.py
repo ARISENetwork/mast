@@ -47,6 +47,8 @@ def load_yaml(path: str) -> dict:
 # RESPONSE PARSING
 # =============================================================================
 
+_MINUS_SIGNS = str.maketrans({c: "-" for c in "−–—﹣－"})
+
 def parse_response(response: str) -> Optional[int]:
     """
     Extract rating from LLM response text.
@@ -63,6 +65,11 @@ def parse_response(response: str) -> Optional[int]:
     """
     if not response or not isinstance(response, str):
         return None
+
+    # Typographic minus signs (U+2212 minus, U+2013 en dash, U+2014 em dash,
+    # U+FE63 small hyphen-minus, U+FF0D fullwidth hyphen-minus) are not matched
+    # by the ASCII [+-] below, so "Rating: −2" would otherwise parse as +2.
+    response = response.translate(_MINUS_SIGNS)
 
     try:
         # Structured JSON rating, e.g. {"Rating": 2} or {"rating": "-1"}. The
