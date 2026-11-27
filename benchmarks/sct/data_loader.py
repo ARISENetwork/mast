@@ -119,7 +119,7 @@ class SCTLoader:
 
         return prompt
 
-    def _load_items_from_jsonl(self) -> List[dict]:
+    def load_manifest(self) -> List[dict]:
         """Load raw items from items.jsonl."""
         if self._items_cache is not None:
             return self._items_cache
@@ -135,7 +135,7 @@ class SCTLoader:
         self._items_cache = items
         return items
 
-    def _load_rubrics(self) -> Dict[str, dict]:
+    def load_rubrics(self) -> Dict[str, dict]:
         """Load rubrics (expert distributions) from rubrics.jsonl."""
         if self._rubrics_cache is not None:
             return self._rubrics_cache
@@ -167,8 +167,8 @@ class SCTLoader:
         Yields:
             SCTItem objects with prompts ready for inference
         """
-        raw_items = self._load_items_from_jsonl()
-        rubrics = self._load_rubrics()
+        raw_items = self.load_manifest()
+        rubrics = self.load_rubrics()
 
         # Determine which sources to include
         if subset == "all":
@@ -233,7 +233,7 @@ class SCTLoader:
         Returns:
             List of 5 floats [dist for -2, -1, 0, +1, +2]
         """
-        rubrics = self._load_rubrics()
+        rubrics = self.load_rubrics()
         rubric = rubrics.get(item_id)
         if rubric:
             return rubric.get("expert_distribution")
