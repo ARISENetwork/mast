@@ -36,6 +36,18 @@ python score.py --model-config config/models/example.yaml --benchmark-config con
 
 `run.py` writes `results/raw/sct/<model>.jsonl` with id, trial, response, usage, and metadata. You can skip `run.py` and supply your own JSONL with at least `{id, trial, response}`.
 
+For LiteLLM runs, set `model.completion_kwargs.temperature` to the value your
+provider accepts, or to YAML `null` to omit it. If `completion_kwargs` includes
+`reasoning_effort` or `thinking`, the runner sends temperature 1 even when
+the configured temperature is null.
+
+Score with the same subset, test mode, and limit used for inference. Each
+selected item needs one successful, nonblank response for the requested trial
+(default 1). Integer and string item IDs both work. The dataset supplies the
+subtest. The scorer continues to report and exclude nonblank answers it cannot
+parse. Each invocation writes the same model-specific output paths, so save a
+copy before scoring another trial.
+
 `score.py` reads the rating from either shape a model might return: the plain-text answer line the kit's prompt elicits (`Rating: X`), or a JSON field (`{"Rating": N, ...}`) as produced by structured outputs and by the leaderboard submission endpoint (see [`submission/`](submission/)). Both parse identically, so a JSONL captured from a submission-format endpoint scores without conversion.
 
 A complete worked run is in [`examples/`](examples/): a real GPT-5.5 run over all 174 items plus the score outputs it produced.
@@ -95,3 +107,7 @@ If you want your model on the public [leaderboard](https://arise-ai.org/mast/tec
 ## License
 
 Code is MIT-licensed (see `LICENSE`). Data provenance and sources are in `DATA.md`.
+
+## Acknowledgments
+
+Albert Lie (@albertlieyingadrian) reported the SCT scorer input issues and temperature configuration issue and supplied the reproductions in [#31](https://github.com/ARISENetwork/mast/pull/31), [#33](https://github.com/ARISENetwork/mast/pull/33), [#34](https://github.com/ARISENetwork/mast/pull/34), and [#35](https://github.com/ARISENetwork/mast/pull/35).

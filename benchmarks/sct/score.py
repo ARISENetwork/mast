@@ -29,6 +29,11 @@ import pandas as pd
 import yaml
 from tqdm import tqdm
 
+if __package__:
+    from .data_loader import create_loader
+else:
+    from data_loader import create_loader
+
 SCT_RATINGS = [-2, -1, 0, 1, 2]
 CONFIDENCE_METRIC_LABELS = {
     "overconfidence_rate": "Overconfidence",
@@ -47,59 +52,33 @@ def load_yaml(path: str) -> dict:
 # RESPONSE PARSING
 # =============================================================================
 
+_MINUS = re.compile(r"[\u2212\u2010-\u2014\ufe63\uff0d][ \t]*(?=[012])")
+_JSON_RATING = re.compile(r'"[Rr]ating"\s*:\s*("(?:\\.|[^"\\])*"|[+\-\d]+)(?=\s*[,}])')
+
+
 def parse_response(response: str) -> Optional[int]:
-    """
-    Extract rating from LLM response text.
-
-    Handles two output shapes: a JSON-style {"Rating": X} field (structured
-    outputs, e.g. the submission endpoint format) and the plain-text
-    "Rating: X" answer line, where X is -2, -1, 0, +1, or +2.
-
-    Args:
-        response: Raw text response from LLM.
-
-    Returns:
-        Integer rating in range [-2, 2], or None if parsing fails.
-    """
-    if not response or not isinstance(response, str):
+    """Read a structured rating or the last plain-text Rating: answer."""
+    if not isinstance(response, str):
         return None
+    response = _MINUS.sub("-", response)
+    fields = _JSON_RATING.findall(response)
+    if fields:
+        value = fields[-1]
+        if value.startswith('"'):
+            try:
+                value = json.loads(value)
+            except json.JSONDecodeError:
+                return None
+        value = _MINUS.sub("-", value.strip())
+        return int(value) if re.fullmatch(r"[+-]?[012]", value) else None
 
-    try:
-        # Structured JSON rating, e.g. {"Rating": 2} or {"rating": "-1"}. The
-        # quote before the colon distinguishes this from the plain-text
-        # "Rating: X" heading, so this branch only fires for JSON outputs (the
-        # plain-text path below is left byte-identical for every other model).
-        json_matches = re.findall(r'"[Rr]ating"\s*:\s*"?([+-]?[012])"?', response)
-        if json_matches:
-            rating = int(json_matches[-1])
-            if rating in [-2, -1, 0, 1, 2]:
-                return rating
-
-        # Look for "Rating:" followed by the score. Use the LAST occurrence so
-        # chain-of-thought reasoning that mentions "**Rating:**" as a heading
-        # earlier in the response doesn't preempt the final answer line.
-        idx = response.rfind("Rating:")
-        if idx == -1:
-            return None
-
-        rating_section = response[idx + len("Rating:"):][:10]
-        pattern = r'[+-]?[012]'
-        matches = re.findall(pattern, rating_section)
-
-        if not matches:
-            return None
-
-        # Take first match
-        rating_str = matches[0]
-        rating = int(rating_str)
-
-        if rating not in [-2, -1, 0, 1, 2]:
-            return None
-
-        return rating
-
-    except Exception:
-        return None
+    _, heading, answer = response.rpartition("Rating:")
+    if heading:
+        # Reasoning can contain earlier headings. Keep the last answer window.
+        match = re.search(r"(?<![0-9.])[+-]?[012](?![0-9]|\.[0-9])", answer[:10])
+        if match:
+            return int(match.group())
+    return None
 
 
 # =============================================================================
@@ -322,6 +301,34 @@ def bootstrap_ci(per_item: List[float], n_boot: int = 2000, seed: int = 0) -> Di
 # MAIN
 # =============================================================================
 
+def read_trial(path: Path, trial: int, expected: set[str], manifest: set[str]) -> dict[str, dict]:
+    """Load one complete trial for the selected benchmark items."""
+    records = {}
+    with path.open() as stream:
+        for line_number, line in enumerate(stream, 1):
+            if not line.strip():
+                continue
+            record = json.loads(line)
+            if record.get("trial", 1) != trial:
+                continue
+            item_id = str(record.get("id", record.get("item_id")))
+            if item_id not in manifest:
+                raise SystemExit(f"{path}:{line_number}: unknown item ID {item_id!r}")
+            if item_id not in expected:
+                continue
+            if item_id in records:
+                raise SystemExit(f"{path}:{line_number}: duplicate item {item_id} in trial {trial}")
+            response = record.get("response")
+            if record.get("error") or not isinstance(response, str) or not response.strip():
+                raise SystemExit(f"{path}:{line_number}: empty or failed response for item {item_id} in trial {trial}")
+            records[item_id] = record
+
+    missing = sorted(expected - records.keys())
+    if missing:
+        raise SystemExit(f"{path}: trial {trial} missing {len(missing)} items, including {', '.join(missing[:10])}")
+    return records
+
+
 def main():
     parser = argparse.ArgumentParser(description="Score SCT benchmark results")
     parser.add_argument("--model-config", required=True, help="Path to model config YAML")
@@ -363,64 +370,33 @@ def main():
     print(f"Output: {output_dir}")
     print("-" * 60)
 
-    if not input_file.exists():
-        print(f"Error: Input file not found: {input_file}")
-        print("Run the benchmark first with run.py")
-        return
-
-    # -------------------------------------------------------------------------
-    # 3. LOAD RUBRICS (expert + student distributions)
-    # -------------------------------------------------------------------------
-    rubrics_file = script_dir / "dataset" / "rubrics.jsonl"
-    rubrics = {}  # Full rubric data including student info
-    if rubrics_file.exists():
-        with open(rubrics_file, 'r') as f:
-            for line in f:
-                if line.strip():
-                    obj = json.loads(line)
-                    rubrics[obj["id"]] = obj
-
-    print(f"Loaded {len(rubrics)} rubrics")
-
-    # Count questions with student data
-    with_student = sum(1 for r in rubrics.values() if "student_distribution" in r)
-    print(f"Questions with student comparison data: {with_student}")
-
-    # -------------------------------------------------------------------------
-    # 4. LOAD RESPONSES - group by (id, trial)
-    # -------------------------------------------------------------------------
-    responses: Dict[tuple, dict] = {}  # (id, trial) -> item
-
-    with open(input_file, 'r') as f:
-        for line in f:
-            if line.strip():
-                item = json.loads(line)
-                item_id = item.get("id") or item.get("item_id")
-                trial = item.get("trial", 1)
-                if item_id:
-                    responses[(item_id, trial)] = item
-
-    # Apply --limit (first N unique item IDs)
-    unique_ids = sorted(set(id for id, _ in responses.keys()))
-    if args.limit is not None:
-        unique_ids = unique_ids[:args.limit]
-        limited_set = set(unique_ids)
-        responses = {k: v for k, v in responses.items() if k[0] in limited_set}
-        print(f"Limited to {len(unique_ids)} items")
-
-    # Determine trials from data
-    trial_numbers = sorted(set(t for _, t in responses.keys()))
-    n_trials = len(trial_numbers)
-    print(f"Detected {n_trials} trial(s); scoring trial={args.trial}")
-    if args.trial not in trial_numbers:
-        print(f"Error: trial {args.trial} not present in raw data (available: {trial_numbers})")
-        return
+    settings = {**model_config.get("benchmark", {}), **bench_config.get("benchmark", {})}
+    subset = settings.get("subset", "all")
+    limit = args.limit if args.limit is not None else settings.get("limit")
+    if limit is not None and limit < 1:
+        raise SystemExit("The item limit must be positive")
+    loader = create_loader({"sct": {**model_config.get("sct", {}), **bench_config.get("sct", {})}})
+    manifest = {str(item["id"]) for item in loader.load_manifest()}
+    sources = {item.id: item.metadata["source_short"] for item in loader.load_items(subset, limit)}
+    if not sources:
+        raise SystemExit(f"No dataset items selected for subset {subset!r}, limit {limit}")
+    rubrics = loader.load_rubrics()
+    for item_id in sources:
+        weights = rubrics.get(item_id, {}).get("expert_distribution")
+        if not isinstance(weights, list) or len(weights) != 5:
+            raise SystemExit(f"Missing or invalid expert distribution for item {item_id}")
+        if not all(isinstance(w, (int, float)) and np.isfinite(w) and w >= 0 for w in weights) or not any(weights):
+            raise SystemExit(f"Missing or invalid expert distribution for item {item_id}")
+    if not input_file.is_file():
+        raise SystemExit(f"Missing response file: {input_file}")
+    trial = args.trial
+    trial_items = read_trial(input_file, trial, set(sources), manifest)
+    unique_ids = sorted(sources)
 
     # -------------------------------------------------------------------------
     # 5. SCORE PER ITEM (single trial; item-level bootstrap CIs)
     # -------------------------------------------------------------------------
     parse_errors = 0
-    api_errors = 0
     question_results = []  # For detailed JSONL output
 
     # Per-subtest item-level scores (kept as flat lists for bootstrap)
@@ -440,20 +416,10 @@ def main():
     item_trial_scores: Dict[str, list] = defaultdict(list)
     item_source: Dict[str, str] = {}
 
-    trial = args.trial
-    trial_items = {id: item for (id, t), item in responses.items() if t == trial}
-
     for item_id in tqdm(unique_ids, desc=f"Scoring trial {trial}"):
-        if item_id not in trial_items:
-            continue
-
         item = trial_items[item_id]
-        rubric = rubrics.get(item_id, {})
-        expert_dist = rubric.get("expert_distribution", [0, 0, 0, 0, 0])
-
-        if item.get("error") or item.get("response") is None:
-            api_errors += 1
-            continue
+        rubric = rubrics[item_id]
+        expert_dist = rubric["expert_distribution"]
 
         rating = parse_response(item.get("response", ""))
         if rating is None:
@@ -475,7 +441,7 @@ def main():
 
         item_trial_scores[item_id].append(per_item_score)
 
-        source_short = item.get("metadata", {}).get("source_short", "unknown")
+        source_short = sources[item_id]
         subtest_names.add(source_short)
         item_source[item_id] = source_short
         subtest_sct[source_short].append(per_item_score)
@@ -506,7 +472,6 @@ def main():
     print(f"Total questions:   {total}")
     print(f"Scored items:      {n_used} (trial {trial})")
     print(f"Parse errors:      {parse_errors}")
-    print(f"API errors:        {api_errors}")
     print(f"Bootstrap:         B={args.n_boot}, seed={args.seed}, percentile method")
     print()
 
@@ -572,11 +537,11 @@ def main():
     human_comparison_data: Dict[str, Dict[str, list]] = {}
 
     for item_id, scores in item_trial_scores.items():
-        rubric = rubrics.get(item_id, {})
+        rubric = rubrics[item_id]
         if "student_distribution" not in rubric:
             continue
 
-        expert_dist = rubric.get("expert_distribution", [0, 0, 0, 0, 0])
+        expert_dist = rubric["expert_distribution"]
         if "student_score" in rubric:
             student_score = rubric["student_score"]
         else:

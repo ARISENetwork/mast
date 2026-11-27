@@ -16,8 +16,7 @@ figures exactly.
 - `response` - the model's raw answer text (real GPT-5.5 output). For this
   model the answers are terse (`Rating: -1`) because the reasoning happens in
   tokens the provider does not return; other models emit their rationale here
-- `metadata` - `source` / `source_short`; `score.py` uses `source_short` for the
-  per-subtest rows
+- `metadata` - `source` / `source_short` from the runner. The scorer looks up the subtest by item ID
 - `usage`, `runtime` - token counts and wall-clock seconds
 
 You can hand-write a file in this shape (`{id, trial, response}` minimum) and
